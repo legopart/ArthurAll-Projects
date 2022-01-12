@@ -35,6 +35,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseOOP", "..\_External
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ewmsCsharp", "ewmsCsharp\ewmsCsharp\ewmsCsharp.csproj", "{F2977ECF-9EED-4D8B-B311-F0002E72BDC3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9_TimeStamp_ExternalClassExternalDll", "DataStructurePractice\9_TimeStamp_ExternalClassExternalDll\9_TimeStamp_ExternalClassExternalDll.csproj", "{22F2C6D9-1311-4059-91A8-F303664F37DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9_MyToolsLibarary", "DataStructurePractice\9_MyToolsLibarary\9_MyToolsLibarary.csproj", "{A04A4CD6-D4F8-4DCF-BA3A-0A9DCFE13F27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +93,14 @@ Global
 		{F2977ECF-9EED-4D8B-B311-F0002E72BDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2977ECF-9EED-4D8B-B311-F0002E72BDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2977ECF-9EED-4D8B-B311-F0002E72BDC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22F2C6D9-1311-4059-91A8-F303664F37DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F2C6D9-1311-4059-91A8-F303664F37DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F2C6D9-1311-4059-91A8-F303664F37DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F2C6D9-1311-4059-91A8-F303664F37DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A04A4CD6-D4F8-4DCF-BA3A-0A9DCFE13F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A04A4CD6-D4F8-4DCF-BA3A-0A9DCFE13F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A04A4CD6-D4F8-4DCF-BA3A-0A9DCFE13F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A04A4CD6-D4F8-4DCF-BA3A-0A9DCFE13F27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,6 +118,8 @@ Global
 		{2A810EE8-2FB5-486F-BCEF-1C2FF42E4F5D} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
 		{712BECE0-6453-4B23-BA44-080BAB111D23} = {E6AE45E8-6A9C-4264-B1CE-B65BF57CCD21}
 		{F2977ECF-9EED-4D8B-B311-F0002E72BDC3} = {D93B37F6-04C2-4B22-ACB9-62F3CE41CBBD}
+		{22F2C6D9-1311-4059-91A8-F303664F37DF} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
+		{A04A4CD6-D4F8-4DCF-BA3A-0A9DCFE13F27} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19DA1C0C-CABF-47AA-8DBE-E82809E9C597}
