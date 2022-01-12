@@ -39,6 +39,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9_TimeStamp_ExternalClassEx
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9_MyToolsLibarary", "DataStructurePractice\9_MyToolsLibarary\9_MyToolsLibarary.csproj", "{A04A4CD6-D4F8-4DCF-BA3A-0A9DCFE13F27}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "9_RecorsiaFunction", "DataStructurePractice\9_RecorsiaFunction\9_RecorsiaFunction.csproj", "{5795C803-E0CC-45DE-B906-2A6009C4A89D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8_TreeOrdering_XMLRSSfileRead", "DataStructurePractice\8_TreeOrdering_XMLRSSfileRead\8_TreeOrdering_XMLRSSfileRead.csproj", "{6BD9E469-F4CE-45C5-91DC-E55CD6C8F80C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +105,14 @@ Global
 		{A04A4CD6-D4F8-4DCF-BA3A-0A9DCFE13F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A04A4CD6-D4F8-4DCF-BA3A-0A9DCFE13F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A04A4CD6-D4F8-4DCF-BA3A-0A9DCFE13F27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5795C803-E0CC-45DE-B906-2A6009C4A89D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5795C803-E0CC-45DE-B906-2A6009C4A89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5795C803-E0CC-45DE-B906-2A6009C4A89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5795C803-E0CC-45DE-B906-2A6009C4A89D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BD9E469-F4CE-45C5-91DC-E55CD6C8F80C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BD9E469-F4CE-45C5-91DC-E55CD6C8F80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BD9E469-F4CE-45C5-91DC-E55CD6C8F80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BD9E469-F4CE-45C5-91DC-E55CD6C8F80C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +132,8 @@ Global
 		{F2977ECF-9EED-4D8B-B311-F0002E72BDC3} = {D93B37F6-04C2-4B22-ACB9-62F3CE41CBBD}
 		{22F2C6D9-1311-4059-91A8-F303664F37DF} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
 		{A04A4CD6-D4F8-4DCF-BA3A-0A9DCFE13F27} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
+		{5795C803-E0CC-45DE-B906-2A6009C4A89D} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
+		{6BD9E469-F4CE-45C5-91DC-E55CD6C8F80C} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19DA1C0C-CABF-47AA-8DBE-E82809E9C597}
