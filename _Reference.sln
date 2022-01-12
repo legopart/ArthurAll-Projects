@@ -1,0 +1,106 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBasePractice", "DataBasePractice", "{BC2B9BC9-DDF4-4616-84F6-ED9BDB4B6980}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructurePractice", "DataStructurePractice", "{1E362BB3-2A6C-477C-ABE8-A261397B41B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ewmsCsharp", "ewmsCsharp", "{D93B37F6-04C2-4B22-ACB9-62F3CE41CBBD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ewmsCsharp", "ewmsCsharp\ewmsCsharp\ewmsCsharp.csproj", "{C6E779F8-EC48-499B-BEED-CB8970C82774}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ewmsCsharpTest", "ewmsCsharp\ewmsCsharpTest\ewmsCsharpTest.csproj", "{1C13AD28-C28E-4DE9-AAD7-B1A30F9FD25C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExamMySQL_MongoDB", "DataBasePractice\ExamMySQL_MongoDB\ExamMySQL_MongoDB.csproj", "{BFB302CC-1CF1-4C8C-BF2C-2D2EC35FD267}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8_MaarivNewsApp_XMLRSS", "DataStructurePractice\8_MaarivNewsAppXML_RSS\8_MaarivNewsApp_XMLRSS.csproj", "{83B1F316-19F8-4EF2-8D89-BB2586A3FB4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7_Tree_WinFormsApp", "DataStructurePractice\7_Tree-WinFormsApp_FailApp\7_Tree_WinFormsApp.csproj", "{B1200F0A-AA5A-4B4A-9347-1601C2098201}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySQL_MongoDB_Cars_Students", "DataBasePractice\MySQL_MongoDB_Cars_Students\MySQL_MongoDB_Cars_Students.csproj", "{0BE2848B-80BC-4CA8-9220-9EF7B6F3308F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elias_mongoDb-console-app", "DataBasePractice\Elias_mongoDb-console-app\Elias_mongoDb-console-app.csproj", "{6FCDDC1F-0B3B-46C4-BC79-6FC6CEFC3BCA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elias_mongoDBWindowApp_PassagersPractice", "DataBasePractice\Elias_mongoDBWindowApp_PassagersPractice\Elias_mongoDBWindowApp_PassagersPractice.csproj", "{246F0E12-5735-4FED-8C0E-B8202CEA28A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures_ToReorder", "DataStructurePractice\DataStructures_ToReOrder\DataStructures_ToReorder.csproj", "{14A46720-98D2-4414-9886-6C655690391D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6_LottoReadFromFile", "DataStructurePractice\6_LottoReadFromFile\6_LottoReadFromFile.csproj", "{A97C3E75-934E-4658-A95C-3F28B391E0B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7_Tree_ToFix", "DataStructurePractice\7_Tree_ToFix\7_Tree_ToFix.csproj", "{2A810EE8-2FB5-486F-BCEF-1C2FF42E4F5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{E6AE45E8-6A9C-4264-B1CE-B65BF57CCD21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6E779F8-EC48-499B-BEED-CB8970C82774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E779F8-EC48-499B-BEED-CB8970C82774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E779F8-EC48-499B-BEED-CB8970C82774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E779F8-EC48-499B-BEED-CB8970C82774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C13AD28-C28E-4DE9-AAD7-B1A30F9FD25C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C13AD28-C28E-4DE9-AAD7-B1A30F9FD25C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C13AD28-C28E-4DE9-AAD7-B1A30F9FD25C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C13AD28-C28E-4DE9-AAD7-B1A30F9FD25C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFB302CC-1CF1-4C8C-BF2C-2D2EC35FD267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFB302CC-1CF1-4C8C-BF2C-2D2EC35FD267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFB302CC-1CF1-4C8C-BF2C-2D2EC35FD267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFB302CC-1CF1-4C8C-BF2C-2D2EC35FD267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83B1F316-19F8-4EF2-8D89-BB2586A3FB4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83B1F316-19F8-4EF2-8D89-BB2586A3FB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83B1F316-19F8-4EF2-8D89-BB2586A3FB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83B1F316-19F8-4EF2-8D89-BB2586A3FB4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1200F0A-AA5A-4B4A-9347-1601C2098201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1200F0A-AA5A-4B4A-9347-1601C2098201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1200F0A-AA5A-4B4A-9347-1601C2098201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1200F0A-AA5A-4B4A-9347-1601C2098201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE2848B-80BC-4CA8-9220-9EF7B6F3308F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE2848B-80BC-4CA8-9220-9EF7B6F3308F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE2848B-80BC-4CA8-9220-9EF7B6F3308F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE2848B-80BC-4CA8-9220-9EF7B6F3308F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FCDDC1F-0B3B-46C4-BC79-6FC6CEFC3BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FCDDC1F-0B3B-46C4-BC79-6FC6CEFC3BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FCDDC1F-0B3B-46C4-BC79-6FC6CEFC3BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FCDDC1F-0B3B-46C4-BC79-6FC6CEFC3BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{246F0E12-5735-4FED-8C0E-B8202CEA28A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{246F0E12-5735-4FED-8C0E-B8202CEA28A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{246F0E12-5735-4FED-8C0E-B8202CEA28A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{246F0E12-5735-4FED-8C0E-B8202CEA28A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A46720-98D2-4414-9886-6C655690391D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A46720-98D2-4414-9886-6C655690391D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A46720-98D2-4414-9886-6C655690391D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A46720-98D2-4414-9886-6C655690391D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A97C3E75-934E-4658-A95C-3F28B391E0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97C3E75-934E-4658-A95C-3F28B391E0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97C3E75-934E-4658-A95C-3F28B391E0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97C3E75-934E-4658-A95C-3F28B391E0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A810EE8-2FB5-486F-BCEF-1C2FF42E4F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A810EE8-2FB5-486F-BCEF-1C2FF42E4F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A810EE8-2FB5-486F-BCEF-1C2FF42E4F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A810EE8-2FB5-486F-BCEF-1C2FF42E4F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C6E779F8-EC48-499B-BEED-CB8970C82774} = {D93B37F6-04C2-4B22-ACB9-62F3CE41CBBD}
+		{1C13AD28-C28E-4DE9-AAD7-B1A30F9FD25C} = {D93B37F6-04C2-4B22-ACB9-62F3CE41CBBD}
+		{BFB302CC-1CF1-4C8C-BF2C-2D2EC35FD267} = {BC2B9BC9-DDF4-4616-84F6-ED9BDB4B6980}
+		{83B1F316-19F8-4EF2-8D89-BB2586A3FB4F} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
+		{B1200F0A-AA5A-4B4A-9347-1601C2098201} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
+		{0BE2848B-80BC-4CA8-9220-9EF7B6F3308F} = {BC2B9BC9-DDF4-4616-84F6-ED9BDB4B6980}
+		{6FCDDC1F-0B3B-46C4-BC79-6FC6CEFC3BCA} = {BC2B9BC9-DDF4-4616-84F6-ED9BDB4B6980}
+		{246F0E12-5735-4FED-8C0E-B8202CEA28A8} = {BC2B9BC9-DDF4-4616-84F6-ED9BDB4B6980}
+		{14A46720-98D2-4414-9886-6C655690391D} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
+		{A97C3E75-934E-4658-A95C-3F28B391E0B7} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
+		{2A810EE8-2FB5-486F-BCEF-1C2FF42E4F5D} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19DA1C0C-CABF-47AA-8DBE-E82809E9C597}
+	EndGlobalSection
+EndGlobal
