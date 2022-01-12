@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructurePractice", "Da
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ewmsCsharp", "ewmsCsharp", "{D93B37F6-04C2-4B22-ACB9-62F3CE41CBBD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ewmsCsharp", "ewmsCsharp\ewmsCsharp\ewmsCsharp.csproj", "{C6E779F8-EC48-499B-BEED-CB8970C82774}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ewmsCsharpTest", "ewmsCsharp\ewmsCsharpTest\ewmsCsharpTest.csproj", "{1C13AD28-C28E-4DE9-AAD7-B1A30F9FD25C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExamMySQL_MongoDB", "DataBasePractice\ExamMySQL_MongoDB\ExamMySQL_MongoDB.csproj", "{BFB302CC-1CF1-4C8C-BF2C-2D2EC35FD267}"
@@ -35,16 +33,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseOOP", "..\_External_MyTools\DataBaseOOP\DataBaseOOP.csproj", "{712BECE0-6453-4B23-BA44-080BAB111D23}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ewmsCsharp", "ewmsCsharp\ewmsCsharp\ewmsCsharp.csproj", "{F2977ECF-9EED-4D8B-B311-F0002E72BDC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C6E779F8-EC48-499B-BEED-CB8970C82774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6E779F8-EC48-499B-BEED-CB8970C82774}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6E779F8-EC48-499B-BEED-CB8970C82774}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6E779F8-EC48-499B-BEED-CB8970C82774}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1C13AD28-C28E-4DE9-AAD7-B1A30F9FD25C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1C13AD28-C28E-4DE9-AAD7-B1A30F9FD25C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C13AD28-C28E-4DE9-AAD7-B1A30F9FD25C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -89,12 +85,15 @@ Global
 		{712BECE0-6453-4B23-BA44-080BAB111D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{712BECE0-6453-4B23-BA44-080BAB111D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{712BECE0-6453-4B23-BA44-080BAB111D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2977ECF-9EED-4D8B-B311-F0002E72BDC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2977ECF-9EED-4D8B-B311-F0002E72BDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2977ECF-9EED-4D8B-B311-F0002E72BDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2977ECF-9EED-4D8B-B311-F0002E72BDC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C6E779F8-EC48-499B-BEED-CB8970C82774} = {D93B37F6-04C2-4B22-ACB9-62F3CE41CBBD}
 		{1C13AD28-C28E-4DE9-AAD7-B1A30F9FD25C} = {D93B37F6-04C2-4B22-ACB9-62F3CE41CBBD}
 		{BFB302CC-1CF1-4C8C-BF2C-2D2EC35FD267} = {BC2B9BC9-DDF4-4616-84F6-ED9BDB4B6980}
 		{83B1F316-19F8-4EF2-8D89-BB2586A3FB4F} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
@@ -106,6 +105,7 @@ Global
 		{A97C3E75-934E-4658-A95C-3F28B391E0B7} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
 		{2A810EE8-2FB5-486F-BCEF-1C2FF42E4F5D} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
 		{712BECE0-6453-4B23-BA44-080BAB111D23} = {E6AE45E8-6A9C-4264-B1CE-B65BF57CCD21}
+		{F2977ECF-9EED-4D8B-B311-F0002E72BDC3} = {D93B37F6-04C2-4B22-ACB9-62F3CE41CBBD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19DA1C0C-CABF-47AA-8DBE-E82809E9C597}
