@@ -13,4 +13,8 @@
     <PackageReference Include="Nancy.Serialization.JsonNet" Version="1.4.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\_External_MyTools\DataBaseOOP\DataBaseOOP.csproj" />
+  </ItemGroup>
+
 </Project>

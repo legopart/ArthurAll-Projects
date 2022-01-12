@@ -3,7 +3,7 @@ using BaseLib;
 using ShapeLib;
 using static BaseLib.MathFunctions;
 
-var rect = new Rectangle();
+var rect = new Rectangle(5, 5); //?
 
 rect.Color = System.Drawing.Color.BlueViolet;
 
