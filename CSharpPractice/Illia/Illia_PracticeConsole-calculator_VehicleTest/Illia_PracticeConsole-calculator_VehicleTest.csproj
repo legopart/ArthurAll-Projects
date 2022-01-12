@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleCalculator\ConsoleCalculator.csproj" />
     <ProjectReference Include="..\Illia_PracticeConsole-calculator\Illia_PracticeConsole-calculator.csproj" />
   </ItemGroup>
 
