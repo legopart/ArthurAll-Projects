@@ -1,7 +1,7 @@
 ﻿using DataBaseOOP;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using Nancy.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -77,9 +77,7 @@ namespace ExamMySQL_MongoDB.Classes
                     if (doc.Contains("Course"))
                         try
                         {
-                            string json = doc.GetElement("Course").Value.ToJson().ToString();
-                            JavaScriptSerializer js = new JavaScriptSerializer();
-                            CourseJson[] courses = js.Deserialize<CourseJson[]>(json);
+                            var courses = JsonConvert.DeserializeObject<List<CourseJson>>(doc.GetElement("Course").Value.ToString());
                             foreach (CourseJson course in courses)
                                 coursesString += $"{course.CourseName}, ";
                             dataRow["Courses"] = coursesString;

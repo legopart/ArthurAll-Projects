@@ -1,10 +1,11 @@
 ﻿using DataBaseOOP;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using Nancy.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using Newtonsoft.Json;
+
 namespace MySQL_MongoDB_Cars_StudentsNet4_7.Classes
 {
     public class Students
@@ -81,14 +82,13 @@ namespace MySQL_MongoDB_Cars_StudentsNet4_7.Classes
                     {
                         try
                         {
-                            string json = doc.GetElement("Course").Value.ToJson().ToString();
-                            JavaScriptSerializer js = new JavaScriptSerializer();
-                            CourseJson[] courses = js.Deserialize<CourseJson[]>(json);
-                            foreach (CourseJson course in courses)
-                                if(course != null)
-                                coursesString += $"{course.CourseName}, ";
-                            dataRow["Courses"] = coursesString;
-                        }catch (Exception) { }
+                            var courses = JsonConvert.DeserializeObject<List<CourseJson>>(doc.GetElement("Course").Value.ToString());
+                                    foreach (var course in courses)
+                                        if(course != null)
+                                      coursesString += $"{course.CourseName}, ";
+                                    dataRow["Courses"] = coursesString;
+                        }
+                        catch (Exception) { }
                     }
                     newStudentsDataTable.Rows.Add(dataRow);
                 }
