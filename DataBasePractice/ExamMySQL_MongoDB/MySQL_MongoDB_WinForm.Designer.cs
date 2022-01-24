@@ -89,6 +89,7 @@
             this.dgrdMongoDB.Size = new System.Drawing.Size(376, 255);
             this.dgrdMongoDB.TabIndex = 0;
             this.dgrdMongoDB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrdMongoDB_CellClick);
+            this.dgrdMongoDB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrdMongoDB_CellContentClick);
             this.dgrdMongoDB.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgrdMongoDB_CellStateChanged);
             // 
             // clmId_MongoDB

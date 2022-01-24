@@ -129,8 +129,12 @@ namespace ExamMySQL_MongoDB
         }
         private void btnReload_MySQL_Click(object sender, EventArgs e) => LoadTable_MySQL();
 
+
         #endregion
 
+        private void dgrdMongoDB_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }
