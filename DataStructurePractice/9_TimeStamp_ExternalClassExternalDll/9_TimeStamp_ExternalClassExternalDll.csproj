@@ -14,15 +14,7 @@
     <Reference Include="ExternalDll">
       <HintPath>ExternalDll.dll</HintPath>
     </Reference>
-    <Reference Include="MyToolsLibarary">
-      <HintPath>MyToolsLibararyDll.dll</HintPath>
-    </Reference>
-    <Reference Include="MyToolsLibarary">
-      <HintPath>MyToolsLibararyDll.dll</HintPath>
-    </Reference>
-    <Reference Include="MyToolsLibarary">
-      <HintPath>MyToolsLibararyDll.dll</HintPath>
-    </Reference>
+
   </ItemGroup>
 
 
