@@ -16,8 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ewmsCsharp\ewmsCsharp.csproj" />
     <ProjectReference Include="..\ewmsCsharp\ewmsCsharpUnDevelopVersion.csproj" />
   </ItemGroup>
+
+
 
 </Project>
