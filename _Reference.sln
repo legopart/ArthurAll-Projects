@@ -126,37 +126,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Files", "_Files", "{28A6AB
 		DataStructurePractice\_Files\RoadsConnection.txt = DataStructurePractice\_Files\RoadsConnection.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_Linked_List1", "DataStructurePractice\2_Linked_List1\2_Linked_List1.csproj", "{AFE56D89-FFF6-4E25-B4C6-580234115F59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2_Linked_List1", "DataStructurePractice\2_Linked_List1\2_Linked_List1.csproj", "{AFE56D89-FFF6-4E25-B4C6-580234115F59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_LinkedListMainFunctions", "DataStructurePractice\2_LinkedListMainFunctions\2_LinkedListMainFunctions.csproj", "{EA2EC0FB-F8FC-4D24-9698-F7EB0AB2B3C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2_LinkedListMainFunctions", "DataStructurePractice\2_LinkedListMainFunctions\2_LinkedListMainFunctions.csproj", "{EA2EC0FB-F8FC-4D24-9698-F7EB0AB2B3C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_QueueAndStack", "DataStructurePractice\4_QueueAndStack\4_QueueAndStack.csproj", "{2DE55787-99A9-4C94-8563-CA27FD075827}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_QueueAndStack", "DataStructurePractice\4_QueueAndStack\4_QueueAndStack.csproj", "{2DE55787-99A9-4C94-8563-CA27FD075827}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_BubbleSorts", "DataStructurePractice\3_BubbleSorts\3_BubbleSorts.csproj", "{1C6111E8-6B79-47EB-A721-2337F5414A40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3_BubbleSorts", "DataStructurePractice\3_BubbleSorts\3_BubbleSorts.csproj", "{1C6111E8-6B79-47EB-A721-2337F5414A40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonus_ReadFromFile_EasyVersion", "DataStructurePractice\Bonus_ReadFromFile_EasyVersion\Bonus_ReadFromFile_EasyVersion.csproj", "{3C6FBFDC-04DA-42E8-9726-63B4D1A24D96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bonus_ReadFromFile_EasyVersion", "DataStructurePractice\Bonus_ReadFromFile_EasyVersion\Bonus_ReadFromFile_EasyVersion.csproj", "{3C6FBFDC-04DA-42E8-9726-63B4D1A24D96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonus_ReadFromFile_EasyVersion_OOP", "DataStructurePractice\Bonus_ReadFromFile_EasyVersion_OOP\Bonus_ReadFromFile_EasyVersion_OOP.csproj", "{CB211B43-2376-4AEB-B96A-99A319FC89AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bonus_ReadFromFile_EasyVersion_OOP", "DataStructurePractice\Bonus_ReadFromFile_EasyVersion_OOP\Bonus_ReadFromFile_EasyVersion_OOP.csproj", "{CB211B43-2376-4AEB-B96A-99A319FC89AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam_LoadDataFromFile", "DataStructurePractice\Exam_LoadDataFromFile\Exam_LoadDataFromFile.csproj", "{A68F15D2-E8AB-44DB-BFC7-68DE10898606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exam_LoadDataFromFile", "DataStructurePractice\Exam_LoadDataFromFile\Exam_LoadDataFromFile.csproj", "{A68F15D2-E8AB-44DB-BFC7-68DE10898606}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practice_ArrayAndRandom", "Practice_ArrayAndRandom", "{202E3E75-C9D6-457F-B121-02244C463228}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_HashtableAndIO_Basics", "DataStructurePractice\5_HashtableAndIO_Basics\5_HashtableAndIO_Basics.csproj", "{48338EE6-FFAB-4926-BC25-4AE356A293DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5_HashtableAndIO_Basics", "DataStructurePractice\5_HashtableAndIO_Basics\5_HashtableAndIO_Basics.csproj", "{48338EE6-FFAB-4926-BC25-4AE356A293DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_RoadConnectionFromFiles_1File", "DataStructurePractice\5_RoadConnectionFromFiles_1File\5_RoadConnectionFromFiles_1File.csproj", "{2443E149-3C3A-4A7C-A621-4E105ECDA3A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5_RoadConnectionFromFiles_1File", "DataStructurePractice\5_RoadConnectionFromFiles_1File\5_RoadConnectionFromFiles_1File.csproj", "{2443E149-3C3A-4A7C-A621-4E105ECDA3A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_RoadConnectionFromFiles_MyVersion2Files", "DataStructurePractice\5_RoadConnectionFromFiles_MyVersion2Files\5_RoadConnectionFromFiles_MyVersion2Files.csproj", "{C7A8924D-1EB6-46F0-A09E-1E876262AB84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5_RoadConnectionFromFiles_MyVersion2Files", "DataStructurePractice\5_RoadConnectionFromFiles_MyVersion2Files\5_RoadConnectionFromFiles_MyVersion2Files.csproj", "{C7A8924D-1EB6-46F0-A09E-1E876262AB84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraySizingWithRandomNumbers_ProgramRun", "DataStructurePractice\Practice_ArrayAndRandom\ArraySizingWithRandomNumbers_ProgramRun\ArraySizingWithRandomNumbers_ProgramRun.csproj", "{934C4BFF-2E7F-4E3D-93A1-090226D0A27C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArraySizingWithRandomNumbers_ProgramRun", "DataStructurePractice\Practice_ArrayAndRandom\ArraySizingWithRandomNumbers_ProgramRun\ArraySizingWithRandomNumbers_ProgramRun.csproj", "{934C4BFF-2E7F-4E3D-93A1-090226D0A27C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BullPgia_ProgramRun", "DataStructurePractice\Practice_ArrayAndRandom\BullPgia_ProgramRun\BullPgia_ProgramRun.csproj", "{2A13D4DB-7D34-42B5-AF97-954772D029F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BullPgia_ProgramRun", "DataStructurePractice\Practice_ArrayAndRandom\BullPgia_ProgramRun\BullPgia_ProgramRun.csproj", "{2A13D4DB-7D34-42B5-AF97-954772D029F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HagralaFromArrayChossenNumber_ProgramRun", "DataStructurePractice\Practice_ArrayAndRandom\HagralaFromArrayChossenNumber_ProgramRun\HagralaFromArrayChossenNumber_ProgramRun.csproj", "{373618A0-0D8B-4F39-8382-6415C2782F99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HagralaFromArrayChossenNumber_ProgramRun", "DataStructurePractice\Practice_ArrayAndRandom\HagralaFromArrayChossenNumber_ProgramRun\HagralaFromArrayChossenNumber_ProgramRun.csproj", "{373618A0-0D8B-4F39-8382-6415C2782F99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatritzatHamazalNuDoubleElementsInsideArray_ProgramRun", "DataStructurePractice\Practice_ArrayAndRandom\MatritzatHamazalNuDoubleElementsInsideArray_ProgramRun\MatritzatHamazalNuDoubleElementsInsideArray_ProgramRun.csproj", "{2410C4FE-CAAD-4674-9FCF-FCF136B0EE6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatritzatHamazalNuDoubleElementsInsideArray_ProgramRun", "DataStructurePractice\Practice_ArrayAndRandom\MatritzatHamazalNuDoubleElementsInsideArray_ProgramRun\MatritzatHamazalNuDoubleElementsInsideArray_ProgramRun.csproj", "{2410C4FE-CAAD-4674-9FCF-FCF136B0EE6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_InserSort", "DataStructurePractice\3_InserSort\3_InserSort.csproj", "{5D96506F-E111-4A0C-A23C-AE7ADC016929}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3_InserSort", "DataStructurePractice\3_InserSort\3_InserSort.csproj", "{5D96506F-E111-4A0C-A23C-AE7ADC016929}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elias", "Elias", "{FE46E653-628A-4E3B-838B-DFDAE8FA6B36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elias_DependencyInjection", "CSharpPractice\Elias\Elias_DependencyInjection\Elias_DependencyInjection.csproj", "{0B681AC7-83D9-4231-91D3-F7B3943DD45D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -372,6 +376,10 @@ Global
 		{5D96506F-E111-4A0C-A23C-AE7ADC016929}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D96506F-E111-4A0C-A23C-AE7ADC016929}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D96506F-E111-4A0C-A23C-AE7ADC016929}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B681AC7-83D9-4231-91D3-F7B3943DD45D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B681AC7-83D9-4231-91D3-F7B3943DD45D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B681AC7-83D9-4231-91D3-F7B3943DD45D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B681AC7-83D9-4231-91D3-F7B3943DD45D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -440,6 +448,8 @@ Global
 		{373618A0-0D8B-4F39-8382-6415C2782F99} = {202E3E75-C9D6-457F-B121-02244C463228}
 		{2410C4FE-CAAD-4674-9FCF-FCF136B0EE6B} = {202E3E75-C9D6-457F-B121-02244C463228}
 		{5D96506F-E111-4A0C-A23C-AE7ADC016929} = {1E362BB3-2A6C-477C-ABE8-A261397B41B3}
+		{FE46E653-628A-4E3B-838B-DFDAE8FA6B36} = {ADB4680B-5E7A-47BD-B5D0-1E0D2EBEAD4F}
+		{0B681AC7-83D9-4231-91D3-F7B3943DD45D} = {FE46E653-628A-4E3B-838B-DFDAE8FA6B36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19DA1C0C-CABF-47AA-8DBE-E82809E9C597}
