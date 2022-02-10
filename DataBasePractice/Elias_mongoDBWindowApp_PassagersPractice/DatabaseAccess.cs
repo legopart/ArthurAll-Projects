@@ -73,24 +73,25 @@ namespace winform_flights
             return false;
         }
 
-        public static DataTable DB_GetData(DataTable tablemMongoDB, DataTable tableMySQL)   //vvvvv
+        public static DataTable DB_GetData(DataTable tableMySQL)   //vvvvv
         {
-            tablemMongoDB.Columns.Add("name");
-            tablemMongoDB.Columns.Add("age");
+            DataTable table=new DataTable();
+            table.Columns.Add("name");
+            table.Columns.Add("age");
             try
             {
                 IFindFluent<BsonDocument, BsonDocument> documents = passengersDBCollection.Find(new BsonDocument());
                 foreach (BsonDocument document in documents.ToListAsync().Result)
                 {
-                    DataRow dataRow = tablemMongoDB.NewRow();
+                    DataRow dataRow = table.NewRow();
                     dataRow["name"] = document[1].ToString();
                     dataRow["age"] = document[2].ToString();
-                    tablemMongoDB.Rows.Add(dataRow);
+                    table.Rows.Add(dataRow);
                 }
             }
-            catch (Exception ex) { }
-            tablemMongoDB.AcceptChanges();
-            return tablemMongoDB;
+            catch { }
+            table.AcceptChanges();
+            return table;
         }
 
     }

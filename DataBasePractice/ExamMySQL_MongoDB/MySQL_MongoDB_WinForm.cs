@@ -12,7 +12,7 @@ namespace ExamMySQL_MongoDB
         private StudentMongo? selectedRowStudent_MongoDB;
         private StudentMySQL? selectedRowStudent_MySQL;
         private MongoDb mongoDb = new MongoDb();
-        private MySQL mySQL = new MySQL();
+        private MySQL mySQL = new MySQL("localhost", "root", "admin", "school");
         public MySQL_MongoDB_WinForm()
         {
             InitializeComponent();

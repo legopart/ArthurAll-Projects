@@ -14,12 +14,12 @@ namespace winform_flights
 {
     public partial class frmFlightPassangers : Form
     {
-        DataTable MongoDBResultTable = new DataTable();
+        //DataTable MongoDBResultTable = new DataTable();
         DataTable MySQLResultTable = new DataTable();
         Passanger selectedRowPassanger = new Passanger();
 
         private void DB_LoadPassengers()
-            => dgrdPassengers.DataSource = DatabaseAccess.DB_GetData(MongoDBResultTable, MySQLResultTable);
+            => dgrdPassengers.DataSource = DatabaseAccess.DB_GetData(MySQLResultTable);
 
         public frmFlightPassangers()
         {

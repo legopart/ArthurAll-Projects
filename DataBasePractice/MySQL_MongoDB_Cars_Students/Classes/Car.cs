@@ -29,7 +29,7 @@ namespace MySQL_MongoDB_Cars_StudentsNet4_7.Classes
 
         public void Insert(MySQL mySQL)
         {
-            mySQL.Procedute("InsertCar");
+            mySQL.Procedure("InsertCar");
             mySQL.SetParameter("_type", Type);
             mySQL.SetParameter("_description", Description);
             mySQL.SetParameter("_subDescription", SubDescription);
@@ -48,7 +48,7 @@ namespace MySQL_MongoDB_Cars_StudentsNet4_7.Classes
 
         public void Delete(MySQL mySQL)
         {
-            mySQL.Procedute("DeleteCar");
+            mySQL.Procedure("DeleteCar");
             mySQL.SetParameter("_id", Id);
             mySQL.ProceduteExecute();
             ////Query Example
@@ -59,7 +59,7 @@ namespace MySQL_MongoDB_Cars_StudentsNet4_7.Classes
 
         public void Update(MySQL mySQL, Car updated)
         {
-            mySQL.Procedute("UpdateCar");
+            mySQL.Procedure("UpdateCar");
             mySQL.SetParameter("_id", Id);
             mySQL.SetParameter("_type", updated.Type);
             mySQL.SetParameter("_description", updated.Description);

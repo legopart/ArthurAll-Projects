@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Elias_DependencyInjection.Models
+namespace Elias_Singleton.Models
 {
     public class Student
     {

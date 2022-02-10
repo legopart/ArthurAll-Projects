@@ -19,7 +19,7 @@ namespace ExamMySQL_MongoDB.Classes
 
         public void Insert(MySQL mySQL)
         {
-            mySQL.Procedute("add");
+            mySQL.Procedure("add");
             foreach (var (key, value) in new[] { ("_firstname", FirstName), ("_lastname", LastName), ("_age", Age.ToString()) })
                 mySQL.SetParameter(key, value);
             mySQL.ProceduteExecute();
@@ -30,7 +30,7 @@ namespace ExamMySQL_MongoDB.Classes
             DataTable newStudentTable = new DataTable();
             foreach (string culmn in new[]{ "clmId_MySQL", "First Name", "Last Name", "Age" })
                 newStudentTable.Columns.Add(culmn);
-            mySQL.Procedute("getstudents");
+            mySQL.Procedure("getstudents");
            // mySQL.Quary("SELECT * FROM school.students");
             using MySqlDataReader? results = mySQL.ProceduteExecuteMultyResults();
             while (results != null && results.Read()) //for 1 result: if (mdr.Read())
