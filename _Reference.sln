@@ -164,6 +164,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elias_Singleton", "CSharpPr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elias_DependencyInjection", "CSharpPractice\Elias\Elias_DependencyInjection\Elias_DependencyInjection.csproj", "{5A41A42A-74E3-4A71-ACED-EFFE1AF8DD2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deligates", "Reference\Deligates\Deligates.csproj", "{7556AF4E-3583-4CCA-8253-D5FAF72391FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -386,6 +388,10 @@ Global
 		{5A41A42A-74E3-4A71-ACED-EFFE1AF8DD2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A41A42A-74E3-4A71-ACED-EFFE1AF8DD2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A41A42A-74E3-4A71-ACED-EFFE1AF8DD2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7556AF4E-3583-4CCA-8253-D5FAF72391FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7556AF4E-3583-4CCA-8253-D5FAF72391FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7556AF4E-3583-4CCA-8253-D5FAF72391FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7556AF4E-3583-4CCA-8253-D5FAF72391FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -457,6 +463,7 @@ Global
 		{FE46E653-628A-4E3B-838B-DFDAE8FA6B36} = {ADB4680B-5E7A-47BD-B5D0-1E0D2EBEAD4F}
 		{EA732EBA-1A37-46A3-AE9A-6C0011D0D7BE} = {FE46E653-628A-4E3B-838B-DFDAE8FA6B36}
 		{5A41A42A-74E3-4A71-ACED-EFFE1AF8DD2B} = {FE46E653-628A-4E3B-838B-DFDAE8FA6B36}
+		{7556AF4E-3583-4CCA-8253-D5FAF72391FA} = {E6AE45E8-6A9C-4264-B1CE-B65BF57CCD21}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19DA1C0C-CABF-47AA-8DBE-E82809E9C597}
