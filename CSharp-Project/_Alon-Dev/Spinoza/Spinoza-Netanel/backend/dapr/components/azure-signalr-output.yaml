@@ -1,0 +1,13 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: azuresignalroutput
+spec:
+  type: bindings.azure.signalr
+  version: v1
+  metadata:
+  - name: connectionString
+    value: Endpoint=http://host.docker.internal:8888;Port=8888;AccessKey=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGH;Version=1.0;
+    #value: Endpoint=https://spinozasignalr.service.signalr.net;AccessKey="" \ // Cloud signalR Endpoint the AccessKey Is in the azure portal
+  - name: hub 
+    value: spinozahub

@@ -1,0 +1,25 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "azurite": "StartWithoutDebugging",
+        "cosmosdb": "StartWithoutDebugging",
+        "placement": "StartWithoutDebugging",
+        "redis": "StartWithoutDebugging",
+        "testaccessor-dapr": "StartWithoutDebugging",
+        "spinoza.backend.managers.catalogmanager": "StartDebugging",
+        "spinoza.backend.accessors.testaccessor": "StartDebugging",
+        "catalogmanager-dapr": "StartWithoutDebugging",
+        "zipkin": "StartWithoutDebugging",
+        "rabbitmq": "StartWithoutDebugging",
+        "signalr-negotiate": "StartWithoutDebugging",
+        "spinoza.backend.accessors.tagcatalog": "StartDebugging",
+        "questionaccessor-dapr": "StartWithoutDebugging",
+        "spinoza.backend.accessors.questioncatalog": "StartDebugging",
+        "tagaccessor-dapr": "StartWithoutDebugging"
+      }
+    }
+  }
+}

@@ -1,0 +1,320 @@
+version: '3.4'
+
+services:
+  ###########################################
+  # Test Accessor Microservice + Dapr sidecar
+  ###########################################
+  spinoza.backend.accessors.testaccessor:
+    image: ${DOCKER_REGISTRY-}testcatalogaccessor
+    build:
+      context: .
+      dockerfile: ./Accessors/TestCatalogAccessor/Dockerfile
+    ports:
+      - "5008:80"
+      - "50002:3500"
+      - "50010:50001"
+    depends_on:
+      - redis
+      - placement
+      - rabbitmq
+      - cosmosdb
+      - zipkin
+    networks:
+      - spinoza-dapr
+    environment:
+      - ASPNETCORE_URLS=http://spinoza.backend.accessors.testaccessor:80
+      - ASPNETCORE_ENVIRONMENT=Development
+  testaccessor-dapr:
+    image: "daprio/daprd:edge"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 10
+        window: 120s
+    command: ["./daprd",
+     "-app-id", "testaccessor",
+     "-app-port", "80",
+     "-dapr-http-port", "3500",
+     "-placement-host-address", "placement:50006",
+     "-components-path", "/dapr/components",
+     "-config", "/dapr/config.yaml"]
+    volumes:
+        - "./dapr/:/dapr"
+    depends_on:
+      - spinoza.backend.accessors.testaccessor
+    network_mode: "service:spinoza.backend.accessors.testaccessor"
+   
+  #############################################
+  # Question Accessor Microservice + Dapr sidecar
+  #############################################
+  spinoza.backend.accessors.questioncatalog:
+    image: ${DOCKER_REGISTRY-}spinozabackendaccessorquestioncatalog
+    build:
+      context: .
+      dockerfile: ./Accessors/Spinoza.Backend.Accessor.QuestionCatalog/Dockerfile
+    ports:
+      - "5009:80"
+      - "50003:3500"
+      - "50011:50001"
+    depends_on:
+      - redis
+      - placement
+      - rabbitmq
+      - cosmosdb
+      - zipkin
+    networks:
+      - spinoza-dapr
+    environment:
+      - ASPNETCORE_URLS=http://spinoza.backend.accessor.questioncatalog:80
+      - ASPNETCORE_ENVIRONMENT=Development
+  questionaccessor-dapr:
+    image: "daprio/daprd:edge"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 10
+        window: 120s 
+    command: ["./daprd",
+     "-app-id", "questionaccessor",
+     "-app-port", "80",
+     "-dapr-http-port", "3500",
+     "-placement-host-address", "placement:50006",
+     "-components-path", "/dapr/components",
+     "-config", "/dapr/config.yaml"]
+    volumes:
+        - "./dapr/:/dapr"
+    depends_on:
+      - spinoza.backend.accessors.questioncatalog
+    network_mode: "service:spinoza.backend.accessors.questioncatalog"
+
+  #############################################
+  # Tag Accessor Microservice + Dapr sidecar
+  #############################################
+  spinoza.backend.accessors.tagcatalog:
+    image: ${DOCKER_REGISTRY-}spinozabackendaccessortagcatalog
+    build:
+      context: .
+      dockerfile: Accessors/Spinoza.Backend.Accessor.TagCatalog/Dockerfile
+    ports:
+      - "5020:80"
+      - "50015:3500"
+      - "50012:50001"
+    depends_on:
+      - redis
+      - placement
+      - rabbitmq
+      - cosmosdb
+      - zipkin
+    networks:
+      - spinoza-dapr
+    environment:
+      - ASPNETCORE_URLS=http://spinoza.backend.accessor.tagcatalog:80
+      - ASPNETCORE_ENVIRONMENT=Development
+  tagaccessor-dapr:
+    image: "daprio/daprd:edge"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 10
+        window: 120s 
+    command: ["./daprd",
+     "-app-id", "tagaccessor",
+     "-app-port", "80",
+     "-dapr-http-port", "3500",
+     "-placement-host-address", "placement:50006",
+     "-components-path", "/dapr/components",
+     "-config", "/dapr/config.yaml"]
+    volumes:
+      - "./dapr/:/dapr"
+    depends_on:
+      - spinoza.backend.accessors.tagcatalog
+    network_mode: "service:spinoza.backend.accessors.tagcatalog"
+
+  #############################################
+  # Catalog Manager Microservice + Dapr sidecar
+  #############################################
+  spinoza.backend.managers.catalogmanager:
+    image: ${DOCKER_REGISTRY-}catalogmanager
+    build:
+      context: .
+      dockerfile: ./Managers/CatalogManager/Dockerfile
+    ports:
+      - "5007:80"
+      - "50000:3500"
+      - "50001:50001"
+    depends_on:
+      - spinoza.backend.accessors.testaccessor
+      - spinoza.backend.accessors.questioncatalog
+      - spinoza.backend.accessors.tagcatalog
+      - signalr-negotiate
+    networks:
+      - spinoza-dapr
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://spinoza.backend.managers.catalogmanager:80
+  catalogmanager-dapr:
+    image: "daprio/daprd:edge"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 10
+        window: 120s
+    command: ["./daprd",
+     "-app-id", "catalogmanager",
+     "-app-port", "80",
+     "-placement-host-address", "placement:50006",
+     "-dapr-http-port", "3500",
+     "-components-path", "/dapr/components",
+     "-config", "/dapr/config.yaml"]
+    volumes:
+        - "./dapr/:/dapr"
+    depends_on:
+      - spinoza.backend.managers.catalogmanager
+    network_mode: "service:spinoza.backend.managers.catalogmanager"
+
+  #############################################
+  # SignalR Negotiate function support
+  #############################################
+  signalr-negotiate:
+    image: ${DOCKER_REGISTRY-}signalr-negotiate
+    build:
+      context: .
+      dockerfile: ./Managers/SignalRConnectionSupport/Docker/Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - azurite
+    networks:
+      - spinoza-dapr
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - AzureSignalRConnectionString=Endpoint=http://localhost;Port=8888;AccessKey=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGH;Version=1.0;
+    
+  ############################
+  # Azurite
+  ############################
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    hostname: azurite
+    command: "azurite-queue --queueHost 0.0.0.0 --loose --skipApiVersionCheck -d /tmp/azurite_debug.log"
+    ports:
+     - "10000:10000"
+     - "10001:10001"
+    networks:
+      - spinoza-dapr
+    volumes:
+     - ./data/azurite:/data
+
+  ############################
+  # CosmosDB
+  ############################
+  cosmosdb:
+    container_name: cosmosdb
+    image: "mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator"
+    tty: true
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '8'
+          memory: 8G
+    environment:
+      - AZURE_COSMOS_EMULATOR_PARTITION_COUNT=20
+      - AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE=true
+#      - AZURE_COSMOS_EMULATOR_IP_ADDRESS_OVERRIDE=
+    ports:
+       - "8081:8081"
+       - "8900:8900"
+       - "8901:8901"
+       - "8979:8979"
+       - "10250:10250"
+       - "10251:10251"
+       - "10252:10252"
+       - "10253:10253"
+       - "10254:10254"
+       - "10255:10255"
+       - "10256:10256"
+       - "10350:10350"
+    networks:
+      - spinoza-dapr
+    volumes:
+       - vol_cosmos:/data/db
+
+  ############################
+  # RabitMQ
+  ############################
+  rabbitmq:
+    image: "rabbitmq:3-management-alpine"
+    ports:
+      - "5672:5672"
+    networks:
+      - spinoza-dapr
+
+  ############################
+  # Redis state store
+  ############################
+  redis:
+    image: "redis:alpine"
+    hostname: redisserver
+    ports:
+      - "6379:6379"
+    networks:
+      - spinoza-dapr
+
+  ############################
+  # Dapr placement service
+  ############################
+  placement:
+    image: "daprio/dapr"
+    command: ["./placement", "-port", "50006"]
+    ports:
+      - "50006:50006"
+    networks:
+      - spinoza-dapr
+
+  ############################
+  # Dapr zipkin service
+  ############################
+  zipkin:
+    image: "openzipkin/zipkin"
+    ports:
+      - "9411:9411"
+    networks:
+      - spinoza-dapr
+
+############################
+# SignalR emulator service
+############################
+#  signalr:
+#    image: ${DOCKER_REGISTRY-}signalremulator
+#    build:
+#      context: .
+#      dockerfile: ./LocalEnvironmentSupport/Dockerfile
+#    #ports:
+#    #  - 8999:8999
+#    #  - 7071:7071
+#    network_mode: host
+#    volumes:
+#     - ./workspace:/workspace
+#    environment:
+#      - ASRS_EMULATOR_PORT=8888
+##      - ASPNETCORE_ENVIRONMENT=Development
+#      - ASPNETCORE_URLS=http://+:8888;http://+:7071
+      
+############################
+# Global settings
+############################
+networks:
+  spinoza-dapr:
+
+volumes: 
+  vol_cosmos:
+  workspace:
+
+
+
