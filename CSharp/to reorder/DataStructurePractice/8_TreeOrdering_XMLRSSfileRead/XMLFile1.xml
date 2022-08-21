@@ -1,0 +1,29 @@
+﻿<Class>
+  <Banks>
+    <Bank Name="Leumi" Num="11">
+      <Snif City="TelAv" PhoneNumber="03-45646">></Snif>
+      <Snif City="Bat-Yam" PhoneNumber="03-56546"></Snif>
+      <Snif City="Haifa"></Snif>
+    </Bank>
+    <Bank Name="Hapoalim" Num="13">
+      <Snif City="RamatGan"></Snif>
+      <Snif City="Afula"></Snif>
+      <Snif City="RamatGan" PhoneNumber="04-56456754"></Snif>
+    </Bank>
+  </Banks>
+  <Pais>
+    <Hagrala Date="12.12.1951">
+      <Card Num1="19" Num2="10" Num3="5" Num4="6" Num5="7"></Card>
+    </Hagrala>
+    <Hagrala Date="19.12.1951">
+      <Card Num1="4" Num2="2" Num3="12" Num4="8" Num5="20"></Card>
+    </Hagrala>
+  </Pais>
+  <Data>
+    Parant
+    Child
+    Node
+    Attributes
+    </Data>
+  
+</Class>
