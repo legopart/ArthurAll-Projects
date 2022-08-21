@@ -1,8 +1,0 @@
-Nof-Hagalil,15,20,4,False,
-Afula,65,30,4,False,
-BeerSheva,12,40,4,False,
-Ashdod,4,70,6,False,
-Migdal-Haemek,25,40,2,False,
-Ein-Tut,24,22,2,False,
-Shesh,6,200,4,True,
-Nataniya,41,50,4,False,0-0-25
