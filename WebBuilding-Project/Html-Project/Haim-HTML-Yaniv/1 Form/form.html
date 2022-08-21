@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Form </title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+
+
+
+  <div id="container">
+    <div class="form-wrap">
+      <h1>Sign Up</h1>
+      <p> join to our school at all ages</p>
+
+      <form  onsubmit="return validateForm()" method="get">
+        <div class="form-group">
+          <label for="id">ID</label>
+          <input type="text" name="Id" id="userId" placeholder="Enter id number"  />
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="Name" id="userName" placeholder="Enter full name" />
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" name="Age" id="age" placeholder="Enter age" name="amount" min="1" max="120" />
+        </div>
+
+        <label for="schoolSelect">Choose a school:</label>
+        <select name="schoolSelect" id="schoolSelect">
+          <option value="">--Please choose an option--</option>
+          <option value="kindergarten">kindergarten</option>
+          <option value="School">School</option>
+          <option value="Preparatory program">Preparatory program</option>
+          <option value="Academy">Academy</option>
+        </select>
+
+        <button type="submit" class="btn">Save</button>
+
+      </form>
+    </div>
+
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Fruits</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='style.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+</head>
+
+
+<body>
+  <div class="parent">
+
+    <div class="div1"> 
+      <item class="card card-body">
+        <div class="form-group">
+          <label for="id"></label>
+          <input type="number" name="quantity" id="quantity" placeholder="quantity"  />
+        </div>
+        <div><p></p></div>
+        <div class="form-group">
+          <label for="name"></label>
+          <input type="number" name="value" id="value" placeholder="Value" />
+        </div>
+        <div><p></p></div>
+        <div class="form-group">
+          <button type="button" class="btn btn-primary" onclick="CheckPrice()">price</button>
+        </div>
+      </item>
+    </div>
+
+    <div class="div2"> 
+      <item class="card fruit banana" onclick="bananaClick()">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT68b0O5wgNnMvg2hrPVjD4cRADRiFNcmXHvQ&usqp=CAU" class='card-body'>
+      </item>
+    </div>
+
+    <div class="div3"> 
+      <item class="card fruit orange" onclick="orangeClick()">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe2DRK4JxrgOkJXCc7PuORV1eWucpoAUQhzA&usqp=CAU" class='card-body'>
+      </item>
+    </div>
+
+    <div class="div4"> 
+      <item class="card fruit watermelon " onclick="watermelonClick()">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh5jqfatCoKE9I4_lbXjTnjsGTucbAJl7oEA&usqp=CAU" class='card-body'>
+      </item>
+    </div>
+  </div> 
+
+</body>
+
+
+
+
+<script src='script.js'></script>
+</html>

@@ -1,0 +1,35 @@
+*{
+  box-sizing: border-box;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 14px;
+  }
+  
+  #ret { grid-area: 1 / 2 / 4 / 8; }
+  #red { grid-area: 3 / 7 / 5 / 9; }
+  #green { grid-area: 3 / 5 / 5 / 7; }
+  #yellow { grid-area: 3 / 3 / 5 / 5; }
+  #black { grid-area: 3 / 1 / 5 / 3; }
+  #btn { grid-area: 5 / 3 / 5 / 7; } 
+
+body{
+  
+  font-family: 'Roboto' ,sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: #a59f9f4b !important;
+}
+
+#ret{
+  margin-bottom: 5rem !important;
+}

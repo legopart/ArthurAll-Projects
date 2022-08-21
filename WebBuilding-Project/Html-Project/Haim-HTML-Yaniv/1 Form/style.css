@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #344a72;
+  color: #fff;
+  line-height: 1.8;
+}
+
+/* input:invalid {
+  border: 2px dashed red;
+}
+
+input:invalid:required {
+  background-image: linear-gradient(to right, pink, lightgreen);
+}
+
+input:valid {
+  border: 2px solid black;
+} */
+
+
+
+
+
+a {
+  text-decoration: none;
+}
+
+#container {
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.form-wrap  {
+  background: #fff;
+  padding: 15px 25px;
+  color: #333;
+}
+
+.form-wrap h1,
+.form-wrap p {
+  text-align: center;
+}
+
+.form-wrap .form-group {
+  margin-top: 15px;
+}
+
+.form-wrap .form-group label .school-select {
+  display: block;
+  color: #666;
+}
+
+.form-wrap .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: #ddd 1px solid;
+  border-radius: 5px;
+}
+
+.form-wrap button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background: #14ac21;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-wrap button:hover {
+  background: #37a08e
+}
+
+.form-wrap .bottom-text {
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 10px;
+}
+
+footer a {
+  color:#49c1a2
+}

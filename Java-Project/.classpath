@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="Java-Project/src"/>
+	<classpathentry kind="src" path="Java-To_Organize/GUI"/>
+	<classpathentry kind="src" path="Java-To_Organize/GuitarLessons-ManagmentConsole"/>
+	<classpathentry kind="src" path="Java-To_Organize/GuitarLessons-ManagmentGUI/src"/>
+	<classpathentry kind="src" path="Java-To_Organize/Tree/workA/src"/>
+	<classpathentry kind="src" path="Java-To_Organize/Tree/workB/src"/>
+	<classpathentry kind="src" path="Java-To_Organize/Tree/workC/src"/>
+	<classpathentry kind="output" path="Java-Project/bin"/>
+</classpath>
