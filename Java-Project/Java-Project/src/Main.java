@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Main {//1
+public class Main {//2
 	
     public static void main(String args[]) {
     	int age = 30, temprature = 20;
