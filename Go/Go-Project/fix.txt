@@ -1,0 +1,15 @@
+go env -w GO111MODULE=off
+
+go build
+
+GOPATH = $HOME/go
+            C:\Users\legop\go
+go get -u github.com/gorilla/mux
+
+	"encoding/json"
+	"log"
+	"net/http"
+	"math/rand"
+	"strconv"
+	"github.com/gorilla/mux"
+	"fmt"
