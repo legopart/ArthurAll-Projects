@@ -1,0 +1,32 @@
+#sample-p1{
+    border: 1px solid #111;
+    margin-top: 50px; /* px % */
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+#sample-p2{
+    border: 1px solid #111;
+    /* T R B L */
+    margin: 50px 60px 70px 80px;
+    
+    /* T RL B */
+     margin: 50px 60px 70px;
+    
+    /* TB RL */
+     margin: 50px 60px;
+    
+    /* TBRL */
+     margin: 50px;
+}
+
+#sample-div1{
+    border: 1px solid #111;
+    margin: 30px;
+}
+
+#sample-p3{
+    border: 1px solid #111;
+    margin: inherit;
+}s

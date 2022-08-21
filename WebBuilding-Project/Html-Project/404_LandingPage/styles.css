@@ -1,0 +1,59 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #2f80ed;
+    font-family: Avenir, Helvetica, Arial, sans-serif; 
+    text-align: center;
+    
+}
+
+.main{
+    margin-top: 110px;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    
+}
+
+.image404file{
+    width: 520px;
+    height: 190px;
+}
+
+.text404{
+    width: 400px;
+    height: 120px;
+    font-size: 120px;
+    line-height: 140px;
+    font-weight: 400;
+}
+
+.text404:hover {
+    cursor: pointer;
+}
+
+.description404{
+    margin-top: 10px;
+    width: 400px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    opacity: 0;
+    transition:  opacity .4s ease-in-out;
+}
+
+ .visibilityArea:hover .description404{
+    opacity: 1 !important;
+    transition:  opacity 1.2s ease-in-out;
+}
+
+.footer{
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: normal;
+}

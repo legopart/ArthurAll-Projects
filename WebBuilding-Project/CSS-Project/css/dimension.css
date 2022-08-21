@@ -1,0 +1,20 @@
+#sample-div1{
+    width:200px;
+    height: 48px;
+}
+
+#sample-div2{
+    width:50%;
+    height: 20%;
+}
+
+#sample-div3{ /*not goes below!*/
+   min-width:200px;
+   min-height: 140px;
+}
+
+#sample-div4{ /*not goes below!*/
+   max-width:50%;
+   max-height: 100px;
+    overflow-y: scroll; /*overflow, overflow-x */
+}

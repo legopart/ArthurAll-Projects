@@ -1,0 +1,45 @@
+p{
+    color:red;
+}
+
+p.blue{
+    color:blue;
+}
+
+p#black{
+    color:black;
+}
+
+#h1-sample{
+    color:blue;
+    font-size:24px;
+}
+/*
+#sample-heading{
+    color:green;
+}
+
+.sample-para {
+    color:green;
+}
+
+#s1 {
+    color:green;
+}
+*/
+
+#sample-heading, .sample-para, #s1{ /*grouping style*/
+    color:green;
+}
+
+.container-1{
+    font-size: 24px;
+}
+
+.container-1 p{
+    color:black;
+}
+
+.container-1 .container-2 p{
+    color:green;
+}

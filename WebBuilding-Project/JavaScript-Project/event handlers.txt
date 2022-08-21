@@ -1,0 +1,18 @@
+<button onclick="btnClicked();">Click Me</button>
+<button id="myBtn">Click Me2</button>
+<script>
+	function btnClicked(){
+			alert ('button clicked!');
+		}
+
+	var btn2 = document.getElentById("myBtn");
+	btn2.onclick = function () {alert ('button clicked2!')}
+</script>
+https://dyclassroom.com/js/js-event-handlers
+
+
+*onchange
+*onload
+*onresize
+*onscroll
+*onsubmit

@@ -1,0 +1,15 @@
+
+body
+{
+  background-image: url(g2.jpg);
+  margin:50px;
+  font-style: italic;
+  font-family: 'Coda Caption', sans-serif;
+}
+
+button
+{
+  background-color:	#1E90FF;
+  color:white;
+  font-family: 'Coda Caption', sans-serif;
+}

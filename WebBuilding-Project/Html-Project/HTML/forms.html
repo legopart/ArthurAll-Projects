@@ -1,0 +1,44 @@
+<!DOCTYPE html />
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <h1>Forms</h1><hr />
+
+        <form method="post" action="forms.html">
+            
+            <input name="fullname" type="text" placeholder="Full Name" maxlength="30" />
+            <input name="fullname2" type="text" value="Hello World"  placeholder="Full Name" maxlength="30" />
+            <input name="password" type="password" placeholder="aaaaaaa" value="guest" maxlength="10" />
+            <textarea name="user-text" placeholder="Please enter the text" maxlength="20" rows="6" cols="50"></textarea>
+            <br />
+            
+            <input name="froits" type="radio" value="Apple" /> Apple
+            <input name="froits" type="radio" value="Mango" /> Mango
+            <input name="froits" type="radio" value="Orange" /> Orange
+            <input name="froits" type="radio" value="Others" checked="checked" /> Others
+            <br />
+            
+            <input name="texteditor" type="checkbox" value="Atom" checked="checked" /> Atom
+            <input name="texteditor" type="checkbox" value="Brackets" /> Brackets
+            <input name="texteditor" type="checkbox" value="Siblimetext" /> Siblimetext
+            <br />
+            
+            <select>
+                <option value="-">---</option>
+                <option value="macOS">macOS</option>
+                <option value="Windows">Windows</option>
+                <option value="Ubuntu" selected="selected">Ubuntu</option>
+            </select>
+            <br />
+            
+           <!-- <input name="hiddenFieldValue" type="hidden" value="this is hidden value" /> //-->
+            <input type="reset" value="Reset" />
+            <input type="submit" value="Submit" />
+            
+        </form>
+        
+        
+    </body>
+</html>

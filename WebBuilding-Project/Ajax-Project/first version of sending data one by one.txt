@@ -1,0 +1,19 @@
+function  senditem(){
+    var itemidvalue=$('#itemid').val();
+    var itemidvalue=$('#itemname').val();
+    var itemidvalue=$('#itemid').val();
+    var itemidvalue=$('#itemid').val();
+    
+    $.post( './files/ajax.php' 
+        ,{itemregiseter:"true"
+          ,itemid:itemidvalue
+         
+         }
+        ,function(data) {
+        alert(data);
+            var ojson=JSON.parse(data); 
+            if(ojson.value){   }
+            if( !ojson.value ){  }
+
+        }).fail(function() {   });
+}

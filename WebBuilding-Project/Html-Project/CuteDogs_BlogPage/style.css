@@ -1,0 +1,232 @@
+@font-face {
+font-family: "Arimo-Regular";
+src: url("Arimo-Regular.ttf");
+}
+@font-face {
+font-family: "Arimo-Bold";
+src: url("Arimo-Bold.ttf");
+}
+
+body
+{
+  background-image: url('gb.jpg');
+background-color: green;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 100% 100%;
+    color: #fff;
+    direction: rtl;
+    text-align: right;
+      font-family: 'Arimo-Regular', cursive;
+  margin-top: auto;
+  margin-left: 7%;
+  margin-right:7%;
+  padding-left:3% ;
+  padding-right:3%;
+    letter-spacing: 2px;
+font-size   : 1em;
+line-height: 1.1;
+
+}
+.header{
+  background-position: right top;
+  background-image: url('gb2.png');
+  background-size: 85px 85px ;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+
+}
+
+nav{
+
+  color:white;
+    text-align: center;
+      word-spacing: 3em;
+}
+.page{
+  background-color:black; width:100%;
+}
+.clear{
+  clear:both;
+}
+.aside{
+  margin-left: 0.2%;
+  width:20%;
+  height:100%;
+background-color:black;
+ text-align: center;
+  font-size: 0.8em;
+
+}
+img{
+  border-radius: 5%
+}
+.main{
+width:79.8%;
+
+  float:left;
+}
+article{
+
+  background-color: #050505;
+        border-radius: 1%;
+border-style: solid;
+border-color: white;
+border-width: 1px;
+
+
+}
+main article{
+  border-left-width: 5px;
+  border-left-color: #d55;
+}
+article p::first-letter {
+    font-size: 1.5em;
+    color: #8A2BE2;
+}
+
+footer
+{
+  clear:both;
+  margin-top:500px;
+  margin-left:30%;
+  margin-right:30%;
+  color:#9999ff;
+}
+
+
+time{
+  color:#9999ff;
+  font-weight:bold;
+  font-size: 0.7em;
+  letter-spacing: 0.35em;
+}
+header time {color:#080;background-color: rgba(201, 200, 200, 0.6);}
+
+hr{
+
+  border-style:double;
+  border-width: 1px;
+  border-spacing: 0;
+  border-color: black;
+  margin: 0px;
+  padding: 0px;
+}
+h1{
+
+    text-align: center;
+    font-size   : 1.5em;
+}
+h2{
+font-size   : 1.2em;
+}
+
+strong, h1, h2 {
+color: rgb(0, 102, 204);
+  font-family: 'Arimo-Bold';
+  font-weight:bolder;
+}
+h1,h2{
+
+
+  letter-spacing: 0.5em;
+}
+
+
+.image{
+  text-align: center;
+  width:100%
+}
+.image img{
+  width:50%
+
+}
+a
+{
+  text-decoration:none;
+  color:white;
+
+}
+
+a:hover{
+  color: #0099cc;
+
+}
+
+.center{
+  text-align: center;
+}
+.gallery img{
+  width:30%; float: left;margin:1.5%;
+border-radius:50%;
+}
+.form{}
+.form label {
+  margin-right: 4%;
+  width:50%;
+}
+
+.form input, .form select, .form textarea {
+  margin-right: 8%;
+background-color: black;
+color: white;
+width: 50%;
+text-align:center;
+  border-width: 2px ;
+  border-spacing: 5;
+  border-style: double;
+  border-color: white;
+  text-align:center;
+}
+.form {
+  margin-left: 10%;
+  margin-right:10%;
+}
+.form2{
+  margin-left: 10%;
+  margin-right:14%;
+}
+.form textarea{text-align: right;}
+.form input:invalid { background-color: black;}
+.form input:valid { background-color:lightGreen;color:black; }
+.form input:required {border: 2px solid pink;}
+.form input:optional {border: 2px solid blue;}
+
+.form3 input {
+background-color: black;
+color: white;
+
+text-align:center;
+  border-width: 1px ;
+  border-spacing: 5;
+  border-style: double;
+  border-color: white;
+
+}
+
+.table{
+    background-color:black;
+    width: 100%;
+}
+
+.table, .table td{
+  border-width: 1px ;
+  border-spacing: 0;
+  border-style: solid;
+  border-color: white;
+  border-radius: 0.1%;
+  text-align: right;
+  vertical-align: top;
+}
+.table th{text-align: center;
+ }
+.table img{
+  width: 70%;
+}
+
+.twidth{
+  width:22.5%;
+}
+.twidthfirst{width: 10%;
+border-width:0 0 1px 0 !important;}
+#ttt{text-align: center;}

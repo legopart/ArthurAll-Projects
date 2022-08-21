@@ -1,0 +1,26 @@
+/*
+outline-style
+outline-width
+outline-color
+*/
+#sample-p1{
+    
+    outline-style: dotted;  /* none gidden solid dotted dashed double*/
+    border: 5px solid red;
+}
+
+#sample-p2{
+    outline-style: solid;
+    outline-width: 5px; /* px thin medium thick*/
+}
+
+#sample-p3{
+    outline-style: dashed;
+    outline-width: 10px;
+    outline-color: blue; /*rgb()  hex name* # */
+}
+
+#sample-p4{
+    /* width style color*/
+    outline: 10px dashed green;
+}

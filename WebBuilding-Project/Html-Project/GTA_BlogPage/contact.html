@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Contact</title>
+  </head>
+  <body>
+    <form action="action.html" method="post">
+
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" name="User Name" value="" required placeholder="Enter your name"></td>
+        </tr>
+        <tr>
+          <td><label for="">Phone number:</label></td>
+          <td><input type="tel" name="Phone" value="" required placeholder="Enter your phone number"></td>
+        </tr>
+        <tr>
+          <td><label for="">Email:</label></td>
+          <td><input type="email" name="Email address" value="" required placeholder="Enter your e-mail"></td>
+        </tr>
+        <tr>
+          <td><label for="">Select Game:</label></td>
+          <td><select class="" name="Choose Game">
+            <option value="">GTA San Andreas</option>
+            <option value="">GTA V</option>
+            <option value="">GTA Vice City</option>
+          </select></td>
+        </tr>
+
+        <tr>
+          <td>Gender:</td>
+          <td>
+            <label for="">Male</label>
+            <input type="radio" name="gender" value="">
+            <label for="">Female</label>
+            <input type="radio" name="gender" value="">
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+          <label for="">Your massage:</label>
+          </td>
+          <td>
+          <textarea name="name" rows="8" cols="80" placeholder="Enter your massage here" required></textarea>
+          </td>
+        </tr>
+
+      </table>
+    <br>
+    <br>
+
+      <label for="">I agree that my age is 18 or above</label>
+      <input type="checkbox" name="" value="" required>
+      <br>
+      <br>
+      <button type="submit" name="Send">Send</button>
+    </form>
+  </body>
+</html>

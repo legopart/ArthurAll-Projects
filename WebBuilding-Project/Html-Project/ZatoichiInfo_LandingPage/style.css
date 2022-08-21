@@ -1,0 +1,12 @@
+body { background: #AAE; color:#005577; font-size:1.2em; direction: rtl;}
+h1 {color: red; font-size: 2EM}
+p {}
+ul {color:white;}
+h3 {color:white; font-size: 1.4EM}
+table{color:white}
+td{color:white; font-size: 200%}
+input{font-size: 0.5em; width: 20%; background: black;color: white}
+img{width: 50%}
+#pic{width: 35%}
+.cattegory{width: 15%}
+.cattegory img{width: 100%}

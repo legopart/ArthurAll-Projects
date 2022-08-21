@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+כלבים כלבלביים במיוחד! - דף ראשי
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    arr=["g1.jpg","g2.jpg","g3.jpg","g4.jpg","g5.jpg","g6.jpg","g7.jpg","g8.jpg","g9.jpg"]
+    i=0;
+    function nextPic(){
+      i++;
+      if (i>=arr.length)
+        i=0;
+      pic.src=arr[i];
+      document.getElementById("ttt").value=i+1;
+    }
+    function lastPic(){
+      i--;
+      if (i<=-1)
+        i=arr.length-1;
+      pic.src=arr[i];
+    document.getElementById("ttt").value=i+1;
+    };
+
+    </script>
+  </head>
+  <body>
+        <section class="header">
+    <header>
+  <h1>כלבים כלבלביים במיוחד!</h1>
+</header>
+  <nav>
+    <strong> דף-בית  </strong>
+    <a href="contact.html"> צור-קשר </a>
+    <a href="blog.html">  בלוג  </a>
+    <a href="gallery.html"> גלרייה </a>
+        <a href="table.html">השוואה</a>
+      </nav>
+
+
+    <header>
+          <time datetime="2018-04-08 20:00">נערך לאחרונה ב 08/04/2018</time></br>
+
+    </header>
+    <hr>
+</section>
+
+
+<main>
+<section>
+<p>מידע על כל הכלבים האפשריים.<br>
+הגיעה השעה וההתרגשות בשיאה, אבא חוזר ואיתו ברכב הכלב החדש. המיטה, הצעצועים והאוכל מוכנים לכלב החדש וגם שם כבר יש. מכאן מתחיל עידן חדש בבית שבו יש עוד בן משפחה חדש. אבל הצרה היא שלעתים קרובות מגלים: אילוף כלבים זה לא משחק ילדים. הכלב החדש, לא יודע כלום מה מותר מה אסור, איפה מותר לעשות צרכים, מאיפה ומתי מותר לכלב לאכול וכו'. בכתבה זו תוכלו לקרוא טיפים והוראות לאילוף כלב. נתחיל בהפסקת עשיית צרכים בבית והפסקת לעיסת נעליים ונגע במשמעת בסיסית ואולי טריק או שניים. מה שנקרא, אילוף כלבים בשלבים. אז שיהיה בהצלחה.</p>
+<p>אתר הנבנה על נושא שאני מאוד אוהב, הכלבים. למוזיקה אני פחות מתחבר כיוון שזה נושא יותר דומם לכן פחות אטרקטיבי מבחינתי.</p>
+</secetion>
+<br>
+<br>
+<section  class="center">
+ <img id="pic" src="g1.jpg" width=50%></img><br>
+ <section class="form3">
+
+
+ <!--<input type="button" value="stop" onclick="clearInterval(myvar)">//-->
+<input type="button" value="<<<next" onclick="nextPic()">
+ <input type="button" value="back>>>" onclick="lastPic()">
+
+<!--<input type="button" value="slide" onclick="clearInterval(myvar);myvar=setInterval('nextPic()',5000)"><br />//-->
+<input id="ttt" type="text" value="1">
+</section>
+</section>
+</main>
+
+
+
+
+
+
+<footer>תודה על הקריאה, כל הזכויות שמורות <STRONG>ארטור</STRONG></footer>
+<script type="text/javascript">
+myvar=setInterval('nextPic()',5000);
+</script>
+  </body>
+</html>
