@@ -1,0 +1,19 @@
+Load from JSON all the Classes
+
+Add Unit Testing
+Add Enums
+Add Loggings
+Add Try Catch in log file in Functions and every function
+
+Add fuctuion Add_____
+Add fuctuion Edit
+Add view
+Add fuctuion Delete
+Add all data from file
+
+Set better Set/Get
+Add #Regions
+
+
+FIX inside add____ function
+else if (singleDataInput.GetType().Name == typeOfT) 
