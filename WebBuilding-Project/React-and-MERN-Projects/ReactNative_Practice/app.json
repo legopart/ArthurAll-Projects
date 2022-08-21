@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "React Native Developments",
+    "slug": "React_Native_Developments",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./Images/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./Images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./Images/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./Images/favicon.png"
+    }
+  }
+}
