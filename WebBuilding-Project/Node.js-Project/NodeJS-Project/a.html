@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {
+            border: solid 1px black;
+        }
+        #container {
+            display: grid;
+          
+            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+           
+        }
+        #divwidth {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        #divheight {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 5;
+            vertical-align:middle;
+            justify-items:center;
+        }
+        #divbtn {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 4;
+            grid-row-end: 4;
+        }
+        #divimg {
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="divwidth">
+            <input type="number" id="imgwidth" />
+        </div>
+        <div id="divheight">
+            <input type="number" id="imgheight" />
+        </div>
+        <div onclick="changeSize()" id="divbtn">
+            OK
+        </div>
+        <div id="divimg">
+            <img style="width:100px;height:100px" id="myimg" src="https://www.logodesignlove.com/wp-content/uploads/2012/08/microsoft-logo-02.jpeg" />
+        </div>
+
+
+    </div>
+    <script>
+        function changeSize() {
+            let i = document.getElementById("myimg");
+            i.style.width = document.getElementById("imgwidth").value + "px";
+            i.style.height = document.getElementById("imgheight").value + "px";
+        }
+
+    </script>
+
+</body>
+</html>
