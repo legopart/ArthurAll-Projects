@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator - Haim Exam</title>
+
+    <style>
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      .calculator {
+        max-width: 320px;
+        background: #eee;
+      }
+
+      .calculator-buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border: 0;
+        padding: 10px;
+      }
+
+      .calc-numbers {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(224, 216, 222);
+        color: rgb(106, 98, 98);
+        font-size: 2em;
+        border: 0;
+        padding: 0.3em;
+        text-align: right;
+        width: 100%;
+        height: 100px;
+      }
+
+      .span-3 { grid-column: span 3; }
+      .btn {
+        font-size: 1em;
+        height: 65px;
+        background-color: rgb(224, 216, 222);
+        margin: 3px;
+        border-radius: 55px;
+        color: rgb(255, 255, 255);
+        padding: 10px;
+        border: none;
+      }
+      .btn:hover { background: rgb(207, 210, 178); }
+      .btn-bg { background-color: rgb(75, 59, 71); }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <div class="calc-numbers">0</div>
+        <div class="calculator-buttons">
+          <button class="btn is-clear span-3 btn-bg operator">C</button>
+          <button class="btn btn-bg operator">/</button>
+          <button class="btn">7</button>
+          <button class="btn">8</button>
+          <button class="btn">9</button>
+          <button class="btn btn-bg operator">*</button>
+          <button class="btn">4</button>
+          <button class="btn">5</button>
+          <button class="btn">6</button>
+          <button class="btn btn-bg">-</button>
+          <button class="btn">1</button>
+          <button class="btn">2</button>
+          <button class="btn">3</button>
+          <button class="btn btn-bg operator">+</button>
+          <button class="btn">0</button>
+          <button class="btn btn-bg operator span-3">=</button>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      let currentTotal = 0;
+      let buffer = "0";
+      let previousOperator = null;
+      const calcScreen = document.querySelector(".calc-numbers");
+
+      document.querySelector(".calculator-buttons").addEventListener("click", function (event) {buttonClick(event.target.innerHTML); });
+
+      function buttonClick(value) {
+        if (isNaN(parseInt(value)))  handleSymbol(value);
+        else  handleNumber(value);
+        rerenderScreen();
+      }
+
+      function handleSymbol(value) {
+        switch (value) {
+          case "C": buffer = "0";
+                    currentTotal = 0;
+                    previousOperator = null;
+                    break;
+          case "=": if (previousOperator === null)  return;
+                    flushOperation(parseInt(buffer));
+                    buffer = "" + currentTotal;
+                    previousOperator = null;
+                    currentTotal = 0;
+                    break;
+          default:  handleMath(value);
+                    break;
+        } }
+
+      function handleNumber(value) {
+        if (buffer === "0") buffer = value;
+        else buffer += value;
+        }
+
+      function handleMath(value) {
+        const internalBuffer = parseInt(buffer);
+        if (currentTotal === 0)  currentTotal = internalBuffer;
+        else flushOperation(internalBuffer);
+        previousOperator = value;
+        buffer = "0";
+      }
+
+      function flushOperation(internalBuffer) {
+        if (previousOperator === "+")  currentTotal += internalBuffer;
+        else if (previousOperator === "-")  currentTotal -= internalBuffer;
+        else if (previousOperator === "*") currentTotal *= internalBuffer;
+        else currentTotal /= internalBuffer;
+      }
+
+      function rerenderScreen() { calcScreen.innerHTML = buffer; }
+    </script>
+
+  </body>
+</html>
