@@ -1,4 +1,4 @@
-package datastructure.arraylist;
+package datastructure.likedlist;
 import java.util.ArrayList;
 
 
@@ -18,5 +18,8 @@ public class Main {
 		System.out.println( list.lastIndexOf(20) );
 		System.out.println( list.size() );
 		Object[] arr = list.toArray();
+		
+		
+		
 	}
 }
