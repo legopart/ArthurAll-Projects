@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Lesson1">
+      <UniqueIdentifier>{b7d77e8d-790a-4028-8753-28372ce51526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lesson2">
+      <UniqueIdentifier>{abe1339a-a8d2-409a-af4d-165a92895af0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lesson3">
+      <UniqueIdentifier>{318ad776-9809-4134-8cb8-9425991b7947}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lesson4">
+      <UniqueIdentifier>{1ab98a20-6008-4af7-8174-1e40ebbb5888}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lesson5">
+      <UniqueIdentifier>{85a41cee-f4a4-456b-84f1-c4d434f04deb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lesson6">
+      <UniqueIdentifier>{d600cbe2-528f-4a2c-aef8-f662b27721b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lesson7">
+      <UniqueIdentifier>{6c36396e-80d8-494e-99b1-d2644f4e9473}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lesson8">
+      <UniqueIdentifier>{b742588a-f188-4214-8317-d559d3f27ec2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lesson9">
+      <UniqueIdentifier>{01b1c4eb-a97e-48f3-85a9-ffe21df6a06b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lesson10">
+      <UniqueIdentifier>{1258cc05-ac41-4487-bc30-ed9564e66c89}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Lesson1-1-start.c">
+      <Filter>Source Files\Lesson1</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson2-1-Start.c">
+      <Filter>Source Files\Lesson2</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson1-2-printf.c">
+      <Filter>Source Files\Lesson1</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson2-2-Num.c">
+      <Filter>Source Files\Lesson2</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson2-3-Operations.c">
+      <Filter>Source Files\Lesson2</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson2-4-Scanf.c">
+      <Filter>Source Files\Lesson2</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson3-1.c">
+      <Filter>Source Files\Lesson3</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson3-2-amp.c">
+      <Filter>Source Files\Lesson3</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson3-3-if.c">
+      <Filter>Source Files\Lesson3</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson3-6-ifelse.c">
+      <Filter>Source Files\Lesson3</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson3-5-modulu.c">
+      <Filter>Source Files\Lesson3</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson3-4-smallIf.c">
+      <Filter>Source Files\Lesson3</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson4-1-Homework1.c">
+      <Filter>Source Files\Lesson4</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson4-2-ifComplex.c">
+      <Filter>Source Files\Lesson4</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson5-Homework.c">
+      <Filter>Source Files\Lesson5</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson4-3-loop.c">
+      <Filter>Source Files\Lesson4</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson5-loop.c">
+      <Filter>Source Files\Lesson5</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson5-index-loop.c">
+      <Filter>Source Files\Lesson5</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson5-for.c">
+      <Filter>Source Files\Lesson5</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson6-homework.c">
+      <Filter>Source Files\Lesson6</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson6-oneLoop.c">
+      <Filter>Source Files\Lesson6</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson6-knestedLoop.c">
+      <Filter>Source Files\Lesson6</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson6-workClass.c">
+      <Filter>Source Files\Lesson6</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson6-array.cpp">
+      <Filter>Source Files\Lesson6</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson6-array2.c">
+      <Filter>Source Files\Lesson6</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson6-array3.c">
+      <Filter>Source Files\Lesson6</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson6-array4.c">
+      <Filter>Source Files\Lesson6</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson6-array5.c">
+      <Filter>Source Files\Lesson6</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson7-homework.c">
+      <Filter>Source Files\Lesson7</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson7-functions.c">
+      <Filter>Source Files\Lesson7</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson7-functions2.c">
+      <Filter>Source Files\Lesson7</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson7-functions3.c">
+      <Filter>Source Files\Lesson7</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson8-homework.c">
+      <Filter>Source Files\Lesson8</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson8-arr.c">
+      <Filter>Source Files\Lesson8</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson8-string.c">
+      <Filter>Source Files\Lesson8</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson8-string1.c">
+      <Filter>Source Files\Lesson8</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson8-string2.c">
+      <Filter>Source Files\Lesson8</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson8-string-classwork.c">
+      <Filter>Source Files\Lesson8</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson8-strings-functions.c">
+      <Filter>Source Files\Lesson8</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson9-homework.c">
+      <Filter>Source Files\Lesson9</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson9-pointer.c">
+      <Filter>Source Files\Lesson9</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson9-pointer-strstr.c">
+      <Filter>Source Files\Lesson9</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson9-pointer-strstr2.c">
+      <Filter>Source Files\Lesson9</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson10-homework.c">
+      <Filter>Source Files\Lesson10</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson10-atoi.c">
+      <Filter>Source Files\Lesson10</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson10-prjStarter.c">
+      <Filter>Source Files\Lesson10</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

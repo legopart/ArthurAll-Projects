@@ -1,5 +1,7 @@
 package datastructure.array;
 
+import java.util.ArrayList;
+
 //lookup by index o(1)
 //lookup by value o(n)
 //insert o(n)
@@ -20,5 +22,23 @@ public class Main {
 		
 		numbers.print();
 		System.out.println( "the index of:" + numbers.indexOf(40) );
+		
+		System.out.println("/////");
+		
+		// Vector : increased by 100%, synchronized, only for 1 core
+		// ArrayList: increased by 50%
+		ArrayList<Integer> list = new ArrayList<>(); //byte
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.remove(0);
+		
+		System.out.println( list );
+		System.out.println( list.indexOf(20) );	//0
+		System.out.println( list.lastIndexOf(20) );	//0
+		System.out.println( list.size() );	//2
+		Object[] arr = list.toArray();
+		
+		
 	}
 }

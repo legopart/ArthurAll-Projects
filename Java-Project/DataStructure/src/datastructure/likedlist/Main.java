@@ -1,25 +1,39 @@
 package datastructure.likedlist;
-import java.util.ArrayList;
+
+import java.util.Arrays;
+import java.util.LinkedList;
 
 
 public class Main {
 	public static void main(String args[]) {
+		//declare t inside your version
+//		LinkedList<Integer> list1 = new LinkedList<Integer>();
+//		list1.addFirst(10);
+//		list1.addLast(20);
+//		list1.addLast(30);
+//		list1.addLast(40);
+//		list1.remove(2);
+//		list1.removeFirst();
+//		//list.removeAll(list);
+//		var arr = list1.toArray();
+//		System.out.println( list1.contains(20) );
+//		System.out.println( list1 );
+//		System.out.println( Arrays.toString(arr) );
 		
-		// Vector : increased by 100%, synchronized, only for 1 core
-		// ArrayList: increased by 50%
-		ArrayList<Integer> list = new ArrayList<>(); //byte
-		list.add(10);
-		list.add(20);
-		list.add(30);
-		list.remove(0);
+		MyLinkedList list = new MyLinkedList();
+		System.out.println( list.size() );	//0
+		list.addLast(10);
+		list.addLast(20);
+		list.addLast(30);
+		System.out.println( list.size() );	//3
+		list.removeFirst();
+		list.removeLast();
+
+		System.out.println();	
 		
-		System.out.println( list );
-		System.out.println( list.indexOf(20) );
-		System.out.println( list.lastIndexOf(20) );
-		System.out.println( list.size() );
-		Object[] arr = list.toArray();
-		
-		
-		
+		System.out.println( list.indexOf(20) );	//0
+		System.out.println( list.indexOf(40) );	//-1
+		System.out.println( list.contains(40) );	//false
+		System.out.println( list.contains(20) );	//true
 	}
 }
