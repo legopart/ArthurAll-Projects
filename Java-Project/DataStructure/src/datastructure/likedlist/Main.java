@@ -22,9 +22,10 @@ public class Main {
 		
 		MyLinkedList list = new MyLinkedList();
 		System.out.println( list.size() );	//0
-		list.addLast(10);
+		list.addLast(10);	//deleted
 		list.addLast(20);
 		list.addLast(30);
+		list.addLast(50);	//deleted
 		System.out.println( list.size() );	//3
 		list.removeFirst();
 		list.removeLast();
@@ -35,5 +36,19 @@ public class Main {
 		System.out.println( list.indexOf(40) );	//-1
 		System.out.println( list.contains(40) );	//false
 		System.out.println( list.contains(20) );	//true
+		
+		var array1 = list.toArray();
+		System.out.println( Arrays.toString( array1 ) );
+		
+		
+		list.reverse();
+		list.addLast(10);
+		
+		var array2 = list.toArray();
+		System.out.println( Arrays.toString( array2 ) );
+		
+		System.out.println();
+		System.out.println( list.Kth(2) );
+		System.out.println( list );
 	}
 }
