@@ -11,6 +11,7 @@ import java.util.Arrays;
 //      F           R 
 
 public class QueueStack {	//of array
+	
 	private int[] items;
 	private int front;
 	private int rear;
