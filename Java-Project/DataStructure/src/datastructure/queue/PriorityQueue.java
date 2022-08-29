@@ -31,10 +31,16 @@ public class PriorityQueue {
 	}
 	
 	private boolean isEmpty() { return front == rear; }
-	private boolean isFull() { return items.length == rear; }
+	private boolean isFull() { return items.length == rear - 1; }	// +1 !!!
 	public void enqueue(int value) {
-		if(isFull()) extendArray();
-		items[rear] = value;
+		//if(isFull()) extendArray();
+		int i;
+		//if(isEmpty()) items[front] = value;
+		for(i = rear - 1; i >= front ; i--) {
+			if( items[i] > value ) {items[i + 1] = items[i];}
+			else { break;}
+		}
+		items[i+1] = value;
 		rear++;
 	}
 	public int peek() {
@@ -43,10 +49,12 @@ public class PriorityQueue {
 	}
 	public int dequeue() {
 		int peek = peek();
-		front++;
+		front++;	//!
 		return peek;
 	}
 	
 	@Override
-	public String toString() { return Arrays.toString( Arrays.copyOfRange(items, front, rear) ); }
+	public String toString() { 
+		return Arrays.toString( Arrays.copyOfRange(items, front, rear) ); 
+		}
 }

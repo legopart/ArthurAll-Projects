@@ -68,10 +68,18 @@ public class Main {
 		queueStack.enqueue(30);
 		System.out.println( queueStack.dequeue()  );
 		System.out.println(queueStack);
+		
+		System.out.println("////////////");
+		System.out.println("");
+		PriorityQueue priorityQueue = new PriorityQueue();
+		priorityQueue.enqueue(40);
+		priorityQueue.enqueue(20);
+		priorityQueue.enqueue(60);
+		priorityQueue.enqueue(10);
+		System.out.println( priorityQueue.dequeue()  );
+		System.out.println(priorityQueue);
+		
 	}
-	
-	
-	
 	
 	
 	public static void reverse(Queue<Integer> queue) {
