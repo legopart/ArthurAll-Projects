@@ -60,7 +60,14 @@ public class Main {
 		queueCyrcular.enqueue(70);
 		System.out.println( queueCyrcular );
 		
-
+		System.out.println("////////////");
+		System.out.println("");
+		QueueStack queueStack = new QueueStack();
+		queueStack.enqueue(10);
+		queueStack.enqueue(20);
+		queueStack.enqueue(30);
+		System.out.println( queueStack.dequeue()  );
+		System.out.println(queueStack);
 	}
 	
 	

@@ -1,57 +1,67 @@
 package datastructure.queue;
 
-import java.util.Arrays;
+import java.util.Stack;
+
+
+////// !!!!!! EDGE CASES !!!!!!!
 
 //enqueue
 //dequeue
 //peek
 //isEmpty
 //isFull
-// [10, 20, 30, 40, 50]
-//      F           R 
+//	Q [10, 20, 30]
+// S1 [10, 20, 30]
+// S2 []
+
+
+//	queue (fifo)
+// -->	[  ]
+//		[  ] -->
+
+//stack (lifo)
+//-->	[  ]	-->
+//		[  ]
+
+//run time O(n)
 
 public class QueueStack {	//of array
 	
-	private int[] items;
-	private int front;
-	private int rear;
+	private Stack<Integer> stack1;
+	private Stack<Integer> stack2;
+//	private int front;
+//	private int rear;
 	private final double extendBy = 2.0;
 	
 	public QueueStack() {
-		items = new int[5];
-		front = 0;
-		rear = 0;
+		stack1 = new Stack<>();
+		stack2 = new Stack<>();
 	}
 
-	private void extendArray() {
-		int[] array = new int[(int)(rear*extendBy)];
-		int j=0;
-		for(int i = front; i < rear; i++) {
-			array[j] = items[i];
-			j++;
-		}
-		front = 0;
-		rear = j;
-		items = array;
+	private boolean isEmpty() { return stack1.isEmpty(); }
+//	private boolean isFull() {  
+	private void exchangeStacks(Stack<Integer> stack1, Stack<Integer> stack2 ) {
+		while(isEmpty()) stack2.push( stack1.pop() );
 	}
 	
-	private boolean isEmpty() { return front == rear; }
-	private boolean isFull() { return items.length == rear; }
-	public void enqueue(int value) {
-		if(isFull()) extendArray();
-		items[rear] = value;
-		rear++;
+	public void enqueue(int value) {	//O(1)
+		stack1.push(value);
 	}
-	public int peek() {
-		if(isEmpty()) throw new Error();
-		return items[front];
+	public int peek() {			// O(n)
+		if(isEmpty()) throw new IllegalStateException();
+		exchangeStacks(stack1, stack2);
+		int value = stack1.peek();
+		exchangeStacks(stack2, stack1);
+		return value;
 	}
 	public int dequeue() {
-		int peek = peek();
-		front++;
-		return peek;
+		if(isEmpty()) throw new IllegalStateException();
+		exchangeStacks(stack1, stack2);
+		int value = stack1.pop();
+		exchangeStacks(stack2, stack1);
+		return value;
 	}
 	
 	@Override
-	public String toString() { return Arrays.toString( Arrays.copyOfRange(items, front, rear) ); }
+	public String toString() { return stack1.toString(); }
 }
