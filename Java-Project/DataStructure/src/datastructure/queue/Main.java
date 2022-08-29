@@ -76,6 +76,8 @@ public class Main {
 		priorityQueue.enqueue(20);
 		priorityQueue.enqueue(60);
 		priorityQueue.enqueue(10);
+		priorityQueue.enqueue(5);
+		priorityQueue.enqueue(2);
 		System.out.println( priorityQueue.dequeue()  );
 		System.out.println(priorityQueue);
 		

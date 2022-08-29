@@ -31,9 +31,9 @@ public class PriorityQueue {
 	}
 	
 	private boolean isEmpty() { return front == rear; }
-	private boolean isFull() { return items.length == rear - 1; }	// +1 !!!
+	private boolean isFull() { return items.length == rear + 1; }	// +1 !!!
 	public void enqueue(int value) {
-		//if(isFull()) extendArray();
+		if(isFull()) extendArray();
 		int i;
 		//if(isEmpty()) items[front] = value;
 		for(i = rear - 1; i >= front ; i--) {
