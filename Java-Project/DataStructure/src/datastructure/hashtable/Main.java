@@ -61,11 +61,16 @@ public class Main {
 		String s1 = "abc";
 		System.out.println(  s1.hashCode() );
 		
-		
 		//Collision, hash key1 == hash key2
+		System.out.println("");
+		System.out.println("/////");
+		HashTableLinkedList table1 = new HashTableLinkedList();
+		table1.put(6, "A");
+		table1.put(8, "B");
+		table1.put(11, "C");
+		table1.put(6, "A+");
+		System.out.println(table1.get(11));
 	} 
-	
-	
 	
 	public static int hash(String key) {
 		int hash = 0;
