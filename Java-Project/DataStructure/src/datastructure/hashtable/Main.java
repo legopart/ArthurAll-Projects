@@ -8,6 +8,11 @@ import java.util.Set;
 // Maps: k -> v
 // Sets: k (s)	//not allowed to duplicate keys (as Map)
 
+//Insert O(1)
+//Remove O(1)
+//Lookup O(1)
+
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -69,7 +74,10 @@ public class Main {
 		table1.put(8, "B");
 		table1.put(11, "C");
 		table1.put(6, "A+");
+		//table1.remove(6);
+		System.out.println(table1.get(6));
 		System.out.println(table1.get(11));
+		System.out.println(table1.get(10));
 	} 
 	
 	public static int hash(String key) {
