@@ -61,6 +61,7 @@ public class Main {
 		String s1 = "abc";
 		System.out.println(  s1.hashCode() );
 		
+		
 		//Collision, hash key1 == hash key2
 	} 
 	
