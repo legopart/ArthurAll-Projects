@@ -23,6 +23,7 @@ public class Main {
 		System.out.println( factorial_re(5) );
 		System.out.println("//////");
 		System.out.println("");
+		//DEPTH FIRST
 		tree.traversePreOrder();
 		tree.traverseInOrder();
 		tree.traversePostOrder();
@@ -32,7 +33,50 @@ public class Main {
 		System.out.println( tree.min() );
 		System.out.println( tree.min_binarySearchTree() );
 		
+		Tree tree2 = new Tree();
+		tree2.insert( 7 );
+		tree2.insert( 4 );
+		tree2.insert( 9 );
+		tree2.insert( 1 );
+		tree2.insert( 6 );
+		tree2.insert( 8 );
+		tree2.insert( 10 );
+		System.out.println( tree.equals(tree2) );
+		Tree tree3 = new Tree();
+		tree3.insert( 7 );
+		tree3.insert( 4 );
+		tree3.insert( 9 );
+		tree3.insert( 1 );
+		tree3.insert( 6 );
+		tree3.insert( 8 );
 		
+		System.out.println( tree.equals(tree3) );
+		System.out.println( tree.equals(null) );
+		
+		System.out.println( tree.isBinarySearchTree() );
+		tree2.swapRoot();
+		System.out.println( tree2.isBinarySearchTree() );
+		System.out.println( tree.isBinarySearchTree() );
+		System.out.println( tree2.isBinarySearchTree2() );
+		
+		System.out.println( tree.getNodesAtDistance(0) );
+		System.out.println( tree.getNodesAtDistance(1) );
+		System.out.println( tree.getNodesAtDistance(2) );
+		System.out.println( tree.getNodesAtDistance(3) );
+		System.out.println( tree.getNodesAtDistance(30) );
+		//BREADTH FIRST
+		tree.traverseLevelOrder();
+		System.out.println( tree.size1() );
+		System.out.println( tree.size() );
+		Tree tree4 = new Tree();
+		System.out.println( tree4.size() );
+		System.out.println(  );
+
+		tree3.insert(5);
+		System.out.println( tree3.countLeavels() );
+		System.out.println( "max" );
+		System.out.println( tree.max() );
+		System.out.println( tree.contains(4) );
 	}
 	
 	// 4! = 4 x 3 x 2 x 1
