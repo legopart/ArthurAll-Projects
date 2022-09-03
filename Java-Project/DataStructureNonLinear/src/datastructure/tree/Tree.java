@@ -11,7 +11,7 @@ public class Tree {
 	private class Node {
 		int value;
 		Node leftChild; // next
-		Node rightChild; // previus
+		Node rightChild; // previous
 		Node(int value) { this.value = value; }
 	}
 	private Node root;
