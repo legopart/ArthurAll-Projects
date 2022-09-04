@@ -28,6 +28,9 @@ public class Main {
 		for(var number: numbers) heap.insert(number);
 		for(var i = numbers.length - 1; i >= 0 ; i--) numbers[i] = heap.remove();
 		System.out.println(Arrays.toString(numbers));
+		System.out.println("");
+		
+		MaxHeap.heapify(numbers);
 	}
 	
 
