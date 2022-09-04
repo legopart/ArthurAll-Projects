@@ -68,6 +68,11 @@ public class Heap {
 		items[second] = temp;
 	}
 	
+	public int max() {
+		if(isEmpty())  throw new IllegalStateException();
+		return items[0];
+	}
+	
 	@Override
 	public String toString() {
 		return Arrays.toString(Arrays.copyOfRange(items, 0, size));
