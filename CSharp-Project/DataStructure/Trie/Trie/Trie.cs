@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
+
+// https://www.cs.usfca.edu/~galles/visualization/Trie.html
 namespace Trie
 {
     public class Trie
@@ -47,7 +49,22 @@ namespace Trie
             }
             current.IsEndOfWord = true;
         }
-        public bool Contains(String word)
+
+
+        public bool Contains(String word)   //recursion
+        {
+            if (IsNull(word)) return false;
+            return contains(word, 0, Root);
+        }
+        private bool contains(String word, int index, Node node)
+        {
+            if (index == word.Length) return node.IsEndOfWord;
+            char ch = word[index];
+            if (!node.HasWord(ch)) return false;
+            else return contains(word, index + 1, node.GetWord(ch));
+        }
+
+        public bool ContainsLoop(String word)
         {
             if (IsNull(word)) throw new Exception();
             var current = Root;
@@ -58,6 +75,7 @@ namespace Trie
             }
             return current.IsEndOfWord;
         }
+
 
         public void Remove(String word) { Remove(word, 0, Root); }
 
@@ -118,6 +136,10 @@ namespace Trie
             }
             return current;
         }
+
+        //To finish
+       // public int countWords(String word)
+
 
         public override String ToString() { return TraversePreOrder();  }
     }

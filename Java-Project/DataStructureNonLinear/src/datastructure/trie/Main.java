@@ -25,5 +25,7 @@ public class Main {
 		System.out.println(trie.contains("care"));
 		
 		System.out.println(trie.findWords("ca"));
+		System.out.println("++++++++++++");
+		System.out.println(trie.countWords("ca"));
 	}
 }

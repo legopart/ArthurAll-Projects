@@ -9,15 +9,15 @@ import java.util.concurrent.ConcurrentHashMap;
 import datastructure.heap.MaxHeap;
 
 public class Trie {
-	private static final int ALPHABET_SIZE = 26; //A..Z	//array
+	//private static final int ALPHABET_SIZE = 26; //A..Z	//array
 	private class Node{
 		private char value;
-		private Node[] childrenArray;
+		//private Node[] childrenArray;
 		private HashMap<Character, Node> children;
 		public boolean isEndOfWord;
 		public Node(char value){
 			this.value = value;
-			childrenArray = new Node[ALPHABET_SIZE];//array
+			//childrenArray = new Node[ALPHABET_SIZE];//array
 			children = new HashMap();
 			isEndOfWord = false;
 		}
@@ -46,9 +46,8 @@ public class Trie {
 	private Node root;
 	public Trie() { root = new Node(' '); }
 
-	private boolean isNull(Node node) {
-		return node == null;
-	}
+	private boolean isNull(Node node) { return node == null; }
+	private boolean isNull(String word) { return word == null; }
 	public void insert(String word) {
 		if(word == null) throw new IllegalStateException();
 		var current = root;
@@ -59,7 +58,21 @@ public class Trie {
 		current.isEndOfWord = true;
 	}
 	
-	public boolean contains(String word) {
+
+	
+	public boolean contains(String word) { //recursion
+		if(isNull(word)) return false;  
+		return contains(word, 0, root);
+	}
+	
+	private boolean contains(String word, int index, Node node) {
+		if(index == word.length()) return node.isEndOfWord;
+		char ch = word.toCharArray()[index];
+		if(!node.hasChild(ch)) return false;
+		else return contains(word, index + 1, node.getChild(ch));
+	}
+	
+	public boolean containsLoop(String word) {
 		if(word == null) return false;  
 		var current = root;
 		for(var ch : word.toLowerCase().toCharArray()) {
@@ -119,4 +132,17 @@ public class Trie {
 		return current;
 	}
 	
+	public int countWords(String word) { //לתקן
+		Node startNode = findLastNodeOf(word);
+		return countWords(word, startNode);
+	}
+	private int countWords(String word, Node node) {
+		if(isNull(node)) return 0;
+		int count = node.isEndOfWord ? 1 : 0;
+		for(var ch: node.getChildren()) {
+			count += countWords(word + ch.value, ch );	
+		}
+		return count;
+		
+	}
 }
