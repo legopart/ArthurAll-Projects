@@ -1,6 +1,9 @@
 package datastructure.trie;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 import datastructure.heap.MaxHeap;
@@ -8,11 +11,11 @@ import datastructure.heap.MaxHeap;
 public class Trie {
 	private static final int ALPHABET_SIZE = 26; //A..Z	//array
 	private class Node{
-		char value;
-		Node[] childrenArray;
-		HashMap<Character, Node> children;
-		boolean isEndOfWord;
-		Node(char value){
+		private char value;
+		private Node[] childrenArray;
+		private HashMap<Character, Node> children;
+		public boolean isEndOfWord;
+		public Node(char value){
 			this.value = value;
 			childrenArray = new Node[ALPHABET_SIZE];//array
 			children = new HashMap();
@@ -20,22 +23,22 @@ public class Trie {
 		}
 		@Override
 		public String toString() { return "value=" + value; }
-		Node getChild(char ch) { return children.get(ch); }
-		boolean hasChild(char ch) { return children.containsKey(ch); }
-		void addChild(char ch) { children.put(ch, new Node(ch)); }
+		public Node getChild(char ch) { return children.get(ch); }
+		public boolean hasChild(char ch) { return children.containsKey(ch); }
+		public void addChild(char ch) { children.put(ch, new Node(ch)); }
 		
 		//array
 //		Node getChildArray(char ch) { var index = ch - 'a'; return childrenArray[index]; }
 //		boolean hasChildArray(char ch) { return getChildArray(ch) != null; }
 //		void addChildArray(char ch) { var index = ch - 'a'; childrenArray[index] = new Node(ch); }
 		
-		Node[] getChildren() {
+		public Node[] getChildren() {
 			return children.values().toArray(new Node[0]);
 		}
 		
-		boolean hasChildren() { return !children.isEmpty(); }
+		public boolean hasChildren() { return !children.isEmpty(); }
 		
-		void removeChild(char ch) {
+		public void removeChild(char ch) {
 			children.remove(ch);
 		}
 		
@@ -47,6 +50,7 @@ public class Trie {
 		return node == null;
 	}
 	public void insert(String word) {
+		if(word == null) throw new IllegalStateException();
 		var current = root;
 		for(var ch : word.toLowerCase().toCharArray()) {
 			if (!current.hasChild(ch)) current.addChild(ch);
@@ -92,9 +96,29 @@ public class Trie {
 		if(isNull(child)) return;
 		remove(child, word, index + 1);
 		if(!child.hasChildren() && !child.isEndOfWord) node.removeChild(ch);
+
 		
 		System.out.println("0:" + node.value);
 	}
 	
+	public List<String> findWords(String prefix){	//לחזור
+		List<String> words = new ArrayList<>(); //List = interface ArrayList = implementation
+		var lastNode = findLastNodeOf(prefix);
+		findWords(lastNode, prefix, words);
+		return words;
+	}
+	private void findWords(Node node, String prefix, List<String> words) {
+		if(node.isEndOfWord) words.add(prefix);
+		for(var child : node.getChildren()) findWords(child, prefix + child.value, words);
+	}
+	private Node findLastNodeOf(String prefix) {
+		var current = root;
+		for(var ch: prefix.toCharArray()) {
+			var child = current.getChild(ch);
+			if(isNull(child)) return null;
+			current = child;
+		}
+		return current;
+	}
 	
 }

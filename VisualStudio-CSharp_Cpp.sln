@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deligates", "CSharp-Project
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClient_ApiClient", "CSharp-Project\HttpClient\HttpClient_ApiClient.csproj", "{9BCC46FD-6AC9-4C81-97FA-B53FD891B964}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClient-PostGet", "CSharp-Project\HttpClient-PostGet\HttpClient-PostGet.csproj", "{EFD32CCF-24C0-4F0C-B70E-5E7F000B2217}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClient-PostGet", "CSharp-Project\HttpClient-PostGet\HttpClient-PostGet.csproj", "{EFD32CCF-24C0-4F0C-B70E-5E7F000B2217}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunctionApp", "CSharp-Project\AzureFunctionApp\AzureFunctionApp.csproj", "{BCF509F6-FB12-4F11-B067-0148EF3B0BF7}"
 EndProject
@@ -38,6 +38,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultyThreadPrimeApp", "CSharp-Project\MultyThreadPrimeApp\MultyThreadPrimeApp.csproj", "{370095F3-A175-4549-BFB9-7B4D398727A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultyThreadPrimeLibrary", "CSharp-Project\MultyThreadPrimeLibrary\MultyThreadPrimeLibrary.csproj", "{70EF27B0-CE78-4F1A-A77B-86E50EB52921}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructure", "DataStructure", "{D9F1B608-3007-49E7-B141-CE7DBDB2DDCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trie", "CSharp-Project\DataStructure\Trie\Trie\Trie.csproj", "{CFE250A6-90DF-4747-B035-B2B9E36A03FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -241,6 +245,18 @@ Global
 		{70EF27B0-CE78-4F1A-A77B-86E50EB52921}.Release|x64.Build.0 = Release|Any CPU
 		{70EF27B0-CE78-4F1A-A77B-86E50EB52921}.Release|x86.ActiveCfg = Release|Any CPU
 		{70EF27B0-CE78-4F1A-A77B-86E50EB52921}.Release|x86.Build.0 = Release|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Debug|x64.Build.0 = Debug|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Debug|x86.Build.0 = Debug|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Release|x64.ActiveCfg = Release|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Release|x64.Build.0 = Release|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Release|x86.ActiveCfg = Release|Any CPU
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -262,6 +278,8 @@ Global
 		{B1DE377B-E7C0-48BD-9696-F1B8E5AD8391} = {0604E801-73E6-498A-808E-FC253D1B8F18}
 		{370095F3-A175-4549-BFB9-7B4D398727A5} = {0604E801-73E6-498A-808E-FC253D1B8F18}
 		{70EF27B0-CE78-4F1A-A77B-86E50EB52921} = {0604E801-73E6-498A-808E-FC253D1B8F18}
+		{D9F1B608-3007-49E7-B141-CE7DBDB2DDCE} = {0604E801-73E6-498A-808E-FC253D1B8F18}
+		{CFE250A6-90DF-4747-B035-B2B9E36A03FD} = {D9F1B608-3007-49E7-B141-CE7DBDB2DDCE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19DA1C0C-CABF-47AA-8DBE-E82809E9C597}

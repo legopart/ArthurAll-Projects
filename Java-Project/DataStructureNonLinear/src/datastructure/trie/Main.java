@@ -23,5 +23,7 @@ public class Main {
 		trie.remove(null);
 		System.out.println(trie.contains("car"));
 		System.out.println(trie.contains("care"));
+		
+		System.out.println(trie.findWords("ca"));
 	}
 }
