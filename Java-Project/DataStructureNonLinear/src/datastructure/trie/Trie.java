@@ -85,19 +85,17 @@ public class Trie {
 	
 	public void remove(String word) { if(word == null) return; remove(root, word, 0); }
 	private void remove(Node node, String word, int index) { // לחזור
-		// לסיים הסרה
+		// לסיים הסרה שתהיה תקפה
 		if(index == word.length()) { /*last char*/ // we need preLast child + no -1 because 1st time remove applied on ' ' 
 			node.isEndOfWord = false;
 			System.out.println("last:" + node.value);
 			return; 
 		} //
 		var ch = word.charAt(index);
-		var child = node.getChild( ch );
-		if(isNull(child)) return;
-		remove(child, word, index + 1);
-		if(!child.hasChildren() && !child.isEndOfWord) node.removeChild(ch);
-
-		
+		var next = node.getChild( ch );
+		if(isNull(next)) return;
+		remove(next, word, index + 1);
+		if(!next.hasChildren() && !next.isEndOfWord) node.removeChild(ch);
 		System.out.println("0:" + node.value);
 	}
 	

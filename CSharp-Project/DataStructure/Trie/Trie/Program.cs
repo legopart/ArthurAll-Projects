@@ -12,9 +12,15 @@ namespace Trie
             trie.Insert("cat");
             trie.Insert("can");
             trie.Insert("cant");
-            trie.Insert("cant");
-            System.Console.WriteLine(trie.Contains("cat"));
-            System.Console.WriteLine(trie.Contains("caty"));
+            trie.Insert("cana");
+            trie.Remove("cana");
+            Console.WriteLine(trie.Contains("cat"));
+            Console.WriteLine(trie.Contains("caty"));
+            Console.WriteLine( trie.TraversePreOrder() );
+            trie.TraversePostOrder();
+            Console.WriteLine();
+            var words = trie.FindWords("ca").ToArray();
+            Console.WriteLine("[" + string.Join( ", " , words) + "]");
         }
     }
 }
