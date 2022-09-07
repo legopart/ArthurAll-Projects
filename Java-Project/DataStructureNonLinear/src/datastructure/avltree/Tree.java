@@ -3,11 +3,11 @@ import java.util.ArrayList;
 
 public class Tree {
 	private class Node{
-		int value;
-		int height;
-		Node leftChild;
-		Node rightChild;
-		Node(int value){
+		public int value;
+		public int height;
+		public Node leftChild;
+		public Node rightChild;
+		public Node(int value){
 			this.value = value;
 		}
 	}
@@ -26,9 +26,28 @@ public class Tree {
 	//   30	(1)!						=>	  20	+>	10  30
 	// 20		lefRotate(30) + RightRotate(10)	    30		
 	// --		
+	
+	public void insert(int value) {	//recursive insert
+		if(isNull(root)) {root = new Node(value); return;}
+		root = insert(root, value);
+	}
+	private Node insert(Node node, int value) {
+		if(isNull(node)) node = new Node(value);
+		else if( value < node.value) node.leftChild = insert(node.leftChild, value);
+		else if(value > node.value) node.rightChild = insert(node.rightChild, value);
+		else throw new IllegalStateException();
+		node.height = getMaxHeight(node);
+		return balance(node);	//node
+	}
+	//private int getMaxHeight(Node node) { return Math.max(node.rightChild.height, node.leftChild.height); }
+	//getMaxHeightMosh
+
+	
+	
+	
 	private Node balance(Node node) {
 		if( balanceFactor(node) > 1 ) {
-			if(balanceFactor(node.rightChild) < 0) {node.leftChild = rotateLeft(node);/*System.out.println("Left Route" + node.leftChild.value);*/}
+			if(balanceFactor(node.leftChild) < 0) {node.leftChild = rotateLeft(node);/*System.out.println("Left Route" + node.leftChild.value);*/}
 			return rotateRight(node);/*System.out.println("Right Route" + node.value);*/
 		} else if( balanceFactor(node) < -1 ) {
 			if(balanceFactor(node.rightChild) > 0) {node.rightChild = rotateRight(node);/*System.out.println("Right Route" + node.rightChild.value);*/}
@@ -60,21 +79,13 @@ public class Tree {
 	}
 
 
-	public void insert(int value) {	//recursive insert
-		if(isNull(root)) {root = new Node(value); return;}
-		root = insert(root, value);
-	}
-	private Node insert(Node node, int value) {//שלי
-		if(isNull(node)) node = new Node(value);
-		else if( value < node.value) node.leftChild = insert(node.leftChild, value);
-		else if(value > node.value) node.rightChild = insert(node.rightChild, value);
-		else throw new IllegalStateException();
-		node.height = getMaxHeight(node);
-		return balance(node);	//node
-	}
-	//private int getMaxHeight(Node node) { return Math.max(node.rightChild.height, node.leftChild.height); }
-	//getMaxHeightMosh
 
+	
+	
+	
+	
+	
+	
 	/*1*/ public boolean isBalanced() { return balanceFactor(root) <= 1 && balanceFactor(root) >= -1; }
 	/*2*/ public boolean isPerfect() { return isPerfect(root); }
 	private boolean isPerfect(Node node) {
