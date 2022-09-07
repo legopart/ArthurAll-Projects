@@ -6,13 +6,33 @@ public class Heap {
 	private int[] items;
 	private int size;
 	
-	Heap() {
+	public Heap() {
 		items = new int[10];
 		size = 0;
 	}
 	
 	private boolean isFull() { return size == items.length; }
 	public boolean isEmpty() { return size == 0; }
+	private int parent(int index) { return (index - 1) / 2; }
+	private void swap(int first, int second) {
+		var temp = items[first];
+		items[first] = items[second];
+		items[second] = temp;
+	}
+	
+	public void insert(int value) {
+		if(isFull()) throw new IllegalStateException();
+		items[size] = value;
+		size ++;
+		bubbleUp();
+	}
+	private void bubbleUp() {
+		var index = size - 1; //0 <= 1
+		while(items[index] > items[parent(index)]) {
+			swap(index, parent(index));
+			index = parent(index);	//decrees index
+		}
+	}
 	
 	public int remove() {
 		if(isEmpty()) throw new IllegalStateException();
@@ -22,7 +42,6 @@ public class Heap {
 		bubbleDown();
 		return tmp;
 	}
-	
 	private void bubbleDown() {
 		var index = 0;
 		while(index <= size && !isValidParant(index) ) {
@@ -45,29 +64,7 @@ public class Heap {
 	private int rightChild(int index) { return items[rightChildIndex(index)]; }
 	
 	
-	public void insert(int value) {
-		if(isFull()) throw new IllegalStateException();
-		items[size] = value;
-		size ++;
-		bubbleUp();
-	}
-	
-	private void bubbleUp() {
-		var index = size - 1; //0 <= 1
-		while(items[index] > items[parent(index)]) {
-			swap(index, parent(index));
-			index = parent(index);	//decrees index
-		}
-	}
-	private int parent(int index) { return (index - 1) / 2; }
-	
-	
-	private void swap(int first, int second) {
-		var temp = items[first];
-		items[first] = items[second];
-		items[second] = temp;
-	}
-	
+
 	public int max() {
 		if(isEmpty())  throw new IllegalStateException();
 		return items[0];
