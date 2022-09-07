@@ -145,4 +145,6 @@ public class Trie {
 		return count;
 		
 	}
+	// לסיים
+	//longestCommonPrefix()
 }

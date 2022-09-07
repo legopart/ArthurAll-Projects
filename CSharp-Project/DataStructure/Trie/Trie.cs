@@ -137,7 +137,7 @@ namespace Trie
             return current;
         }
 
-        //To finish
+        //לסיים
        // public int countWords(String word)
 
 
