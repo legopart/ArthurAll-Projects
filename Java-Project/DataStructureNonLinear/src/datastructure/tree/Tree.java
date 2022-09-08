@@ -9,10 +9,10 @@ import javax.lang.model.type.NullType;
 
 public class Tree {
 	private class Node {
-		int value;
-		Node leftChild; // next
-		Node rightChild; // previous
-		Node(int value) { this.value = value; }
+		public int value;
+		public Node leftChild; // next
+		public Node rightChild; // previous
+		public Node(int value) { this.value = value; }
 	}
 	private Node root;
 	
