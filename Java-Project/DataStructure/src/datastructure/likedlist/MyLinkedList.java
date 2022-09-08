@@ -6,9 +6,9 @@ import java.util.NoSuchElementException;
 public class MyLinkedList {
 	
 	private class Node {
-		private int value;
-		private Node next;
-		private Node(int value) { //constructor
+		public int value;
+		public Node next;
+		public Node(int value) { //constructor
 			this.value = value;
 		}
 	}
