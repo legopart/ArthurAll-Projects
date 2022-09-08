@@ -11,12 +11,6 @@ public class BalancedExpression {
 	private final List<Character> rightBracket
 		= Arrays.asList(')', '>', '}', ']');
 	
-	private boolean isLeftBracket(char ch) {
-		return leftBracket.contains(ch);
-	}
-	private boolean isRightBracket(char ch) {
-		return rightBracket.contains(ch);
-	}
 	private boolean bracketsMatch(char chLeft, char chRight ) {
 		return leftBracket.indexOf(chLeft) == rightBracket.indexOf(chRight);
 	}
@@ -24,11 +18,11 @@ public class BalancedExpression {
 	public boolean isBalanced(String input) {
 		Stack<Character> stack = new Stack<>();
 		for(char ch: input.toCharArray()) {
-			if( isLeftBracket(ch)  ) stack.push(ch);
-			else if ( isRightBracket(ch) ) {
+			if( leftBracket.contains(ch)  ) stack.push(ch);
+			else if ( rightBracket.contains(ch) ) {
 				if(stack.empty()) return false;	//Edge case
 				char oposite = stack.pop();
-				if( bracketsMatch(ch, oposite) ) return true;
+				if( !bracketsMatch(ch, oposite) ) return false;
 			}
 // for single case ( )
 //		Stack<Character> stack = new Stack<>();
