@@ -42,13 +42,13 @@ namespace AvlTree
         {
             if (BalanceFactor(node) > 1)    // RR
             {
-                if (BalanceFactor(node.ChildLeft) < 0) /*LR*/ { node.ChildLeft = RotateLeft(node);/*System.out.println("Left Route" + node.leftChild.value);*/}
-                return RotateRight(node);/*System.out.println("Right Route" + node.value);*/
+                if (BalanceFactor(node.ChildLeft) < 0) /*LR*/ { node.ChildLeft = RotateLeft(node);/*Console.WriteLine("Left Route" + node.leftChild.value);*/}
+                return RotateRight(node);/*Console.WriteLine("Right Route" + node.value);*/
             }
             else if (BalanceFactor(node) < -1) //LL
             {
-                if (BalanceFactor(node.ChildRight) > 0) /*RL*/ { node.ChildRight = RotateRight(node);/*System.out.println("Right Route" + node.rightChild.value);*/}
-                return RotateLeft(node);/*System.out.println("Left Route" + node.value);*/
+                if (BalanceFactor(node.ChildRight) > 0) /*RL*/ { node.ChildRight = RotateRight(node);/*Console.WriteLine("Right Route" + node.rightChild.value);*/}
+                return RotateLeft(node);/*Console.WriteLine("Left Route" + node.value);*/
             }
             else return node;   // balance ok -1 <=> 1
         }
@@ -91,7 +91,7 @@ namespace AvlTree
         public List<int> GetNodesAtDistance(int distance)
         {
             var list = new List<int>();
-            GetNodesAtDistance(Root, distance, list); /*System.out.println("");*/
+            GetNodesAtDistance(Root, distance, list); /*Console.WriteLine("");*/
             return list;
         }
         private void GetNodesAtDistance(Node node, int distance, List<int> list)

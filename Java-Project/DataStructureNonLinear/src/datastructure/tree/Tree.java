@@ -183,6 +183,8 @@ public class Tree {
 		return contains(node.leftChild, value) || contains(node.rightChild, value); //O(n)
 	}
 	
+	
+	
 	private ArrayList<Integer> tempList;
 	public int size1() {
 		tempList = new ArrayList<>();

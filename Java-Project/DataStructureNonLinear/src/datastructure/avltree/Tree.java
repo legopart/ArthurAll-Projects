@@ -90,7 +90,7 @@ public class Tree {
 	/*2*/ public boolean isPerfect() { return isPerfect(root); }
 	private boolean isPerfect(Node node) {
 		if(isNull(node)) return true;
-		if( isNull(node.leftChild) && !isNull(node.leftChild) || !isNull(node.leftChild) && isNull(node.leftChild)) return false;
+		if( isNull(node.leftChild) && !isNull(node.rightChild) || !isNull(node.rightChild) && isNull(node.leftChild)) return false;
 		return isPerfect(node.leftChild) && isPerfect(node.rightChild) ;
 	}
 	
