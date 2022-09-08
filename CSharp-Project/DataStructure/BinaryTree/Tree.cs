@@ -51,7 +51,6 @@ namespace BinaryTree
         }
 
 
-
         public int Height() { return Height(Root); }
         private int Height(Node node)
         {
@@ -76,7 +75,6 @@ namespace BinaryTree
             while (!IsNull(current.ChildLeft)) current = current.ChildLeft;
             return current.Value;
         }
-
 
         public bool Equals(Tree other)
         {
@@ -136,7 +134,6 @@ namespace BinaryTree
                      + (!IsNull(node.ChildRight) ? Size(node.ChildRight) : 0);
         }
 
-
         /*2*/
         public int CountLeavels()
         {
@@ -147,7 +144,6 @@ namespace BinaryTree
             if (IsNull(node)) return level;
             return 1 + Math.Max(CountLeavels(node.ChildLeft, level), CountLeavels(node.ChildRight, level));
         }
-
 
         /*3*/
         public int Max()
@@ -163,7 +159,6 @@ namespace BinaryTree
             );
         }
 
-
         public bool Contains(int value)
         {
             return Contains(Root, value);
@@ -175,12 +170,6 @@ namespace BinaryTree
             /*binary search tree O(log(n))*///return value < node.Value ? Contains(node.ChildLeft, value) : Contains(node.ChildRight, value); //	O(log(n))
             return Contains(node.ChildLeft, value) || Contains(node.ChildRight, value); //O(n)
         }
-
-
-
-
-
-
 
 
         public void TraversePreOrder()      // Root, Left, Right
@@ -221,13 +210,6 @@ namespace BinaryTree
             TraversePostOrder(node.ChildRight);
             Console.Write(node.Value + " "); //Root
         }
-
-
-
-
-
-
-
 
 
         private List<int> tempList;
