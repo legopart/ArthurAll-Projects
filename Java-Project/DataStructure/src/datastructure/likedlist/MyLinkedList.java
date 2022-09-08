@@ -85,6 +85,8 @@ public class MyLinkedList {
 	public int size() {
 		return size;
 	}
+	
+	
 	public int[] toArray() {
 		int[] array = new int[size];
 		var current = first;
