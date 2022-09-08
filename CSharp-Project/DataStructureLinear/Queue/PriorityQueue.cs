@@ -25,7 +25,7 @@ namespace Queue
         {
             if (IsFull()) throw new Exception();
             int i;
-            for (i = Back - 1; i >= Front; i--) //הזזה 
+            for (i = Back - 1; i >= Front; i--) //הזזה  !!!
             {
                 if (Items[i] > value) { Items[i + 1] = Items[i]; }
                 else { break; }
@@ -33,7 +33,7 @@ namespace Queue
             Items[i+1] = value;
             Back++;
         }
-        public int peek()
+        public int Peek()
         {
             if (IsEmpty()) throw new Exception();
             return Items[Front];
