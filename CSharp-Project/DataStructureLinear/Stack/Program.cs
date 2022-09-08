@@ -28,20 +28,6 @@ namespace Stack
             String str1_5 = "(1 + 2[])()";
 
 
-/*            BalancedExpression exp = new BalancedExpression();
-
-
-
-            System.out.println(exp.isBalanced(str1));
-            //Edge Cases
-            System.out.println(exp.isBalanced(str1_1));
-            System.out.println(exp.isBalanced(str1_2));
-            System.out.println(exp.isBalanced(str1_3));
-            System.out.println(exp.isBalanced(str1_4));
-            System.out.println(exp.isBalanced(str1_5));
-
-            System.out.println();*/
-
             Stacks stack = new Stacks();
             stack.Push(10);
             stack.Push(20);
