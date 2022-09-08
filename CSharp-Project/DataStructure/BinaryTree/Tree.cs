@@ -92,12 +92,19 @@ namespace BinaryTree
         }
 
         public bool IsBinarySearchTree() { return IsBinarySearchTree(Root, int.MinValue, int.MaxValue); }
-        public void SwapRoot() { var temp = Root.ChildLeft; Root.ChildLeft = Root.ChildRight; Root.ChildRight = temp; }
         private bool IsBinarySearchTree(Node node, int min, int max)
         {
             if (IsNull(node)) return true;
             if (node.Value < min || node.Value > max) return false;
             return IsBinarySearchTree(node.ChildLeft, min, node.Value) && IsBinarySearchTree(node.ChildRight, node.Value, max);
+        }
+        public void SwapRoot() { var temp = Root.ChildLeft; Root.ChildLeft = Root.ChildRight; Root.ChildRight = temp; }
+
+        public List<int> GetNodesAtDistance(int distance)
+        {
+            var list = new List<int>();
+            GetNodesAtDistance(Root, distance, list); /*Console.WriteLine("");*/
+            return list;
         }
 
         private void GetNodesAtDistance(Node node, int distance, List<int> list)
@@ -108,12 +115,6 @@ namespace BinaryTree
             GetNodesAtDistance(node.ChildRight, distance - 1, list);
         }
 
-        public List<int> GetNodesAtDistance(int distance)
-        {
-            var list = new List<int>();
-            GetNodesAtDistance(Root, distance, list); /*Console.WriteLine("");*/
-            return list;
-        }
 
         public void TraverseLevelOrder()
         {
@@ -221,7 +222,7 @@ namespace BinaryTree
             tempList = null;
             return size;
         }
-        private void TraverseInOrder2(Node node)
+        private void TraverseInOrder2(Node node)    //the recursion
         {   // from low to high  1 2 3 4 ...
             if (IsNull(node)) return;   //base condition
             TraverseInOrder2(node.ChildLeft);
