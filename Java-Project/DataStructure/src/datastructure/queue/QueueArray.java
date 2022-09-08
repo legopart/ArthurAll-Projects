@@ -53,4 +53,5 @@ public class QueueArray {	//of array
 	
 	@Override
 	public String toString() { return Arrays.toString( Arrays.copyOfRange(items, front, rear) ); }
+	
 }

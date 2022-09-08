@@ -12,17 +12,17 @@ public class Stack {
 		count = 0;
 	}
 	
-	private void increaseArraySize() {
-		int[] arr = new int[(int)(count*increment)];
-		for(int i = 0; i < items.length; ++i) arr[i] = items[i];
-		items = arr;
-	}
+	/*
+	 * private void increaseArraySize() { int[] arr = new
+	 * int[(int)(count*increment)]; for(int i = 0; i < items.length; ++i) arr[i] =
+	 * items[i]; items = arr; }
+	 */
 	private boolean isEmpty() {
 		return count == 0;
 	}
 
 	public void push(int item) {
-		if(items.length == count) increaseArraySize();
+		if(items.length == count) throw new IllegalStateException();
 		items[count] = item;
 		count ++;
 	}

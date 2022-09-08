@@ -29,8 +29,7 @@ public class QueueStack {	//of array
 	
 	private Stack<Integer> stack1;
 	private Stack<Integer> stack2;
-//	private int front;
-//	private int rear;
+
 	private final double extendBy = 2.0;
 	
 	public QueueStack() {
@@ -38,24 +37,22 @@ public class QueueStack {	//of array
 		stack2 = new Stack<>();
 	}
 
-	private boolean isEmpty() { return stack1.isEmpty(); }
-//	private boolean isFull() {  
 	private void exchangeStacks(Stack<Integer> stack1, Stack<Integer> stack2 ) {
-		while(isEmpty()) stack2.push( stack1.pop() );
+		while(!stack1.isEmpty()) stack2.push( stack1.pop() );
 	}
 	
 	public void enqueue(int value) {	//O(1)
 		stack1.push(value);
 	}
 	public int peek() {			// O(n)
-		if(isEmpty()) throw new IllegalStateException();
+		if(stack1.isEmpty()) throw new IllegalStateException();
 		exchangeStacks(stack1, stack2);
 		int value = stack1.peek();
 		exchangeStacks(stack2, stack1);
 		return value;
 	}
 	public int dequeue() {
-		if(isEmpty()) throw new IllegalStateException();
+		if(stack1.isEmpty()) throw new IllegalStateException();
 		exchangeStacks(stack1, stack2);
 		int value = stack1.pop();
 		exchangeStacks(stack2, stack1);

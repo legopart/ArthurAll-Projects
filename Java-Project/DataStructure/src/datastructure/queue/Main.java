@@ -15,7 +15,7 @@ import java.util.Stack;
 public class Main {
 	public static void main(String args[]) {
 		// Queue in java is an interface == construct
-		Queue<Integer> javaQueue = new ArrayDeque<>();	//Interface = Class, Implementation
+		/*Interface to use ArrayDeque class*/ Queue<Integer> javaQueue = new ArrayDeque<>();	//Interface = Class, Implementation
 		javaQueue.add(10);
 		javaQueue.add(20);
 		javaQueue.add(30);
