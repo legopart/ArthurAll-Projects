@@ -21,23 +21,33 @@ namespace Hashtable
             //Values /Keys
 
 
-            Console.WriteLine(firstNonRepeatedChar("A Green Apple"));
+            Console.WriteLine(FirstNonRepeatedChar("A Green Apple"));   //g
+            Console.WriteLine(FirstRepeatedChar("A Green Apple"));      //e
+
         }
-        static public char? firstNonRepeatedChar(String str) 
+
+        static public char? FirstNonRepeatedChar(String str) 
         {   // A Green Apple
-            Dictionary<char, int> map = new Dictionary<char, int>();
+            Dictionary<char, int> map = new Dictionary<char, int>();    //HashMap
             foreach (var ch in str.ToLower()) {
                 if (map.ContainsKey(ch)) map[ch]++;
                 else map[ch] = 1;
             }
-            foreach (var item in map) {
-                if (item.Value == 1) return item.Key;
-            }
-
-            return null;
+            foreach (var item in map)  if (item.Value == 1) return item.Key;
+            // foreach (var ch in str.ToLower())  if (map[ch] == 1) return ch;
+            return null;// char.MinValue;
         }
-/*        static public String reverseString(String str) 
-        {
-        }*/
+
+        static public char? FirstRepeatedChar(String str)
+        {   // A Green Apple
+            HashSet<char> set = new HashSet<char>(); //Set
+            foreach (var ch in str.ToLower())
+            {
+                if (set.Contains(ch)) return ch;
+                else set.Add(ch);
+            }
+            return null;// char.MinValue;
+        }
+
     }
 }
