@@ -53,6 +53,9 @@ public class Main {
 		System.out.println("The unique list of values:");
 		System.out.println( set );
 		
+		
+		
+		
 		//Find first Repeated Character
 		string = "green apple";
 		CharFinder charFinder2 = new CharFinder();

@@ -5,9 +5,9 @@ import java.util.LinkedList;
 
 public class HashTableLinkedList {
 	private class Entry{
-		private int key;
-		private String value;
-		private Entry(int key, String value) { this.key = key; this.value = value; }
+		public int key;
+		public String value;
+		public Entry(int key, String value) { this.key = key; this.value = value; }
 	}
 	private LinkedList<Entry>[] entries;
 	
@@ -15,9 +15,7 @@ public class HashTableLinkedList {
 		entries = new LinkedList[5];
 	}
 	
-	private int hash(int key) {
-		return key % entries.length;
-	}
+	private int hash(int key) { return key % entries.length; }
 	private LinkedList<Entry> getBucket(int key){
 		return entries[hash(key)];
 	}
