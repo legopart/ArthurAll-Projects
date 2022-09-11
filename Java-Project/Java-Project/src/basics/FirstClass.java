@@ -1,4 +1,4 @@
-//package newProject;
+package basics;
 
 import java.awt.Point;
 import java.util.Arrays;
