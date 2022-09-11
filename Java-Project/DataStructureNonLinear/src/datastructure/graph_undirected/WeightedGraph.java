@@ -1,12 +1,14 @@
 package datastructure.graph_undirected;
 
-import java.awt.print.Printable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Set;
+import java.util.Stack;
 
 public class WeightedGraph { // Weighted
 	private class Node {
@@ -98,14 +100,53 @@ public class WeightedGraph { // Weighted
 		}
 	}
 
-	public int getShortestDistance(String from, String to) {
-		
-		  PriorityQueue<NodeEntry> queue = 
-				  new PriorityQueue<>( Comparator.comparingInt(ne -> ne.priority ) );
-		 
-		return 0;
-	}
+	public Path getShortestPath(String from, String to) {
+		var fromNode = nodes.get(from);
+		var toNode = nodes.get(to);
+		if (isNull(fromNode)) throw new IllegalArgumentException();
+	    if (isNull(toNode)) throw new IllegalArgumentException();
+		Map<Node, Integer> distances = new HashMap<>();
+		for (var node : nodes.values()) distances.put(node, Integer.MAX_VALUE);
+		Map<Node, Node> previousNodes = new HashMap<>();
+		Set<Node> visited = new HashSet<>();
+	    PriorityQueue<NodeEntry> queue = new PriorityQueue<>( Comparator.comparingInt(ne -> ne.priority));
+	    			//queue, PriorityQueue with  Comparator
+	    queue.add(new NodeEntry(fromNode, 0));	// only item in the queue
 
+		distances.replace(fromNode, 0); // A 0
+	    while (!queue.isEmpty()) { 
+	    	var current = queue.remove().node;
+	    	visited.add(current);
+
+	    	for (var edge : current.getEdges()) {
+	    		if (visited.contains(edge.to)) continue;
+	    		var newDistance = distances.get(current) + edge.weight;
+		        if (newDistance < distances.get(edge.to)) {
+		          distances.replace(edge.to, newDistance);
+		          previousNodes.put(edge.to, current);
+		          queue.add(new NodeEntry(edge.to, newDistance));
+		        }
+	    	}
+	    	
+	    }
+	    
+	    
+	    //return distances.get(toNode);
+	    return buildPath(previousNodes,toNode);
+	}
+	  private Path buildPath(Map<Node, Node> previousNodes, Node toNode){
+		    Stack<Node> stack = new Stack<>();
+		    stack.push(toNode);
+		    var previous = previousNodes.get(toNode);
+		    while(!isNull(previous)) {
+		    	stack.push(previous);
+		    	previous = previousNodes.get(previous);
+		    }
+		    var path = new Path();
+		    while(!stack.isEmpty()) path.add(stack.pop().lable);
+		    return path;
+	  }
+	
 	@Override
 	public String toString() {
 		String str = "";
