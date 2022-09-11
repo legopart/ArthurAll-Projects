@@ -1,4 +1,4 @@
-package iterable_interface;
+package collections.iterable_interface;
 public class Main {
 
 	public static void main(String[] args) {

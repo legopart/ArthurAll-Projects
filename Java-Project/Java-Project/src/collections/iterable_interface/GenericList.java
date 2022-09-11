@@ -1,4 +1,4 @@
-package iterable_interface;
+package collections.iterable_interface;
 
 import java.util.Iterator;
 
