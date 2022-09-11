@@ -1,4 +1,4 @@
-package collections.comparable;
+package collections.comparable_interface;
 public class Main {
 
 	public static void main(String[] args) {
