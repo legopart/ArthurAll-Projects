@@ -9,11 +9,11 @@ My C# C++ JAVA and Full Stack Reference Projects
 
 <h2>Java</h2>
 <strong>Projects</strong> 
-<a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Java-Project">All Projects</a>
+<a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Java-Project">All Projects Java</a>
 
 <h2>C#</h2>
 <strong>Projects</strong> 
-<a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/CSharp-Project">All Projects</a>
+<a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/CSharp-Project">All Projects C#</a>
 
 
 <h2>C++</h2>
