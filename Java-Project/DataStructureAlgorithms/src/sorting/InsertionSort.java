@@ -1,3 +1,4 @@
+package sorting;
 import javax.crypto.interfaces.DHPrivateKey;
 
 public class InsertionSort {

@@ -1,3 +1,4 @@
+package sorting;
 import javax.management.loading.PrivateClassLoader;
 
 public class QuickSort {	//לחזור
