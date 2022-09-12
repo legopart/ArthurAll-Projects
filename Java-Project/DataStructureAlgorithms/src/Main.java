@@ -39,6 +39,11 @@ public class Main {
 		CountingSort.sort(numbers);
 		System.out.println("CountingSortn.sort \t" + Arrays.toString(numbers));
 		System.out.println("");
+		
+		numbers = new int[]{ 7, 3, 1, 4, 6, 2, 3 };
+		BucketSort.sort(numbers, 3);
+		System.out.println("BucketSort.sort \t" + Arrays.toString(numbers));
+		System.out.println("");
 	}
 
 }
