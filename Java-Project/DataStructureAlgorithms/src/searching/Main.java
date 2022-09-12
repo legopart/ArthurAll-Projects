@@ -34,6 +34,10 @@ public class Main {
 		resultIndex = JumpSearch.search(numbers, target);
 		System.out.println("JumpSearch.search \t\t" + resultIndex);
 		System.out.println("");
+		
+		resultIndex = ExponentialSearch.search(numbers, target);
+		System.out.println("ExponentialSearch.search \t" + resultIndex);
+		System.out.println("");
 	}
 
 }
