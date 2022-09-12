@@ -7,12 +7,23 @@ import sorting.BubbleSort;
 public class Main {
 
 	public static void main(String[] args) {
-		int index;
+		int target = 4;
+		int resultIndex;
 		int[] numbers;
 		numbers = new int[]{ 7, 3, 1, 4, 6, 2, 3 };
-		index = LinearSearch.search(numbers, 4);
-		System.out.println("LinearSearch.search \t" + index);
+		resultIndex = LinearSearch.search(numbers, target);
+		System.out.println("LinearSearch.search \t\t" + resultIndex);
 		System.out.println("");
+		
+		numbers = new int[]{ 1, 2, 3, 3, 4, 6, 7 }; // sorted !!!
+		resultIndex = BinarySearch.searchRecursion(numbers, target);
+		System.out.println("BinarySearch.searchRecursion \t" + resultIndex);
+		resultIndex = BinarySearch.searchIterative(numbers, target);
+		System.out.println("BinarySearch.searchIterative \t" + resultIndex);
+		
+		System.out.println("");
+		
+		
 	}
 
 }
