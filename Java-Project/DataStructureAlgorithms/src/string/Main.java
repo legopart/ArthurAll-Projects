@@ -57,7 +57,7 @@ public class Main {
 		return false;
 	}
 	// אפשר לעשות עם ch
-	public static boolean removeDuplicates(String str ) {
+	public static boolean removeDuplicates(String str ) { 
 		if(str1 == null || str2 == null) return false;
 		else if(str1.length() != str2.length()) return false;
 		String newString = str1 + str1;
