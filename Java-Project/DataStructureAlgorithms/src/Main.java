@@ -24,6 +24,11 @@ public class Main {
 		InsertionSort.sort(numbers);
 		System.out.println("InsertionSort.sort" + Arrays.toString(numbers));
 		System.out.println("");
+		
+		numbers = new int[]{ 7, 3, 1, 4, 6, 2, 3 };
+		MergeSort.sort(numbers);
+		System.out.println("MergeSort.sort" + Arrays.toString(numbers));
+		System.out.println("");
 	}
 
 }
