@@ -2,19 +2,22 @@ package string;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println( countVowels("Hello World") );
-		System.out.println( reverseString("Hello World") );
-		System.out.println( reverseWords("Hello World") );
-		System.out.println( isRotation("ABCD", "BCDA") );
-		System.out.println( isRotation("ABCD", "BCDE") );
-		System.out.println( removeDuplicates("Hello World") );
-		
+		System.out.println("countVowels: \t\t" +	countVowels("Hello World") );
+		System.out.println("reverseString: \t\t" +	reverseString("Hello World") );
+		System.out.println("reverseWords: \t\t" +	reverseWords("Hello World") );
+		System.out.println("isRotation: \t\t" + 	isRotation("Hello World", "rldHello Wo") );
+		System.out.println("isRotation: \t\t" + 	isRotation("Hello World", "Hello Wogfufg") );
+		System.out.println("removeDuplicates: \t" +	removeDuplicates("Hello World") );
+		System.out.println("removeDuplicates: \t" +	getMaxOccuringChar("Hello World") );
+		System.out.println("capitalize: \t\t" + 	capitalize("hELLO       wORLD") );
 	}
 	
 	public static int countVowels(String str) {
@@ -58,8 +61,10 @@ public class Main {
 		if(newString.contains(str2)) return true;
 		return false;
 	}
-	// אפשר לעשות עם ch
+	// אפשר לעשות עם ch בנפרד
+	
 	public static String removeDuplicates(String str) { 
+		if(str == null) return "";
 		StringBuilder output = new StringBuilder();
 		Set<Character> seen = new HashSet<>();
 		for(var ch : str.toCharArray()) {
@@ -70,5 +75,36 @@ public class Main {
 		}
 		return output.toString();
 	}
+	
+	public static char getMaxOccuringChar(String str) { 
+//		Map<Character, Integer> frequencies = new HashMap<>();	//hashtable
+//		for(var ch : str.toLowerCase().toCharArray()) {
+//			if(frequencies.containsKey(ch)) 
+//				frequencies.replace(ch, frequencies.get(ch) + 1);
+//			else frequencies.put(ch, 1);
+//		}
+		//Ascii
+		if(str.isEmpty() || str == null) throw new IllegalArgumentException();
+		final int ASCII_SIZE = 256;
+		int[] frequencies = new int[ASCII_SIZE];
+		for(var ch : str.toLowerCase().toCharArray()) frequencies[ch]++;
+		char result = ' ';
+		int max = 0;
+		for(var i = 0; i < frequencies.length; ++i) 
+			if(frequencies[i] > max) { 
+				max = frequencies[i];
+				result = (char) i ;
+			}
+		return result;
+	}
+	
+	public static String capitalize(String sentence) { 
+		if(sentence == null || sentence.trim().isEmpty()) return "";
+		String[] words = sentence.replaceAll(" +", " ").split(" ");
+		for(var i = 0; i < words.length; i++) 
+			words[i] = words[i].substring(0, 1).toUpperCase() + words[i].substring(1).toLowerCase();
+		return String.join(" ", words);
+	}
+	
 	
 }
