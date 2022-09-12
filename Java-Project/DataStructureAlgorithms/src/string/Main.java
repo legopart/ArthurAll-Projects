@@ -2,6 +2,8 @@ package string;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
 
@@ -11,7 +13,7 @@ public class Main {
 		System.out.println( reverseWords("Hello World") );
 		System.out.println( isRotation("ABCD", "BCDA") );
 		System.out.println( isRotation("ABCD", "BCDE") );
-		
+		System.out.println( removeDuplicates("Hello World") );
 		
 	}
 	
@@ -57,12 +59,16 @@ public class Main {
 		return false;
 	}
 	// אפשר לעשות עם ch
-	public static boolean removeDuplicates(String str ) { 
-		if(str1 == null || str2 == null) return false;
-		else if(str1.length() != str2.length()) return false;
-		String newString = str1 + str1;
-		if(newString.contains(str2)) return true;
-		return false;
+	public static String removeDuplicates(String str) { 
+		StringBuilder output = new StringBuilder();
+		Set<Character> seen = new HashSet<>();
+		for(var ch : str.toCharArray()) {
+			if( !seen.contains(ch) ) {
+				seen.add(ch);
+				output.append(ch);
+			}
+		}
+		return output.toString();
 	}
 	
 }
