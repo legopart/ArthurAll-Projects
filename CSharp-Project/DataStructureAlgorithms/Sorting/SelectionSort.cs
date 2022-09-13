@@ -13,7 +13,7 @@ namespace Sorting
         {
             for (var i = 0; i < array.Length; ++i)
             {
-                var selection = i;
+                var selection = i;  //minValue
                 for (var j = i; j < array.Length - 1; ++j)
                     if (array[selection] > array[j]) selection = j;
                 swap(array, i, selection);

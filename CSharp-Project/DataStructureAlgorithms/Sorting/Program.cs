@@ -24,6 +24,10 @@
             Console.WriteLine("InsertionSort.Sort: " + String.Join(", ", array));
             Console.WriteLine();
 
+            array = new int[] { 7, 3, 1, 4, 6, 2, 3 };
+            MergeSort.Sort(array);
+            Console.WriteLine("MergeSort.Sort: " + String.Join(", ", array));
+            Console.WriteLine();
         }
     }
 }
