@@ -12,7 +12,10 @@
 
             Array.Sort(array);
 
-            
+            Console.WriteLine("BinarySearch.SearchIterative " + BinarySearch.SearchIterative(array, index));
+            Console.WriteLine("BinarySearch.SearchRecursion " + BinarySearch.SearchRecursion(array, index));
+            Console.WriteLine();
+
 
         }
     }
