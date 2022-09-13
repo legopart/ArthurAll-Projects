@@ -16,8 +16,8 @@ namespace String
             Console.WriteLine("capitalize: \t\t" +     Capitalize("hELLO       wORLD"));
             Console.WriteLine("isAnagram: \t\t" +      IsAnagram("Hello World", "Worlo Helld"));
             Console.WriteLine("isAnagram2: \t\t" +     IsAnagram2("Hello World", "Worlo Helld"));
-            Console.WriteLine("isPalindrom: \t\t" +        IsPalindrom("Hello World dlroW olleH"));
-            Console.WriteLine("isPalindrom2: \t\t" +       IsPalindrom2("Hello World dlroW olleH"));
+            Console.WriteLine("isPalindrom: \t\t" +    IsPalindrom("Hello World dlroW olleH"));
+            Console.WriteLine("isPalindrom2: \t\t" +   IsPalindrom2("Hello World dlroW olleH"));
         }
 
 
