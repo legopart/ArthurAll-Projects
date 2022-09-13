@@ -18,6 +18,11 @@ public class Main {
 		System.out.println("removeDuplicates: \t" +	removeDuplicates("Hello World") );
 		System.out.println("removeDuplicates: \t" +	getMaxOccuringChar("Hello World") );
 		System.out.println("capitalize: \t\t" + 	capitalize("hELLO       wORLD") );
+		System.out.println("isAnagram: \t\t" + 		isAnagram("Hello World", "Worlo Helld") );
+		System.out.println("isAnagram2: \t\t" +		isAnagram2("Hello World", "Worlo Helld") );
+		System.out.println("isPalindrom: \t\t" +		isPalindrom("Hello World dlroW olleH") );
+		System.out.println("isPalindrom2: \t\t" +		isPalindrom2("Hello World dlroW olleH") );
+		
 	}
 	
 	public static int countVowels(String str) {
@@ -106,5 +111,47 @@ public class Main {
 		return String.join(" ", words);
 	}
 	
+	public static boolean isAnagram(String first, String second) {// O(nlogn)
+		// ABCD - CBD
+		//1 ['A', 'B', 'C', 'D'] - ['C', 'B', 'D','A']A =SORT=> ['A', 'B', 'C', 'D'] - ['A', 'B', 'C', 'D']
+		if(first == null || second == null) return false;
+		else if(second.length() != second.length()) return false;
+		var array1 = first.toLowerCase().toCharArray();
+		var array2 = second.toLowerCase().toCharArray();	// O(n)
+		Arrays.sort(array1);	 // O(nlogn)
+		Arrays.sort(array2);
+		return Arrays.equals(array1, array2);
+	}
+	public static boolean isAnagram2(String first, String second) {// O(n)
+		// ABCD - CBD
+		//1 ['A', 'B', 'C', 'D'] - ['C', 'B', 'D','A']A =SORT=> ['A', 'B', 'C', 'D'] - ['A', 'B', 'C', 'D']
+		// not works without replaceAll(" ", "") !!
+		if (first == null || second == null) return false;
+		if (first.length() != second.length()) return false;
+		final int ENGLISH_ALPHABET = 26;
+		int[] frequencies = new int[ENGLISH_ALPHABET];
+		first = first.replaceAll(" ", "").toLowerCase();
+		for (var i = 0; i < first.length(); i++) frequencies[first.charAt(i) - 'a']++;
+		second = second.replaceAll(" ", "").toLowerCase();
+		for(var i = 0; i < second.length(); ++i) { // O(n)
+			final int index = second.charAt(i) - 'a';
+			if(frequencies[index] == 0) return false;
+			frequencies[index] --;
+		} 
+		return true;
+	}
 	
+	public static boolean isPalindrom(String word) {
+		var input = new StringBuilder(word);
+		input.reverse();
+		return input.toString().equals(word);
+		// 4 Iterators!
+	}
+	public static boolean isPalindrom2(String word) {
+		int left = 0;
+		int right = word.length() - 1;
+		while ( left < right )
+			if(word.charAt(left++) != word.charAt(right-- )) return false;
+		return true;
+	}
 }
