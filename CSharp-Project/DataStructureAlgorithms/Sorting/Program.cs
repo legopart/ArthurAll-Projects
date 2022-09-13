@@ -28,6 +28,11 @@
             MergeSort.Sort(array);
             Console.WriteLine("MergeSort.Sort: " + String.Join(", ", array));
             Console.WriteLine();
+
+            array = new int[] { 7, 3, 1, 4, 6, 2, 3 };
+            QuickSort.Sort(array);
+            Console.WriteLine("QuickSort.Sort: " + String.Join(", ", array));
+            Console.WriteLine();
         }
     }
 }
