@@ -10,7 +10,7 @@
             Console.WriteLine("LinearSearch.Search: " + LinearSearch.Search(array, index) );
             Console.WriteLine();
 
-            Array.Sort(array);
+            Array.Sort(array);  //!!! after sorting the array!
 
             Console.WriteLine("BinarySearch.SearchIterative " + BinarySearch.SearchIterative(array, index));
             Console.WriteLine("BinarySearch.SearchRecursion " + BinarySearch.SearchRecursion(array, index));
