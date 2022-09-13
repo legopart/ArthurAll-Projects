@@ -27,7 +27,6 @@ namespace Sorting
                 swap(array, i, FindMinIndex(array, i));
             }
         }
-
         public static int FindMinIndex(int[] array, int i)
         {
             var selection = i;
