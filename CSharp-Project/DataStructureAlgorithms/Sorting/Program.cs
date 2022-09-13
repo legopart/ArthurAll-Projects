@@ -39,6 +39,13 @@
             CountingSort.Sort(array);
             Console.WriteLine("CountingSort.Sort: " + String.Join(", ", array));
             Console.WriteLine();
+
+            array = new int[] { 7, 3, 1, 4, 6, 2, 3 };
+            BucketSort.Sort(array, 3);
+            Console.WriteLine("BucketSort.Sort: " + String.Join(", ", array));
+            Console.WriteLine();
+
+
         }
     }
 }
