@@ -16,6 +16,8 @@
             Console.WriteLine("BinarySearch.SearchRecursion " + BinarySearch.SearchRecursion(array, index));
             Console.WriteLine();
 
+            Console.WriteLine("TernarySearch.Search " + TernarySearch.Search(array, index));
+            Console.WriteLine();
 
         }
     }
