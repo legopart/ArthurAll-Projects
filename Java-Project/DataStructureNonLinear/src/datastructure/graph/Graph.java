@@ -38,7 +38,7 @@ public class Graph {
 		if(isNull(node)) return;
 		for(var n : adjecencyList.keySet()) adjecencyList.get(n).remove(node);
 		adjecencyList.remove(node);
-		nodes.remove(node);
+		nodes.remove(label);//nodes.remove(node);
 	}
 	
 	public void addEdge(String from, String to) {	//relationship

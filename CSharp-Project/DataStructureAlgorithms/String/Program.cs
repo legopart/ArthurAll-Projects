@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace String
+namespace Strings
 {
     class Program
     {
@@ -21,17 +21,17 @@ namespace String
         }
 
 
-        public static int CountVowels(string str)
+        public static int CountVowels(String str)
         {
             if (str == null) return 0;
             int count = 0;
-            string vowels = "aeiou";
+            String vowels = "aeiou";
             foreach (var ch in str.ToLower().ToCharArray())
                 if (vowels.IndexOf(ch) != -1) count++;
             return count;
         }
         
-        public static string ReverseString(string str)
+        public static String ReverseString(String str)
         {
             if (str == null) return "";
             StringBuilder reversed = new StringBuilder();
@@ -40,25 +40,25 @@ namespace String
         }
 
 
-        public static string ReverseWords(string sentence)
+        public static String ReverseWords(String sentence)
         {
             if (sentence == null) return "";
-            string[] words = sentence.Trim().Split(" ");
+            String[] words = sentence.Trim().Split(" ");
             Array.Reverse(words);
-            return string.Join(" ", words);
+            return String.Join(" ", words);
         }
 
-        public static bool IsRotation(string str1, string str2)
+        public static bool IsRotation(String str1, String str2)
         {
             if (str1 == null || str2 == null) return false;
             else if (str1.Length != str2.Length) return false;
-            string newString = str1 + str1;
+            String newString = str1 + str1;
             if (newString.Contains(str2)) return true;
             return false;
         }
         // אפשר לעשות עם ch בנפרד
 
-        public static string RemoveDuplicates(string str)
+        public static String RemoveDuplicates(String str)
         {
             if (str == null) return "";
             StringBuilder output = new StringBuilder();
@@ -74,7 +74,7 @@ namespace String
             return output.ToString();
         }
 
-        public static char GetMaxOccuringChar(string str)
+        public static char GetMaxOccuringChar(String str)
         {
             //		Map<Character, Integer> frequencies = new HashMap<>();	//hashtable
             //		for(var ch : str.toLowerCase().toCharArray()) {
@@ -98,19 +98,19 @@ namespace String
             return result;
         }
 
-        public static string Capitalize(string sentence)
+        public static String Capitalize(String sentence)
         {
             if (sentence == null || sentence.Trim().Length == 0) return "";
-            string[] words = sentence.Split(" ");
+            String[] words = sentence.Split(" ");
             for (var i = 0; i < words.Length; i++) {
                 if (words[i] == "") continue;
                 words[i] = words[i].Substring(0, 1).ToUpper() + words[i].Substring(1).ToLower();
             }
-            return string.Join(" ", words);
+            return String.Join(" ", words);
         }
 
         //O(nlogn)
-        public static bool IsAnagram(string first, string second)
+        public static bool IsAnagram(String first, String second)
         {// O(nlogn)
          // ABCD - CBD
          //1 ['A', 'B', 'C', 'D'] - ['C', 'B', 'D','A']A =SORT=> ['A', 'B', 'C', 'D'] - ['A', 'B', 'C', 'D']
@@ -123,7 +123,7 @@ namespace String
             return Array.Equals(array1, array2);
         }
         // O(n)
-        public static bool IsAnagram2(string first, string second)
+        public static bool IsAnagram2(String first, String second)
         {// O(n)
          // ABCD - CBD
          //1 ['A', 'B', 'C', 'D'] - ['C', 'B', 'D','A']A =SORT=> ['A', 'B', 'C', 'D'] - ['A', 'B', 'C', 'D']
@@ -144,13 +144,13 @@ namespace String
             return true;
         }
 
-        public static bool IsPalindrom(string word)
+        public static bool IsPalindrom(String word)
         {
             var reversed = word.ToCharArray();
             Array.Reverse(reversed);
-            return (new string(reversed)).Equals(word);
+            return (new String(reversed)).Equals(word);
         }
-        public static bool IsPalindrom2(string word)
+        public static bool IsPalindrom2(String word)
         {
             int left = 0;
             int right = word.Length - 1;
