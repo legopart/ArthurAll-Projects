@@ -33,6 +33,12 @@
             QuickSort.Sort(array);
             Console.WriteLine("QuickSort.Sort: " + String.Join(", ", array));
             Console.WriteLine();
+
+
+            array = new int[] { 7, 3, 1, 4, 6, 2, 3 };
+            CountingSort.Sort(array);
+            Console.WriteLine("CountingSort.Sort: " + String.Join(", ", array));
+            Console.WriteLine();
         }
     }
 }
