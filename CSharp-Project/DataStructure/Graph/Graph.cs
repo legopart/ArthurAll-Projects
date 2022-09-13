@@ -42,21 +42,20 @@ namespace Graph
 
         public void AddEdge(String from, String to)
         {   //relationship
-            var fromNode = nodes[from];
-            var toNode = nodes[to];
-            if (IsNull(fromNode) || IsNull(toNode)) throw new Exception();
-            adjecencyList[fromNode].Add(toNode);
+            Node? fromNode = nodes!.GetValueOrDefault(from, null);
+            Node? toNode = nodes!.GetValueOrDefault(to, null);
+            if (IsNull(fromNode!) || IsNull(toNode!)) throw new Exception();
+            adjecencyList[fromNode!].Add(toNode!);
             //bidirectional graph: adjecenccyList.get(toNode).add(fromNode);
         }
         public void RemoveEdge(String from, String to)
         {
-            var fromNode = nodes[from];
-            var toNode = nodes[to];
-            if (IsNull(fromNode) || IsNull(toNode)) return;
-            adjecencyList[fromNode].Remove(toNode);
+            Node? fromNode = nodes!.GetValueOrDefault(from, null);
+            Node? toNode = nodes!.GetValueOrDefault(to, null);
+            if (IsNull(fromNode!) || IsNull(toNode!)) return;
+            adjecencyList[fromNode!].Remove(toNode!);
             //adjecenccyList.get(toNode).remove(fromNode);
         }
-
 
         public bool HasCycle()  //לתקן
         {
@@ -64,12 +63,8 @@ namespace Graph
             all.UnionWith(nodes.Values); //A.Concat(B).ToHashSet()
             HashSet<Node> visiting = new();
             HashSet<Node> visited = new();
-            int i = 0;
-            while (all.Count != 0)
-            {
-                var current = all.ToArray()[i++];//.toArray(new Node[0])[0];
-                if (HasCycle(current, all, visiting, visited)) return true; ;
-            }
+            foreach(var current in all)  if (HasCycle(current, all, visiting, visited)) return true; ;
+            
             return false;
         }
         private bool HasCycle(Node node, HashSet<Node> all, HashSet<Node> visiting, HashSet<Node> visited)
@@ -117,7 +112,7 @@ namespace Graph
                 var current = queue.Dequeue();
                 if (visited.Contains(current)) continue;
                 visited.Add(current);
-                Console.WriteLine(current + " ");
+                Console.Write(current + " ");
                 foreach (var neighbour in adjecencyList[current]) if (!visited.Contains(neighbour)) queue.Enqueue(neighbour);
             }
         }
@@ -135,7 +130,7 @@ namespace Graph
                 var current = stack.Pop();
                 if (visited.Contains(current)) continue;
                 visited.Add(current);
-                Console.WriteLine(current + " ");
+                Console.Write(current + " ");
                 foreach (var neighbour in adjecencyList[current]) if (!visited.Contains(neighbour)) stack.Push(neighbour);
             }
         }
@@ -143,27 +138,26 @@ namespace Graph
 
         public void TraverseDepthFirsy_recursion(String rootString)
         {
-            Node node = nodes[rootString];
-            if (IsNull(node)) return;
-            traverseDepthFirsy_recursion(node, new());
+            Node? node = nodes!.GetValueOrDefault(rootString, null);
+            if (IsNull(node!)) return;
+            traverseDepthFirsy_recursion(node!, new());
             Console.WriteLine();
         }
         private void traverseDepthFirsy_recursion(Node root, HashSet<Node> visited)
         {
-            Console.WriteLine(root + " ");
+            Console.Write(root + " ");
             visited.Add(root);
             foreach (var node in adjecencyList[root])
                 if (!visited.Contains(node)) traverseDepthFirsy_recursion(node, visited);
         }
 
-       
         public override String ToString()
         {
             String str = "";
             foreach (var source in adjecencyList.Keys)
             {
                 var targets = adjecencyList[source];
-                if (targets.Count != 0) str += source + " is connected to " + targets;
+                if (targets.Count != 0) str += source + " is connected to " + targets.First() + "\n";
             }
             return str;
         }
