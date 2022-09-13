@@ -51,15 +51,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTree", "CSharp-Projec
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructureLinear", "DataStructureLinear", "{027D3889-DAEC-4C56-B6A5-BD8530B6460D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayList", "CSharp-Project\DataStructureLinear\ArrayList\ArrayList.csproj", "{9A7FA7B2-F303-46ED-9716-66A1369C91AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayList", "CSharp-Project\DataStructureLinear\ArrayList\ArrayList.csproj", "{9A7FA7B2-F303-46ED-9716-66A1369C91AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hashtable", "CSharp-Project\DataStructureLinear\Hashtable\Hashtable.csproj", "{F401DFD1-B713-4D4F-9182-D0931DBF930B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hashtable", "CSharp-Project\DataStructureLinear\Hashtable\Hashtable.csproj", "{F401DFD1-B713-4D4F-9182-D0931DBF930B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkdedList", "CSharp-Project\DataStructureLinear\LinkdedList\LinkdedList.csproj", "{D861281F-0C6E-4B9A-8214-E3C65519B1B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkdedList", "CSharp-Project\DataStructureLinear\LinkdedList\LinkdedList.csproj", "{D861281F-0C6E-4B9A-8214-E3C65519B1B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "CSharp-Project\DataStructureLinear\Stack\Stack.csproj", "{108A6C76-1965-43E2-81E5-E112151A1F53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack", "CSharp-Project\DataStructureLinear\Stack\Stack.csproj", "{108A6C76-1965-43E2-81E5-E112151A1F53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue", "CSharp-Project\DataStructureLinear\Queue\Queue.csproj", "{87144CB2-9FB9-4D40-8AF7-0B2D8EDF45D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue", "CSharp-Project\DataStructureLinear\Queue\Queue.csproj", "{87144CB2-9FB9-4D40-8AF7-0B2D8EDF45D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructureAlgorithms", "DataStructureAlgorithms", "{41D6744E-E569-4A4E-8D74-5B2AE607950C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting", "CSharp-Project\DataStructureAlgorithms\Sorting\Sorting.csproj", "{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -371,6 +375,18 @@ Global
 		{87144CB2-9FB9-4D40-8AF7-0B2D8EDF45D5}.Release|x64.Build.0 = Release|Any CPU
 		{87144CB2-9FB9-4D40-8AF7-0B2D8EDF45D5}.Release|x86.ActiveCfg = Release|Any CPU
 		{87144CB2-9FB9-4D40-8AF7-0B2D8EDF45D5}.Release|x86.Build.0 = Release|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Debug|x64.Build.0 = Debug|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Debug|x86.Build.0 = Debug|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Release|x64.ActiveCfg = Release|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Release|x64.Build.0 = Release|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Release|x86.ActiveCfg = Release|Any CPU
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -403,6 +419,8 @@ Global
 		{D861281F-0C6E-4B9A-8214-E3C65519B1B8} = {027D3889-DAEC-4C56-B6A5-BD8530B6460D}
 		{108A6C76-1965-43E2-81E5-E112151A1F53} = {027D3889-DAEC-4C56-B6A5-BD8530B6460D}
 		{87144CB2-9FB9-4D40-8AF7-0B2D8EDF45D5} = {027D3889-DAEC-4C56-B6A5-BD8530B6460D}
+		{41D6744E-E569-4A4E-8D74-5B2AE607950C} = {0604E801-73E6-498A-808E-FC253D1B8F18}
+		{3FA89D78-5E6E-4F16-BCEC-5BE8894A73DB} = {41D6744E-E569-4A4E-8D74-5B2AE607950C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19DA1C0C-CABF-47AA-8DBE-E82809E9C597}
