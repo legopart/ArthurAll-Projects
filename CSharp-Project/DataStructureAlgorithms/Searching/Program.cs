@@ -19,6 +19,8 @@
             Console.WriteLine("TernarySearch.Search " + TernarySearch.Search(array, index));
             Console.WriteLine();
 
+            Console.WriteLine("JumpSearch.Search " + JumpSearch.Search(array, index));
+            Console.WriteLine();
         }
     }
 }

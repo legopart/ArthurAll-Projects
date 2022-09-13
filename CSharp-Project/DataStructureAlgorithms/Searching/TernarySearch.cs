@@ -21,8 +21,8 @@ namespace Searching
             if (array[mid1] == target) return mid1;
             else if (array[mid2] == target) return mid2;
             else if (target < array[mid1]) return Search(array, target, left, mid1 - 1);
-            else if (target < array[mid2]) return Search(array, target, mid1, mid2 - 1);
-            else return Search(array, target, mid2, right);
+            else if (target < array[mid2]) return Search(array, target, mid1 + 1, mid2 - 1);
+            else return Search(array, target, mid2 + 1, right);
         }
     }
 }
