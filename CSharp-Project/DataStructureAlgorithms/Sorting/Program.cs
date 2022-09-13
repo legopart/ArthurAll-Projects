@@ -45,6 +45,7 @@
             Console.WriteLine("BucketSort.Sort: " + String.Join(", ", array));
             Console.WriteLine();
 
+            //Heap sorting set inside trees
 
         }
     }
