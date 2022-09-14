@@ -12,12 +12,12 @@ import java.util.Stack;
 
 public class WeightedGraph { // Weighted
 	private class Node {
-		public String lable;
+		public String label;
 		public List<Edge> edges; // better Map
-		public Node(String lable) { this.lable = lable; edges = new ArrayList<>(); }
+		public Node(String lable) { this.label = lable; edges = new ArrayList<>(); }
 		public void addEdge(Node to, int weight) { edges.add(new Edge(this, to, weight)); }
 		@Override
-		public String toString() { return lable; }
+		public String toString() { return label; }
 	}
 	private class NodePriority {
 		public Node node;
@@ -42,7 +42,8 @@ public class WeightedGraph { // Weighted
 	private boolean isNull(Node node) { return node == null; }
 
 	private boolean isNull(Edge edge) { return edge == null; }
-
+	
+	public void addNode(Node node) { addNode(node.label); }
 	public void addNode(String lable) {
 		nodes.putIfAbsent(lable, new Node(lable));
 		// adjecencyList.putIfAbsent(node, new ArrayList<>());
@@ -54,7 +55,7 @@ public class WeightedGraph { // Weighted
 	 * adjecencyList.get(n).remove(node); adjecencyList.remove(node);
 	 * nodes.remove(node); }
 	 */
-
+	public void addEdge(Node from, Node to, Edge weight) { addEdge(from.label, to.label, weight.weight); }
 	public void addEdge(String from, String to, int weight) { // relationship
 		var fromNode = nodes.get(from);
 		var toNode = nodes.get(to);
@@ -106,7 +107,7 @@ public class WeightedGraph { // Weighted
 		    	previous = previousNodes.get(previous);
 		    }
 		    var path = new Path();
-		    while(!stack.isEmpty()) path.add(stack.pop().lable);
+		    while(!stack.isEmpty()) path.add(stack.pop().label);
 		    return path;
 	}
 	
@@ -128,6 +129,36 @@ public class WeightedGraph { // Weighted
 		}
 		return false;
 	}
+	
+    public WeightedGraph getMinimumSpanningTree() {
+        WeightedGraph tree = new WeightedGraph();
+        if (nodes.isEmpty()) return tree;
+        PriorityQueue<Edge> edges = new PriorityQueue<>( Comparator.comparingInt(e -> e.weight));
+        var startNode = nodes.values().iterator().next();
+        edges.addAll(startNode.edges);
+        tree.addNode(startNode.label);
+        
+        if (edges.isEmpty()) return tree;
+
+        
+        while (tree.nodes.size() < nodes.size()) {
+            var minEdge = edges.remove();
+            var nextNode = minEdge.to;
+            if ( tree.containsNode(nextNode.label)) continue;
+        	tree.addNode(nextNode);
+            tree.addEdge(minEdge.from, nextNode, minEdge);
+        	for (var edge : nextNode.edges)
+        		if(!tree.containsNode(edge.to))
+        			edges.add(edge);
+        }
+        
+        
+        return tree;
+    }
+    
+    public boolean containsNode(String label) { return nodes.containsKey(label); }
+    public boolean containsNode(Node node) { return nodes.containsKey(node.label); }
+    // להוסיף remove node
 	
 	@Override
 	public String toString() {

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace GraphUndirected
 {
@@ -12,18 +13,19 @@ namespace GraphUndirected
     { // Weighted
         private class Vertice   //Node
         {
-            public String Lable { get; private set; }
+            public String Label { get; private set; }
      /*!*/  public List<Edge> EdgeList { get; private set; } // better Map
-            public Vertice(String lable) { Lable = lable; EdgeList = new(); }
-     /*!*/  public void AddEdge(Vertice to, int weight) { EdgeList.Add(new Edge( to, weight)); }
-            public override String ToString() { return Lable; }
+            public Vertice(String lable) { Label = lable; EdgeList = new(); }
+     /*!*/  public void AddEdge(Vertice to, int weight) { EdgeList.Add(new Edge(this, to, weight)); }
+            public override String ToString() { return Label; }
         }
 
         private class Edge
         {
+            public Vertice From { get; private set; }
             public Vertice To { get; private set; }
             public int Weight { get; private set; }
-            public Edge(Vertice to, int weight) { To = to; Weight = weight; }
+            public Edge(Vertice from, Vertice to, int weight) { From = from; To = to; Weight = weight; }
             public override String ToString() { return "<" + Weight + ">" + To; } // A->B
         }
     /*   private class NodePriority
@@ -40,8 +42,10 @@ namespace GraphUndirected
 
         private bool IsNull(Vertice node) { return node == null; }
 
+        private void AddNode(Vertice node) { AddNode(node.Label); }
         public void AddNode(String lable) { Nodes.TryAdd(lable, new Vertice(lable)); }
 
+        private void AddEdge(Vertice from, Vertice to, Edge edge) { AddEdge(from.Label, to.Label, edge.Weight); }
         public void AddEdge(String fromString, String toString, int weight)
         { // relationship
             var from = Nodes?[fromString];
@@ -107,9 +111,64 @@ namespace GraphUndirected
         private List<String> ToList(Stack<Vertice> stack)
         {
             List<String> NodeList = new();
-            foreach (var node in stack) NodeList.Add(node.Lable);
+            foreach (var node in stack) NodeList.Add(node.Label);
             return NodeList;
         }
+
+
+
+
+        public bool HasCycle()
+        {
+            HashSet<Vertice> visited = new();
+            foreach (var node in  Nodes.Values)
+                if (!visited.Contains(node)
+                        && HasCycle(node, null, visited)) return true;
+            return false;
+        }
+
+        //לחזור !
+        private bool HasCycle(Vertice node, Vertice? parant, HashSet<Vertice> visited)
+        {
+            visited.Add(node);
+            foreach (var edge in node.EdgeList)
+            {
+                if (edge.To == parant) continue;
+                if (visited.Contains((edge.To))
+                        || HasCycle(edge.To, node, visited)) return true;
+            }
+            return false;
+        }
+
+        public WeightedGraph GetMinimumSpanningTree()
+        {
+            WeightedGraph tree = new WeightedGraph();
+            if (Nodes.Count == 0) return tree;
+            PriorityQueue<Edge, int> edges = new();
+            var startNode = Nodes.First().Value; //java: nodes.values().iterator().next();
+            foreach (var edge in startNode.EdgeList) edges.Enqueue(edge, edge.Weight);
+            tree.AddNode(startNode.Label);
+
+            if (edges.Count == 0) return tree;
+
+            while (tree.Nodes.Count < Nodes.Count)
+            {
+                var minEdge = edges.Dequeue();
+                var nextNode = minEdge.To;
+                if (tree.ContainsNode(nextNode.Label)) continue;
+                tree.AddNode(nextNode);
+                tree.AddEdge(minEdge.From, nextNode, minEdge);
+                foreach (var edge in nextNode.EdgeList)
+                    if (!tree.ContainsNode(edge.To))
+                        edges.Enqueue(edge, edge.Weight);
+            }
+            return tree;
+        }
+
+
+        public bool ContainsNode(String label) { return Nodes.ContainsKey(label); }
+        private bool ContainsNode(Vertice node) { return Nodes.ContainsKey(node.Label); }
+        // להוסיף remove node
 
         public override String ToString()
         {
