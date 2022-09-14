@@ -68,7 +68,7 @@ namespace GraphUndirected
             HashSet<Node> visited = new();
             PriorityQueue<NodePriority, int> queue = new ();
            //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
-            queue.EnqueueDequeue(new NodePriority(fromNode, 0), 0);  // only item in the queue
+            queue.Enqueue(new NodePriority(fromNode, 0), 0);  // only item in the queue
 
             distances[fromNode] = 0; // java: replace(,) // A 0
             while (queue.Count != 0)
@@ -96,10 +96,11 @@ namespace GraphUndirected
             Stack<Node> stack = new();
             stack.Push(toNode);
             var previous = previousNodes?[toNode];
-            while (!IsNull(previous!))
+            while (true) //!IsNull(previous!)
             {
                 stack.Push(previous!);
-                previous = previousNodes![previous!];
+                try { previous = previousNodes[previous]; }
+                catch (Exception) { break; } //previous = previousNodes.GetValueOrDefault(previous, null);
             }
             var path = new Path();
             while (stack.Count != 0) path.Add(stack.Pop().Lable);
@@ -113,7 +114,7 @@ namespace GraphUndirected
             foreach (var node in nodes.Values/* adjecencyList.keySet() */)
             {
                 var targets = node.EdgeList;// adjecencyList.get(source);
-                if (targets.Count != 0) str.Append(node + " is connected to " + targets + "\n");
+                if (targets.Count != 0) str.Append(node + " is connected to [" + String.Join(", ", targets) + "]\n");
             }
             return str.ToString();
         }

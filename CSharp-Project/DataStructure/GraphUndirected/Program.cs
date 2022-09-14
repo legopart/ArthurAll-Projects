@@ -10,7 +10,7 @@
             graph1.AddNode("B");
             graph1.AddNode("C");
             graph1.AddEdge("A", "B", 3);
-            //graph.AddEdge("A", "B", 2);	//TO FIX !!!
+            graph1.AddEdge("A", "B", 2);
             graph1.AddEdge("A", "C", 2);
             Console.WriteLine(graph1);
 
@@ -20,8 +20,10 @@
             graph.AddNode("C");
             graph.AddEdge("A", "B", 1);
             graph.AddEdge("B", "C", 2);
+
             graph.AddEdge("B", "C", 10);
-            var path = graph.GetShortestPath("A", "C");
+
+              var path = graph.GetShortestPath("A", "C");
             Console.WriteLine(path);
         }
     }

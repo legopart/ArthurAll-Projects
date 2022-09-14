@@ -8,9 +8,9 @@ namespace GraphUndirected
 {
     public class Path
     {
-        private List<String> Nodes { get; set; }
-        public Path() { Nodes = new(); }
-        public void Add(String node) { Nodes.Add(node); }
-        public override String ToString() { return Nodes.ToString() ?? ""; }
+        private List<String> NodeList { get; set; }
+        public Path() { NodeList = new(); }
+        public void Add(String node) { NodeList.Add(node); }
+        public override String ToString() { return String.Join(", ", NodeList); }
     }
 }
