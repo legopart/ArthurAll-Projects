@@ -19,7 +19,7 @@ public class Graph {
 	}
 	private Map<String, Node> nodes;
 	private Map<Node, List<Node>> adjecencyList;
-	public Graph () {
+	public Graph () {  
 		nodes = new HashMap<>();
 		adjecencyList = new HashMap<>();
 	}
