@@ -17,8 +17,8 @@ namespace Graph
             public override String ToString() { return Lable; }
         }
 
-        private Dictionary<String, Vertice> VerticeList { get; set; }
-        private Dictionary<Vertice, List<Vertice>> AdjecencyList { get; set; }
+        private Dictionary<String, Vertice> VerticeList { get; set; } //NodeList
+        private Dictionary<Vertice, List<Vertice>> AdjecencyList { get; set; } //EdgeList
         public Graph() { VerticeList = new(); AdjecencyList = new(); }
 
         private bool IsNull(Vertice node) { return node == null; }
@@ -33,7 +33,6 @@ namespace Graph
         {
             var node = VerticeList[label];
             if (IsNull(node)) return;
-            foreach (var key in AdjecencyList.Keys) AdjecencyList[key].Remove(node); //O(n) O(k)
             AdjecencyList.Remove(node);
             VerticeList.Remove(label);
         }
@@ -41,15 +40,92 @@ namespace Graph
         public void AddEdge(String fromString, String toString)
         {   //relationship from -> to
             try { AdjecencyList[VerticeList[fromString]].Add(VerticeList[toString]); }
-            catch (Exception) { throw new Exception(); }
+            catch (Exception) { throw new Exception(); }    //IsNull
         }
         public void RemoveEdge(String fromString, String toString)
         {   //remove from.to
             try { AdjecencyList[VerticeList[fromString]].Remove(VerticeList[toString]); }
-            catch (Exception) { return; }
+            catch (Exception) { return; }    //IsNull
         }
 
-        public bool HasCycle()  //לתקן
+        //Iteration
+        public void TraverseDepthFirsy(String rootString)
+        {
+            HashSet<Vertice> visited = new();
+            Stack<Vertice> stack = new();
+            var root = VerticeList?[rootString];
+            if (IsNull(root!)) return;
+            stack.Push(root!);   //Link
+            while (stack.Count != 0)
+            {
+                var node = stack.Pop(); //currernt
+                if (visited.Contains(node)) continue;
+                else visited.Add(node);
+                Console.Write(node + " ");
+                foreach (var neighbour in AdjecencyList[node])   //Links
+                    if (!visited.Contains(neighbour)) stack.Push(neighbour);
+            }
+        }
+
+        public void TraverseBreadthFirsy(String rootString)
+        {
+            HashSet<Vertice> visited = new();
+            Queue<Vertice> queue = new();
+            var root = VerticeList?[rootString];
+            if (IsNull(root!)) return;
+            queue.Enqueue(root!);   //Link
+            while (queue.Count != 0)
+            {
+                var node = queue.Dequeue(); //currernt
+                if (visited.Contains(node)) continue;
+                else visited.Add(node);
+                Console.Write(node + " ");
+                foreach (var neighbour in AdjecencyList[node])   //Links
+                    if (!visited.Contains(neighbour)) queue.Enqueue(neighbour);
+            }
+        }
+
+
+        public void TraverseDepthFirsy_recursion(String rootString)
+        {
+            try 
+            {
+                Vertice root = VerticeList[rootString];
+                TraverseDepthFirsy_recursion(root, new());
+                Console.WriteLine();
+            } catch (Exception) { return; }
+        }
+        private void TraverseDepthFirsy_recursion(Vertice node, HashSet<Vertice> visited)
+        {
+            Console.Write(node + " ");
+            visited.Add(node);
+            foreach (var neighbour in AdjecencyList[node])
+                if (!visited.Contains(neighbour)) TraverseDepthFirsy_recursion(neighbour, visited);
+        }
+
+
+
+
+        public List<String> TopologicalSort()  //לחזור 
+        {
+            Stack<Vertice> stack = new();
+            HashSet<Vertice> visited = new();
+            foreach (var node in VerticeList.Values) TopologicalSort(node, visited, stack);
+            List<String> sortedList = new();
+            while (stack.Count != 0) sortedList.Add(stack.Pop().Lable);
+            return sortedList;
+        }
+        private void TopologicalSort(Vertice node, HashSet<Vertice> visited, Stack<Vertice> stack)
+        {
+            if (visited.Contains(node)) return;
+            visited.Add(node);
+            foreach (var neighbour in AdjecencyList[node])
+                TopologicalSort(neighbour, visited, stack);
+            stack.Push(node);
+        }
+
+
+        public bool HasCycle()  //לחזור ולתקן
         {
             HashSet<Vertice> all = new();
             all.UnionWith(VerticeList.Values); //A.Concat(B).ToHashSet()
@@ -74,73 +150,7 @@ namespace Graph
             return false;
         }
 
-        public List<String> TopologicalSort()
-        {
-            Stack<Vertice> stack = new();
-            HashSet<Vertice> visited = new();
-            foreach (var node in VerticeList.Values) TopologicalSort(node, visited, stack);
-            List<String> sortedList = new();
-            while (stack.Count != 0) sortedList.Add(stack.Pop().Lable);
-            return sortedList;
-        }
-        private void TopologicalSort(Vertice node, HashSet<Vertice> visited, Stack<Vertice> stack)
-        {
-            if (visited.Contains(node)) return;
-            visited.Add(node);
-            foreach (var neighbour in AdjecencyList[node])
-                TopologicalSort(neighbour, visited, stack);
-            stack.Push(node);
-        }
 
-        public void TraverseBreadthFirsy(String rootString)
-        {
-            var node = VerticeList[rootString];
-            if (IsNull(node)) return;
-            HashSet<Vertice> visited = new();
-            Queue<Vertice> queue = new();
-            queue.Enqueue(node);
-            while (queue.Count != 0)
-            {
-                var current = queue.Dequeue();
-                if (visited.Contains(current)) continue;
-                visited.Add(current);
-                Console.Write(current + " ");
-                foreach (var neighbour in AdjecencyList[current]) if (!visited.Contains(neighbour)) queue.Enqueue(neighbour);
-            }
-        }
-
-        //Iteration
-        public void TraverseDepthFirsy(String rootString)
-        {
-            var node = VerticeList[rootString];
-            if (IsNull(node)) return;
-            HashSet<Vertice> visited = new();
-            Stack<Vertice> stack = new();
-            stack.Push(node);
-            while (stack.Count != 0)
-            {
-                var current = stack.Pop();
-                if (visited.Contains(current)) continue;
-                visited.Add(current);
-                Console.Write(current + " ");
-                foreach (var neighbour in AdjecencyList[current]) if (!visited.Contains(neighbour)) stack.Push(neighbour);
-            }
-        }
-
-        public void TraverseDepthFirsy_recursion(String rootString)
-        {
-            Vertice? node = VerticeList!.GetValueOrDefault(rootString, null);
-            if (IsNull(node!)) return;
-            traverseDepthFirsy_recursion(node!, new());
-            Console.WriteLine();
-        }
-        private void traverseDepthFirsy_recursion(Vertice root, HashSet<Vertice> visited)
-        {
-            Console.Write(root + " ");
-            visited.Add(root);
-            foreach (var node in AdjecencyList[root])
-                if (!visited.Contains(node)) traverseDepthFirsy_recursion(node, visited);
-        }
 
         public override String ToString()
         {
