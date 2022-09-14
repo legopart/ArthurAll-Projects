@@ -18,8 +18,8 @@ namespace Graph
         }
 
         private Dictionary<String, Vertice> VerticeList { get; set; } //NodeList
-        private Dictionary<Vertice, List<Vertice>> AdjecencyList { get; set; } //EdgeList
-        public Graph() { VerticeList = new(); AdjecencyList = new(); }
+        private Dictionary<Vertice, List<Vertice>> EdgeList { get; set; } //AdjecencyList
+        public Graph() { VerticeList = new(); EdgeList = new(); }
 
         private bool IsNull(Vertice node) { return node == null; }
 
@@ -27,24 +27,24 @@ namespace Graph
         {
             VerticeList.TryAdd(label, new Vertice(label));
             var node = VerticeList[label];
-            AdjecencyList.TryAdd(node, new());  //new List
+            EdgeList.TryAdd(node, new());  //new List
         }
         public void RemoveNode(String label)
         {
             var node = VerticeList[label];
             if (IsNull(node)) return;
-            AdjecencyList.Remove(node);
+            EdgeList.Remove(node);
             VerticeList.Remove(label);
         }
 
         public void AddEdge(String fromString, String toString)
         {   //relationship from -> to
-            try { AdjecencyList[VerticeList[fromString]].Add(VerticeList[toString]); }
+            try { EdgeList[VerticeList[fromString]].Add(VerticeList[toString]); }
             catch (Exception) { throw new Exception(); }    //IsNull
         }
         public void RemoveEdge(String fromString, String toString)
         {   //remove from.to
-            try { AdjecencyList[VerticeList[fromString]].Remove(VerticeList[toString]); }
+            try { EdgeList[VerticeList[fromString]].Remove(VerticeList[toString]); }
             catch (Exception) { return; }    //IsNull
         }
 
@@ -62,7 +62,7 @@ namespace Graph
                 if (visited.Contains(node)) continue;
                 else visited.Add(node);
                 Console.Write(node + " ");
-                foreach (var neighbour in AdjecencyList[node])   //Links
+                foreach (var neighbour in EdgeList[node])   //Links
                     if (!visited.Contains(neighbour)) stack.Push(neighbour);
             }
         }
@@ -80,7 +80,7 @@ namespace Graph
                 if (visited.Contains(node)) continue;
                 else visited.Add(node);
                 Console.Write(node + " ");
-                foreach (var neighbour in AdjecencyList[node])   //Links
+                foreach (var neighbour in EdgeList[node])   //Links
                     if (!visited.Contains(neighbour)) queue.Enqueue(neighbour);
             }
         }
@@ -99,7 +99,7 @@ namespace Graph
         {
             Console.Write(node + " ");
             visited.Add(node);
-            foreach (var neighbour in AdjecencyList[node])
+            foreach (var neighbour in EdgeList[node])
                 if (!visited.Contains(neighbour)) TraverseDepthFirsy_recursion(neighbour, visited);
         }
 
@@ -119,7 +119,7 @@ namespace Graph
         {
             if (visited.Contains(node)) return;
             visited.Add(node);
-            foreach (var neighbour in AdjecencyList[node])
+            foreach (var neighbour in EdgeList[node])
                 TopologicalSort(neighbour, visited, stack);
             stack.Push(node);
         }
@@ -139,7 +139,7 @@ namespace Graph
         {
             all.Remove(node);
             visiting.Add(node);
-            foreach (var neighbour in AdjecencyList[node])
+            foreach (var neighbour in EdgeList[node])
             {
                 if (visited.Contains(neighbour)) continue;
                 if (visiting.Contains(neighbour)) return true;
@@ -151,13 +151,12 @@ namespace Graph
         }
 
 
-
         public override String ToString()
         {
             String str = "";
-            foreach (var source in AdjecencyList.Keys)
+            foreach (var source in EdgeList.Keys)
             {
-                var targets = AdjecencyList[source];
+                var targets = EdgeList[source];
                 if (targets.Count != 0) str += source + " is connected to [" + String.Join(", ", targets) + "]\n";
             }
             return str;

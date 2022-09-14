@@ -13,21 +13,19 @@ namespace GraphUndirected
         private class Vertice   //Node
         {
             public String Lable { get; private set; }
-            public List<Edge> EdgeList { get; private set; } // better Map
-
+     /*!*/  public List<Edge> EdgeList { get; private set; } // better Map
             public Vertice(String lable) { Lable = lable; EdgeList = new(); }
-
-            public void AddEdge(Vertice to, int weight) { EdgeList.Add(new Edge(this, to, weight)); } //
+     /*!*/  public void AddEdge(Vertice to, int weight) { EdgeList.Add(new Edge(/*this,*/ to, weight)); } //
             public override String ToString() { return Lable; }
         }
 
         private class Edge
         {
-            public Vertice From { get; private set; }
+           // public Vertice From { get; private set; }
             public Vertice To { get; private set; }
             public int Weight { get; private set; }
-            public Edge(Vertice from, Vertice to, int weight) { From = from; To = to; Weight = weight; }
-            public override String ToString() { return From + " " + Weight + "> " + To; } // A->B
+            public Edge(/*Vertice from,*/ Vertice to, int weight) { /*From = from;*/ To = to; Weight = weight; }
+            public override String ToString() { return /*From +*/ "<" + Weight + ">" + To; } // A->B
         }
 /*        private class NodePriority
         {
@@ -40,7 +38,7 @@ namespace GraphUndirected
         private Dictionary<String, Vertice> nodes;
 
         /// private Map<Node, List<Edge>> adjecencyList;
-        public WeightedGraph() { nodes = new(); } // adjecencyList = new HashMap<>();
+        public WeightedGraph() { nodes = new(); }
 
         private bool IsNull(Vertice node) { return node == null; }
 
@@ -62,6 +60,7 @@ namespace GraphUndirected
             var fromNode = nodes?[fromString];
             var toNode = nodes?[toString];
             if (IsNull(fromNode!) || IsNull(toNode!)) throw new Exception();
+
             Dictionary<Vertice, int> distances = new();
             foreach (var node in nodes!.Values) distances.Add(node, int.MaxValue);
             Dictionary<Vertice, Vertice> previousNodes = new();
@@ -102,8 +101,13 @@ namespace GraphUndirected
                 try { previous = previousNodes![previous!]; }
                 catch (Exception) { break; } //previous = previousNodes.GetValueOrDefault(previous, null);
             }
+            return ToList(stack);
+        }
+
+        private List<String> ToList(Stack<Vertice> stack)
+        {
             List<String> NodeList = new();
-            foreach(var node in stack) NodeList.Add(node.Lable);
+            foreach (var node in stack) NodeList.Add(node.Lable);
             return NodeList;
         }
 
