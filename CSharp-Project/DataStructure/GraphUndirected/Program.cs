@@ -24,7 +24,7 @@
             graph.AddEdge("B", "C", 10);
 
               var path = graph.GetShortestPath("A", "C");
-            Console.WriteLine(path);
+            Console.WriteLine(String.Join(", ", path));
         }
     }
 }
