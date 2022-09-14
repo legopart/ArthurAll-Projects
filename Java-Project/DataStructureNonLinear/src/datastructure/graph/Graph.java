@@ -13,9 +13,7 @@ import java.util.Stack;
 public class Graph {
 	private class Node{
 		public String lable;
-		public Node(String lable) {
-			this.lable = lable;
-		}
+		public Node(String lable) { this.lable = lable; }
 		@Override
 		public String toString() { return lable; }
 	}
