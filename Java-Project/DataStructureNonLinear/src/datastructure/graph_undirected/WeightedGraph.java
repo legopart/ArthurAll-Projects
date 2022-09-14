@@ -12,60 +12,36 @@ import java.util.Stack;
 
 public class WeightedGraph { // Weighted
 	private class Node {
-		private String lable;
-		private List<Edge> edges; // better Map
-
-		public Node(String lable) {
-			this.lable = lable;
-			edges = new ArrayList<>();
-		}
-
-		public void addEdge(Node to, int weight) {
-			edges.add(new Edge(this, to, weight)); //
-		}
-
-		public List<Edge> getEdges() {
-			return edges;
-		}
-
+		public String lable;
+		public List<Edge> edges; // better Map
+		public Node(String lable) { this.lable = lable; edges = new ArrayList<>(); }
+		public void addEdge(Node to, int weight) { edges.add(new Edge(this, to, weight)); }
 		@Override
-		public String toString() {
-			return lable;
-		}
+		public String toString() { return lable; }
+	}
+	private class NodePriority {
+		public Node node;
+		public int priority;
+		public NodePriority(Node node, int priority) { this.node = node; this.priority = priority; }
 	}
 
 	private class Edge {
-		private Node from;
-		private Node to;
-		private int weight;
-
-		public Edge(Node from, Node to, int weight) {
-			this.from = from;
-			this.to = to;
-			this.weight = weight;
-		}
-
+		public Node from;
+		public Node to;
+		public int weight;
+		public Edge(Node from, Node to, int weight) { this.from = from; this.to = to; this.weight = weight; }
 		@Override
-		public String toString() {
-			return from + " " + weight + "> " + to;
-		} // A->B
+		public String toString() { return from + " " + weight + "> " + to; } // A->B
 	}
 
 	private Map<String, Node> nodes;
 
 	/// private Map<Node, List<Edge>> adjecencyList;
-	public WeightedGraph() {
-		nodes = new HashMap<>();
-		// adjecencyList = new HashMap<>();
-	}
+	public WeightedGraph() { nodes = new HashMap<>(); } // adjecencyList = new HashMap<>();
 
-	private boolean isNull(Node node) {
-		return node == null;
-	}
+	private boolean isNull(Node node) { return node == null; }
 
-	private boolean isNull(Edge edge) {
-		return edge == null;
-	}
+	private boolean isNull(Edge edge) { return edge == null; }
 
 	public void addNode(String lable) {
 		nodes.putIfAbsent(lable, new Node(lable));
@@ -90,16 +66,6 @@ public class WeightedGraph { // Weighted
 		/// *!*/adjecencyList.get(toNode).add(new Edge(toNode, fromNode, weight));
 	}
 
-	private class NodeEntry {
-		private Node node;
-		private int priority;
-
-		public NodeEntry(Node node, int priority) {
-			this.node = node;
-			this.priority = priority;
-		}
-	}
-
 	public Path getShortestPath(String from, String to) {
 		var fromNode = nodes.get(from);
 		var toNode = nodes.get(to);
@@ -109,32 +75,29 @@ public class WeightedGraph { // Weighted
 		for (var node : nodes.values()) distances.put(node, Integer.MAX_VALUE);
 		Map<Node, Node> previousNodes = new HashMap<>();
 		Set<Node> visited = new HashSet<>();
-	    PriorityQueue<NodeEntry> queue = new PriorityQueue<>( Comparator.comparingInt(ne -> ne.priority));
+	    PriorityQueue<NodePriority> queue = new PriorityQueue<>( Comparator.comparingInt(ne -> ne.priority));
 	    			//queue, PriorityQueue with  Comparator
-	    queue.add(new NodeEntry(fromNode, 0));	// only item in the queue
+	    queue.add(new NodePriority(fromNode, 0));	// only item in the queue
 
 		distances.replace(fromNode, 0); // A 0
 	    while (!queue.isEmpty()) { 
 	    	var current = queue.remove().node;
 	    	visited.add(current);
 
-	    	for (var edge : current.getEdges()) {
+	    	for (var edge : current.edges) {
 	    		if (visited.contains(edge.to)) continue;
 	    		var newDistance = distances.get(current) + edge.weight;
 		        if (newDistance < distances.get(edge.to)) {
 		          distances.replace(edge.to, newDistance);
 		          previousNodes.put(edge.to, current);
-		          queue.add(new NodeEntry(edge.to, newDistance));
+		          queue.add(new NodePriority(edge.to, newDistance));
 		        }
 	    	}
-	    	
 	    }
-	    
-	    
 	    //return distances.get(toNode);
 	    return buildPath(previousNodes,toNode);
 	}
-	  private Path buildPath(Map<Node, Node> previousNodes, Node toNode){
+	private Path buildPath(Map<Node, Node> previousNodes, Node toNode){
 		    Stack<Node> stack = new Stack<>();
 		    stack.push(toNode);
 		    var previous = previousNodes.get(toNode);
@@ -145,17 +108,15 @@ public class WeightedGraph { // Weighted
 		    var path = new Path();
 		    while(!stack.isEmpty()) path.add(stack.pop().lable);
 		    return path;
-	  }
-	
+	}
 	@Override
 	public String toString() {
 		String str = "";
 		for (var node : nodes.values()/* adjecencyList.keySet() */) {
-			var targets = node.getEdges();// adjecencyList.get(source);
+			var targets = node.edges;// adjecencyList.get(source);
 			if (!targets.isEmpty())
 				str += node + " is connected to " + targets + "\n";
 		}
 		return str;
 	}
-
 }
