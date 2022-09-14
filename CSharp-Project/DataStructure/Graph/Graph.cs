@@ -9,25 +9,26 @@ namespace Graph
 {
     public class Graph
     {
-        private class Node
+        private class Vertice //Node
         {
             public String Lable { get; private set; }
-            public Node(String lable) { this.Lable = lable; }
+            public Vertice(String lable) { this.Lable = lable; }
             public override String ToString() { return Lable; }
         }
-        private Dictionary<String, Node> nodes;
-        private Dictionary<Node, List<Node>> adjecencyList;
+
+        private Dictionary<String, Vertice> nodes;
+        private Dictionary<Vertice, List<Vertice>> adjecencyList;
         public Graph()
         {
             nodes = new();
             adjecencyList = new();
         }
 
-        private bool IsNull(Node node) { return node == null; }
+        private bool IsNull(Vertice node) { return node == null; }
 
         public void AddNode(String lable)
         {
-            var node = new Node(lable);
+            var node = new Vertice(lable);
             nodes.TryAdd(lable, node);
             adjecencyList.TryAdd(node, new());
         }
@@ -42,16 +43,16 @@ namespace Graph
 
         public void AddEdge(String from, String to)
         {   //relationship
-            Node? fromNode = nodes!.GetValueOrDefault(from, null);
-            Node? toNode = nodes!.GetValueOrDefault(to, null);
+            Vertice? fromNode = nodes!.GetValueOrDefault(from, null);
+            Vertice? toNode = nodes!.GetValueOrDefault(to, null);
             if (IsNull(fromNode!) || IsNull(toNode!)) throw new Exception();
             adjecencyList[fromNode!].Add(toNode!);
             //bidirectional graph: adjecenccyList.get(toNode).add(fromNode);
         }
         public void RemoveEdge(String from, String to)
         {
-            Node? fromNode = nodes!.GetValueOrDefault(from, null);
-            Node? toNode = nodes!.GetValueOrDefault(to, null);
+            Vertice? fromNode = nodes!.GetValueOrDefault(from, null);
+            Vertice? toNode = nodes!.GetValueOrDefault(to, null);
             if (IsNull(fromNode!) || IsNull(toNode!)) return;
             adjecencyList[fromNode!].Remove(toNode!);
             //adjecenccyList.get(toNode).remove(fromNode);
@@ -59,15 +60,15 @@ namespace Graph
 
         public bool HasCycle()  //לתקן
         {
-            HashSet<Node> all = new();
+            HashSet<Vertice> all = new();
             all.UnionWith(nodes.Values); //A.Concat(B).ToHashSet()
-            HashSet<Node> visiting = new();
-            HashSet<Node> visited = new();
+            HashSet<Vertice> visiting = new();
+            HashSet<Vertice> visited = new();
             foreach(var current in all)  if (HasCycle(current, all, visiting, visited)) return true; ;
             
             return false;
         }
-        private bool HasCycle(Node node, HashSet<Node> all, HashSet<Node> visiting, HashSet<Node> visited)
+        private bool HasCycle(Vertice node, HashSet<Vertice> all, HashSet<Vertice> visiting, HashSet<Vertice> visited)
         {
             all.Remove(node);
             visiting.Add(node);
@@ -84,14 +85,14 @@ namespace Graph
 
         public List<String> TopologicalSort()
         {
-            Stack<Node> stack = new();
-            HashSet<Node> visited = new();
+            Stack<Vertice> stack = new();
+            HashSet<Vertice> visited = new();
             foreach (var node in nodes.Values) TopologicalSort(node, visited, stack);
             List<String> sortedList = new();
             while (stack.Count != 0) sortedList.Add(stack.Pop().Lable);
             return sortedList;
         }
-        private void TopologicalSort(Node node, HashSet<Node> visited, Stack<Node> stack)
+        private void TopologicalSort(Vertice node, HashSet<Vertice> visited, Stack<Vertice> stack)
         {
             if (visited.Contains(node)) return;
             visited.Add(node);
@@ -104,8 +105,8 @@ namespace Graph
         {
             var node = nodes[rootString];
             if (IsNull(node)) return;
-            HashSet<Node> visited = new();
-            Queue<Node> queue = new();
+            HashSet<Vertice> visited = new();
+            Queue<Vertice> queue = new();
             queue.Enqueue(node);
             while (queue.Count != 0)
             {
@@ -122,8 +123,8 @@ namespace Graph
         {
             var node = nodes[rootString];
             if (IsNull(node)) return;
-            HashSet<Node> visited = new();
-            Stack<Node> stack = new();
+            HashSet<Vertice> visited = new();
+            Stack<Vertice> stack = new();
             stack.Push(node);
             while (stack.Count != 0)
             {
@@ -138,12 +139,12 @@ namespace Graph
 
         public void TraverseDepthFirsy_recursion(String rootString)
         {
-            Node? node = nodes!.GetValueOrDefault(rootString, null);
+            Vertice? node = nodes!.GetValueOrDefault(rootString, null);
             if (IsNull(node!)) return;
             traverseDepthFirsy_recursion(node!, new());
             Console.WriteLine();
         }
-        private void traverseDepthFirsy_recursion(Node root, HashSet<Node> visited)
+        private void traverseDepthFirsy_recursion(Vertice root, HashSet<Vertice> visited)
         {
             Console.Write(root + " ");
             visited.Add(root);
