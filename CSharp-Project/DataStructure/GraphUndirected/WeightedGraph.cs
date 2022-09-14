@@ -70,7 +70,6 @@ namespace GraphUndirected
             PriorityQueue<Vertice, int> queue = new (); //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
             queue.Enqueue(from!, 0);  // only item in the queue
 
-            
             while (queue.Count != 0)
             {
                 var current = queue.Dequeue();
