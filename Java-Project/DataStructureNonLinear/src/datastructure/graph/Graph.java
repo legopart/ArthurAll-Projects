@@ -12,7 +12,7 @@ import java.util.Stack;
 
 public class Graph {
 	private class Node{
-		private String lable;
+		public String lable;
 		public Node(String lable) {
 			this.lable = lable;
 		}
