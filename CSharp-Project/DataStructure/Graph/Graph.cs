@@ -19,11 +19,7 @@ namespace Graph
 
         private Dictionary<String, Vertice> VerticeList { get; set; }
         private Dictionary<Vertice, List<Vertice>> AdjecencyList { get; set; }
-        public Graph()
-        {
-            VerticeList = new();
-            AdjecencyList = new();
-        }
+        public Graph() { VerticeList = new(); AdjecencyList = new(); }
 
         private bool IsNull(Vertice node) { return node == null; }
 
