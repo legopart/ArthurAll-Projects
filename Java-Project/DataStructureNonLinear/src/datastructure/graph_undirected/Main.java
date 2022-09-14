@@ -18,9 +18,13 @@ public class Main {
 		graph.addNode("C");
 		graph.addEdge("A", "B", 1);
 		graph.addEdge("B", "C", 2);
-		graph.addEdge("B", "C", 10);
+		//graph.addEdge("B", "C", 10);	//לתקן !!!
 		var path = graph.getShortestPath("A", "C");
 		System.out.println(path);
+		System.out.println(graph.hasCycle());
+		graph.addEdge("C", "A", 10);
+		System.out.println(graph.hasCycle());
+		
 	}
 
 }

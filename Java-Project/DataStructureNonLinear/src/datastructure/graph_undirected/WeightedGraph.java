@@ -109,6 +109,26 @@ public class WeightedGraph { // Weighted
 		    while(!stack.isEmpty()) path.add(stack.pop().lable);
 		    return path;
 	}
+	
+	public boolean hasCycle() {
+		Set<Node> visited = new HashSet<>();
+		for(var node: nodes.values()) 
+			if(!visited.contains(node) 
+					&& hasCycle(node, null, visited)) return true;
+		return false;
+	}
+	
+	//לחזור !
+	private boolean hasCycle(Node node, Node parant, Set<Node> visited) {
+		visited.add(node);
+		for (var edge : node.edges) {
+			if(edge.to == parant) continue;
+			if( visited.contains((edge.to)) 
+					|| hasCycle(edge.to, node, visited) ) return true;
+		}
+		return false;
+	}
+	
 	@Override
 	public String toString() {
 		String str = "";

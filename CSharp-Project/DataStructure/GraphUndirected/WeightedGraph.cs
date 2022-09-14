@@ -15,39 +15,37 @@ namespace GraphUndirected
             public String Lable { get; private set; }
      /*!*/  public List<Edge> EdgeList { get; private set; } // better Map
             public Vertice(String lable) { Lable = lable; EdgeList = new(); }
-     /*!*/  public void AddEdge(Vertice to, int weight) { EdgeList.Add(new Edge(/*this,*/ to, weight)); } //
+     /*!*/  public void AddEdge(Vertice to, int weight) { EdgeList.Add(new Edge( to, weight)); }
             public override String ToString() { return Lable; }
         }
 
         private class Edge
         {
-           // public Vertice From { get; private set; }
             public Vertice To { get; private set; }
             public int Weight { get; private set; }
-            public Edge(/*Vertice from,*/ Vertice to, int weight) { /*From = from;*/ To = to; Weight = weight; }
-            public override String ToString() { return /*From +*/ "<" + Weight + ">" + To; } // A->B
+            public Edge(Vertice to, int weight) { To = to; Weight = weight; }
+            public override String ToString() { return "<" + Weight + ">" + To; } // A->B
         }
-/*        private class NodePriority
-        {
+    /*   private class NodePriority
+         {
             public Vertice Node { get; set; }
             public int Priority { get; set; }
             public NodePriority(Vertice node, int priority) { Node = node; Priority = priority; }
-        }
-*/
+         }*/
 
-        private Dictionary<String, Vertice> nodes;
-
-        /// private Map<Node, List<Edge>> adjecencyList;
-        public WeightedGraph() { nodes = new(); }
+        private Dictionary<String, Vertice> Nodes { get; set; }
+        // private Map<Node, List<Edge>> adjecencyList;
+        
+        public WeightedGraph() { Nodes = new(); }
 
         private bool IsNull(Vertice node) { return node == null; }
 
-        public void AddNode(String lable) { nodes.TryAdd(lable, new Vertice(lable)); }
+        public void AddNode(String lable) { Nodes.TryAdd(lable, new Vertice(lable)); }
 
         public void AddEdge(String fromString, String toString, int weight)
         { // relationship
-            var from = nodes?[fromString];
-            var to = nodes?[toString];
+            var from = Nodes?[fromString];
+            var to = Nodes?[toString];
             if (IsNull(from!) || IsNull(to!)) throw new Exception();
             from!.AddEdge(to!, weight);
             to!.AddEdge(from!, weight);
@@ -57,19 +55,22 @@ namespace GraphUndirected
 
         public List<String> GetShortestPath(String fromString, String toString)
         {
-            var fromNode = nodes?[fromString];
-            var toNode = nodes?[toString];
-            if (IsNull(fromNode!) || IsNull(toNode!)) throw new Exception();
+            var from = Nodes?[fromString];
+            var to = Nodes?[toString];
+            if (IsNull(from!) || IsNull(to!)) throw new Exception();
 
             Dictionary<Vertice, int> distances = new();
-            foreach (var node in nodes!.Values) distances.Add(node, int.MaxValue);
-            Dictionary<Vertice, Vertice> previousNodes = new();
-            HashSet<Vertice> visited = new();
-            PriorityQueue<Vertice, int> queue = new ();
-           //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
-            queue.Enqueue(fromNode!, 0);  // only item in the queue
+            foreach (var node in Nodes!.Values) distances.Add(node, int.MaxValue);
+            distances[from!] = 0; // java: replace(,) // A 0
 
-            distances[fromNode] = 0; // java: replace(,) // A 0
+            Dictionary<Vertice, Vertice> previousNodes = new();
+
+            HashSet<Vertice> visited = new();
+
+            PriorityQueue<Vertice, int> queue = new (); //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
+            queue.Enqueue(from!, 0);  // only item in the queue
+
+            
             while (queue.Count != 0)
             {
                 var current = queue.Dequeue();
@@ -78,7 +79,7 @@ namespace GraphUndirected
                 foreach (var edge in current.EdgeList)
                 {
                     if (visited.Contains(edge.To)) continue;
-                    var newDistance = distances[current] + edge.Weight;
+            /*!*/   var newDistance = distances[current] + edge.Weight;
                     if (newDistance < distances[edge.To])
                     {
                         distances[edge.To] = newDistance; // java: replace(,)
@@ -88,7 +89,7 @@ namespace GraphUndirected
                 }
             }
             //return distances.get(toNode);
-            return buildPath(previousNodes, toNode!);
+            return buildPath(previousNodes, to!);
         }
         private List<String> buildPath(Dictionary<Vertice, Vertice> previousNodes, Vertice toNode)
         {
@@ -114,7 +115,7 @@ namespace GraphUndirected
         public override String ToString()
         {
             StringBuilder str = new("");
-            foreach (var node in nodes.Values/* adjecencyList.keySet() */)
+            foreach (var node in Nodes.Values/* adjecencyList.keySet() */)
             {
                 var targets = node.EdgeList;// adjecencyList.get(source);
                 if (targets.Count != 0) str.Append(node + " is connected to [" + String.Join(", ", targets) + "]\n");
