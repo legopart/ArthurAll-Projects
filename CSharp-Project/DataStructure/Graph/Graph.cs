@@ -13,7 +13,7 @@ namespace Graph
         private class Vertice //Node
         {
             public String Lable { get; private set; }
-            public Vertice(String lable) { this.Lable = lable; }
+            public Vertice(String lable) { Lable = lable; }
             public override String ToString() { return Lable; }
         }
 
