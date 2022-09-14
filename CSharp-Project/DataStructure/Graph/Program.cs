@@ -22,6 +22,7 @@ namespace Graph
             // graph1.AddEdge("C", "W"); //fail edge
             graph1.AddNode("W");
             graph1.AddEdge("W", "C");
+            graph1.AddEdge("C", "W");
             Console.WriteLine(graph1);
             Console.WriteLine("");
 

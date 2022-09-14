@@ -17,6 +17,9 @@ public class Main {
 		graph1.removeNode("B");
 		graph1.removeNode("A");
 		graph1.addEdge("C", "D");
+		graph1.addNode("W");
+        graph1.addEdge("W", "C");
+        graph1.addEdge("C", "W");
 		System.out.println(graph1);
 		System.out.println("");
 		

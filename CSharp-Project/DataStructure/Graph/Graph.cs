@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,52 +17,46 @@ namespace Graph
             public override String ToString() { return Lable; }
         }
 
-        private Dictionary<String, Vertice> nodes;
-        private Dictionary<Vertice, List<Vertice>> adjecencyList;
+        private Dictionary<String, Vertice> VerticeList { get; set; }
+        private Dictionary<Vertice, List<Vertice>> AdjecencyList { get; set; }
         public Graph()
         {
-            nodes = new();
-            adjecencyList = new();
+            VerticeList = new();
+            AdjecencyList = new();
         }
 
         private bool IsNull(Vertice node) { return node == null; }
 
-        public void AddNode(String lable)
+        public void AddNode(String label)
         {
-            var node = new Vertice(lable);
-            nodes.TryAdd(lable, node);
-            adjecencyList.TryAdd(node, new());
+            VerticeList.TryAdd(label, new Vertice(label));
+            var node = VerticeList[label];
+            AdjecencyList.TryAdd(node, new());  //new List
         }
         public void RemoveNode(String label)
         {
-            var node = nodes[label];
+            var node = VerticeList[label];
             if (IsNull(node)) return;
-            foreach (var n in adjecencyList.Keys) adjecencyList[n].Remove(node);
-            adjecencyList.Remove(node);
-            nodes.Remove(label);
+            foreach (var key in AdjecencyList.Keys) AdjecencyList[key].Remove(node); //O(n) O(k)
+            AdjecencyList.Remove(node);
+            VerticeList.Remove(label);
         }
 
-        public void AddEdge(String from, String to)
-        {   //relationship
-            Vertice? fromNode = nodes!.GetValueOrDefault(from, null);
-            Vertice? toNode = nodes!.GetValueOrDefault(to, null);
-            if (IsNull(fromNode!) || IsNull(toNode!)) throw new Exception();
-            adjecencyList[fromNode!].Add(toNode!);
-            //bidirectional graph: adjecenccyList.get(toNode).add(fromNode);
+        public void AddEdge(String fromString, String toString)
+        {   //relationship from -> to
+            try { AdjecencyList[VerticeList[fromString]].Add(VerticeList[toString]); }
+            catch (Exception) { throw new Exception(); }
         }
-        public void RemoveEdge(String from, String to)
-        {
-            Vertice? fromNode = nodes!.GetValueOrDefault(from, null);
-            Vertice? toNode = nodes!.GetValueOrDefault(to, null);
-            if (IsNull(fromNode!) || IsNull(toNode!)) return;
-            adjecencyList[fromNode!].Remove(toNode!);
-            //adjecenccyList.get(toNode).remove(fromNode);
+        public void RemoveEdge(String fromString, String toString)
+        {   //remove from.to
+            try { AdjecencyList[VerticeList[fromString]].Remove(VerticeList[toString]); }
+            catch (Exception) { return; }
         }
 
         public bool HasCycle()  //לתקן
         {
             HashSet<Vertice> all = new();
-            all.UnionWith(nodes.Values); //A.Concat(B).ToHashSet()
+            all.UnionWith(VerticeList.Values); //A.Concat(B).ToHashSet()
             HashSet<Vertice> visiting = new();
             HashSet<Vertice> visited = new();
             foreach(var current in all)  if (HasCycle(current, all, visiting, visited)) return true; ;
@@ -72,7 +67,7 @@ namespace Graph
         {
             all.Remove(node);
             visiting.Add(node);
-            foreach (var neighbour in adjecencyList[node])
+            foreach (var neighbour in AdjecencyList[node])
             {
                 if (visited.Contains(neighbour)) continue;
                 if (visiting.Contains(neighbour)) return true;
@@ -87,7 +82,7 @@ namespace Graph
         {
             Stack<Vertice> stack = new();
             HashSet<Vertice> visited = new();
-            foreach (var node in nodes.Values) TopologicalSort(node, visited, stack);
+            foreach (var node in VerticeList.Values) TopologicalSort(node, visited, stack);
             List<String> sortedList = new();
             while (stack.Count != 0) sortedList.Add(stack.Pop().Lable);
             return sortedList;
@@ -96,14 +91,14 @@ namespace Graph
         {
             if (visited.Contains(node)) return;
             visited.Add(node);
-            foreach (var neighbour in adjecencyList[node])
+            foreach (var neighbour in AdjecencyList[node])
                 TopologicalSort(neighbour, visited, stack);
             stack.Push(node);
         }
 
         public void TraverseBreadthFirsy(String rootString)
         {
-            var node = nodes[rootString];
+            var node = VerticeList[rootString];
             if (IsNull(node)) return;
             HashSet<Vertice> visited = new();
             Queue<Vertice> queue = new();
@@ -114,14 +109,14 @@ namespace Graph
                 if (visited.Contains(current)) continue;
                 visited.Add(current);
                 Console.Write(current + " ");
-                foreach (var neighbour in adjecencyList[current]) if (!visited.Contains(neighbour)) queue.Enqueue(neighbour);
+                foreach (var neighbour in AdjecencyList[current]) if (!visited.Contains(neighbour)) queue.Enqueue(neighbour);
             }
         }
 
         //Iteration
         public void TraverseDepthFirsy(String rootString)
         {
-            var node = nodes[rootString];
+            var node = VerticeList[rootString];
             if (IsNull(node)) return;
             HashSet<Vertice> visited = new();
             Stack<Vertice> stack = new();
@@ -132,14 +127,13 @@ namespace Graph
                 if (visited.Contains(current)) continue;
                 visited.Add(current);
                 Console.Write(current + " ");
-                foreach (var neighbour in adjecencyList[current]) if (!visited.Contains(neighbour)) stack.Push(neighbour);
+                foreach (var neighbour in AdjecencyList[current]) if (!visited.Contains(neighbour)) stack.Push(neighbour);
             }
         }
 
-
         public void TraverseDepthFirsy_recursion(String rootString)
         {
-            Vertice? node = nodes!.GetValueOrDefault(rootString, null);
+            Vertice? node = VerticeList!.GetValueOrDefault(rootString, null);
             if (IsNull(node!)) return;
             traverseDepthFirsy_recursion(node!, new());
             Console.WriteLine();
@@ -148,17 +142,17 @@ namespace Graph
         {
             Console.Write(root + " ");
             visited.Add(root);
-            foreach (var node in adjecencyList[root])
+            foreach (var node in AdjecencyList[root])
                 if (!visited.Contains(node)) traverseDepthFirsy_recursion(node, visited);
         }
 
         public override String ToString()
         {
             String str = "";
-            foreach (var source in adjecencyList.Keys)
+            foreach (var source in AdjecencyList.Keys)
             {
-                var targets = adjecencyList[source];
-                if (targets.Count != 0) str += source + " is connected to " + targets.First() + "\n";
+                var targets = AdjecencyList[source];
+                if (targets.Count != 0) str += source + " is connected to [" + String.Join(", ", targets) + "]\n";
             }
             return str;
         }
