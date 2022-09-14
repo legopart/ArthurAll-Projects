@@ -57,7 +57,7 @@ namespace GraphUndirected
             public NodePriority(Node node, int priority) { Node = node; Priority = priority; }
         }
 
-        public Path GetShortestPath(String fromString, String toString)
+        public List<String> GetShortestPath(String fromString, String toString)
         {
             var fromNode = nodes?[fromString];
             var toNode = nodes?[toString];
@@ -91,7 +91,7 @@ namespace GraphUndirected
             //return distances.get(toNode);
             return buildPath(previousNodes, toNode);
         }
-        private Path buildPath(Dictionary<Node, Node> previousNodes, Node toNode)
+        private List<String> buildPath(Dictionary<Node, Node> previousNodes, Node toNode)
         {
             Stack<Node> stack = new();
             stack.Push(toNode);
@@ -102,11 +102,10 @@ namespace GraphUndirected
                 try { previous = previousNodes[previous]; }
                 catch (Exception) { break; } //previous = previousNodes.GetValueOrDefault(previous, null);
             }
-            var path = new Path();
-            while (stack.Count != 0) path.Add(stack.Pop().Lable);
-            return path;
+            List<String> NodeList = new();
+            foreach(var node in stack) NodeList.Add(node.Lable);
+            return NodeList;
         }
-
 
         public override String ToString()
         {
