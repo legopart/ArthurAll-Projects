@@ -1,8 +1,7 @@
 #pragma once
 #include <iostream>
 
-//template <class T>
-class Array {
+class Array1 {
 private:
 	int* itemArray;
 	int arrayLength;
@@ -18,8 +17,12 @@ private:
 	bool needToReSize() { return arrayLength == count; };
 	bool needToReSize(int index) { return index >= count; };
 public:
-	Array(int length) { count = 0; arrayLength = length; itemArray = new int[arrayLength]; }
-	Array() { Array(5); }
+	Array1(int length) {
+		count = 0;
+		arrayLength = length;
+		itemArray = new int[arrayLength];
+	}
+	Array1() { Array1(5); }
 	bool contains(int item) { return indexOf(item) != -1; };
 	int indexOf(int item) {
 		for (int i = 0; i < count; ++i) if (itemArray[i] == item) return i;
@@ -28,26 +31,29 @@ public:
 	int lastIndexOf(int item) { return itemArray[indexOf(item)]; };
 	int get(int index) { return itemArray[index]; };
 	int size() { return count; };
-	int add(int item) { 
+	int add(int item) {
 		if (needToReSize()) resize();
 		itemArray[count] = item;
 		count++;
-		return item; 
+		return item;
 	}
-	int set(int index, int item) { if(needToReSize(index)) throw 0; itemArray[index] = item; return item; };
-	int remove(int index) { 
+	int set(int index, int item) {
+		if (needToReSize(index)) throw 0;
+		itemArray[index] = item;
+		return item;
+	};
+	int remove(int index) {
 		int item = itemArray[index];
 		if (needToReSize(index)) throw 0;
 		for (int i = index; i < count; i++)
-			itemArray[i] = itemArray[i+1];
+			itemArray[i] = itemArray[i + 1];
 		count--;
 		return item;
 	};
 	int removeItem(int item) { return remove(indexOf(item)); };
 	void print() {
-		for (int i = 0; i < count; ++i) 
+		for (int i = 0; i < count; ++i)
 			std::cout << itemArray[i] << ", ";
 		std::cout << "\n";
 	}
 };
-
