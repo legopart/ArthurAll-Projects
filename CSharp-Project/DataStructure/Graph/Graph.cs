@@ -109,26 +109,29 @@ namespace Graph
         public List<String> TopologicalSort()  //לחזור 
         {
             Stack<Vertice> stack = new();
-            HashSet<Vertice> visited = new();
-            foreach (var node in VerticeList.Values) TopologicalSort(node, visited, stack);
+            HashSet<Vertice> visitedSet = new();
+            foreach (var node in VerticeList.Values) TopologicalSort(node, visitedSet, stack);
+            return ToList(stack);
+        }
+        private List<String> ToList(Stack<Vertice> stack) {
             List<String> sortedList = new();
             while (stack.Count != 0) sortedList.Add(stack.Pop().Lable);
             return sortedList;
         }
-        private void TopologicalSort(Vertice node, HashSet<Vertice> visited, Stack<Vertice> stack)
+        private void TopologicalSort(Vertice node, HashSet<Vertice> visitedSet, Stack<Vertice> stack)
         {
-            if (visited.Contains(node)) return;
-            visited.Add(node);
+            if (visitedSet.Contains(node)) return;
+            visitedSet.Add(node);
             foreach (var neighbour in EdgeList[node])
-                TopologicalSort(neighbour, visited, stack);
+                TopologicalSort(neighbour, visitedSet, stack);
             stack.Push(node);
         }
 
 
-        public bool HasCycle()  //לחזור ולתקן
-        {
+        public bool HasCycle()
+        {   //לחזור
             HashSet<Vertice> all = new();
-            all.UnionWith(VerticeList.Values); //A.Concat(B).ToHashSet()
+            all.UnionWith(VerticeList.Values);// java: addAll //A.Concat(B).ToHashSet()
             HashSet<Vertice> visiting = new();
             HashSet<Vertice> visited = new();
             foreach(var current in all)  if (HasCycle(current, all, visiting, visited)) return true; ;
