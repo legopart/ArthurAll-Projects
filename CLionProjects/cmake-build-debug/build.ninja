@@ -109,6 +109,54 @@ build Main2.exe: CXX_EXECUTABLE_LINKER__Main2_Debug CMakeFiles/Main2.dir/main2.c
   TARGET_PDB = Main2.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target ArrayList
+
+
+#############################################
+# Order-only phony target for ArrayList
+
+build cmake_object_order_depends_target_ArrayList: phony || CMakeFiles/ArrayList.dir
+
+build CMakeFiles/ArrayList.dir/DataStructure/ArrayList/main.cpp.obj: CXX_COMPILER__ArrayList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/DataStructure/ArrayList/main.cpp || cmake_object_order_depends_target_ArrayList
+  DEP_FILE = CMakeFiles\ArrayList.dir\DataStructure\ArrayList\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/.
+  OBJECT_DIR = CMakeFiles\ArrayList.dir
+  OBJECT_FILE_DIR = CMakeFiles\ArrayList.dir\DataStructure\ArrayList
+
+build CMakeFiles/ArrayList.dir/DataStructure/ArrayList/Array1.cpp.obj: CXX_COMPILER__ArrayList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/DataStructure/ArrayList/Array1.cpp || cmake_object_order_depends_target_ArrayList
+  DEP_FILE = CMakeFiles\ArrayList.dir\DataStructure\ArrayList\Array1.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/.
+  OBJECT_DIR = CMakeFiles\ArrayList.dir
+  OBJECT_FILE_DIR = CMakeFiles\ArrayList.dir\DataStructure\ArrayList
+
+build CMakeFiles/ArrayList.dir/DataStructure/ArrayList/Array2.cpp.obj: CXX_COMPILER__ArrayList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/DataStructure/ArrayList/Array2.cpp || cmake_object_order_depends_target_ArrayList
+  DEP_FILE = CMakeFiles\ArrayList.dir\DataStructure\ArrayList\Array2.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/.
+  OBJECT_DIR = CMakeFiles\ArrayList.dir
+  OBJECT_FILE_DIR = CMakeFiles\ArrayList.dir\DataStructure\ArrayList
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ArrayList
+
+
+#############################################
+# Link the executable ArrayList.exe
+
+build ArrayList.exe: CXX_EXECUTABLE_LINKER__ArrayList_Debug CMakeFiles/ArrayList.dir/DataStructure/ArrayList/main.cpp.obj CMakeFiles/ArrayList.dir/DataStructure/ArrayList/Array1.cpp.obj CMakeFiles/ArrayList.dir/DataStructure/ArrayList/Array2.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\ArrayList.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = ArrayList.exe
+  TARGET_IMPLIB = libArrayList.dll.a
+  TARGET_PDB = ArrayList.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target CLionProjects
 
 
@@ -131,6 +179,13 @@ build CMakeFiles/CLionProjects.dir/main2.cpp.obj: CXX_COMPILER__CLionProjects_De
   OBJECT_DIR = CMakeFiles\CLionProjects.dir
   OBJECT_FILE_DIR = CMakeFiles\CLionProjects.dir
 
+build CMakeFiles/CLionProjects.dir/DataStructure/ArrayList/main.cpp.obj: CXX_COMPILER__CLionProjects_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/DataStructure/ArrayList/main.cpp || cmake_object_order_depends_target_CLionProjects
+  DEP_FILE = CMakeFiles\CLionProjects.dir\DataStructure\ArrayList\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/.
+  OBJECT_DIR = CMakeFiles\CLionProjects.dir
+  OBJECT_FILE_DIR = CMakeFiles\CLionProjects.dir\DataStructure\ArrayList
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CLionProjects
@@ -139,7 +194,7 @@ build CMakeFiles/CLionProjects.dir/main2.cpp.obj: CXX_COMPILER__CLionProjects_De
 #############################################
 # Link the executable CLionProjects.exe
 
-build CLionProjects.exe: CXX_EXECUTABLE_LINKER__CLionProjects_Debug CMakeFiles/CLionProjects.dir/main.cpp.obj CMakeFiles/CLionProjects.dir/main2.cpp.obj
+build CLionProjects.exe: CXX_EXECUTABLE_LINKER__CLionProjects_Debug CMakeFiles/CLionProjects.dir/main.cpp.obj CMakeFiles/CLionProjects.dir/main2.cpp.obj CMakeFiles/CLionProjects.dir/DataStructure/ArrayList/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CLionProjects.dir
@@ -175,6 +230,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build ArrayList: phony ArrayList.exe
+
 build CLionProjects: phony CLionProjects.exe
 
 build Main1: phony Main1.exe
@@ -189,7 +246,7 @@ build Main2: phony Main2.exe
 #############################################
 # Folder: C:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/cmake-build-debug
 
-build all: phony Main1.exe Main2.exe CLionProjects.exe
+build all: phony Main1.exe Main2.exe ArrayList.exe CLionProjects.exe
 
 # =============================================================================
 # Built-in targets

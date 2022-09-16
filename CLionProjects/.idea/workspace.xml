@@ -10,6 +10,7 @@
     <generated>
       <config projectName="CLionProjects" targetName="Main1" />
       <config projectName="CLionProjects" targetName="CLionProjects" />
+      <config projectName="CLionProjects" targetName="ArrayList" />
       <config projectName="CLionProjects" targetName="Main2" />
     </generated>
   </component>
@@ -19,17 +20,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23b34d87-c845-4fd1-a06e-e2e61d378cb8" name="Changes" comment="Clion init">
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/cmake3/main2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main2.cpp" afterDir="false" />
+    <list default="true" id="23b34d87-c845-4fd1-a06e-e2e61d378cb8" name="Changes" comment="Clion init2">
+      <change afterPath="$PROJECT_DIR$/DataStructure/ArrayList/Array1.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructure/ArrayList/Array2.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructure/ArrayList/Array2.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataStructure/ArrayList/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-946ee163a95f549d6aaf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-09-16T20-47-41-0932.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CLionProjects-Debug-7fc9b874dbe19e3a7a41.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CLionProjects.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
@@ -82,7 +81,12 @@
       <recent name="C:\Users\pc1\Desktop\Multi-Language-All-Projects\CLionProjects\cmake-build-debug" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.Main2">
+  <component name="RunManager" selected="CMake Application.ArrayList">
+    <configuration name="ArrayList" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLionProjects" TARGET_NAME="ArrayList" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLionProjects" RUN_TARGET_NAME="ArrayList">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CLionProjects" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLionProjects" TARGET_NAME="CLionProjects" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLionProjects" RUN_TARGET_NAME="CLionProjects">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -104,6 +108,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="CMake Application.ArrayList" />
       <item itemvalue="CMake Application.CLionProjects" />
       <item itemvalue="CMake Application.Main1" />
       <item itemvalue="CMake Application.Main2" />
@@ -118,7 +123,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663360533456</updated>
       <workItem from="1663360535002" duration="554000" />
-      <workItem from="1663361255486" duration="630000" />
+      <workItem from="1663361255486" duration="1602000" />
     </task>
     <task id="LOCAL-00001" summary="Clion init">
       <created>1663361270751</created>
@@ -134,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663361275412</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Clion init2">
+      <created>1663361940444</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663361940444</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +182,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Clion init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clion init" />
+    <MESSAGE value="Clion init2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clion init2" />
   </component>
 </project>
