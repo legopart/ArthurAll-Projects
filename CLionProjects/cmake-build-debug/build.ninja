@@ -75,6 +75,40 @@ build Main1.exe: CXX_EXECUTABLE_LINKER__Main1_Debug CMakeFiles/Main1.dir/main.cp
   TARGET_PDB = Main1.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target Main2
+
+
+#############################################
+# Order-only phony target for Main2
+
+build cmake_object_order_depends_target_Main2: phony || CMakeFiles/Main2.dir
+
+build CMakeFiles/Main2.dir/main2.cpp.obj: CXX_COMPILER__Main2_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/main2.cpp || cmake_object_order_depends_target_Main2
+  DEP_FILE = CMakeFiles\Main2.dir\main2.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/.
+  OBJECT_DIR = CMakeFiles\Main2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Main2.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Main2
+
+
+#############################################
+# Link the executable Main2.exe
+
+build Main2.exe: CXX_EXECUTABLE_LINKER__Main2_Debug CMakeFiles/Main2.dir/main2.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Main2.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Main2.exe
+  TARGET_IMPLIB = libMain2.dll.a
+  TARGET_PDB = Main2.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target CLionProjects
 
 
@@ -90,6 +124,13 @@ build CMakeFiles/CLionProjects.dir/main.cpp.obj: CXX_COMPILER__CLionProjects_Deb
   OBJECT_DIR = CMakeFiles\CLionProjects.dir
   OBJECT_FILE_DIR = CMakeFiles\CLionProjects.dir
 
+build CMakeFiles/CLionProjects.dir/main2.cpp.obj: CXX_COMPILER__CLionProjects_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/main2.cpp || cmake_object_order_depends_target_CLionProjects
+  DEP_FILE = CMakeFiles\CLionProjects.dir\main2.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/.
+  OBJECT_DIR = CMakeFiles\CLionProjects.dir
+  OBJECT_FILE_DIR = CMakeFiles\CLionProjects.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CLionProjects
@@ -98,7 +139,7 @@ build CMakeFiles/CLionProjects.dir/main.cpp.obj: CXX_COMPILER__CLionProjects_Deb
 #############################################
 # Link the executable CLionProjects.exe
 
-build CLionProjects.exe: CXX_EXECUTABLE_LINKER__CLionProjects_Debug CMakeFiles/CLionProjects.dir/main.cpp.obj
+build CLionProjects.exe: CXX_EXECUTABLE_LINKER__CLionProjects_Debug CMakeFiles/CLionProjects.dir/main.cpp.obj CMakeFiles/CLionProjects.dir/main2.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CLionProjects.dir
@@ -138,6 +179,8 @@ build CLionProjects: phony CLionProjects.exe
 
 build Main1: phony Main1.exe
 
+build Main2: phony Main2.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -146,7 +189,7 @@ build Main1: phony Main1.exe
 #############################################
 # Folder: C:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects/cmake-build-debug
 
-build all: phony Main1.exe CLionProjects.exe
+build all: phony Main1.exe Main2.exe CLionProjects.exe
 
 # =============================================================================
 # Built-in targets

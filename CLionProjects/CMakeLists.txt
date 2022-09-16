@@ -5,5 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(.)
 add_executable(Main1 main.cpp)
+add_executable(Main2 main2.cpp)
 
-add_executable(CLionProjects main.cpp)
+add_executable(CLionProjects main.cpp main2.cpp cmake-build-debug/cmake3/main2.h)

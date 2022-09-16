@@ -8,7 +8,9 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
+      <config projectName="CLionProjects" targetName="Main1" />
       <config projectName="CLionProjects" targetName="CLionProjects" />
+      <config projectName="CLionProjects" targetName="Main2" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -17,7 +19,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23b34d87-c845-4fd1-a06e-e2e61d378cb8" name="Changes" comment="Clion init" />
+    <list default="true" id="23b34d87-c845-4fd1-a06e-e2e61d378cb8" name="Changes" comment="Clion init">
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/cmake3/main2.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-946ee163a95f549d6aaf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-09-16T20-47-41-0932.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-CLionProjects-Debug-7fc9b874dbe19e3a7a41.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CLionProjects.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,12 +75,39 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/pc1/Desktop/Multi-Language-All-Projects/CLionProjects&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pc1\Desktop\Multi-Language-All-Projects\CLionProjects" />
+      <recent name="C:\Users\pc1\Desktop\Multi-Language-All-Projects\CLionProjects\cmake-build-debug\cmake3" />
+      <recent name="C:\Users\pc1\Desktop\Multi-Language-All-Projects\CLionProjects\cmake-build-debug" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.Main2">
     <configuration name="CLionProjects" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLionProjects" TARGET_NAME="CLionProjects" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLionProjects" RUN_TARGET_NAME="CLionProjects">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLionProjects" TARGET_NAME="Main1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLionProjects" RUN_TARGET_NAME="Main1">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLionProjects" TARGET_NAME="Main2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CLionProjects" RUN_TARGET_NAME="Main2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.CLionProjects" />
+      <item itemvalue="CMake Application.Main1" />
+      <item itemvalue="CMake Application.Main2" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -75,8 +118,23 @@
       <option name="presentableId" value="Default" />
       <updated>1663360533456</updated>
       <workItem from="1663360535002" duration="554000" />
-      <workItem from="1663361255486" duration="6000" />
+      <workItem from="1663361255486" duration="630000" />
     </task>
+    <task id="LOCAL-00001" summary="Clion init">
+      <created>1663361270751</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663361270751</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Clion init">
+      <created>1663361275412</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663361275412</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,5 +167,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Clion init" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clion init" />
   </component>
 </project>
