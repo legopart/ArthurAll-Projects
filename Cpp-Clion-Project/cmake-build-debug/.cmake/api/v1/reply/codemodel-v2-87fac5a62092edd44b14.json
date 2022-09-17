@@ -16,7 +16,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -48,8 +50,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Cpp_Clion_Project::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Cpp_Clion_Project-Debug-e4d90d70a71865146125.json",
+					"jsonFile" : "target-Cpp_Clion_Project-Debug-5ce6499ea4f6834b3202.json",
 					"name" : "Cpp_Clion_Project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LinkedList::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LinkedList-Debug-020a79925cb86ae674a1.json",
+					"name" : "LinkedList",
 					"projectIndex" : 0
 				}
 			]

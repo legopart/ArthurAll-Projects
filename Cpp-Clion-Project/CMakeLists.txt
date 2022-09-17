@@ -8,4 +8,6 @@ include_directories(.)
 
 add_executable(ArrayList DataStructure/ArrayList/main.cpp)
 
+add_executable(LinkedList DataStructure/LinkedList/main.cpp)
+
 add_executable(Cpp_Clion_Project main.cpp)

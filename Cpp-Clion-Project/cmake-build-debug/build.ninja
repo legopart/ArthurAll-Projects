@@ -75,6 +75,40 @@ build ArrayList.exe: CXX_EXECUTABLE_LINKER__ArrayList_Debug CMakeFiles/ArrayList
   TARGET_PDB = ArrayList.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target LinkedList
+
+
+#############################################
+# Order-only phony target for LinkedList
+
+build cmake_object_order_depends_target_LinkedList: phony || CMakeFiles/LinkedList.dir
+
+build CMakeFiles/LinkedList.dir/DataStructure/LinkedList/main.cpp.obj: CXX_COMPILER__LinkedList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/LinkedList/main.cpp || cmake_object_order_depends_target_LinkedList
+  DEP_FILE = CMakeFiles\LinkedList.dir\DataStructure\LinkedList\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\LinkedList.dir
+  OBJECT_FILE_DIR = CMakeFiles\LinkedList.dir\DataStructure\LinkedList
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target LinkedList
+
+
+#############################################
+# Link the executable LinkedList.exe
+
+build LinkedList.exe: CXX_EXECUTABLE_LINKER__LinkedList_Debug CMakeFiles/LinkedList.dir/DataStructure/LinkedList/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\LinkedList.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = LinkedList.exe
+  TARGET_IMPLIB = libLinkedList.dll.a
+  TARGET_PDB = LinkedList.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target Cpp_Clion_Project
 
 
@@ -138,6 +172,8 @@ build ArrayList: phony ArrayList.exe
 
 build Cpp_Clion_Project: phony Cpp_Clion_Project.exe
 
+build LinkedList: phony LinkedList.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -146,7 +182,7 @@ build Cpp_Clion_Project: phony Cpp_Clion_Project.exe
 #############################################
 # Folder: C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug
 
-build all: phony ArrayList.exe Cpp_Clion_Project.exe
+build all: phony ArrayList.exe LinkedList.exe Cpp_Clion_Project.exe
 
 # =============================================================================
 # Built-in targets

@@ -147,7 +147,7 @@ namespace LinkdedList
             }
             return currentA.Value;
         }
-        public String toString2()
+        public String ToString2()
         {
             int[] arr = this.ToArray();
             return "the array is: " + String.Join(", ", arr);
@@ -156,15 +156,16 @@ namespace LinkdedList
 
         public override string ToString()
         {
-            String str = "[";
+            StringBuilder str = new StringBuilder("[");
             var current = Head;
             while (current != null)
             {
-                str += current.Value + (current.Next != null ? ", " : "");
+                str.Append(current.Value);
+                str.Append(current.Next != null ? ", " : "");
                 current = current.Next;
             }
-            str += "]";
-            return "the array is: " + str;
+            str.Append("]");
+            return "the array is: " + str.ToString();
         }
     }
 }

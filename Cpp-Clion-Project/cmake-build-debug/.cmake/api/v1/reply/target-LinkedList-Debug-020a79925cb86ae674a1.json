@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Cpp_Clion_Project.exe"
+			"path" : "LinkedList.exe"
 		},
 		{
-			"path" : "Cpp_Clion_Project.pdb"
+			"path" : "LinkedList.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -73,7 +73,7 @@
 			]
 		}
 	],
-	"id" : "Cpp_Clion_Project::@6890427a1f51a3e7e1df",
+	"id" : "LinkedList::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -93,8 +93,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Cpp_Clion_Project",
-	"nameOnDisk" : "Cpp_Clion_Project.exe",
+	"name" : "LinkedList",
+	"nameOnDisk" : "LinkedList.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -115,7 +115,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.cpp",
+			"path" : "DataStructure/LinkedList/main.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

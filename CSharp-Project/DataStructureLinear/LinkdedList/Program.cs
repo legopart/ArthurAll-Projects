@@ -28,7 +28,11 @@ namespace LinkdedList
             Console.WriteLine(String.Join(", ", array1));
 
 
+            Console.WriteLine("reverse");
+            Console.WriteLine(list);
             list.Reverse();
+            Console.WriteLine(list);
+
             list.AddLast(10);
 
             var array2 = list.ToArray();
