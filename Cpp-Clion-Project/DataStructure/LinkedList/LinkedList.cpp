@@ -3,7 +3,7 @@
 #include <string>
 //move to smart pointer
 //move to string_view to print
-//fix 3 destructures!
+//fix destructures!     List.root   List.last
 //delete in the middle
 
 struct Node
@@ -30,7 +30,7 @@ public:
         count = 0;
         isReversed = false;
     }
-    ~List(){ while(root != 0 && !isReversed) {removeLast();}}
+    ~List(){ while(root != 0 && !isReversed) {removeLast();}  }
     void insertLast(int data)
     {
         Node* node = new Node( data );

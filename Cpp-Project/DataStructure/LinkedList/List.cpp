@@ -3,7 +3,7 @@
 #include <string>
 //move to smart pointer
 //move to string_view to print
-//fix 3 destructures!
+//fix destructures!     List.root   List.last
 //delete in the middle
 
 struct Node
