@@ -4,6 +4,7 @@
 //move to smart pointer
 //move to string_view to print
 //fix 3 destructures!
+//delete in the middle
 
 struct Node
 {
@@ -90,16 +91,16 @@ public:
 
     void reverse() {
         if (isEmpty()) return;
-        List* newList = new List();
+        List newList{};
+        //List* newList = &list;
         Node* current = root;
         while (current != 0)
         {
-            newList->insertFirst(current->data);
+            newList.insertFirst(current->data);
             current = current->next;
         }
-        this->root = newList->root;
-        this->last = newList->last;
-        //delete(newList);
+        this->root = newList.root;
+        this->last = newList.last;
     }
 
 
