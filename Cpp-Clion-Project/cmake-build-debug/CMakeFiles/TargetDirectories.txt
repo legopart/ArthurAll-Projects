@@ -1,5 +1,7 @@
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/ArrayList.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/LinkedList.dir
+C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/Stack.dir
+C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/Queue.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/Cpp_Clion_Project.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

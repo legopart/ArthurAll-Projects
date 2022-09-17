@@ -9,7 +9,7 @@
 struct Node
 {
     int data;
-    Node* next;
+    struct Node* next;
     explicit Node(int data) { this->data = data; next = NULL; }
     ~Node(){ std::cout << "deleted:" << data << "\n"; }
 };
@@ -17,20 +17,15 @@ struct Node
 class List
 {
 private:
-    Node* root;
-    Node* last;
+    struct Node* root;
+    struct Node* last;
     int count;
     bool isReversed;
     bool isEmpty() { return root == 0; }
     void resetList(){ delete(root); root=NULL; last=NULL; }
 public:
-    explicit List() {
-        root = NULL;
-        last = NULL;
-        count = 0;
-        isReversed = false;
-    }
-    ~List(){ while(root != 0 && !isReversed) {removeLast();}  }
+    explicit List() : root(NULL), last(NULL), count(0), isReversed(false) { }
+    ~List(){ while(root != 0 && !isReversed) {removeLast();} }
     void insertLast(int data)
     {
         Node* node = new Node( data );

@@ -24,13 +24,11 @@ namespace Queue
         public void Enqueue(int value)
         {
             if (IsFull()) throw new Exception();
-            int i;
-            for (i = Back - 1; i >= Front; i--) //הזזה  !!!
+            for (int i = Back - 1; i >= Front; i--) //הזזה  !!!
             {
                 if (Items[i] > value) { Items[i + 1] = Items[i]; }
-                else { break; }
+                else { Items[i + 1] = value; break; }
             }
-            Items[i+1] = value;
             Back++;
         }
         public int Peek()

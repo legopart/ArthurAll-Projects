@@ -37,7 +37,7 @@ namespace Stack
             return peek;
         }
 
-    public override String ToString()
+        public override String ToString()
         {
             return String.Join(", ", Items[0..Count]);
         }

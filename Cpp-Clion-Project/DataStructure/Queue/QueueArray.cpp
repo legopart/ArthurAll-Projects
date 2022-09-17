@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-class Queue
+class QueueArray
 {
 private:
     int* items;
@@ -22,8 +22,8 @@ private:
         items = newQueue;
     }
 public:
-    explicit Queue() : itemsLength(10), items(new int[itemsLength]), count(0), first(0) {  }
-    ~Queue(){ delete[](items); }
+    explicit QueueArray() : itemsLength(10), items(new int[itemsLength]), count(0), first(0) {  }
+    ~QueueArray(){ delete[](items); }
 
     void enqueue(int value)
     {
