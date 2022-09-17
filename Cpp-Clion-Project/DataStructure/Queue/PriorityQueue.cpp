@@ -29,11 +29,10 @@ public:
     void enqueue(int value)
     {
         if(isFull()) throw 0; // allocate(); // allocate
-
         for(int i = count - 1; i >= first; i--)
         {   //moving
             if (items[i] > value) { items[i + 1] = items[i]; }
-            else { items[i + 1] = value; break;}
+            else { items[i + 1] = value; break; }
         }
         count ++;
     }

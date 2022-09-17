@@ -43,7 +43,6 @@ namespace Queue
             return peek;
         }
 
-        public override String ToString() { return String.Join(",", Items[Front..Back])};
-        }
+        public override String ToString() { return String.Join(",", Items[Front..Back])}
     }
 }
