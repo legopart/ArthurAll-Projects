@@ -1,4 +1,33 @@
-#include "Array2.h"
+#pragma once
+#include <iostream>
+
+template<typename T>
+class Array2
+{
+private:
+    T* itemArray;
+    int arrayLength;
+    int count; //count
+    void resize();
+    bool needToReSize();
+    bool needToReSize(int index);
+public:
+    Array2(int length);
+    Array2();
+    bool contains(T item);
+    int indexOf(T item);
+    int lastIndexOf(T item);
+    T get(int index);
+    int size();
+    T add(T item);
+    int set(int index, T item);
+    T remove(int index);
+    T removeItem(T item);
+    void print();
+};
+
+
+
 template<typename  T>
 inline void Array2<T>::resize()
 {
@@ -23,16 +52,15 @@ bool Array2<T>::needToReSize(int index)
 }
 
 template<typename T>
-Array2<T>::Array2(int length)
+inline Array2<T>::Array2(int length)
 {
     count = 0;
     arrayLength = length;
     itemArray = new T[arrayLength];
 }
 
-
 template<typename T>
-Array2<T>::Array2()
+inline Array2<T>::Array2()
 {
     Array2(5);
 }
