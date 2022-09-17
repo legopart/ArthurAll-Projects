@@ -11,7 +11,7 @@ struct Node
     int data;
     Node* next;
     explicit Node(int data) { this->data = data; next = NULL; }
-    ~Node(){ /* if(next != 0 )delete(next); */std::cout << "deleted:" << data << "\n"; }
+    ~Node(){ std::cout << "deleted:" << data << "\n"; }
 };
 
 class List
@@ -20,6 +20,7 @@ private:
     Node* root;
     Node* last;
     int count;
+    bool isReversed;
     bool isEmpty() { return root == 0; }
     void resetList(){ delete(root); root=NULL; last=NULL; }
 public:
@@ -27,8 +28,9 @@ public:
         root = NULL;
         last = NULL;
         count = 0;
+        isReversed = false;
     }
-    ~List(){ /*if(root != 0 )delete(root); */}
+    ~List(){ while(root != 0 && !isReversed) {removeLast();}}
     void insertLast(int data)
     {
         Node* node = new Node( data );
@@ -48,7 +50,6 @@ public:
         if (isEmpty()) throw 0;
         int value = root->data;
         if (root == last) { resetList();return value;};
-
         Node *current = root;
         root = root->next;
         delete(current);
@@ -91,16 +92,18 @@ public:
 
     void reverse(){
         if(isEmpty()) return;
-        List newList{};
+        List* newList = new List();
         //List* newList = &list;
         Node* current = root;
         while (current != 0)
         {
-            newList.insertFirst(current->data);
+            newList->insertFirst(current->data);
             current = current->next;
         }
-        this->root = newList.root;
-        this->last = newList.last;
+        this->root = newList->root;
+        this->last = newList->last;
+        newList->isReversed = true;
+        delete(newList);
     }
 
 
