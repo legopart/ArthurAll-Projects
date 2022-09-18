@@ -28,7 +28,8 @@ public:
        items.pop_back();
        return  i;
     }
-    string print(){
+    string print() const
+    {
         string str = "";
         for (auto it: items) str += to_string(it) + " ";
         return str;

@@ -102,7 +102,7 @@ public:
     }
 
 
-    string print()
+    string print() const
     {
         Node* current = root;
         string str{};

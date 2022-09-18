@@ -30,7 +30,7 @@ public:
     };
     int lastIndexOf(int item) { return itemArray[indexOf(item)]; };
     int get(int index) { return itemArray[index]; };
-    int size() { return count; };
+    int size() const { return count; };
     int add(int item) {
         if (needToReSize()) resize();
         itemArray[count] = item;
@@ -51,7 +51,7 @@ public:
         return item;
     };
     int removeItem(int item) { return remove(indexOf(item)); };
-    void print() {
+    void print() const {
         for (int i = 0; i < count; ++i)
             cout << itemArray[i] << ", ";
         cout << "\n";

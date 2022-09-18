@@ -32,7 +32,7 @@ public:
         count --;
         return value;   //return items[--count];
     }
-    string print()
+    string print() const
     {
         string str = "";
         for(int i = first; i < count; ++i) str += to_string(items[i]) + " ";

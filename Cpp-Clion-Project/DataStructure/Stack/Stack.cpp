@@ -38,7 +38,8 @@ public:
         return value;
     }
 
-    string print(){
+    string print() const
+    {
         string str = "";
         for (int i = 0; i < count; ++i){
             str += to_string(items[i]) + " ";

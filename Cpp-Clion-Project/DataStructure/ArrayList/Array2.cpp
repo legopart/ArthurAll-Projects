@@ -23,7 +23,7 @@ public:
     int set(int index, T item);
     T remove(int index);
     T removeItem(T item);
-    void print();
+    void print() const;
 };
 
 
@@ -131,7 +131,7 @@ T Array2<T>::removeItem(T item)
 }
 
 template<typename T>
-void Array2<T>::print()
+void Array2<T>::print() const
 {
     for (int i = 0; i < count; ++i)
         cout << itemArray[i] << ", ";
