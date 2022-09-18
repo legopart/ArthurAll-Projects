@@ -45,7 +45,7 @@
             x:Name="firstNameText" Grid.Column="3" Grid.Row="2" Width="150"
             Margin="20, 0"
             />
-        <Button x:Name="submitButton" Content="Run Me" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Margin="0,20,0,0" Click="submitButton_Click"/>
+        <Button x:Name="submitButton" Content="Run Me" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Margin="0,20,0,0"/> <!-- Click="/*submitButton_Click*/" -->
         <ComboBox 
             x:Name="myComboBox" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4"
             Margin="10"

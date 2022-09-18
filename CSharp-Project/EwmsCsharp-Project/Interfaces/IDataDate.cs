@@ -11,7 +11,7 @@ namespace ewmsCsharp.Interfaces
         DateTime CreateDate { get; }
         DateTime EditDate { get; }
         DateTime OnProcessDate { get; } //crossing proccess protector
-        bool Active { get; protected set; } // Check if works to chenge only inside the 
+        bool Active { get; set; } // Check if works to chenge only inside the 
 
         public string DataString();
     }

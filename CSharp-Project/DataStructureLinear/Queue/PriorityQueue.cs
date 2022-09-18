@@ -36,13 +36,16 @@ namespace Queue
             if (IsEmpty()) throw new Exception();
             return Items[Front];
         }
-        public int dequeue()
+        public int Dequeue()
         {
             int peek = Peek();
             Front++;    //!
             return peek;
         }
 
-        public override String ToString() { return String.Join(",", Items[Front..Back])}
+        public override String ToString()
+        {
+            return String.Join(",", Items[Front..Back]);
+        }
     }
 }
