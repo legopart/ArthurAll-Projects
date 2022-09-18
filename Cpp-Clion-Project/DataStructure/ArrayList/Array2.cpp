@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-
+using std::string, std::to_string, std::cout;
 template<typename T>
 class Array2
 {
@@ -134,6 +134,6 @@ template<typename T>
 void Array2<T>::print()
 {
     for (int i = 0; i < count; ++i)
-        std::cout << itemArray[i] << ", ";
-    std::cout << "\n";
+        cout << itemArray[i] << ", ";
+    cout << "\n";
 }

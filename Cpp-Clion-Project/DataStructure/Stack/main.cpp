@@ -2,11 +2,12 @@
 #include <iostream>
 #import "Stack.cpp"
 #import "ListedStack.cpp"
+using std::cout;
 int main()
 {
     Stack stack{};
     stack.push(10);
-    std::cout << stack.pop() << "\n";
+    cout << stack.pop() << "\n";
     stack.push(20);
     stack.push(30);
     stack.push(40);
@@ -23,11 +24,11 @@ int main()
     stack.push(150);
     stack.push(160);
 
-    std::cout << stack.pop() << "\n";
-    std::cout << "Stack: "<< stack.print() + "\n";
+    cout << stack.pop() << "\n";
+    cout << "Stack: "<< stack.print() + "\n";
 
 
-    std::cout << "\nStack wit Linked List\n";
+    cout << "\nStack wit Linked List\n";
     LinkedStack stack2{};
 
     stack2.push(10);
@@ -35,7 +36,7 @@ int main()
     stack2.push(30);
     stack2.push(40);
     stack2.push(50);
-    std::cout << stack2.pop() << "\n";
-    std::cout << stack2.print();
+    cout << stack2.pop() << "\n";
+    cout << stack2.print();
 
 }

@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <string>
+using std::string, std::to_string;
 class Stack
 {
 private:
@@ -37,10 +38,10 @@ public:
         return value;
     }
 
-    std::string print(){
-        std::string str = "";
+    string print(){
+        string str = "";
         for (int i = 0; i < count; ++i){
-            str += std::to_string(items[i]) + " ";
+            str += to_string(items[i]) + " ";
         }
         return str;
     }

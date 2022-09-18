@@ -4,9 +4,10 @@
 #include "Array2.cpp"
 #include "Array3.cpp"
 #include <array>
+using std::array, std::cout;
 int main()
 {
-    std::cout << "Array1\n";
+    cout << "Array1\n";
     Array1 array1{ 5 };
     array1.add(5);
     array1.add(2);
@@ -16,14 +17,14 @@ int main()
     array1.add(3);
     array1.add(7);
 
-    std::cout << (array1.contains(5) ? "true" : "false") << "\n";
+    cout << (array1.contains(5) ? "true" : "false") << "\n";
     array1.print();
     array1.remove(2);
     array1.print();
-    std::cout << "\n";
+    cout << "\n";
 
 
-    std::cout << "Array2\n";
+    cout << "Array2\n";
     Array2<int> array2{ 5 };
     array2.add(5);
     array2.add(2);
@@ -33,15 +34,15 @@ int main()
     array2.add(3);
     array2.add(7);
 
-    std::cout << (array2.contains(5) ? "true" : "false") << "\n";
+    cout << (array2.contains(5) ? "true" : "false") << "\n";
     array2.print();
     array2.remove(2);
     array2.print();
-    std::cout << "\n";
+    cout << "\n";
 
     std::array<int, 5> array;
     //for (int i = 0; i < array.size(); ++i) {
-    //	std::cout << array[i] << "\n";
+    //	cout << array[i] << "\n";
     //}
     Array3<int, 5> array3;
 
@@ -55,7 +56,7 @@ int main()
     {
         //array3[i] = 2;
         //arr[i] = 2;
-        std::cout << array3[i] << "\n";
+        cout << array3[i] << "\n";
     }
 
     //for(auto& a : array3 ) להשלים Iterator

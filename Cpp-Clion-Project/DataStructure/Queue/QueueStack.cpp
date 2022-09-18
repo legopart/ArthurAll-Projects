@@ -4,11 +4,12 @@
 #include <iostream>
 #include <stack>
 #include <string>
+using std::stack, std::string, std::to_string;
 class QueueStack
 {
 private:
-    std::stack<int> queueStack; //stackA
-    std::stack<int> enqueueStack; //stackB
+    stack<int> queueStack; //stackA
+    stack<int> enqueueStack; //stackB
     bool isEmpty() const { return queueStack.size() == 0;}
 public:
     explicit QueueStack() : queueStack(), enqueueStack() {  }
@@ -24,12 +25,12 @@ public:
         while(!enqueueStack.empty()) {queueStack.push(enqueueStack.top()); enqueueStack.pop();}
         return value;
     }
-    std::string print()
+    string print()
     {
-        std::string str = "";
+        string str = "";
         while(queueStack.size() != 0) {enqueueStack.push(queueStack.top()); queueStack.pop();}
         while(enqueueStack.size() != 0) {
-            str += std::to_string(enqueueStack.top()) + " ";
+            str += to_string(enqueueStack.top()) + " ";
             queueStack.push(enqueueStack.top());
             enqueueStack.pop();
         }

@@ -1,6 +1,6 @@
 //#pragma once
 #include <iostream>
-
+using std::string, std::to_string, std::cout;
 class Array1 {
 private:
     int* itemArray;
@@ -53,7 +53,7 @@ public:
     int removeItem(int item) { return remove(indexOf(item)); };
     void print() {
         for (int i = 0; i < count; ++i)
-            std::cout << itemArray[i] << ", ";
-        std::cout << "\n";
+            cout << itemArray[i] << ", ";
+        cout << "\n";
     }
 };

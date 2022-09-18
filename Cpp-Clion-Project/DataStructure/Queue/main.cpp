@@ -2,12 +2,12 @@
 #include <iostream>
 #import "QueueArray.cpp"
 #import "QueueStack.cpp"
-
+using std::cout;
 int main()
 {
     QueueArray queue{};
     queue.enqueue(10);
-    std::cout << queue.dequeue() << "\n";
+    cout << queue.dequeue() << "\n";
     queue.enqueue(20);
     queue.enqueue(30);
     queue.enqueue(40);
@@ -25,12 +25,12 @@ int main()
     queue.enqueue(150);
     queue.enqueue(160);
 
-    std::cout << "QueueArray: " << queue.print() << "\n";
+    cout << "QueueArray: " << queue.print() << "\n";
 
 
     QueueStack queue2{};
     queue2.enqueue(10);
-    std::cout << queue2.dequeue() << "\n";
+    cout << queue2.dequeue() << "\n";
     queue2.enqueue(20);
     queue2.enqueue(30);
     queue2.enqueue(40);
@@ -47,6 +47,6 @@ int main()
     queue2.enqueue(140);
     queue2.enqueue(150);
     queue2.enqueue(160);
-    //std::cout << queue2.dequeue() << "\n";
-    std::cout << "QueueStack: " << queue2.print() << "\n";
+    //cout << queue2.dequeue() << "\n";
+    cout << "QueueStack: " << queue2.print() << "\n";
 }

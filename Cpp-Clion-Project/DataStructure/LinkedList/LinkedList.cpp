@@ -5,13 +5,13 @@
 //move to string_view to print
 //fix destructures!     List.root   List.last
 //delete in the middle
-
+using std::string, std::to_string, std::cout;
 struct Node
 {
     int data;
     struct Node* next;
     explicit Node(int data) { this->data = data; next = NULL; }
-    ~Node(){ std::cout << "deleted:" << data << "\n"; }
+    ~Node(){ cout << "deleted:" << data << "\n"; }
 };
 
 class List
@@ -102,13 +102,13 @@ public:
     }
 
 
-    std::string print()
+    string print()
     {
         Node* current = root;
-        std::string str{};
+        string str{};
         while (current != 0)
         {
-            str += std::to_string(current->data) + ", ";
+            str += to_string(current->data) + ", ";
             current = current->next;
         }
         str += "\n";

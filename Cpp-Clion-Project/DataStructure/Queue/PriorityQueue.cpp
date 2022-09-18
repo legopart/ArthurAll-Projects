@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+using std::string, std::to_string;
 class QueueArray
 {
 private:
@@ -43,10 +44,10 @@ public:
         first++;
         return value;   //return items[--count];
     }
-    std::string print()
+    string print()
     {
-        std::string str = "";
-        for(int i = first; i < count; ++i) str += std::to_string(items[i]) + " ";
+        string str = "";
+        for(int i = first; i < count; ++i) str += to_string(items[i]) + " ";
         return str;
     }
 

@@ -5,10 +5,11 @@
 #include <string>
 #include <list>
 #include <iterator>
+using std::list, std::string, std::to_string;
 class LinkedStack
 {
 private:
-    std::list<int> items{};
+    list<int> items{};
     bool isEmpty() const { items.size() == 0; };
 public:
     explicit LinkedStack() : items() { }
@@ -27,9 +28,9 @@ public:
        items.pop_back();
        return  i;
     }
-    std::string print(){
-        std::string str = "";
-        for (auto it: items) str += std::to_string(it) + " ";
+    string print(){
+        string str = "";
+        for (auto it: items) str += to_string(it) + " ";
         return str;
     }
 
