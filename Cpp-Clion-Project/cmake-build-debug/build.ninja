@@ -41,209 +41,6 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target ArrayList
-
-
-#############################################
-# Order-only phony target for ArrayList
-
-build cmake_object_order_depends_target_ArrayList: phony || CMakeFiles/ArrayList.dir
-
-build CMakeFiles/ArrayList.dir/DataStructure/ArrayList/main.cpp.obj: CXX_COMPILER__ArrayList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/ArrayList/main.cpp || cmake_object_order_depends_target_ArrayList
-  DEP_FILE = CMakeFiles\ArrayList.dir\DataStructure\ArrayList\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\ArrayList.dir
-  OBJECT_FILE_DIR = CMakeFiles\ArrayList.dir\DataStructure\ArrayList
-  TARGET_COMPILE_PDB = CMakeFiles\ArrayList.dir\
-  TARGET_PDB = ArrayList.pdb
-
-build CMakeFiles/ArrayList.dir/DataStructure/Hashtable/main.cpp.obj: CXX_COMPILER__ArrayList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/Hashtable/main.cpp || cmake_object_order_depends_target_ArrayList
-  DEP_FILE = CMakeFiles\ArrayList.dir\DataStructure\Hashtable\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\ArrayList.dir
-  OBJECT_FILE_DIR = CMakeFiles\ArrayList.dir\DataStructure\Hashtable
-  TARGET_COMPILE_PDB = CMakeFiles\ArrayList.dir\
-  TARGET_PDB = ArrayList.pdb
-
-build CMakeFiles/ArrayList.dir/DataStructure/Hashtable/HashtableChaining.cpp.obj: CXX_COMPILER__ArrayList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/Hashtable/HashtableChaining.cpp || cmake_object_order_depends_target_ArrayList
-  DEP_FILE = CMakeFiles\ArrayList.dir\DataStructure\Hashtable\HashtableChaining.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\ArrayList.dir
-  OBJECT_FILE_DIR = CMakeFiles\ArrayList.dir\DataStructure\Hashtable
-  TARGET_COMPILE_PDB = CMakeFiles\ArrayList.dir\
-  TARGET_PDB = ArrayList.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target ArrayList
-
-
-#############################################
-# Link the executable ArrayList.exe
-
-build ArrayList.exe: CXX_EXECUTABLE_LINKER__ArrayList_Debug CMakeFiles/ArrayList.dir/DataStructure/ArrayList/main.cpp.obj CMakeFiles/ArrayList.dir/DataStructure/Hashtable/main.cpp.obj CMakeFiles/ArrayList.dir/DataStructure/Hashtable/HashtableChaining.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\ArrayList.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\ArrayList.dir\
-  TARGET_FILE = ArrayList.exe
-  TARGET_IMPLIB = libArrayList.dll.a
-  TARGET_PDB = ArrayList.pdb
-
-# =============================================================================
-# Object build statements for EXECUTABLE target LinkedList
-
-
-#############################################
-# Order-only phony target for LinkedList
-
-build cmake_object_order_depends_target_LinkedList: phony || CMakeFiles/LinkedList.dir
-
-build CMakeFiles/LinkedList.dir/DataStructure/LinkedList/main.cpp.obj: CXX_COMPILER__LinkedList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/LinkedList/main.cpp || cmake_object_order_depends_target_LinkedList
-  DEP_FILE = CMakeFiles\LinkedList.dir\DataStructure\LinkedList\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\LinkedList.dir
-  OBJECT_FILE_DIR = CMakeFiles\LinkedList.dir\DataStructure\LinkedList
-  TARGET_COMPILE_PDB = CMakeFiles\LinkedList.dir\
-  TARGET_PDB = LinkedList.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target LinkedList
-
-
-#############################################
-# Link the executable LinkedList.exe
-
-build LinkedList.exe: CXX_EXECUTABLE_LINKER__LinkedList_Debug CMakeFiles/LinkedList.dir/DataStructure/LinkedList/main.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\LinkedList.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\LinkedList.dir\
-  TARGET_FILE = LinkedList.exe
-  TARGET_IMPLIB = libLinkedList.dll.a
-  TARGET_PDB = LinkedList.pdb
-
-# =============================================================================
-# Object build statements for EXECUTABLE target Stack
-
-
-#############################################
-# Order-only phony target for Stack
-
-build cmake_object_order_depends_target_Stack: phony || CMakeFiles/Stack.dir
-
-build CMakeFiles/Stack.dir/DataStructure/Stack/main.cpp.obj: CXX_COMPILER__Stack_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/Stack/main.cpp || cmake_object_order_depends_target_Stack
-  DEP_FILE = CMakeFiles\Stack.dir\DataStructure\Stack\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Stack.dir
-  OBJECT_FILE_DIR = CMakeFiles\Stack.dir\DataStructure\Stack
-  TARGET_COMPILE_PDB = CMakeFiles\Stack.dir\
-  TARGET_PDB = Stack.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target Stack
-
-
-#############################################
-# Link the executable Stack.exe
-
-build Stack.exe: CXX_EXECUTABLE_LINKER__Stack_Debug CMakeFiles/Stack.dir/DataStructure/Stack/main.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\Stack.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\Stack.dir\
-  TARGET_FILE = Stack.exe
-  TARGET_IMPLIB = libStack.dll.a
-  TARGET_PDB = Stack.pdb
-
-# =============================================================================
-# Object build statements for EXECUTABLE target Queue
-
-
-#############################################
-# Order-only phony target for Queue
-
-build cmake_object_order_depends_target_Queue: phony || CMakeFiles/Queue.dir
-
-build CMakeFiles/Queue.dir/DataStructure/Queue/main.cpp.obj: CXX_COMPILER__Queue_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/Queue/main.cpp || cmake_object_order_depends_target_Queue
-  DEP_FILE = CMakeFiles\Queue.dir\DataStructure\Queue\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Queue.dir
-  OBJECT_FILE_DIR = CMakeFiles\Queue.dir\DataStructure\Queue
-  TARGET_COMPILE_PDB = CMakeFiles\Queue.dir\
-  TARGET_PDB = Queue.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target Queue
-
-
-#############################################
-# Link the executable Queue.exe
-
-build Queue.exe: CXX_EXECUTABLE_LINKER__Queue_Debug CMakeFiles/Queue.dir/DataStructure/Queue/main.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\Queue.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\Queue.dir\
-  TARGET_FILE = Queue.exe
-  TARGET_IMPLIB = libQueue.dll.a
-  TARGET_PDB = Queue.pdb
-
-# =============================================================================
-# Object build statements for EXECUTABLE target Hashtable
-
-
-#############################################
-# Order-only phony target for Hashtable
-
-build cmake_object_order_depends_target_Hashtable: phony || CMakeFiles/Hashtable.dir
-
-build CMakeFiles/Hashtable.dir/DataStructure/Hashtable/main.cpp.obj: CXX_COMPILER__Hashtable_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/Hashtable/main.cpp || cmake_object_order_depends_target_Hashtable
-  DEP_FILE = CMakeFiles\Hashtable.dir\DataStructure\Hashtable\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Hashtable.dir
-  OBJECT_FILE_DIR = CMakeFiles\Hashtable.dir\DataStructure\Hashtable
-  TARGET_COMPILE_PDB = CMakeFiles\Hashtable.dir\
-  TARGET_PDB = Hashtable.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target Hashtable
-
-
-#############################################
-# Link the executable Hashtable.exe
-
-build Hashtable.exe: CXX_EXECUTABLE_LINKER__Hashtable_Debug CMakeFiles/Hashtable.dir/DataStructure/Hashtable/main.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\Hashtable.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\Hashtable.dir\
-  TARGET_FILE = Hashtable.exe
-  TARGET_IMPLIB = libHashtable.dll.a
-  TARGET_PDB = Hashtable.pdb
-
-# =============================================================================
 # Object build statements for EXECUTABLE target Cpp_Clion_Project
 
 
@@ -258,8 +55,6 @@ build CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj: CXX_COMPILER__Cpp_Clion_Pro
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir
-  TARGET_COMPILE_PDB = CMakeFiles\Cpp_Clion_Project.dir\
-  TARGET_PDB = Cpp_Clion_Project.pdb
 
 
 # =============================================================================
@@ -275,10 +70,179 @@ build Cpp_Clion_Project.exe: CXX_EXECUTABLE_LINKER__Cpp_Clion_Project_Debug CMak
   OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\Cpp_Clion_Project.dir\
   TARGET_FILE = Cpp_Clion_Project.exe
   TARGET_IMPLIB = libCpp_Clion_Project.dll.a
-  TARGET_PDB = Cpp_Clion_Project.pdb
+  TARGET_PDB = Cpp_Clion_Project.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Linear-ArrayList
+
+
+#############################################
+# Order-only phony target for Linear-ArrayList
+
+build cmake_object_order_depends_target_Linear-ArrayList: phony || CMakeFiles/Linear-ArrayList.dir
+
+build CMakeFiles/Linear-ArrayList.dir/DataStructure/ArrayList/main.cpp.obj: CXX_COMPILER__Linear-ArrayList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/ArrayList/main.cpp || cmake_object_order_depends_target_Linear-ArrayList
+  DEP_FILE = CMakeFiles\Linear-ArrayList.dir\DataStructure\ArrayList\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Linear-ArrayList.dir
+  OBJECT_FILE_DIR = CMakeFiles\Linear-ArrayList.dir\DataStructure\ArrayList
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Linear-ArrayList
+
+
+#############################################
+# Link the executable Linear-ArrayList.exe
+
+build Linear-ArrayList.exe: CXX_EXECUTABLE_LINKER__Linear-ArrayList_Debug CMakeFiles/Linear-ArrayList.dir/DataStructure/ArrayList/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Linear-ArrayList.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Linear-ArrayList.exe
+  TARGET_IMPLIB = libLinear-ArrayList.dll.a
+  TARGET_PDB = Linear-ArrayList.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Linear-LinkedList
+
+
+#############################################
+# Order-only phony target for Linear-LinkedList
+
+build cmake_object_order_depends_target_Linear-LinkedList: phony || CMakeFiles/Linear-LinkedList.dir
+
+build CMakeFiles/Linear-LinkedList.dir/DataStructure/LinkedList/main.cpp.obj: CXX_COMPILER__Linear-LinkedList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/LinkedList/main.cpp || cmake_object_order_depends_target_Linear-LinkedList
+  DEP_FILE = CMakeFiles\Linear-LinkedList.dir\DataStructure\LinkedList\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Linear-LinkedList.dir
+  OBJECT_FILE_DIR = CMakeFiles\Linear-LinkedList.dir\DataStructure\LinkedList
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Linear-LinkedList
+
+
+#############################################
+# Link the executable Linear-LinkedList.exe
+
+build Linear-LinkedList.exe: CXX_EXECUTABLE_LINKER__Linear-LinkedList_Debug CMakeFiles/Linear-LinkedList.dir/DataStructure/LinkedList/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Linear-LinkedList.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Linear-LinkedList.exe
+  TARGET_IMPLIB = libLinear-LinkedList.dll.a
+  TARGET_PDB = Linear-LinkedList.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Linear-Stack
+
+
+#############################################
+# Order-only phony target for Linear-Stack
+
+build cmake_object_order_depends_target_Linear-Stack: phony || CMakeFiles/Linear-Stack.dir
+
+build CMakeFiles/Linear-Stack.dir/DataStructure/Stack/main.cpp.obj: CXX_COMPILER__Linear-Stack_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/Stack/main.cpp || cmake_object_order_depends_target_Linear-Stack
+  DEP_FILE = CMakeFiles\Linear-Stack.dir\DataStructure\Stack\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Linear-Stack.dir
+  OBJECT_FILE_DIR = CMakeFiles\Linear-Stack.dir\DataStructure\Stack
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Linear-Stack
+
+
+#############################################
+# Link the executable Linear-Stack.exe
+
+build Linear-Stack.exe: CXX_EXECUTABLE_LINKER__Linear-Stack_Debug CMakeFiles/Linear-Stack.dir/DataStructure/Stack/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Linear-Stack.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Linear-Stack.exe
+  TARGET_IMPLIB = libLinear-Stack.dll.a
+  TARGET_PDB = Linear-Stack.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Linear-Queue
+
+
+#############################################
+# Order-only phony target for Linear-Queue
+
+build cmake_object_order_depends_target_Linear-Queue: phony || CMakeFiles/Linear-Queue.dir
+
+build CMakeFiles/Linear-Queue.dir/DataStructure/Queue/main.cpp.obj: CXX_COMPILER__Linear-Queue_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/Queue/main.cpp || cmake_object_order_depends_target_Linear-Queue
+  DEP_FILE = CMakeFiles\Linear-Queue.dir\DataStructure\Queue\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Linear-Queue.dir
+  OBJECT_FILE_DIR = CMakeFiles\Linear-Queue.dir\DataStructure\Queue
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Linear-Queue
+
+
+#############################################
+# Link the executable Linear-Queue.exe
+
+build Linear-Queue.exe: CXX_EXECUTABLE_LINKER__Linear-Queue_Debug CMakeFiles/Linear-Queue.dir/DataStructure/Queue/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Linear-Queue.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Linear-Queue.exe
+  TARGET_IMPLIB = libLinear-Queue.dll.a
+  TARGET_PDB = Linear-Queue.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Linear-Hashtable
+
+
+#############################################
+# Order-only phony target for Linear-Hashtable
+
+build cmake_object_order_depends_target_Linear-Hashtable: phony || CMakeFiles/Linear-Hashtable.dir
+
+build CMakeFiles/Linear-Hashtable.dir/DataStructure/Hashtable/main.cpp.obj: CXX_COMPILER__Linear-Hashtable_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/Hashtable/main.cpp || cmake_object_order_depends_target_Linear-Hashtable
+  DEP_FILE = CMakeFiles\Linear-Hashtable.dir\DataStructure\Hashtable\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Linear-Hashtable.dir
+  OBJECT_FILE_DIR = CMakeFiles\Linear-Hashtable.dir\DataStructure\Hashtable
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Linear-Hashtable
+
+
+#############################################
+# Link the executable Linear-Hashtable.exe
+
+build Linear-Hashtable.exe: CXX_EXECUTABLE_LINKER__Linear-Hashtable_Debug CMakeFiles/Linear-Hashtable.dir/DataStructure/Hashtable/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Linear-Hashtable.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Linear-Hashtable.exe
+  TARGET_IMPLIB = libLinear-Hashtable.dll.a
+  TARGET_PDB = Linear-Hashtable.exe.dbg
 
 
 #############################################
@@ -306,17 +270,17 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build ArrayList: phony ArrayList.exe
-
 build Cpp_Clion_Project: phony Cpp_Clion_Project.exe
 
-build Hashtable: phony Hashtable.exe
+build Linear-ArrayList: phony Linear-ArrayList.exe
 
-build LinkedList: phony LinkedList.exe
+build Linear-Hashtable: phony Linear-Hashtable.exe
 
-build Queue: phony Queue.exe
+build Linear-LinkedList: phony Linear-LinkedList.exe
 
-build Stack: phony Stack.exe
+build Linear-Queue: phony Linear-Queue.exe
+
+build Linear-Stack: phony Linear-Stack.exe
 
 # =============================================================================
 # Folder targets.
@@ -326,7 +290,7 @@ build Stack: phony Stack.exe
 #############################################
 # Folder: C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug
 
-build all: phony ArrayList.exe LinkedList.exe Stack.exe Queue.exe Hashtable.exe Cpp_Clion_Project.exe
+build all: phony Cpp_Clion_Project.exe Linear-ArrayList.exe Linear-LinkedList.exe Linear-Stack.exe Linear-Queue.exe Linear-Hashtable.exe
 
 # =============================================================================
 # Built-in targets
@@ -335,14 +299,14 @@ build all: phony ArrayList.exe LinkedList.exe Stack.exe Queue.exe Hashtable.exe 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-Determine-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+build ../CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2022.2.3/bin/cmake/win/share/cmake-3.23/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeRCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
 
 
 #############################################

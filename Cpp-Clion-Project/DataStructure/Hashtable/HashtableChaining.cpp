@@ -29,12 +29,12 @@ public:
         for (int i{}; i < HASHTABLE_LENGTH; ++i) if(hashtable[i].size() != 0) return false;
         return true;
     };
-    void insert(int key, string value)
+    void insert (int key, string value)
     {
         auto& cell = hashtable[hashFunction(key)];
         bool keyExists = false;
         //for(auto it = std::begin(cell);it != std::end(cell); it++){
-        for(auto it : cell)
+        for(auto& it : cell)
             if(it.key == key) /*first in pair*/
             {
                 keyExists = true;
@@ -47,6 +47,7 @@ public:
     {
         auto& cell = hashtable[hashFunction(key)];
         bool keyExists = false;
+
         for(auto it = std::begin(cell);it != std::end(cell); it++)
             if(it->key == key)   /*first in pair*/
             {
@@ -61,7 +62,7 @@ public:
         string str{};
         for(int i{}; i < HASHTABLE_LENGTH; ++i){
             if(hashtable[i].empty()) continue;
-            for(auto it :hashtable[i]) str += "the key:" + to_string(it.key) + " value: " + it.value +"\n";
+            for(auto& it :hashtable[i]) str += "the key:" + to_string(it.key) + " value: " + it.value +"\n";
         }
         return str;
     }
