@@ -41,7 +41,7 @@ public:
     string print() const
     {
         string str = "";
-        for (int i = 0; i < count; ++i){
+        for (int i{}; i < count; ++i){
             str += to_string(items[i]) + " ";
         }
         return str;

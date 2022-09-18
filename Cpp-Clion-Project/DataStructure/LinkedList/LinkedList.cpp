@@ -10,7 +10,7 @@ struct Node
 {
     int data;
     struct Node* next;
-    explicit Node(int data) { this->data = data; next = NULL; }
+    explicit Node(int data) : data(data), next(NULL) { }
     ~Node(){ cout << "deleted:" << data << "\n"; }
 };
 
@@ -76,7 +76,7 @@ public:
         if(subplace > count || subplace <= 0) throw 0;
         Node* kth = root;
         Node* current = root;
-        for (int i = 0; i < subplace - 1; ++i)  current = current->next;
+        for (int i{}; i < subplace - 1; ++i)  current = current->next;
         while (current != last)
         {
             current = current->next;

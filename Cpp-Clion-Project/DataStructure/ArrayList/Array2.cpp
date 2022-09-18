@@ -133,7 +133,7 @@ T Array2<T>::removeItem(T item)
 template<typename T>
 void Array2<T>::print() const
 {
-    for (int i = 0; i < count; ++i)
+    for (int i{}; i < count; ++i)
         cout << itemArray[i] << ", ";
     cout << "\n";
 }

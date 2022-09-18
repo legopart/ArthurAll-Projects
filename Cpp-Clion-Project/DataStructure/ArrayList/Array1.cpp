@@ -25,7 +25,7 @@ public:
     Array1() { Array1(5); }
     bool contains(int item) { return indexOf(item) != -1; };
     int indexOf(int item) {
-        for (int i = 0; i < count; ++i) if (itemArray[i] == item) return i;
+        for (int i{}; i < count; ++i) if (itemArray[i] == item) return i;
         return -1;
     };
     int lastIndexOf(int item) { return itemArray[indexOf(item)]; };

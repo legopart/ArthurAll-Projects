@@ -16,16 +16,16 @@ namespace Hashtable
             public String Value { get; set; }
             public Pair(int key, String value) { Key = key; Value = value; }
         }
-        private List<Pair>[] Pairs { get; set; }
-        public HashtableLinkedList() { Pairs = new List<Pair>[5]; } //5 !!!
-        private int Hash(int key) { return key % Pairs.Length; }
-        private bool StartList(int key)
+        private List<Pair>[] Hashtable { get; set; }
+        public HashtableLinkedList() { Hashtable = new List<Pair>[5]; } //5 !!!
+        private int HashFunction(int key) { return key % Hashtable.Length; }
+        private List<Pair> GetList(int key) { return (List<Pair>)Hashtable.GetValue(HashFunction(key))!; }
+        private bool BeginList(int key)
         {
             var list = GetList(key);
-            if (list == null) { Pairs[Hash(key)] = new List<Pair>(); return true; }
+            if (list == null) { Hashtable[HashFunction(key)] = new List<Pair>(); return true; }
             return false;
         }
-        private List<Pair> GetList(int key) { return (List<Pair>)Pairs.GetValue(Hash(key))!; }
         private Pair? GetPair(int key)
         {
             var list = GetList(key);
@@ -43,8 +43,8 @@ namespace Hashtable
         {   // לחזור!
             var bucket = GetList(key);
             var pair = GetPair(key);
-            if (! (StartList(key) || pair is null)) { pair.Value = value; return; }
-            Pairs[Hash(key)].Add(new Pair(key, value));   //add last ?
+            if (! (BeginList(key) || pair is null)) { pair.Value = value; return; }
+            Hashtable[HashFunction(key)].Add(new Pair(key, value));   //add last ?
         }
 
         public void Remove(int key)
@@ -59,7 +59,7 @@ namespace Hashtable
         {
             String str = "";
             int i = 1;
-            foreach ( var list in Pairs)
+            foreach ( var list in Hashtable)
             {
                 if (list is null) continue;
                 foreach (var pair in list) 
