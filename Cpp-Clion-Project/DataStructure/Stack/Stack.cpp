@@ -7,7 +7,7 @@ private:
     int itemsLength;
     int* items;
     int count;
-    bool isEmpty(){ return count == 0;}
+    bool isEmpty() const { return count == 0;}
     void allocate()
     {
         int* newStack = new int[itemsLength * 2];

@@ -21,7 +21,7 @@ private:
     struct Node* last;
     int count;
     bool isReversed;
-    bool isEmpty() { return root == 0; }
+    bool isEmpty() const { return root == 0; }
     void resetList(){ delete(root); root=NULL; last=NULL; }
 public:
     explicit List() : root(NULL), last(NULL), count(0), isReversed(false) { }

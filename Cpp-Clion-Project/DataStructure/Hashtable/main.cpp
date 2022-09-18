@@ -1,3 +1,10 @@
-//
-// Created by pc1 on 18/09/2022.
-//
+
+
+#include <iostream>
+//#include "LinkedList.cpp"
+using std::cout ;
+
+int main()
+{
+    cout << "hashtable \n";
+}

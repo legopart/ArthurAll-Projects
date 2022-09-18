@@ -9,7 +9,7 @@ class LinkedStack
 {
 private:
     std::list<int> items{};
-    bool isEmpty(){ items.size() == 0; };
+    bool isEmpty() const { items.size() == 0; };
 public:
     explicit LinkedStack() : items() { }
     ~LinkedStack(){  }

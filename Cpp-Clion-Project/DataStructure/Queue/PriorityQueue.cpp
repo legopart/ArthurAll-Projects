@@ -10,8 +10,8 @@ private:
     int itemsLength;
     int count;
     int first;
-    bool isEmpty(){ return count == 0;}
-    bool isFull(){ return count == itemsLength;}
+    bool isEmpty() const { return count == 0;}
+    bool isFull() const { return count == itemsLength;}
 /*    void allocate()
     {
         int* newQueue = new int[itemsLength * 2];

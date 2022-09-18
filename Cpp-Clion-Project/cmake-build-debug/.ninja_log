@@ -8,11 +8,8 @@
 4	763	6851215021378486	CMakeFiles/LinkedList.dir/DataStructure/LinkedList/main.cpp.obj	4e683931a369db97
 764	880	6851215022493311	LinkedList.exe	852124b776dd01b5
 74	926	6851251117481622	CMakeFiles/Stack.dir/DataStructure/Stack/ListedStack.cpp.obj	43de1f1ed7417fd2
-4	1093	6851348320924110	CMakeFiles/Queue.dir/DataStructure/Queue/main.cpp.obj	45df8e0f93fa988
-1094	1225	6851348322212233	Queue.exe	b32bd83d1186081
-3	810	6851347849307962	CMakeFiles/Queue.dir/DataStructure/Queue/QueueStack.cpp.obj	c54a3d369992bb13
-11	743	6851347848644222	CMakeFiles/Queue.dir/DataStructure/Queue/QueueCyrcular.cpp.obj	7801cbfd7561b8db
-11	771	6851358609326679	CMakeFiles/Queue.dir/DataStructure/Queue/QueueCyrcular.cpp.obj	7801cbfd7561b8db
-8	777	6851358609386565	CMakeFiles/Queue.dir/DataStructure/Queue/PriorityQueue.cpp.obj	5ae7469709d11d83
 4	1015	6851358611786991	CMakeFiles/Queue.dir/DataStructure/Queue/main.cpp.obj	45df8e0f93fa988
 1016	1165	6851358613219262	Queue.exe	5ec6fb9f32759081
+3	810	6851347849307962	CMakeFiles/Queue.dir/DataStructure/Queue/QueueStack.cpp.obj	c54a3d369992bb13
+11	771	6851358609326679	CMakeFiles/Queue.dir/DataStructure/Queue/QueueCyrcular.cpp.obj	7801cbfd7561b8db
+8	777	6851358609386565	CMakeFiles/Queue.dir/DataStructure/Queue/PriorityQueue.cpp.obj	5ae7469709d11d83

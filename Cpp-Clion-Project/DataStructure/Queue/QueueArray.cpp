@@ -10,7 +10,7 @@ private:
     int itemsLength;
     int count;
     int first;
-    bool isEmpty(){ return count == 0;}
+    bool isEmpty() const { return count == 0;}
     void allocate()
     {
         int* newQueue = new int[itemsLength * 2];

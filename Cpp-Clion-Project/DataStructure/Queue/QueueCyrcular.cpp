@@ -11,8 +11,8 @@ private:
     int count;
     int first;
     int last;
-    bool isEmpty(){ return count == 0;}
-    bool isFull(){ return itemsLength == count;}
+    bool isEmpty() const { return count == 0;}
+    bool isFull() const { return itemsLength == count;}
 public:
     explicit QueueCyrcular() : itemsLength(10), items(new int[itemsLength]), count(0), first(0), last(0) {  }
     ~QueueCyrcular(){ delete[](items); }

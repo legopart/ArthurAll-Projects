@@ -9,15 +9,12 @@ class QueueStack
 private:
     std::stack<int> queueStack; //stackA
     std::stack<int> enqueueStack; //stackB
-    bool isEmpty(){ return queueStack.size() == 0;}
+    bool isEmpty() const { return queueStack.size() == 0;}
 public:
     explicit QueueStack() : queueStack(), enqueueStack() {  }
     ~QueueStack(){  }
 
-    void enqueue(int value)
-    {
-        queueStack.push(value);
-    }
+    void enqueue(int value) { queueStack.push(value);  }
     int dequeue()
     {
         if(queueStack.empty()) throw 0;
