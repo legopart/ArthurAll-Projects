@@ -59,8 +59,8 @@ namespace Stack
                 else if ( rightBracket.Contains(ch) )
                 {
                     if (stack.Count == 0) return false;    //Edge case
-                    char oposite = stack.Pop();
-                    if (!BracketsMatch(ch, oposite)) return false;
+                    char opposite = stack.Pop();
+                    if (!BracketsMatch(ch, opposite)) return false;
                 }
             }
             return stack.Count == 0; //boolean
