@@ -40,7 +40,7 @@ public:
 
     string print() const
     {
-        string str = "";
+        string str{};
         for (int i{}; i < count; ++i){
             str += to_string(items[i]) + " ";
         }

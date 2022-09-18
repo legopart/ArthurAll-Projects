@@ -30,7 +30,7 @@ public:
     }
     string print() const
     {
-        string str = "";
+        string str{};
         for (auto it: items) str += to_string(it) + " ";
         return str;
     }

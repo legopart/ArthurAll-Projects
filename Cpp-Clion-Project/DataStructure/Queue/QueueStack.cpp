@@ -27,7 +27,7 @@ public:
     }
     string print()
     {
-        string str = "";
+        string str{};
         while(queueStack.size() != 0) {enqueueStack.push(queueStack.top()); queueStack.pop();}
         while(enqueueStack.size() != 0) {
             str += to_string(enqueueStack.top()) + " ";

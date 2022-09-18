@@ -71,12 +71,12 @@ public:
         return value;
     }
 
-    int kth(int subplace){
+    int kth(int subPlace){
         if(isEmpty()) throw 0;
-        if(subplace > count || subplace <= 0) throw 0;
+        if(subPlace > count || subPlace <= 0) throw 0;
         Node* kth = root;
         Node* current = root;
-        for (int i{}; i < subplace - 1; ++i)  current = current->next;
+        for (int i{}; i < subPlace - 1; ++i) current = current->next;
         while (current != last)
         {
             current = current->next;

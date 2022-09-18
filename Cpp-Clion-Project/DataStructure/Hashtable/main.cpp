@@ -15,13 +15,13 @@ int main()
     hashtable.insert(346430, "Rub");
     hashtable.insert(548569, "John");
 
-    hashtable.print();
+    cout << hashtable.print();
     cout << "\n\n\n";
 
     hashtable.remove(345677); //Bob
-    hashtable.remove(5798);  // -
+    hashtable.remove(5798);  //    item not found to delete 5798
     hashtable.remove(564798); // Salli
-    hashtable.print();
+    cout << hashtable.print();
     if(hashtable.isEmpty()) cout <<  "true!\n";
     else cout << "ok\n";
 
