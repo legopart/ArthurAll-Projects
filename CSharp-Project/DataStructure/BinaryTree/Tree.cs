@@ -215,29 +215,27 @@ namespace BinaryTree
         }
 
 
-        private List<int> tempList;
         public int Size2()  //with recursion
         {
-            tempList = new List<int>();
-            TraverseInOrder2(Root);
-            int size = tempList.ToArray().Length;
-            tempList = null;
+            List<int> list = new List<int>();
+            TraverseInOrder2(Root, list);
+            int size = list.Count;
             return size;
         }
-        private void TraverseInOrder2(Node node)    //the recursion
+
+        private void TraverseInOrder2(Node node, List<int> list)    //the recursion
         {   // from low to high  1 2 3 4 ...
             if (IsNull(node)) return;   //base condition
-            TraverseInOrder2(node.ChildLeft);
-            tempList.Add(node.Value);
-            TraverseInOrder2(node.ChildRight);
+            TraverseInOrder2(node.ChildLeft, list);
+            list.Add(node.Value);
+            TraverseInOrder2(node.ChildRight, list);
         }
         public override string ToString()
         {
 
-            tempList = new List<int>();
-            TraverseInOrder2(Root);
-            String str = String.Join(", ", tempList.ToArray());
-            tempList = null;
+            var list = new List<int>();
+            TraverseInOrder2(Root, list);
+            String str = String.Join(", ", list);
             return str;
         }
     }

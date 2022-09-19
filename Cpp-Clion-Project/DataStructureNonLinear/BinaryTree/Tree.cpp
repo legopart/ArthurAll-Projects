@@ -53,6 +53,53 @@ private:
         getNodesAtDistance(node->left, distance - 1, list);
         getNodesAtDistance(node->right, distance - 1, list);
     }
+    /*1*/
+    /*2*/
+    /*3*/
+
+
+    int max(Node *node)
+    {
+        if (isNull(node)) return INT_MIN;
+        return std::max(
+                isNull(node->left) ? node->data : max(node->left)
+                , isNull(node->right) ? node->data : max(node->right)
+        );
+    }
+    bool contains(Node* node, int data)
+    {
+        if (isNull(node)) return false;
+        if (data == node->data) return true;
+        return contains(node->left, data) || contains(node->right, data); //O(n)
+    }
+    void traversePreOrder(Node *node)
+    {
+        if (isNull(node)) return;   //base condition
+        std::cout << node->data << " ";
+        traversePreOrder(node->left);
+        traversePreOrder(node->right);
+    }
+    void traverseInOrder(Node *node)
+    {
+        if (isNull(node)) return;   //base condition
+        traverseInOrder(node->left);
+        std::cout << node->data << " ";
+        traverseInOrder(node->right);
+    }
+    void traversePostOrder(Node *node)
+    {
+        if (isNull(node)) return;   //base condition
+        traversePostOrder(node->left);
+        traversePostOrder(node->right);
+        std::cout << node->data << " "; //Root
+    }
+    void TraverseInOrder2(Node* node, std::list<int>* list)    //the recursion
+    {   // from low to high  1 2 3 4 ...
+        if (isNull(node)) return;   //base condition
+        TraverseInOrder2(node->left, list);
+        list->push_back(node->data);
+        TraverseInOrder2(node->right, list);
+    }
 public:
     explicit Tree() : root(NULL) { }
     ~Tree(){ /*delete(root);*/ }
@@ -125,5 +172,42 @@ public:
     /*2*/
     /*3*/
 
-
+    int max()
+    {
+        if (isNull(root)) throw 0;
+        return std::max(max(root), root->data);
+    }
+    bool contains(int data) { return contains(root, data); }
+    void traversePreOrder()      // Root, Left, Right
+    {
+        traversePreOrder(root);
+        std::cout <<"\n";
+    }
+    void traverseInOrder()       // Left, Root, Right
+    {
+        traverseInOrder(root);
+        std::cout <<"\n";
+    }
+    void traversePostOrder()     // Left, Right, Root
+    {
+        traversePostOrder(root);
+        std::cout <<"\n";
+    }
+    int Size2()  //with recursion
+    {
+        std::list<int> list{};
+        TraverseInOrder2(root, &list);
+        int size = list.size();
+        return size;
+    }
+    string print()
+    {
+        std::list<int> list{};
+        TraverseInOrder2(root, &list);
+        string str{};
+        for(auto data: list){
+            str += std::to_string(data) + ", ";
+        }
+        return str;
+    }
 };

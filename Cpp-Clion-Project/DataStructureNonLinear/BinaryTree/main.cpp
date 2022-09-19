@@ -29,5 +29,6 @@ int main() {
     tree.traverseLevelOrder();
 
     cout << "\nend\n";
+    cout << tree.print();
 
 }
