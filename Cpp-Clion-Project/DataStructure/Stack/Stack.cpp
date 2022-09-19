@@ -13,8 +13,8 @@ private:
     {
         int* newStack = new int[itemsLength * 2];
         for(int i = 0; i < count; ++i )  newStack[i] = items[i];
-        itemsLength *= 2;
         delete[](items);
+        itemsLength *= 2;
         items = newStack;
     }
 public:

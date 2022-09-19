@@ -15,13 +15,12 @@ private:
     void allocate()
     {
         int* newQueue = new int[itemsLength * 2];
-        for(int i = first ; i < count; ++i) {
-            newQueue[i - first] = items[i];
-        }
+        for(int i = first ; i < count; ++i) newQueue[i - first] = items[i];
+
         count -= first;
         first = 0;
-        itemsLength *= 2;
         delete[](items);
+        itemsLength *= 2;
         items = newQueue;
     }
 public:
