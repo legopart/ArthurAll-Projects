@@ -7,19 +7,21 @@ using std::string, std::to_string;
 class QueueArray
 {
 private:
-    int* items;
     int itemsLength;
+    int* items;
     int count;
     int first;
     bool isEmpty() const { return count == 0;}
     void allocate()
     {
         int* newQueue = new int[itemsLength * 2];
-        for(int i = first ; i < count; ++i) newQueue[i - first] = items[i];
+        for(int i = first ; i < count; ++i) {
+            newQueue[i - first] = items[i];
+        }
         count -= first;
         first = 0;
         itemsLength *= 2;
-         //delete[](items);             /// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        delete[](items);
         items = newQueue;
     }
 public:

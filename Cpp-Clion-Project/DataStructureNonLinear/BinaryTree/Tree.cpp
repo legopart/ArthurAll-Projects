@@ -54,10 +54,26 @@ private:
         getNodesAtDistance(node->right, distance - 1, list);
     }
     /*1*/
+    int size(Node* node)
+    {
+        if (isNull(node)) return 0;
+        return
+                1
+                + (!isNull(node->left) ? size(node->left) : 0)
+                + (!isNull(node->right) ? size(node->right) : 0);
+    }
     /*2*/
+    int countLevels(Node* node, int level)
+    {
+        if (isNull(node)) return level;
+        return
+                1
+                + std::max(
+                        countLevels(node->left, level)
+                        , countLevels(node->right, level)
+                );
+    }
     /*3*/
-
-
     int max(Node *node)
     {
         if (isNull(node)) return INT_MIN;
@@ -169,9 +185,10 @@ public:
     };
 
     /*1*/
+    int size() { return size(root); }
     /*2*/
+    int countLevels() { return countLevels(root, 0); }    //height with recursion
     /*3*/
-
     int max()
     {
         if (isNull(root)) throw 0;

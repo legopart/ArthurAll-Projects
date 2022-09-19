@@ -53,7 +53,7 @@ int main()
     cout << (isBalanced("[a>bc]") ? "true" : "false") << "\n";
 
 
-
+    return 0;
 }
 
 static const char leftBrackets[] = { '(', '<', '{', '[' };
