@@ -6,23 +6,13 @@ struct A{
 };
 
 int main() {
-    std::cout << "out scope1:" << std::endl;
-    A* ptr = NULL;
-    //std::cout << "*ptr= " << *ptr << std::endl; //fail
+    int x = 1;
+    int y = -1;
 
-    {
-        std::cout << "in scope1:" << std::endl;
-        A* a= new A(5);
-        std::cout << "x= " << a->x << std::endl;   //5
-        ptr = a;
-        std::cout << "*ptr= " << ptr->x << std::endl; //5
-    }
+    std::cout << (false, ++x) << std::endl;
 
-    std::cout << "out scope2:" << std::endl;
-    std::cout << "*ptr= " << ptr->x << std::endl;
-
-
-
+    std::cout << x << std::endl;
+    std::cout << y << std::endl;
 
     return 0;
 }

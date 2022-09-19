@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <string>
 //move to smart pointer
@@ -6,26 +5,25 @@
 //fix destructures!     List.root   List.last
 //delete in the middle
 using std::string, std::to_string, std::cout;
-struct Node
-{
-    int data;
-    struct Node* next;
-    explicit Node(int data) : data(data), next(NULL) { }
-    ~Node(){ cout << "deleted:" << data << "\n"; }
-};
-
 class List
 {
 private:
+    struct Node
+    {
+        int data;
+        struct Node* next;
+        explicit Node(int data) : data(data), next(NULL) { }
+        ~Node(){ cout << "deleted:" << data << "\n"; }
+    };
     struct Node* root;
     struct Node* last;
     int count;
     bool isReversed;
-    bool isEmpty() const { return root == 0; }
+    bool isEmpty() const { return root == NULL; }
     void resetList(){ delete(root); root=NULL; last=NULL; }
 public:
     explicit List() : root(NULL), last(NULL), count(0), isReversed(false) { }
-    ~List(){ while(root != 0 && !isReversed) {removeLast();} }
+    ~List(){ while(root != NULL && !isReversed) {removeLast();} }
     void insertLast(int data)
     {
         Node* node = new Node( data );
@@ -59,7 +57,7 @@ public:
 
         Node* current = root->next;
         Node* previous = root;
-        while (current->next != 0)
+        while (current->next != NULL)
         {
             previous = previous->next;
             current = current->next;
@@ -90,7 +88,7 @@ public:
         List* newList = new List();
         //List* newList = &list;
         Node* current = root;
-        while (current != 0)
+        while (current != NULL)
         {
             newList->insertFirst(current->data);
             current = current->next;
@@ -106,7 +104,7 @@ public:
     {
         Node* current = root;
         string str{};
-        while (current != 0)
+        while (current != NULL)
         {
             str += to_string(current->data) + ", ";
             current = current->next;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace BinaryTree
 {
@@ -18,7 +19,7 @@ namespace BinaryTree
         private Node Root { set; get; }
         public Tree() {  }
         private bool IsNull(Node node) { return node == null; }
-        private bool IsLeaf(Node node) { return node.ChildLeft == null && node.ChildRight == null ; }
+        private bool IsLeaf(Node node) { return IsNull(node.ChildLeft) && IsNull(node.ChildRight) ; }
 
         public void Insert(int value)
         {
@@ -36,7 +37,7 @@ namespace BinaryTree
                     if (IsNull(current.ChildRight)) { current.ChildRight = new Node(value); break; }
                     current = current.ChildRight;
                 }
-                else /*==*/ return;
+                else /*==*/ break;
             }
         }
         public bool Find(int value) 
@@ -54,7 +55,7 @@ namespace BinaryTree
         public int Height() { return Height(Root); }
         private int Height(Node node)
         {
-            if (IsNull(node)) return int.MinValue;//-1;
+            if (IsNull(node)) return -1; //int.MinValue;
             if (IsLeaf(node)) return 0; // base condition
             return 1 + Math.Max(Height(node.ChildLeft), Height(node.ChildRight));
         }
@@ -62,6 +63,7 @@ namespace BinaryTree
         public int Min() { return Min(Root); }
         private int Min(Node node)
         { // O(n)
+            if (IsNull(node)) return int.MaxValue;
             if (IsLeaf(node)) return node.Value;    //base condition
             var left = Min(node.ChildLeft);
             var right = Min(node.ChildRight);
@@ -86,7 +88,7 @@ namespace BinaryTree
             if (IsNull(a) && IsNull(b)) return true;
             if (!IsNull(a) && !IsNull(b))
                 return a.Value == b.Value
-                        && Equals(a.ChildLeft, b.ChildRight)
+                        && Equals(a.ChildLeft, b.ChildLeft)
                         && Equals(a.ChildRight, b.ChildRight);
             return false;
         }
@@ -118,7 +120,7 @@ namespace BinaryTree
 
         public void TraverseLevelOrder()
         {
-            for (var i = 0; i <= Height(); i++)
+            for (var i = 0; i <= Height(); ++i)
             {
                 var list = GetNodesAtDistance(i);
                Console.WriteLine(i + "| "+ list);

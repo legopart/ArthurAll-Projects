@@ -19,7 +19,7 @@ private:
         count -= first;
         first = 0;
         itemsLength *= 2;
-         //delete[](items);
+         //delete[](items);             /// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         items = newQueue;
     }
 public:

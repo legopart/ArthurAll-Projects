@@ -45,15 +45,13 @@ public:
     int remove(int index) {
         int item = itemArray[index];
         if (needToReSize(index)) throw 0;
-        for (int i = index; i < count; i++)
-            itemArray[i] = itemArray[i + 1];
+        for (int i = index; i < count; i++) itemArray[i] = itemArray[i + 1];
         count--;
         return item;
     };
     int removeItem(int item) { return remove(indexOf(item)); };
     void print() const {
-        for (int i = 0; i < count; ++i)
-            cout << itemArray[i] << ", ";
+        for (int i = 0; i < count; ++i) cout << itemArray[i] << ", ";
         cout << "\n";
     }
 };
