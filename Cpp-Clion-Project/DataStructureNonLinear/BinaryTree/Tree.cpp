@@ -9,7 +9,7 @@ private:
         struct Node *left;
         struct Node *right;
         explicit Node(int data) : data(data), left(NULL), right(NULL) {}
-        ~Node() { cout << "deleted:" << data << "\n"; }
+        ~Node() { if(left != 0) delete(left);if(right != 0) delete(right); cout << "del:" << data << "\n"; }
     };
     struct Node *root;
     bool isNull(const Node *node){  return node == NULL; }
@@ -118,7 +118,7 @@ private:
     }
 public:
     explicit Tree() : root(NULL) { }
-    ~Tree(){ /*delete(root);*/ }
+    ~Tree(){ delete(root); }
     void insert(int data)
     {
         Node* node = new Node( data );

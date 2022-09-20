@@ -41,6 +41,40 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/
 # =============================================================================
+# Object build statements for EXECUTABLE target NonLinear-AVLTree
+
+
+#############################################
+# Order-only phony target for NonLinear-AVLTree
+
+build cmake_object_order_depends_target_NonLinear-AVLTree: phony || CMakeFiles/NonLinear-AVLTree.dir
+
+build CMakeFiles/NonLinear-AVLTree.dir/DataStructureNonLinear/AVLTree/main.cpp.obj: CXX_COMPILER__NonLinear-AVLTree_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureNonLinear/AVLTree/main.cpp || cmake_object_order_depends_target_NonLinear-AVLTree
+  DEP_FILE = CMakeFiles\NonLinear-AVLTree.dir\DataStructureNonLinear\AVLTree\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\NonLinear-AVLTree.dir
+  OBJECT_FILE_DIR = CMakeFiles\NonLinear-AVLTree.dir\DataStructureNonLinear\AVLTree
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target NonLinear-AVLTree
+
+
+#############################################
+# Link the executable NonLinear-AVLTree.exe
+
+build NonLinear-AVLTree.exe: CXX_EXECUTABLE_LINKER__NonLinear-AVLTree_Debug CMakeFiles/NonLinear-AVLTree.dir/DataStructureNonLinear/AVLTree/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\NonLinear-AVLTree.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = NonLinear-AVLTree.exe
+  TARGET_IMPLIB = libNonLinear-AVLTree.dll.a
+  TARGET_PDB = NonLinear-AVLTree.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target NonLinear-BinartTree
 
 
@@ -344,6 +378,8 @@ build Linear-Queue: phony Linear-Queue.exe
 
 build Linear-Stack: phony Linear-Stack.exe
 
+build NonLinear-AVLTree: phony NonLinear-AVLTree.exe
+
 build NonLinear-BinartTree: phony NonLinear-BinartTree.exe
 
 # =============================================================================
@@ -354,7 +390,7 @@ build NonLinear-BinartTree: phony NonLinear-BinartTree.exe
 #############################################
 # Folder: C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug
 
-build all: phony NonLinear-BinartTree.exe Cpp_Clion_Project.exe Linear-ArrayList.exe Linear-LinkedList.exe Linear-Stack.exe Linear-Queue.exe Linear-Hashtable.exe
+build all: phony NonLinear-AVLTree.exe NonLinear-BinartTree.exe Cpp_Clion_Project.exe Linear-ArrayList.exe Linear-LinkedList.exe Linear-Stack.exe Linear-Queue.exe Linear-Hashtable.exe
 
 # =============================================================================
 # Built-in targets
