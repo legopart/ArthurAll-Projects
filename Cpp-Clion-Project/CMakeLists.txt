@@ -5,9 +5,11 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(.)
 
+add_executable(NonLinear-BinartTree DataStructureNonLinear/AVLTree/main.cpp)
+
 add_executable(NonLinear-BinartTree DataStructureNonLinear/BinaryTree/main.cpp)
 
-add_executable(Cpp_Clion_Project main.cpp DataStructureNonLinear/BinaryTree/main.cpp DataStructureNonLinear/BinaryTree/Tree.cpp)
+add_executable(Cpp_Clion_Project main.cpp DataStructureNonLinear/BinaryTree/main.cpp DataStructureNonLinear/BinaryTree/Tree.cpp DataStructureNonLinear/AVLTree/main.cpp DataStructureNonLinear/AVLTree/Tree.cpp)
 
 add_executable(Linear-ArrayList DataStructure/ArrayList/main.cpp)
 

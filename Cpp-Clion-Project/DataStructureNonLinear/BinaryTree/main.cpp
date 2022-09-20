@@ -5,7 +5,7 @@
 #include "Tree.cpp"
 using  std::cout;
 int main() {
-    cout << "BinaryTree1\n";
+    cout << "BinaryTree\n";
     Tree tree{};
     tree.insert(5);
     tree.insert(10);
