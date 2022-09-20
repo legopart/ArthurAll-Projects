@@ -123,7 +123,7 @@ namespace BinaryTree
             for (var i = 0; i <= Height(); ++i)
             {
                 var list = GetNodesAtDistance(i);
-               Console.WriteLine(i + "| "+ list);
+               Console.WriteLine(i + "| "+ String.Join(", ",list));
             }
         }
 
@@ -237,6 +237,35 @@ namespace BinaryTree
             TraverseInOrder2(Root, list);
             String str = String.Join(", ", list);
             return str;
+        }
+
+
+        /*AVL*/
+        /*1*/
+        private bool IsBalanced(Node node)
+        {
+            if (IsNull(node)) return true;
+            return Math.Abs(Height(node.ChildLeft) - Height(node.ChildRight))  <= 1
+                && IsBalanced(node.ChildLeft)
+                && IsBalanced(node.ChildRight);
+        }
+        public bool IsBalanced() 
+        {
+            if (IsNull(Root)) return true;
+            return IsBalanced(Root);
+        }
+        /*2*/
+        private bool IsPerfect(Node node)
+        {
+            if (IsNull(node)) return true;
+            return Height(node.ChildLeft) - Height(node.ChildRight) == 0
+                && IsPerfect(node.ChildLeft)
+                && IsPerfect(node.ChildRight);
+        }
+        public bool IsPerfect()
+        {
+            if (IsNull(Root)) return true;
+            return IsPerfect(Root);
         }
     }
 }

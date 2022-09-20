@@ -211,4 +211,32 @@ public class Tree {
 	}
 	
 	
+    /*AVL*/
+    /*1*/
+    private boolean isBalanced(Node node)
+    {
+        if (isNull(node)) return true;
+        return Math.abs(height(node.leftChild) - height(node.rightChild))  <= 1
+            && isBalanced(node.leftChild)
+            && isBalanced(node.rightChild);
+    }
+    public boolean isBalanced() 
+    {
+        if (isNull(root)) return true;
+        return isBalanced(root);
+    }
+    /*2*/
+    private boolean isPerfect(Node node)
+    {
+        if (isNull(node)) return true;
+        return height(node.leftChild) - height(node.rightChild) == 0
+            && isPerfect(node.leftChild)
+            && isPerfect(node.rightChild);
+    }
+    public boolean isPerfect()
+    {
+        if (isNull(root)) return true;
+        return isPerfect(root);
+    }
+	
 }

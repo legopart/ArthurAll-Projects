@@ -55,11 +55,11 @@
             Console.WriteLine((tree.IsBinarySearchTree()));
             Console.WriteLine((tree2.IsBinarySearchTree()));
 
-            Console.WriteLine((tree.GetNodesAtDistance(0)));
-            Console.WriteLine(tree.GetNodesAtDistance(1));
-            Console.WriteLine(tree.GetNodesAtDistance(2));
-            Console.WriteLine(tree.GetNodesAtDistance(3));
-            Console.WriteLine(tree.GetNodesAtDistance(30));
+            Console.WriteLine(String.Join("," ,tree.GetNodesAtDistance(0)));
+            Console.WriteLine(String.Join(",", tree.GetNodesAtDistance(1)));
+            Console.WriteLine(String.Join(",", tree.GetNodesAtDistance(2)));
+            Console.WriteLine(String.Join(",", tree.GetNodesAtDistance(3)));
+            Console.WriteLine(String.Join(",", tree.GetNodesAtDistance(30)));
             //BREADTH FIRST
             tree.TraverseLevelOrder();
             Console.WriteLine(tree.Size2());    //Recursion
@@ -73,6 +73,20 @@
             Console.WriteLine("max");
             Console.WriteLine(tree.Max());
             Console.WriteLine(tree.Contains(4));
+
+            Console.WriteLine("///////");
+            Tree tree6 = new Tree();
+            tree6.Insert(10);
+            tree6.Insert(20);
+            tree6.Insert(30);
+ 
+            tree6.Insert(5);
+            tree6.Insert(6);
+            tree6.Insert(2);
+           // tree6.Insert(15);
+
+            Console.WriteLine(tree6.IsBalanced());
+            Console.WriteLine(tree6.IsPerfect());
 
         }
 

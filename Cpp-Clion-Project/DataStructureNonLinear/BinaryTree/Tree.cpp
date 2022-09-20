@@ -116,6 +116,23 @@ private:
         list->push_back(node->data);
         TraverseInOrder2(node->right, list);
     }
+    /*AVL*/
+    /*1*/
+    bool isBalanced(Node* node)
+    {
+        if (isNull(node)) return true;
+        return std::abs(height(node->left) - height(node->right))  <= 1
+               && isBalanced(node->left)
+               && isBalanced(node->right\);
+    }
+    /*2*/
+    bool isPerfect(Node* node)
+    {
+        if (isNull(node)) return true;
+        return height(node->left) - height(node->right) == 0
+               && isPerfect(node->left)
+               && isPerfect(node->right);
+    }
 public:
     explicit Tree() : root(NULL) { }
     ~Tree(){ delete(root); }
@@ -227,4 +244,19 @@ public:
         }
         return str;
     }
+
+    /*AVL*/
+    /*1*/
+    bool isBalanced()
+    {
+        if (isNull(root)) return true;
+        return isBalanced(root);
+    }
+    /*2*/
+    bool isPerfect()
+    {
+        if (isNull(root)) return true;
+        return isPerfect(root);
+    }
+
 };
