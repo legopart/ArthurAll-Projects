@@ -2,7 +2,7 @@
 
 namespace CSharp_Project
 {
-    //polymorphism example
+    //oop polymorphism example
     class Person
     {
         public virtual String SayHi() 
