@@ -41,6 +41,40 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/
 # =============================================================================
+# Object build statements for EXECUTABLE target NonLinear-HeapTree
+
+
+#############################################
+# Order-only phony target for NonLinear-HeapTree
+
+build cmake_object_order_depends_target_NonLinear-HeapTree: phony || CMakeFiles/NonLinear-HeapTree.dir
+
+build CMakeFiles/NonLinear-HeapTree.dir/DataStructureNonLinear/HeapTree/main.cpp.obj: CXX_COMPILER__NonLinear-HeapTree_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureNonLinear/HeapTree/main.cpp || cmake_object_order_depends_target_NonLinear-HeapTree
+  DEP_FILE = CMakeFiles\NonLinear-HeapTree.dir\DataStructureNonLinear\HeapTree\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\NonLinear-HeapTree.dir
+  OBJECT_FILE_DIR = CMakeFiles\NonLinear-HeapTree.dir\DataStructureNonLinear\HeapTree
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target NonLinear-HeapTree
+
+
+#############################################
+# Link the executable NonLinear-HeapTree.exe
+
+build NonLinear-HeapTree.exe: CXX_EXECUTABLE_LINKER__NonLinear-HeapTree_Debug CMakeFiles/NonLinear-HeapTree.dir/DataStructureNonLinear/HeapTree/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\NonLinear-HeapTree.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = NonLinear-HeapTree.exe
+  TARGET_IMPLIB = libNonLinear-HeapTree.dll.a
+  TARGET_PDB = NonLinear-HeapTree.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target NonLinear-AVLTree
 
 
@@ -152,6 +186,13 @@ build CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/AVLTree/Tree.cpp.o
   OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureNonLinear\AVLTree
 
+build CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/main.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureNonLinear/HeapTree/main.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
+  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureNonLinear\HeapTree\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureNonLinear\HeapTree
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Cpp_Clion_Project
@@ -160,7 +201,7 @@ build CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/AVLTree/Tree.cpp.o
 #############################################
 # Link the executable Cpp_Clion_Project.exe
 
-build Cpp_Clion_Project.exe: CXX_EXECUTABLE_LINKER__Cpp_Clion_Project_Debug CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/BinaryTree/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/BinaryTree/Tree.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/AVLTree/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/AVLTree/Tree.cpp.obj
+build Cpp_Clion_Project.exe: CXX_EXECUTABLE_LINKER__Cpp_Clion_Project_Debug CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/BinaryTree/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/BinaryTree/Tree.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/AVLTree/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/AVLTree/Tree.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
@@ -382,6 +423,8 @@ build NonLinear-AVLTree: phony NonLinear-AVLTree.exe
 
 build NonLinear-BinartTree: phony NonLinear-BinartTree.exe
 
+build NonLinear-HeapTree: phony NonLinear-HeapTree.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -390,7 +433,7 @@ build NonLinear-BinartTree: phony NonLinear-BinartTree.exe
 #############################################
 # Folder: C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug
 
-build all: phony NonLinear-AVLTree.exe NonLinear-BinartTree.exe Cpp_Clion_Project.exe Linear-ArrayList.exe Linear-LinkedList.exe Linear-Stack.exe Linear-Queue.exe Linear-Hashtable.exe
+build all: phony NonLinear-HeapTree.exe NonLinear-AVLTree.exe NonLinear-BinartTree.exe Cpp_Clion_Project.exe Linear-ArrayList.exe Linear-LinkedList.exe Linear-Stack.exe Linear-Queue.exe Linear-Hashtable.exe
 
 # =============================================================================
 # Built-in targets
