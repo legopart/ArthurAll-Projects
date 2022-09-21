@@ -17,9 +17,6 @@ namespace Heap
             Console.WriteLine(heap);
         }
 
-
-
-
         public static int GetKthLargest(int[] array, int kth)
         {
             if (kth > array.Length || kth < 1) throw new Exception();
