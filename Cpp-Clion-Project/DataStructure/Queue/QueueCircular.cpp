@@ -19,14 +19,14 @@ public:
     ~QueueCyrcular(){ delete[](items); }
     void enqueue(int value)
     {
-        if(isFull()) throw 0;
+        if(isFull()) throw new std::exception();
         items[last] = value;
         last = (last + 1) % itemsLength;
         count ++;
     }
     int dequeue()
     {
-        if(isEmpty()) throw 0;
+        if(isEmpty()) throw new std::exception();
         int value = items[first];
         first = (first +1) % itemsLength;
         count --;
