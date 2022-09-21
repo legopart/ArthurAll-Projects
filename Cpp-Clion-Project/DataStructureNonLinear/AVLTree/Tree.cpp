@@ -5,7 +5,8 @@
 using std::string, std::to_string, std::cout, std::max;
 class Tree {
 private:
-    struct Node {
+    struct Node
+    {
         int data;
         int height;
         struct Node *left;

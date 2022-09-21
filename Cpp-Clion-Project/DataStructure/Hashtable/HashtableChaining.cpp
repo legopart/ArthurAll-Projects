@@ -3,7 +3,6 @@
 #include <string>
 #include <list>
 using std::pair, std::list, std::string, std::to_string, std::begin, std::end, std::cout ;
-
 class HashtableChaining
 {
 private:
@@ -65,5 +64,4 @@ public:
         }
         return str;
     }
-
 };

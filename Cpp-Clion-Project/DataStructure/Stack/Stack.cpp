@@ -25,19 +25,16 @@ public:
         items[count] = value;
         count ++;
     }
-
     int peak(){
         if(isEmpty()) throw 0;
         return items[count - 1];
     }
-
     int pop(){
         if(isEmpty()) throw 0;
         int value = items[count - 1];
         count --;
         return value;
     }
-
     string print() const
     {
         string str{};
@@ -46,5 +43,4 @@ public:
         }
         return str;
     }
-
 };

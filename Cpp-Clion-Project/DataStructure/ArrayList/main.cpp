@@ -48,7 +48,6 @@ int main()
 
 //    memset(array3.Data() /*&array3[0]*/, 0, array3.Size() * sizeof(int));
 
-
     array3[2] = 5;
     array3[4] = 8;
 
@@ -59,9 +58,7 @@ int main()
         cout << array3[i] << "\n";
     }
 
-    //for(auto& a : array3 ) להשלים Iterator
+    //for(auto& a : array3 ) finish Iterator
 
-    //לא עובד Template
-    // שמיושם ב header
     return 0;
 }

@@ -15,14 +15,11 @@ public:
     explicit LinkedStack() : items{} { }
     ~LinkedStack(){  }
 
-    void push(int value){
-        items.push_back(value);
-    }
+    void push(int value){ items.push_back(value); }
     int peak(){
         if(isEmpty()) throw 0;
         return items.back();
     }
-
     int pop(){
         int i  = items.back();;
        items.pop_back();
@@ -34,5 +31,4 @@ public:
         for (auto it: items) str += to_string(it) + " ";
         return str;
     }
-
 };

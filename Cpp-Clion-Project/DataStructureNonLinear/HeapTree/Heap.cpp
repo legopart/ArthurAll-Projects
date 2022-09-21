@@ -10,8 +10,18 @@ private:
     int count;
     int* itemArray;
     int arrayLength;
+    bool isFull(){ return count == arrayLength; }
+    bool ismpty(){ return count == 0; }
+    int parant(int index) {return index >> 1;} // index/2
+    int child(int index) {return index << 1;} // index*2
+    int left(int index){ return  child(index) + 1; } // index*2+1
+    int right(int index){ return  child(index) + 2; } // index*2+2
+    void swap(int* a, int* b){ std::swap(a, b); }
 public:
-    explicit Heap() : arrayLength{10}, itemArray{new int[arrayLength]}, count{}, {}
+    explicit Heap() : arrayLength{10}, itemArray{new int[arrayLength]}, count{} {}
     ~Heap() { delete[](itemArray) ;}
+    void insert(int data)
+    {
 
+    }
 };

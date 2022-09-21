@@ -21,8 +21,7 @@ namespace Heap
         }
 
         private bool IsFull() { return Items.Length == Counter; }
-        public bool IsEmpty() { return Items.Length == Counter; }
-        private bool IsNull(int? value) { return value == null; }
+        public bool IsEmpty() { return Counter == 0; }
         private int Parant(int index) { return (index - 1) / 2; }
         private int ChildLeft(int index) { return index  * 2 + 1; }
         private int ChildRight(int index) { return index  * 2 + 2; }
@@ -36,7 +35,6 @@ namespace Heap
         public void Insert(int value)
         {
             if (IsFull()) throw new Exception();    //or extend
-            if (IsNull(value)) throw new Exception();
             Items[Counter] = value;
             Counter++;
             BubbleUp();

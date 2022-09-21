@@ -98,8 +98,6 @@ public:
         newList->isReversed = true;
         delete(newList);
     }
-
-
     string print() const
     {
         Node* current = root;
@@ -112,5 +110,4 @@ public:
         str += "\n";
         return str;
     }
-
 };

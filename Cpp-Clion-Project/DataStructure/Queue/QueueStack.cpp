@@ -14,7 +14,6 @@ private:
 public:
     explicit QueueStack() : queueStack{}, enqueueStack{} {  }
     ~QueueStack(){ }
-
     void enqueue(int value) { queueStack.push(value);  }
     int dequeue()
     {
@@ -36,5 +35,4 @@ public:
         }
         return str;
     }
-
 };

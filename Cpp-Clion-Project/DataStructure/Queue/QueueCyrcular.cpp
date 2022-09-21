@@ -38,5 +38,4 @@ public:
         for(int i = first; i < count; ++i) str += to_string(items[i]) + " ";
         return str;
     }
-
 };

@@ -26,7 +26,6 @@ private:
 public:
     explicit QueueArray() : itemsLength{10}, items{new int[itemsLength]}, count{}, first{} {  }
     ~QueueArray(){ delete[](items); }
-
     void enqueue(int value)
     {
         if(count == itemsLength) allocate();//throw 0; // allocate
@@ -46,5 +45,4 @@ public:
         for(int i = first; i < count; ++i) str += to_string(items[i]) + " ";
         return str;
     }
-
 };

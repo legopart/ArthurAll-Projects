@@ -38,25 +38,15 @@ inline void Array2<T>::resize()
     itemArray = newArray;
     arrayLength *= 2;
 }
-
 template<typename  T> bool Array2<T>::needToReSize() { return arrayLength == count; }
-
 template<typename T> bool Array2<T>::needToReSize(int index) { return index >= count; }
-
 template<typename T> inline Array2<T>::Array2(int length) : count{}, arrayLength{length}, itemArray {new T[arrayLength]} { }
-
 template<typename T> inline Array2<T>::Array2() { Array2(5); }
-
 template<typename T> bool Array2<T>::contains(T item) { return indexOf(item) != -1; }
-
 template<typename T> int Array2<T>::indexOf(T item) { for (int i = 0; i < count; ++i) if (itemArray[i] == item) return i; return -1; }
-
 template<typename T> int Array2<T>::lastIndexOf(T item) { return itemArray[indexOf(item)]; }
-
 template<typename T> T Array2<T>::get(int index) { return itemArray[index]; }
-
 template<typename T> int Array2<T>::size() { return count; }
-
 template<typename T> T Array2<T>::add(T item)
 {
     if (needToReSize()) resize();
@@ -64,14 +54,12 @@ template<typename T> T Array2<T>::add(T item)
     count++;
     return item;
 }
-
 template<typename T> int Array2<T>::set(int index, T item)
 {
     if (needToReSize(index)) throw 0;
     itemArray[index] = item;
     return item;
 }
-
 template<typename T> T Array2<T>::remove(int index)
 {
     int item = itemArray[index];
@@ -81,12 +69,7 @@ template<typename T> T Array2<T>::remove(int index)
     count--;
     return item;
 }
-
-template<typename T> T Array2<T>::removeItem(T item)
-{
-    return remove(indexOf(item));
-}
-
+template<typename T> T Array2<T>::removeItem(T item){ return remove(indexOf(item)); }
 template<typename T> void Array2<T>::print() const
 {
     for (int i{}; i < count; ++i)
