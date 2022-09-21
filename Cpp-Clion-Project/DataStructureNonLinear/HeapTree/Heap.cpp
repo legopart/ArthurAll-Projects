@@ -12,13 +12,13 @@ private:
     int arrayLength;
     bool isFull(){ return count == arrayLength; }
     bool isEmpty(){ return count == 0; }
-    int parant(int index) {return index >> 1;} // index/2
-    int child(int& index) {return index << 1;} // index*2
-    int left(int& index){ return  child(index) + 1; } // index*2+1
-    int right(int& index){ return  child(index) + 2; } // index*2+2
-    void swap(int& a, int& b){ std::swap(itemArray[a], itemArray[b]); }
-    void swap(int& a, int&& b){ std::swap(itemArray[a], itemArray[b]); }
-    void bubbleUp()
+    int parant(int& index) const {return index >> 1;} // index/2
+    int child(int& index) const {return index << 1;} // index*2
+    int left(int& index) const { return  child(index) + 1; } // index*2+1
+    int right(int& index) const { return  child(index) + 2; } // index*2+2
+    void swap(int& a, int b) const { std::swap(itemArray[a], itemArray[b]); }
+    //void swap(int& a, int&& b){ std::swap(itemArray[a], itemArray[b]); }
+    void bubbleUp() const
     {
         auto index = count - 1; //last
         while (itemArray[index] > itemArray[parant(index)])
@@ -27,7 +27,7 @@ private:
             index = parant(index);
         }
     }
-    bool isParant(int index)
+    bool isParant(int index) const
     {
         auto childLeft = itemArray[left(index)];
         auto childRight = itemArray[right(index)];
@@ -36,7 +36,7 @@ private:
         else if (right(index) > count) return itemArray[index] >= childLeft;
         else return itemArray[index] >=  childLeft &&  itemArray[index] >=  childRight;
     }
-    void bubbleDown()  // לחזור!
+    void bubbleDown() const  // לחזור!
     {
         int index{};
         while (!isParant(index))
@@ -79,7 +79,12 @@ public:
         bubbleDown();
         return temp;
     }
-    string print(){
-        return "";
+    string print() const {
+        string str{};
+        for(int i{}; i < count; i++){
+            str += std::to_string(itemArray[i]) + ", ";
+        }
+        str += "\n";
+        return str;
     }
 };
