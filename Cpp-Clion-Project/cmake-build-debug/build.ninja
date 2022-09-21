@@ -214,6 +214,20 @@ build CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/HeapVecto
   OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureNonLinear\HeapTree
 
+build CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/TrieTree/main.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureNonLinear/TrieTree/main.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
+  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureNonLinear\TrieTree\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureNonLinear\TrieTree
+
+build CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/TrieTree/Trie.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureNonLinear/TrieTree/Trie.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
+  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureNonLinear\TrieTree\Trie.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureNonLinear\TrieTree
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Cpp_Clion_Project
@@ -222,7 +236,7 @@ build CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/HeapVecto
 #############################################
 # Link the executable Cpp_Clion_Project.exe
 
-build Cpp_Clion_Project.exe: CXX_EXECUTABLE_LINKER__Cpp_Clion_Project_Debug CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/BinaryTree/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/BinaryTree/Tree.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/AVLTree/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/AVLTree/Tree.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/Heap.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/PriorityQueue.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/HeapVector.cpp.obj
+build Cpp_Clion_Project.exe: CXX_EXECUTABLE_LINKER__Cpp_Clion_Project_Debug CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/BinaryTree/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/BinaryTree/Tree.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/AVLTree/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/AVLTree/Tree.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/Heap.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/PriorityQueue.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/HeapTree/HeapVector.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/TrieTree/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureNonLinear/TrieTree/Trie.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir

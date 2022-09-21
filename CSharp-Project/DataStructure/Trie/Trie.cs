@@ -17,20 +17,21 @@ namespace Trie
         {
             private Dictionary<char, Node> Words{ get; set; }      //jave HashMap       //used Words instead Chileds !
             public char Value { get; set; }
-            public Boolean IsEndOfWord { get; set; }
+            public bool IsEndOfWord { get; set; }
             public Node(char ch)
             {
                 Value = ch;
                 Words = new Dictionary<char, Node>();
                 IsEndOfWord = false;
             }
+            //used Word instead Child !
             public bool IsEmpty() { return Words.Count == 0; }
-            public Node? GetWord(char ch) { return Words.GetValueOrDefault(ch, null); } //used Word instead Chiled !
-            public bool HasWord(char ch) { return Words.ContainsKey(ch); }              //used Word instead Chiled !
-            public void AddWord(char ch) { Words.Add(ch, new Node(ch)); }               //used Word instead Chiled !
-            public void RemoveWord(char ch) { Words.Remove(ch); }                      //used Word instead Chiled !
-            public Node[] GetWords() { return Words.Values.ToArray(); }                 //used Words instead Chileds !
-            public bool HasWords() { return Words.Count != 0; }                         //used Words instead Chileds !
+            public Node? GetWord(char ch) { return Words.GetValueOrDefault(ch, null); } 
+            public bool HasWord(char ch) { return Words.ContainsKey(ch); }
+            public void AddWord(char ch) { Words.Add(ch, new Node(ch)); }
+            public void RemoveWord(char ch) { Words.Remove(ch); }
+            public Node[] GetWords() { return Words.Values.ToArray(); }
+            public bool HasWords() { return !IsEmpty(); }
 
         }
         private Node Root { get; set; }
