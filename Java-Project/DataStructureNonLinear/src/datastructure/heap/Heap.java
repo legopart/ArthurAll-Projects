@@ -54,17 +54,21 @@ public class Heap {
 	private boolean hasLeftChild(int index) { return leftChildIndex(index) <= size; }
 	private boolean hasRightChild(int index) { return rightChildIndex(index) <= size; }
 	private int largerChildIndex(int index){
-		if (!hasLeftChild(index)) return index;
-		if (!hasRightChild(index)) return leftChildIndex(index);
-		return (leftChild(index) > rightChild(index)) ? leftChildIndex(index) : rightChildIndex(index);
+        if (hasLeftChild(index) && hasRightChild(index))
+        {
+            if (leftChild(index) > rightChild(index)) return leftChildIndex(index);
+            else return rightChildIndex(index);
+        }
+        else if (hasLeftChild(index) && !hasRightChild(index)) return leftChildIndex(index);
+        else return index;
 	}
 	private boolean isValidParant(int index) { 
-		if (!hasLeftChild(index)) return true;
-		var isValidLeft = items[index] >= leftChild(index);
-		if (!hasRightChild(index)) return isValidLeft;
-		return isValidLeft && items[index] >= rightChild(index);
+        var isValidLeft = items[index] >= leftChild(index);
+        var isValidRight = items[index] >= rightChild(index);
+        if (hasLeftChild(index) && hasRightChild(index)) return isValidLeft && isValidRight;
+        if (hasLeftChild(index) && !hasRightChild(index)) return isValidLeft;
+        /*if (!HasLeftChild(index))*/ return true;
 	}
-	
 	
 	private int leftChildIndex(int index) { return index * 2 + 1; }
 	private int rightChildIndex(int index) { return index * 2 + 2; }
@@ -77,7 +81,5 @@ public class Heap {
 	}
 	
 	@Override
-	public String toString() {
-		return Arrays.toString(Arrays.copyOfRange(items, 0, size));
-	}
+	public String toString() { return Arrays.toString(Arrays.copyOfRange(items, 0, size)); }
 }

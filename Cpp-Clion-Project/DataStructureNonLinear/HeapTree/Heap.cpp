@@ -28,11 +28,10 @@ private:
         }
     }
 
-
     void bubbleDown()  // לחזור!
     {
         int index{};
-        while (index <= count && !isValidParant(index))
+        while (index <= count && !isValidParent(index))
         {
             int largerIndex = largerChildIndex(index);
             std::swap(itemArray[index], itemArray[largerIndex]);
@@ -40,24 +39,24 @@ private:
         }
     }
 
-    bool hasLeftChild(int i) { return left(i) <= count; }
-    bool hasRightChild(int i) { return right(i) <= count; }
-    int largerChildIndex(int index)
+    bool hasLeftChild(int& i) const { return left(i) <= count; }
+    bool hasRightChild(int& i) const { return right(i) <= count; }
+    int largerChildIndex(int& index) const
     {
         if (hasLeftChild(index) && hasRightChild(index))
         {
             if (itemArray[left(index)] > itemArray[right(index)]) return left(index);
             else return right(index);
         }
-        else if (!hasRightChild(index) && hasLeftChild(index)) return left(index);
+        else if (hasLeftChild(index) && !hasRightChild(index)) return left(index);
         else return index;
     }
-    bool isValidParant(int index)
+    bool isValidParent(int& index) const
     {
         auto isValidLeft = itemArray[index] >= itemArray[left(index)];
         auto isValidRight = itemArray[index] >= itemArray[right(index)];
         if (hasLeftChild(index) && hasRightChild(index)) return isValidLeft && isValidRight;
-        if (!hasRightChild(index) && hasLeftChild(index)) return isValidLeft;
+        if (hasLeftChild(index) && !hasRightChild(index)) return isValidLeft;
         /*if (!hasLeftChild(index))*/  return true;
     }
 

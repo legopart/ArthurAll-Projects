@@ -7,61 +7,72 @@ class HeapVector {
 private:
     int _size;
     std::vector<int> vector ;
-    int parent(int& i)  {return i << 1;}    // i/2
-    int child(int& i) const {return i >> 1;} // i*2
-    int left(int i) const { return  child(i) + 1; } // index*2+1
-    int right(int i) const { return  child(i) + 2; } // index*2+2
+    int parent(int& i) const {return i >> 1;}    // i/2
     void shiftUp(int i)
     {
         if(i > _size) return;
-        if(i == 1) return;  //top
+        if(i == 0) return;  //top
         if(vector[i] > vector[parent(i)]) std::swap(vector[i], vector[parent(i)]);
         shiftUp(parent(i));
     }
-    bool isAParent(int i)
-    {
-        return left(i) > _size   //no left
-               || right(i) > _size && vector[i] < vector[left(i)]
-               || vector[i] >= vector[left(i)]
-               || vector[i] >= vector[right(i)];
-    }
+
+    int child(int& i) const {return i << 1;} // i*2
+    int left(int& i) const { return  child(i) + 1; } // index*2+1
+    int right(int& i) const { return  child(i) + 2; } // index*2+2
     void shiftDown(const int& i)
     {
         if(i > _size) return;
-        int swapId = i;
-        if( left(i) < _size && right(i) < _size)    //2 parents
-        {
-            if (vector[left(i)] > vector[right(i)]) swapId = left(i);
-            else swapId = right(i);
-        }
-        else if(right(i) >= _size) swapId = left(i);//1 parents
+        int swapId = largerChildIndex(i);
         if(swapId != i) std::swap(vector[i], vector[swapId]);
-        if( ! isAParent(swapId) ) shiftDown(swapId);//1-2 parents
+        if( i <= _size && !isValidParent(swapId) ) shiftDown(swapId);//1-2 parents
     }
+    bool hasLeftChild(int& i) const { return left(i) <= _size; }
+    bool hasRightChild(int& i) const { return right(i) <= _size; }
+    int largerChildIndex(int i) const
+    {
+        if (hasLeftChild(i) && hasRightChild(i))
+        {
+            if (vector[left(i)] > vector[right(i)]) return left(i);
+            else return right(i);
+        }
+        else if (hasLeftChild(i) && !hasRightChild(i)) return left(i);
+        else return i;
+    }
+    bool isValidParent(int& i) const
+    {
+        auto isValidLeft = vector[i] >= vector[left(i)];
+        auto isValidRight = vector[i] >= vector[right(i)];
+        if (hasLeftChild(i) && hasRightChild(i)) return isValidLeft && isValidRight;
+        if (hasLeftChild(i) && !hasRightChild(i)) return isValidLeft;
+        /*if (!hasLeftChild(i))*/  return true;
+    }
+
 public:
-    explicit HeapVector() : vector{NULL}, _size{} {}  //set to NULL
+    explicit HeapVector() : vector{}, _size{} {}  //set to NULL
     ~HeapVector() { }
     bool isEmpty() const { return _size == 0; }
-    int getMax() const { return vector[1]; }
-    void insert(int value)
+    int getMax() const { return vector[0]; }
+    void insert(const int& value)
     {
-        if (_size + 1 >= vector.size()) vector.push_back(value);
-        else vector[_size] = value;
+        if (_size >= vector.size()) vector.push_back(value);
         _size ++;
+        vector[_size] = value;
+
         shiftUp(_size);
     }
     int extractMax() //remove()
     {
-        int maxNum = vector[1];
-        std::swap(vector[1], vector[_size]);
+        int maxNum = vector[0];
+        std::swap(vector[0], vector[_size]);
         vector.pop_back();
         _size --;
-        shiftDown(1);
+        shiftDown(0);
         return maxNum;
     }
     string print() const {
         string str{};
-        for(int i{}; i < _size; i++) str += std::to_string(vector[1 + i]) + ", ";
+        for(int i{}; i < _size; i++) str += std::to_string(vector[i]) + ", ";
+        //for(auto data : vector) str += std::to_string(data) + ", ";
         str += "\n";
         return str;
     }

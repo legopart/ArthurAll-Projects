@@ -68,7 +68,7 @@ namespace Heap
         private void BubbleDown()  // לחזור!
         {
             var index = 0;
-            while ( index <= Counter && !IsValidParant(index) )
+            while ( index <= Counter && !isValidParent(index) )
             {
                 var largerIndex = LargerChildIndex(index); //ChildLeft(index) >= Counter
                 if (largerIndex != index) Swap(index, largerIndex);
@@ -84,15 +84,15 @@ namespace Heap
                 if (Items[ChildLeft(index)] > Items[ChildRight(index)]) return ChildLeft(index);
                 else return ChildRight(index);
             }
-            else if (!HasRightChild(index) && HasLeftChild(index)) return ChildLeft(index);
+            else if (HasLeftChild(index) && !HasRightChild(index)) return ChildLeft(index);
             else return index;
         }
-        private bool IsValidParant(int index)
+        private bool isValidParent(int index)
         {
             var isValidLeft = Items[index] >= Items[ChildLeft(index)];
             var isValidRight = Items[index] >= Items[ChildRight(index)];
             if (HasLeftChild(index) && HasRightChild(index)) return isValidLeft && isValidRight;
-            if (!HasRightChild(index) && HasLeftChild(index)) return isValidLeft;
+            if (HasLeftChild(index) && !HasRightChild(index)) return isValidLeft;
             /*if (!HasLeftChild(index))*/ return true;
         }
 
