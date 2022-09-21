@@ -16,7 +16,7 @@ private:
         shiftUp(parent(i));
     }
 
-    int child(int& i) const {return i << 1;} // i*2
+    int child(int& i) const {return i << 1;}    // i*2
     int left(int& i) const { return  child(i) + 1; } // index*2+1
     int right(int& i) const { return  child(i) + 2; } // index*2+2
     void shiftDown(const int& i)
