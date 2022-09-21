@@ -10,9 +10,8 @@ private:
     int count;
     int* itemArray;
     int arrayLength;
-    bool isFull(){ return count == arrayLength; }
-    bool isEmpty(){ return count == 0; }
-    int parant(int& index) const {return index >> 1;} // index/2
+
+    int parent(int& index) const {return index >> 1;} // index/2
     int child(int& index) const {return index << 1;} // index*2
     int left(int& index) const { return  child(index) + 1; } // index*2+1
     int right(int& index) const { return  child(index) + 2; } // index*2+2
@@ -21,10 +20,10 @@ private:
     void bubbleUp() const
     {
         auto index = count - 1; //last
-        while (itemArray[index] > itemArray[parant(index)])
+        while (itemArray[index] > itemArray[parent(index)])
         {
-            swap(index, parant(index));
-            index = parant(index);
+            swap(index, parent(index));
+            index = parent(index);
         }
     }
     bool isParant(int index) const
@@ -57,20 +56,22 @@ private:
     }
 public:
     explicit Heap() : arrayLength{10}, itemArray{new int[arrayLength]}, count{} {}
-    ~Heap() { delete[](itemArray) ;}
-    void insert(int data)
+    ~Heap() { delete[](itemArray); }
+    bool isFull() const { return count == arrayLength; }
+    bool isEmpty() const { return count == 0; }
+    void insert(const int data)
     {
         if(isFull()) throw new std::exception(); //or extend
         itemArray[count] = data;
         count ++;
         bubbleUp();
     }
-    int max()
+    int max() const
     {
         if (isEmpty()) throw new std::exception();
         return itemArray[0];    //root
     }
-    int remove()
+    int remove() //remove top
     {
         if (isEmpty()) throw new std::exception();
         int temp = itemArray[0];
@@ -81,9 +82,7 @@ public:
     }
     string print() const {
         string str{};
-        for(int i{}; i < count; i++){
-            str += std::to_string(itemArray[i]) + ", ";
-        }
+        for(int i{}; i < count; i++) str += std::to_string(itemArray[i]) + ", ";
         str += "\n";
         return str;
     }

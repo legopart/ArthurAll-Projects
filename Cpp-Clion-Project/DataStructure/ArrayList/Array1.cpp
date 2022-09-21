@@ -15,13 +15,13 @@ private:
         itemArray = newArray;
         arrayLength *= 2;
     };
-    bool needToReSize() { return arrayLength == count; };
-    bool needToReSize(int index) { return index >= count; };
+    bool needToReSize() const { return arrayLength == count; };
+    bool needToReSize(int index) const { return index >= count; };
 public:
     Array1(int length) : count{}, arrayLength{length}, itemArray{new int[arrayLength]}  { }
     Array1() { Array1(5); }
-    bool contains(int item) { return indexOf(item) != -1; };
-    int indexOf(int item) {
+    bool contains(int item) const { return indexOf(item) != -1; };
+    int indexOf(int& item) const {
         for (int i{}; i < count; ++i) if (itemArray[i] == item) return i;
         return -1;
     };
@@ -35,19 +35,19 @@ public:
         count++;
         return item;
     }
-    int set(int index, int item) {
+    int set(const int index, const int item) {
         if (needToReSize(index)) throw new std::exception();
         itemArray[index] = item;
         return item;
     };
-    int remove(int index) {
+    int remove(const int index) {
         int item = itemArray[index];
         if (needToReSize(index)) throw new std::exception();
         for (int i = index; i < count; i++) itemArray[i] = itemArray[i + 1];
         count--;
         return item;
     };
-    int removeItem(int item) { return remove(indexOf(item)); };
+    int removeItem(int& item) { return remove(indexOf(item)); };
     void print() const {
         for (int i = 0; i < count; ++i) cout << itemArray[i] << ", ";
         cout << "\n";
