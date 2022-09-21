@@ -10,7 +10,7 @@ private:
         int height;
         struct Node *left;
         struct Node *right;
-        explicit Node(int data) : data(data), left(NULL), right(NULL), height(0) {}
+        explicit Node(int data) : data{data}, left{NULL}, right{NULL}, height{} {}
         ~Node() { if(left != 0) delete(left);if(right != 0) delete(right); cout << "del:" << data << "\n"; }
     };
 

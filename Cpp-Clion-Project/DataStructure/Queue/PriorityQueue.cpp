@@ -24,7 +24,7 @@ private:
         items = newQueue;
     }*/
 public:
-    explicit QueueArray() : itemsLength(10), items(new int[itemsLength]), count(0), first(0) {  }
+    explicit QueueArray() : itemsLength{10}, items{new int[itemsLength]}, count{}, first{} {  }
     ~QueueArray(){ delete[](items); }
 
     void enqueue(int value)

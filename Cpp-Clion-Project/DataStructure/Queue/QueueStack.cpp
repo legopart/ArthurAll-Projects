@@ -12,8 +12,8 @@ private:
     stack<int> enqueueStack; //stackB
     bool isEmpty() const { return queueStack.size() == 0;}
 public:
-    explicit QueueStack() : queueStack(), enqueueStack() {  }
-    ~QueueStack(){  }
+    explicit QueueStack() : queueStack{}, enqueueStack{} {  }
+    ~QueueStack(){ }
 
     void enqueue(int value) { queueStack.push(value);  }
     int dequeue()

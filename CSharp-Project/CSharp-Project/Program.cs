@@ -27,11 +27,12 @@ namespace CSharp_Project
         static void Main()
         {
 
-            Person person1 = new Person();
+            Person person1 = new Person();  //hi
             Console.WriteLine("Person1 sayHi: " + person1.SayHi());
 
-            Person italian1 = new Italiano();
+            Person italian1 = new Italiano();   //olla
             Console.WriteLine("Italian sayHi: " + italian1.SayHi());
+
 
         }
     }

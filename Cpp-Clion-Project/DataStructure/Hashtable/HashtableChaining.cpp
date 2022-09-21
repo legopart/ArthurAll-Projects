@@ -4,17 +4,16 @@
 #include <list>
 using std::pair, std::list, std::string, std::to_string, std::begin, std::end, std::cout ;
 
-struct Pair
-{
-    int key;
-    string value;
-    explicit Pair(int key, string value) : key(key), value(value) { }
-    ~Pair(){ }
-};
-
 class HashtableChaining
 {
 private:
+    struct Pair
+    {
+        int key;
+        string value;
+        explicit Pair(int key, string value) : key{key}, value{value} { }
+        ~Pair(){ }
+    };
     static const int HASHTABLE_LENGTH = 10;
     //list<pair<int, string>>* hashtable;
     list<struct Pair>* hashtable;
@@ -22,8 +21,8 @@ private:
     list<Pair> getList(int key) { return hashtable[key]; };
     bool beginList(int key) {  }
 public:
-    HashtableChaining() : hashtable(new list<Pair>[HASHTABLE_LENGTH]) { }
-    ~HashtableChaining(){ delete(hashtable); }
+    HashtableChaining() : hashtable{new list<Pair>[HASHTABLE_LENGTH]} { }
+    ~HashtableChaining(){ delete[](hashtable); }
     bool isEmpty() const
     {
         for (int i{}; i < HASHTABLE_LENGTH; ++i) if(hashtable[i].size() != 0) return false;

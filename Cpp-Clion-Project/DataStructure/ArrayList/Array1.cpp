@@ -1,7 +1,8 @@
 //#pragma once
 #include <iostream>
 using std::string, std::to_string, std::cout;
-class Array1 {
+class Array1
+{
 private:
     int* itemArray;
     int arrayLength;
@@ -17,17 +18,14 @@ private:
     bool needToReSize() { return arrayLength == count; };
     bool needToReSize(int index) { return index >= count; };
 public:
-    Array1(int length) {
-        count = 0;
-        arrayLength = length;
-        itemArray = new int[arrayLength];
-    }
+    Array1(int length) : count{}, arrayLength{length}, itemArray{new int[arrayLength]}  { }
     Array1() { Array1(5); }
     bool contains(int item) { return indexOf(item) != -1; };
     int indexOf(int item) {
         for (int i{}; i < count; ++i) if (itemArray[i] == item) return i;
         return -1;
     };
+    ~Array1(){delete(itemArray);}
     int lastIndexOf(int item) { return itemArray[indexOf(item)]; };
     int get(int index) { return itemArray[index]; };
     int size() const { return count; };

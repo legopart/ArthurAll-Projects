@@ -18,7 +18,7 @@ private:
         items = newStack;
     }
 public:
-    explicit Stack() : itemsLength(10), items(new int[itemsLength]), count(0) { }
+    explicit Stack() : itemsLength{10}, items{new int[itemsLength]}, count{} { }
     ~Stack(){ delete[](items); }
     void push(int value){
         if(itemsLength == count) allocate();//throw 0; //or allocate

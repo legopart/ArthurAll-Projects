@@ -8,7 +8,7 @@ private:
         int data;
         struct Node *left;
         struct Node *right;
-        explicit Node(int data) : data(data), left(NULL), right(NULL) {}
+        explicit Node(int data) : data{data}, left{NULL}, right{NULL} {}
         ~Node() { if(left != 0) delete(left);if(right != 0) delete(right); cout << "del:" << data << "\n"; }
     };
     struct Node *root;
@@ -123,7 +123,7 @@ private:
         if (isNull(node)) return true;
         return std::abs(height(node->left) - height(node->right))  <= 1
                && isBalanced(node->left)
-               && isBalanced(node->right\);
+               && isBalanced(node->right);
     }
     /*2*/
     bool isPerfect(Node* node)

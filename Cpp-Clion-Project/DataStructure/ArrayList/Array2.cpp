@@ -14,6 +14,7 @@ private:
 public:
     Array2(int length);
     Array2();
+    ~Array2(){ delete[](itemArray); };
     bool contains(T item);
     int indexOf(T item);
     int lastIndexOf(T item);
@@ -42,12 +43,7 @@ template<typename  T> bool Array2<T>::needToReSize() { return arrayLength == cou
 
 template<typename T> bool Array2<T>::needToReSize(int index) { return index >= count; }
 
-template<typename T> inline Array2<T>::Array2(int length)
-{
-    count = 0;
-    arrayLength = length;
-    itemArray = new T[arrayLength];
-}
+template<typename T> inline Array2<T>::Array2(int length) : count{}, arrayLength{length}, itemArray {new T[arrayLength]} { }
 
 template<typename T> inline Array2<T>::Array2() { Array2(5); }
 

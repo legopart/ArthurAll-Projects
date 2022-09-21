@@ -7,6 +7,7 @@ private:
     T m_Data[S]{};
 public:
     Array3() { }
+    ~Array3() { delete[](m_Data); }
     constexpr size_t Size() const { return S; }
     T& operator[](size_t index) { //allow data[2] = 2 .
         //if (!(index < 5)) { __debugbreak(); }

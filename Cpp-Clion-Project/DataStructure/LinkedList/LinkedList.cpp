@@ -12,7 +12,7 @@ private:
     {
         int data;
         struct Node* next;
-        explicit Node(int data) : data(data), next(NULL) { }
+        explicit Node(int data) : data{data}, next{NULL} { }
         ~Node(){ cout << "del:" << data << "\n"; }
     };
     struct Node* root;

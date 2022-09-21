@@ -15,7 +15,7 @@ private:
     bool isEmpty() const { return count == 0;}
     bool isFull() const { return itemsLength == count;}
 public:
-    explicit QueueCyrcular() : itemsLength(10), items(new int[itemsLength]), count(0), first(0), last(0) {  }
+    explicit QueueCyrcular() : itemsLength{10}, items{new int[itemsLength]}, count{}, first{}, last{} {  }
     ~QueueCyrcular(){ delete[](items); }
     void enqueue(int value)
     {

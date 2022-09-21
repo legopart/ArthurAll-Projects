@@ -12,7 +12,7 @@ private:
     list<int> items{};
     bool isEmpty() const { items.size() == 0; };
 public:
-    explicit LinkedStack() : items() { }
+    explicit LinkedStack() : items{} { }
     ~LinkedStack(){  }
 
     void push(int value){
