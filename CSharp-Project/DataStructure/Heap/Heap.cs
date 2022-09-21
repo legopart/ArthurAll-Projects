@@ -68,33 +68,33 @@ namespace Heap
         private void BubbleDown()  // לחזור!
         {
             var index = 0;
-            while (!IsParant(index)) 
+            while ( index <= Counter && !IsValidParant(index) )
             {
-                var childLeft = Items[ChildLeft(index)];
-                var childRight = Items[ChildRight(index)];
-                var largerIndex = index; //ChildLeft(index) >= Counter
-                if (ChildRight(index) < Counter && ChildLeft(index) < Counter)
-                {
-                    if (childLeft > childRight) largerIndex = ChildLeft(index);
-                    else largerIndex = ChildRight(index);
-                }
-                else if (ChildRight(index) == Counter) largerIndex = ChildLeft(index);
-                //else largerIndex = index;
-
-                Swap(index, largerIndex);
+                var largerIndex = LargerChildIndex(index); //ChildLeft(index) >= Counter
+                if (largerIndex != index) Swap(index, largerIndex);
                 index = largerIndex;
             }
         }
-        private bool IsParant(int index)
+        private bool HasLeftChild(int index) { return ChildLeft(index) <= Counter; }
+        private bool HasRightChild(int index) { return ChildRight(index) <= Counter; }
+        private int LargerChildIndex(int index)
         {
-            var childLeft = Items[ChildLeft(index)];
-            var childRight = Items[ChildRight(index)];
-            if (index > Counter) return true;
-            if (ChildLeft(index) > Counter) return true;  //no right one;
-            else if (ChildRight(index) > Counter) return Items[index] >= childLeft;
-            else return Items[index] >=  childLeft &&  Items[index] >=  childRight;
+            if (HasLeftChild(index) && HasRightChild(index))
+            {
+                if (Items[ChildLeft(index)] > Items[ChildRight(index)]) return ChildLeft(index);
+                else return ChildRight(index);
+            }
+            else if (!HasRightChild(index) && HasLeftChild(index)) return ChildLeft(index);
+            else return index;
         }
-
+        private bool IsValidParant(int index)
+        {
+            var isValidLeft = Items[index] >= Items[ChildLeft(index)];
+            var isValidRight = Items[index] >= Items[ChildRight(index)];
+            if (HasLeftChild(index) && HasRightChild(index)) return isValidLeft && isValidRight;
+            if (!HasRightChild(index) && HasLeftChild(index)) return isValidLeft;
+            /*if (!HasLeftChild(index))*/ return true;
+        }
 
         public override string ToString()
         {

@@ -4,6 +4,7 @@
 #include <list>
 #include<bits/stdc++.h>
 #include "Heap.cpp"
+#include "HeapVector.cpp"
 using  std::cout;
 int main() {
     cout << "HeapTree\n";
@@ -14,10 +15,26 @@ int main() {
     heap.insert(5);
     heap.insert(2);
     heap.insert(6);
-    heap.insert(8);
-    heap.remove();
+    heap.insert(26); // will remove
+    cout <<  heap.remove() << "\n";
+    cout <<  heap.remove() << "\n";
     cout << heap.print() << "\n";
+
+    cout << "\nHeap2\n";
+    HeapVector heap2{};     //To fix removing and bubble down  !!!
+
+    heap2.insert(20);
+    heap2.insert(10);
+    heap2.insert(5);
+    heap2.insert(2);
+    cout << heap2.print() << "\n";
+    //to fix !!!! remove() and shiftDown
+    cout <<  heap2.extractMax() << "\n";
+    cout <<  heap2.extractMax() << "\n";    //WRONG !!!
+
+    cout << heap2.print() << "\n";
     return 0;
+
 }
 
  int getKthLargest (const int* array, const int& arrayLength,const int& kth)

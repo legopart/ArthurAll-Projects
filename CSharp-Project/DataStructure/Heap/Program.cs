@@ -13,7 +13,14 @@ namespace Heap
             heap.Insert(10);
             heap.Insert(5);
             heap.Insert(2);
-            heap.Remove();
+            Console.WriteLine(heap);
+            Console.WriteLine(heap.Remove());
+            Console.WriteLine(heap.Remove());
+
+            heap.Insert(30);
+            heap.Insert(50);
+            Console.WriteLine(heap.Remove());
+            Console.WriteLine(heap.Remove());
             Console.WriteLine(heap);
         }
 

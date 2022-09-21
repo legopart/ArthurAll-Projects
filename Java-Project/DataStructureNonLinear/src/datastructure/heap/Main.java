@@ -14,7 +14,12 @@ public class Main {
 		heap2.insert(17);
 		heap2.insert(4);
 		heap2.insert(22);
-		heap2.remove();
+		System.out.println(heap2);
+		System.out.println(heap2.remove());
+		System.out.println(heap2.remove());
+		System.out.println(heap2.remove());
+
+		
 		System.out.println("");
 		System.out.println(heap2);
 		
@@ -23,7 +28,8 @@ public class Main {
 		//Heap Sort > maximum heap
 		for(var number: numbers) heap.insert(number);
 		for(var i = 0 ; i < numbers.length ; i++) numbers[i] = heap.remove();
-		System.out.println(Arrays.toString(numbers));
+		
+		System.out.println("sorted array with heap: "+Arrays.toString(numbers));
 		//Heap Sort < minimum heap
 		for(var number: numbers) heap.insert(number);
 		for(var i = numbers.length - 1; i >= 0 ; i--) numbers[i] = heap.remove();

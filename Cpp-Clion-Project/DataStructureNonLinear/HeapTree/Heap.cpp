@@ -1,3 +1,6 @@
+//Fix needToSwap function
+//Delete vector version
+
 #include <iostream>
 #include <string>
 //move to smart pointer
@@ -10,52 +13,56 @@ private:
     int count;
     int* itemArray;
     int arrayLength;
-
-    int parent(int& index) const {return index >> 1;} // index/2
-    int child(int& index) const {return index << 1;} // index*2
+    void swap(int& a, int b) const { std::swap(itemArray[a], itemArray[b]); }
+    int parent(int& index) const {return index / 2;} // index/2
+    int child(int& index) const {return index * 2;} // index*2
     int left(int& index) const { return  child(index) + 1; } // index*2+1
     int right(int& index) const { return  child(index) + 2; } // index*2+2
-    void swap(int& a, int b) const { std::swap(itemArray[a], itemArray[b]); }
-    //void swap(int& a, int&& b){ std::swap(itemArray[a], itemArray[b]); }
     void bubbleUp() const
     {
         auto index = count - 1; //last
-        while (itemArray[index] > itemArray[parent(index)])
+        while (index > 0 && itemArray[index] > itemArray[parent(index)])
         {
-            swap(index, parent(index));
+            std::swap(itemArray[index], itemArray[parent(index)]);
             index = parent(index);
         }
     }
-    bool isParant(int index) const
-    {
-        auto childLeft = itemArray[left(index)];
-        auto childRight = itemArray[right(index)];
-        if (index > count) return true;
-        if (left(index) > count) return true;  //no right one;
-        else if (right(index) > count) return itemArray[index] >= childLeft;
-        else return itemArray[index] >=  childLeft &&  itemArray[index] >=  childRight;
-    }
-    void bubbleDown() const  // לחזור!
+
+
+    void bubbleDown()  // לחזור!
     {
         int index{};
-        while (!isParant(index))
+        while (index <= count && !isValidParant(index))
         {
-            auto childLeft = itemArray[left(index)];
-            auto childRight = itemArray[right(index)];
-            int largerIndex = index; //ChildLeft(index) >= Counter
-            if (right(index) < count && left(index) < count)
-            {
-                if (childLeft > childRight) largerIndex = left(index);
-                else largerIndex = right(index);
-            }
-            else if (right(index) == count) largerIndex = left(index);
-            //else largerIndex = index;
-            swap(index, largerIndex);
+            int largerIndex = largerChildIndex(index);
+            std::swap(itemArray[index], itemArray[largerIndex]);
             index = largerIndex;
         }
     }
+
+    bool hasLeftChild(int i) { return left(i) <= count; }
+    bool hasRightChild(int i) { return right(i) <= count; }
+    int largerChildIndex(int index)
+    {
+        if (hasLeftChild(index) && hasRightChild(index))
+        {
+            if (itemArray[left(index)] > itemArray[right(index)]) return left(index);
+            else return right(index);
+        }
+        else if (!hasRightChild(index) && hasLeftChild(index)) return left(index);
+        else return index;
+    }
+    bool isValidParant(int index)
+    {
+        auto isValidLeft = itemArray[index] >= itemArray[left(index)];
+        auto isValidRight = itemArray[index] >= itemArray[right(index)];
+        if (hasLeftChild(index) && hasRightChild(index)) return isValidLeft && isValidRight;
+        if (!hasRightChild(index) && hasLeftChild(index)) return isValidLeft;
+        /*if (!hasLeftChild(index))*/  return true;
+    }
+
 public:
-    explicit Heap() : arrayLength{10}, itemArray{new int[arrayLength]}, count{} {}
+    explicit Heap() : arrayLength{20}, itemArray{new int[arrayLength]}, count{} {}
     ~Heap() { delete[](itemArray); }
     bool isFull() const { return count == arrayLength; }
     bool isEmpty() const { return count == 0; }
