@@ -83,7 +83,7 @@ private:
                 , isNull(node->right) ? node->data : max(node->right)
         );
     }
-    bool contains(Node* node, int data)
+    bool contains(Node* node, int &data)
     {
         if (isNull(node)) return false;
         if (data == node->data) return true;
@@ -171,7 +171,7 @@ public:
     int min(){ return min(root); }
     int min_binarySearchTree()
     {
-        if(isNull(root)) throw 0;
+        if(isNull(root)) throw new std::exception();
         auto* current = root;
         while(!isNull(current->left)) current = current->left;
         int data = current->data;
@@ -209,7 +209,7 @@ public:
     /*3*/
     int max()
     {
-        if (isNull(root)) throw 0;
+        if (isNull(root)) throw new std::exception();
         return std::max(max(root), root->data);
     }
     bool contains(int data) { return contains(root, data); }

@@ -28,7 +28,7 @@ public:
     ~QueueArray(){ delete[](items); }
     void enqueue(int value)
     {
-        if(isFull()) throw 0; // allocate(); // allocate
+        if(isFull()) throw new std::exception(); // allocate(); // allocate
         for(int i = count - 1; i >= first; i--)
         {   //moving
             if (items[i] > value) { items[i + 1] = items[i]; }
@@ -38,7 +38,7 @@ public:
     }
     int dequeue()
     {
-        if(isEmpty()) throw 0;
+        if(isEmpty()) throw new std::exception();
         int value = items[first];
         first++;
         return value;   //return items[--count];

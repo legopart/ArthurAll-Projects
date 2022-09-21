@@ -42,7 +42,7 @@ namespace Heap
         }
         private void BubbleUp() 
         {
-            var index = Counter - 1;
+            var index = Counter - 1;    //last
             while (Items[index] > Items[Parant(index)]) 
             {
                 Swap(index, Parant(index));

@@ -27,7 +27,7 @@ private:
         if (isNull(node)) node = newNode;
         else if (value < node->data) node->left =  insert(value, node->left, newNode);
         else if (value > node->data) node->right =  insert(value, node->right, newNode);
-        else throw 0;
+        else throw new std::exception();
         node->height = getMaxHeight(node); // for balancing
 
         return balance(node); //node;

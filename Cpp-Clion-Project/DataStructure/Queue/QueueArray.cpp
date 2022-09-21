@@ -16,7 +16,6 @@ private:
     {
         int* newQueue = new int[itemsLength * 2];
         for(int i = first ; i < count; ++i) newQueue[i - first] = items[i];
-
         count -= first;
         first = 0;
         delete[](items);
@@ -28,13 +27,13 @@ public:
     ~QueueArray(){ delete[](items); }
     void enqueue(int value)
     {
-        if(count == itemsLength) allocate();//throw 0; // allocate
+        if(count == itemsLength) allocate();//throw new std::exception();
         items[count] = value;
         count ++;
     }
     int dequeue()
     {
-        if(isEmpty()) throw 0;
+        if(isEmpty()) throw new std::exception();
         int value = items[first];
         first++;
         return value;   //return items[--count];

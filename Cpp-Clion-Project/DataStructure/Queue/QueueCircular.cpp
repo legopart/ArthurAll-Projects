@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 using std::string, std::to_string;
-class QueueCyrcular
+class QueueCircular
 {
 private:
     int* items;
@@ -15,8 +15,8 @@ private:
     bool isEmpty() const { return count == 0;}
     bool isFull() const { return itemsLength == count;}
 public:
-    explicit QueueCyrcular() : itemsLength{10}, items{new int[itemsLength]}, count{}, first{}, last{} {  }
-    ~QueueCyrcular(){ delete[](items); }
+    explicit QueueCircular() : itemsLength{10}, items{new int[itemsLength]}, count{}, first{}, last{} {  }
+    ~QueueCircular(){ delete[](items); }
     void enqueue(int value)
     {
         if(isFull()) throw new std::exception();
