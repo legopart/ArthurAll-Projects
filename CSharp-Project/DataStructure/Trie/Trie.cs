@@ -26,7 +26,7 @@ namespace Trie
             }
             //used Word instead Child !
             public bool IsEmpty() { return Words.Count == 0; }
-            public Node? GetWord(char ch) { return Words.GetValueOrDefault(ch, null); } 
+            public Node? GetWord(char ch) { return Words!.GetValueOrDefault(ch, null); } 
             public bool HasWord(char ch) { return Words.ContainsKey(ch); }
             public void AddWord(char ch) { Words.Add(ch, new Node(ch)); }
             public void RemoveWord(char ch) { Words.Remove(ch); }
@@ -45,7 +45,7 @@ namespace Trie
             var current = Root;
             foreach(char ch in word.ToLower().ToCharArray())
             {
-                if (!current.HasWord(ch))  current.AddWord(ch); 
+                if (!current!.HasWord(ch))  current.AddWord(ch); 
                 current = current.GetWord(ch);
             }
             current.IsEndOfWord = true;
@@ -62,7 +62,7 @@ namespace Trie
             if (index == word.Length) return node.IsEndOfWord;
             char ch = word[index];
             if (!node.HasWord(ch)) return false;
-            else return Contains(word, index + 1, node.GetWord(ch));
+            else return Contains(word, index + 1, node.GetWord(ch)!);
         }
 
         public bool ContainsLoop(String word)
@@ -71,7 +71,7 @@ namespace Trie
             var current = Root;
             foreach (char ch in word.ToLower().ToCharArray())
             {
-                if (!current.HasWord(ch)) return false;
+                if (!current!.HasWord(ch)) return false;
                 current = current.GetWord(ch);
             }
             return current.IsEndOfWord;
@@ -89,10 +89,10 @@ namespace Trie
                 return;
             }
             var ch = word[index];
-            var next = node.GetWord(ch);
+            var next = node!.GetWord(ch);
             if (IsNull(next)) return;
             Remove(word, index +1, next);
-            if (!next.HasWords() && !next.IsEndOfWord) node.RemoveWord(ch); //!!!
+            if (!next!.HasWords() && !next.IsEndOfWord) node.RemoveWord(ch); //!!!
             Console.WriteLine("0:" + node.Value);
         }
 
@@ -120,9 +120,9 @@ namespace Trie
             FindWords(word, wordList, startNode);
             return wordList;
         }
-        private void FindWords(String word, /*ref*/ List<String> wordList, Node node)
+        private void FindWords(String word, /*ref*/ List<String> wordList, Node? node)
         {
-            if (node.IsEndOfWord) wordList.Add(word);
+            if (node!.IsEndOfWord) wordList.Add(word);
             foreach(var ch in node.GetWords()) FindWords(word + ch.Value, wordList, ch);
         }
         private Node? FindWordEnd(String word)
