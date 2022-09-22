@@ -25,7 +25,7 @@ public:
         for (int i{}; i < count; ++i) if (itemArray[i] == item) return i;
         return -1;
     };
-    ~Array1(){delete(itemArray);}
+    ~Array1(){delete[](itemArray);}
     int lastIndexOf(int item) { return itemArray[indexOf(item)]; };
     int get(int index) { return itemArray[index]; };
     int size() const { return count; };

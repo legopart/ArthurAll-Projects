@@ -22,7 +22,7 @@ private:
     bool isEmpty() const { return root == NULL; }
     void resetList(){ delete(root); root=NULL; last=NULL; }
 public:
-    explicit List() : root(NULL), last(NULL), count(0), isReversed(false) { }
+    explicit List() : root{NULL}, last{NULL}, count{}, isReversed{false} { }
     ~List(){ while(root != NULL && !isReversed) {removeLast();} }
     void insertLast(int data)
     {

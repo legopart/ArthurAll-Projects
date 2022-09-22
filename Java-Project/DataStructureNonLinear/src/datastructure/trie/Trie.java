@@ -145,6 +145,16 @@ public class Trie {
 		return count;
 		
 	}
+	
+	
+	
 	// לסיים
 	//longestCommonPrefix()
+	
+	//לסיים
+	//TraversePreOrder
+	//TraversePostOrder
+	//FindWords
+	//FindWordEnd
+	
 }

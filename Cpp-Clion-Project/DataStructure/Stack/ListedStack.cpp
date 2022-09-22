@@ -9,7 +9,7 @@ using std::list, std::string, std::to_string;
 class LinkedStack
 {
 private:
-    list<int> items{};
+    list<int> items;
     bool isEmpty() const { items.size() == 0; };
 public:
     explicit LinkedStack() : items{} { }

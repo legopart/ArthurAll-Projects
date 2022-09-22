@@ -20,7 +20,7 @@ private:
     list<Pair> getList(int key) { return hashtable[key]; };
     bool beginList(int key) {  }
 public:
-    HashtableChaining() : hashtable{new list<Pair>[HASHTABLE_LENGTH]} { }
+    HashtableChaining() : hashtable{new list<struct Pair>[HASHTABLE_LENGTH]} { }
     ~HashtableChaining(){ delete[](hashtable); }
     bool isEmpty() const
     {

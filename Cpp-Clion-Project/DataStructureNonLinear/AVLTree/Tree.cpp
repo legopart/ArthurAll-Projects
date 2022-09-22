@@ -91,8 +91,8 @@ private:
         return isPerfect(node->left) && isPerfect(node->right);
     }
 public:
-    explicit Tree() : root(NULL) { }
-    ~Tree(){ /*delete(root);*/ }
+    explicit Tree() : root{NULL} { }
+    ~Tree(){ delete(root); }
     void insert(int data)
     {
         Node* node = new Node( data );

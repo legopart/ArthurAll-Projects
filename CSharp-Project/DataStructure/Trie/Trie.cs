@@ -55,14 +55,14 @@ namespace Trie
         public bool Contains(String word)   //recursion
         {
             if (IsNull(word)) return false;
-            return contains(word, 0, Root);
+            return Contains(word, 0, Root);
         }
-        private bool contains(String word, int index, Node node)
+        private bool Contains(String word, int index, Node node)
         {
             if (index == word.Length) return node.IsEndOfWord;
             char ch = word[index];
             if (!node.HasWord(ch)) return false;
-            else return contains(word, index + 1, node.GetWord(ch));
+            else return Contains(word, index + 1, node.GetWord(ch));
         }
 
         public bool ContainsLoop(String word)
@@ -94,7 +94,6 @@ namespace Trie
             Remove(word, index +1, next);
             if (!next.HasWords() && !next.IsEndOfWord) node.RemoveWord(ch); //!!!
             Console.WriteLine("0:" + node.Value);
-
         }
 
         //Traverse
@@ -114,24 +113,24 @@ namespace Trie
             Console.Write(node.Value);
         }
 
-        public List<String> FindWords(string word) //לחזור
+        public List<String> FindWords(String word) //לחזור
         {
             List<String> wordList = new List<String>();    //java ArrayList<>
             var startNode = FindWordEnd(word);    //startPoint
             FindWords(word, wordList, startNode);
             return wordList;
         }
-        private void FindWords(string word, /*ref*/ List<String> wordList, Node node)
+        private void FindWords(String word, /*ref*/ List<String> wordList, Node node)
         {
             if (node.IsEndOfWord) wordList.Add(word);
             foreach(var ch in node.GetWords()) FindWords(word + ch.Value, wordList, ch);
         }
-        private Node? FindWordEnd(string word)
+        private Node? FindWordEnd(String word)
         {
             var current = Root;
             foreach (var ch in word.ToArray())
             {
-                var next = current.GetWord(ch);
+                var next = current?.GetWord(ch);
                 if (IsNull(next)) return null;
                 current = next;
             }
