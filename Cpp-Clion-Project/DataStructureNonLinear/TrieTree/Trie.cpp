@@ -1,3 +1,7 @@
+// fix the amount of Destruction
+// fix trim
+// fix toLowerCaseSting
+
 #include <iostream>
 #include <string>
 #include <map>
@@ -12,14 +16,14 @@ private:
         bool isEndOfWord;
         std::map<char, struct Node> words;  //map <pair<char, Node>>
         explicit Node(char data) : words{}, value{data}, isEndOfWord{false}  { }
-        ~Node(){ cout << "del:" << value << "\n"; }
+        ~Node(){ cout << "";/* << value << ";";*//* << value << "\n";*/ }
         //used Word instead Child !
         bool isEmpty() const { return words.empty(); }
-        struct Node& getWord(const char& ch)  { return words.find(ch)->second; }
-        bool hasWord(char& ch) const { return words.contains(ch); }
-        void addWord(const char& ch) { words.insert(std::pair( ch, Node{ch})); }
+        struct Node* getWord(const char& ch)  {  return &words.find(ch)->second; }
+        bool hasWord(char& ch) const { std::cout <<""; return words.contains(ch); }
+        void addWord(const char ch) { words.insert(std::pair( ch,Node(ch) ));}
         void removeWord(const char& ch)  { words.erase(ch); }
-        std::vector<struct Node>& getWords() const
+        std::vector<struct Node> getWords() const
         {
             std::vector<struct Node> wordsVector{};
             for( auto it = words.begin(); it != words.end(); ++it )  wordsVector.push_back(it->second);
@@ -27,7 +31,7 @@ private:
         }
         bool hasWords() const { return !isEmpty(); }
     };
-    struct Node* root;
+
     bool isNull(struct Node* node) const { return node == 0; }
     bool isNull(string word) const { return word.length() == 0; }
     std::string& toLowerCaseSting(const std::string& str)
@@ -50,7 +54,7 @@ private:
         if (index == word.length()) return node->isEndOfWord;
         char ch = word[index];
         if (!node->hasWord(ch)) return false;
-        else return contains(word, index + 1, &node->getWord(ch));
+        else return contains(word, index + 1, node->getWord(ch));
     }
     void remove(const std::string& word, const int& index, struct Node* node)
     {   //לחזור
@@ -61,7 +65,7 @@ private:
             return;
         }
         auto ch = word[index];
-        Node* next = &node->getWord(ch);
+        Node* next = node->getWord(ch);
         if (isNull(next)) return;
         remove(word, index +1, next);
         if (!next->hasWords() && !next->isEndOfWord) node->removeWord(ch); //!!!
@@ -77,7 +81,7 @@ private:
     {
         std::cout << " ";
         for (auto& ch : node->getWords()) traversePostOrder(&ch);
-        std::cout <<  node->value;
+        std::cout << node->value;
     }
     void findWords(std::string word, /*ref*/ std::list<std::string>& wordList, Node* node)
     {
@@ -89,34 +93,36 @@ private:
         auto current = root;
         for (auto ch : word)
         {
-            auto& next = current->getWord(ch);
-            if (isNull(&next)) return 0;
-            current = &next;
+            auto next = current->getWord(ch);
+            if (isNull(next)) return 0;
+            current = next;
         }
         return current;
     }
 public:
-    explicit Trie() : root{new struct Node(' ')} { }
+    explicit Trie() : root{new struct Node('\0')} { }
     ~Trie() { delete(root); }
+    struct Node* root;
     void insert(const std::string& word)
     {
-        std::string lowerCaseString =toLowerCaseSting(word);
+        std::string lowerCaseString = word;//toLowerCaseSting(word);
         if (isNull(word)) throw new std::exception();
-        struct Node* current = root;
+        struct Node *current = root ;
         for(char& ch : lowerCaseString)
         {
             if (!current->hasWord(ch))  current->addWord(ch);
-            current = &current->getWord(ch);
+            current = current->getWord(ch);
         }
         current->isEndOfWord = true;
     }
-    bool contains(std::string& word)   //recursion
+    bool contains(std::string word)   //recursion
     {
-        std::string lowerCaseString =toLowerCaseSting(word);
+        std::string lowerCaseString = word;//toLowerCaseSting(word);
         if (isNull(word)) return false;
         return contains(lowerCaseString, 0, root);
     }
-    std::string traversePreOrder() { std::string str=""; traversePreOrder(root, str); return trim(str) + "\n"; }
+    std::string traversePreOrder() { std::string str=""; traversePreOrder(root, str);str = trim(str) ;str += "\n"; return str  ; }
+    void traversePostOrder() { traversePostOrder(root); }
     std::list<std::string>& findWords(string word) //לחזור
     {
         std::list<std::string> wordList{};    //java ArrayList<>
