@@ -7,6 +7,7 @@
 #include <map>
 #include <vector>
 #include <list>
+
 using std::string, std::to_string, std::cout;
 class Trie {   //for example only
 private:
@@ -16,12 +17,16 @@ private:
         bool isEndOfWord;
         std::map<char, struct Node> words;  //map <pair<char, Node>>
         explicit Node(char data) : words{}, value{data}, isEndOfWord{false}  { }
-        ~Node(){ cout << "";/* << value << ";";*//* << value << "\n";*/ }
+        ~Node(){ std::cout << ";";/* << value << ";";*//* << value << "\n";*/ }
         //used Word instead Child !
         bool isEmpty() const { return words.empty(); }
         struct Node* getWord(const char& ch)  {  return &words.find(ch)->second; }
-        bool hasWord(char& ch) const { std::cout <<""; return words.contains(ch); }
-        void addWord(const char ch) { words.insert(std::pair( ch,Node(ch) ));}
+        bool hasWord(char& ch) const { return words.contains(ch); }
+        void addWord(char ch)
+        {
+            Node newNode = Node(ch);
+            words.insert(std::pair( ch, newNode));
+        }
         void removeWord(const char& ch)  { words.erase(ch); }
         std::vector<struct Node> getWords() const
         {
@@ -61,7 +66,6 @@ private:
         if (index == word.length())
         {
             node->isEndOfWord = false;
-            std::cout << "last:" << node->value;
             return;
         }
         auto ch = word[index];
@@ -69,8 +73,8 @@ private:
         if (isNull(next)) return;
         remove(word, index +1, next);
         if (!next->hasWords() && !next->isEndOfWord) node->removeWord(ch); //!!!
-        std::cout << "0:" << node->value;
     }
+
     void traversePreOrder(struct Node* node, std::string& str)
     {
         str += node->value;
@@ -121,6 +125,7 @@ public:
         if (isNull(word)) return false;
         return contains(lowerCaseString, 0, root);
     }
+    void remove(std::string word) { remove(word, 0, root); }
     std::string traversePreOrder() { std::string str=""; traversePreOrder(root, str);str = trim(str) ;str += "\n"; return str  ; }
     void traversePostOrder() { traversePostOrder(root); }
     std::list<std::string>& findWords(string word) //לחזור

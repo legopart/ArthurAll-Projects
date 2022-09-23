@@ -13,7 +13,7 @@ add_executable(NonLinear-AVLTree DataStructureNonLinear/AVLTree/main.cpp)
 
 add_executable(NonLinear-BinartTree DataStructureNonLinear/BinaryTree/main.cpp)
 
-add_executable(Cpp_Clion_Project main.cpp DataStructureNonLinear/BinaryTree/main.cpp DataStructureNonLinear/BinaryTree/Tree.cpp DataStructureNonLinear/AVLTree/main.cpp DataStructureNonLinear/AVLTree/Tree.cpp DataStructureNonLinear/HeapTree/main.cpp DataStructureNonLinear/HeapTree/Heap.cpp DataStructureNonLinear/HeapTree/PriorityQueue.cpp DataStructureNonLinear/HeapTree/HeapVector.cpp DataStructureNonLinear/TrieTree/main.cpp DataStructureNonLinear/TrieTree/Trie.cpp)
+add_executable(Cpp_Clion_Project main.cpp DataStructureNonLinear/BinaryTree/main.cpp DataStructureNonLinear/BinaryTree/Tree.cpp DataStructureNonLinear/AVLTree/main.cpp DataStructureNonLinear/AVLTree/Tree.cpp DataStructureNonLinear/HeapTree/main.cpp DataStructureNonLinear/HeapTree/Heap.cpp DataStructureNonLinear/HeapTree/PriorityQueue.cpp DataStructureNonLinear/HeapTree/HeapVector.cpp DataStructureNonLinear/TrieTree/main.cpp DataStructureNonLinear/TrieTree/Trie.cpp DataStructureNonLinear/TrieTree/TrieC.c)
 
 add_executable(Linear-ArrayList DataStructure/ArrayList/main.cpp)
 

@@ -1,0 +1,3 @@
+C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug/CMakeFiles/C_Clion_Project.dir
+C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

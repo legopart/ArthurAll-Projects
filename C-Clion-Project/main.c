@@ -1,23 +1,24 @@
+//Fix inset / print issue for same words with changing
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
 
-#define NUM_CHAR 256    //try with 26 -'a' version for lower case only
+#define NUM_CHAR 256
 
 
 //Trie
 struct node
 {
-    bool terminal;
-    struct node* nodeWords[NUM_CHAR];
+	bool terminal;
+	struct node* nodeWords[NUM_CHAR];
 };
 
 struct node* createNode()
 {
-    struct node *newNode = static_cast<node *>(malloc(sizeof *newNode));
-    for (int i = 0; i < NUM_CHAR; ++i) newNode->nodeWords[i] = NULL;
-    newNode->terminal = false;
+	struct node *newNode = malloc(sizeof *newNode);
+	for (int i = 0; i < NUM_CHAR; ++i) newNode->nodeWords[i] = NULL;
+	newNode->terminal = false;
     return newNode;
 };
 
@@ -27,7 +28,7 @@ bool insert(struct node **root, char *textWords){
     struct node *tmp = *root;
     int length = strlen(textWords);
     for(int ch=0; ch<length; ++ch){
-        if (tmp->nodeWords[text[ch]] == NULL) tmp->nodeWords[text[ch]] = createNode();
+        if (tmp->nodeWords[ch] == NULL) tmp->nodeWords[text[ch]] = createNode();
         tmp = tmp->nodeWords[text[ch]];
     }
     if(tmp->terminal) return false;
@@ -46,10 +47,25 @@ void print_rec(struct node *node, unsigned char *prefix, int length) {
         }
     }
 }
+
+
 void print(struct node* root){
     if(root == NULL) { printf("trie is empty"); return; }
     print_rec(root, NULL, 0);
 }
 
 
+int main() {
+    printf("Trie Tree C:\n\n\n");
 
+    struct node *root = NULL;
+    insert(&root, "KIT");
+    insert(&root, "KITTTE");
+    insert(&root, "CATTLE");
+    insert(&root, "KIR");
+    insert(&root, "KIAR");
+
+
+    print(root);
+    return 0;
+}
