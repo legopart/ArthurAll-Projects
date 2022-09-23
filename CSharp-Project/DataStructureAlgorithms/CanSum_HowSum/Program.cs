@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Can_Sum
+namespace CanSum_HowSum
 {
     class Program
     {
@@ -14,13 +14,21 @@ namespace Can_Sum
 
 
             Console.WriteLine("////");
-            Console.WriteLine(  String.Join("," ,HowSum(7, new int[] { 5, 3, 4, 7 })));
+
+            Console.WriteLine("HowSum Brut: " + String.Join(",", HowSum(7, new int[] { 2, 3 })));
+
+            Console.WriteLine("HowSum Memorization: " +  String.Join("," ,HowSum(7, new int[] { 5, 3, 4, 7 })));
+            Console.WriteLine("HowSum Memorization: " + String.Join(",", HowSum(7, new int[] { 7 })));
+            try{ Console.WriteLine("HowSum Memorization: " + String.Join(",", HowSum(7, new int[] { 2, 4 })!) ); } 
+            catch (ArgumentNullException) { Console.WriteLine("HowSum: NO RESULT"); }
+            Console.WriteLine("HowSum Memorization: " + String.Join(",", HowSum(7, new int[] { 2, 3 })));
+            Console.WriteLine("HowSum Memorization: " + String.Join(",", HowSum(100, new int[] { 1 })));  //o(m)
         }
 
 
 
 
-        public static List<int>? HowSum(int sumTarget, int[] numbers) //  O(n^m) <-O(n^hmax) space O(m)    m=targer sum n=array length
+        public static List<int>? HowSum(int sumTarget, int[] numbers) //  O(m^n * m) space O(m)    m=targer sum n=array length
         {
             Dictionary<int, List<int>> memo = new Dictionary<int, List<int>>() { /*[0] = true*/ };
             //memo[0] = true;
@@ -28,23 +36,35 @@ namespace Can_Sum
         }
         public static List<int>? HowSum(int sumTarget, int[] numbers, Dictionary<int, List<int>> memo) //  O(n^m) <-O(n^hmax) space O(m)    m=targer sum n=array length
         {
-
             if (memo.ContainsKey(sumTarget)) return memo[sumTarget];
             if (sumTarget == 0) { return new(); } //{  }
             if (sumTarget < 0) return null;
             foreach (var num in numbers)
             {
                 var remainder = sumTarget - num;
-
-
                 List<int>? remainderList = HowSum(remainder, numbers, memo);
-
-                if (remainderList != null) { remainderList.Add(remainder); return remainderList; /*memo[remainder]*/ }   //reminder from the sum
+                if (remainderList != null) { remainderList.Add(num); return remainderList; /*memo[remainder]*/ }   //reminder from the sum
             }
             memo[sumTarget] = null;
             return null; /*memo[sumTarget]*/
         }
 
+
+
+
+
+        public static List<int>? HowSumBrut(int sumTarget, int[] numbers) //  O(n^m) <-O(n^hmax) space O(m)    m=targer sum n=array length
+        {
+            if (sumTarget == 0) { return new(); } //{  }
+            if (sumTarget < 0) return null;
+            foreach (var num in numbers)
+            {
+                var remainder = sumTarget - num;
+                List<int>? remainderList = HowSumBrut(remainder, numbers);
+                if (remainderList != null) { remainderList.Add(num); return remainderList; /*memo[remainder]*/ }   //reminder from the sum
+            }
+            return null; /*memo[sumTarget]*/
+        }
 
 
 
@@ -59,6 +79,7 @@ namespace Can_Sum
         {
             if (sumTarget == 0) { return true; }
             if (sumTarget < 0) return false;
+            if (memo.ContainsKey(sumTarget) && memo[sumTarget]) return true;
             foreach (var num in numbers) 
             {
                 var remainder = sumTarget - num;
