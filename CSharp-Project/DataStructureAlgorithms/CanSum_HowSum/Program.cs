@@ -6,11 +6,11 @@ namespace CanSum_HowSum
     {
         static void Main()
         {
+            Console.WriteLine(CanSumBrut(7, new int[] { 5, 3, 4, 7 })); // true
+            Console.WriteLine(CanSumBrut(7, new int[] { 2, 4 })); // false
+
             Console.WriteLine(CanSum(7, new int[] { 5, 3, 4, 7 })); // true
             Console.WriteLine(CanSum(7, new int[] { 2, 4 })); // false
-
-            Console.WriteLine(CanSumImproved(7, new int[] { 5, 3, 4, 7 })); // true
-            Console.WriteLine(CanSumImproved(7, new int[] { 2, 4 })); // false
 
 
             Console.WriteLine("////");
@@ -27,8 +27,9 @@ namespace CanSum_HowSum
 
 
 
+        //HowSum
 
-        public static List<int>? HowSum(int sumTarget, int[] numbers) //  O(m^n * m) space O(m)    m=targer sum n=array length
+        public static List<int>? HowSum(int sumTarget, int[] numbers) //  O((m*n) * m) -> O(n*m^2) space O(m^2)   because the list
         {
             Dictionary<int, List<int>> memo = new Dictionary<int, List<int>>() { /*[0] = true*/ };
             //memo[0] = true;
@@ -52,8 +53,7 @@ namespace CanSum_HowSum
 
 
 
-
-        public static List<int>? HowSumBrut(int sumTarget, int[] numbers) //  O(n^m) <-O(n^hmax) space O(m)    m=targer sum n=array length
+        public static List<int>? HowSumBrut(int sumTarget, int[] numbers) //  O(n^m*m) space O(m)    m=targer sum n=array length
         {
             if (sumTarget == 0) { return new(); } //{  }
             if (sumTarget < 0) return null;
@@ -69,13 +69,13 @@ namespace CanSum_HowSum
 
 
         // CanSum
-        public static bool CanSumImproved(int sumTarget, int[] numbers) //  O(n^m) <-O(n^hmax) space O(m)    m=targer sum n=array length
+        public static bool CanSum(int sumTarget, int[] numbers) //  O(n^m) <-O(n^hmax) space O(m)    m=targer sum n=array length
         {
             Dictionary<int, bool> memo = new Dictionary<int, bool>() { /*[0] = true*/ };
             //memo[0] = true;
-            return CanSumImproved(sumTarget, numbers, memo);
+            return CanSum(sumTarget, numbers, memo);
         }
-        private static bool CanSumImproved(int sumTarget, int[] numbers, Dictionary<int, bool> memo) //  O(n^m) <-O(n^hmax) space O(m)    m=targer sum n=array length
+        private static bool CanSum(int sumTarget, int[] numbers, Dictionary<int, bool> memo) //  O(n^m) <-O(n^hmax) space O(m)    m=targer sum n=array length
         {
             if (sumTarget == 0) { return true; }
             if (sumTarget < 0) return false;
@@ -83,7 +83,7 @@ namespace CanSum_HowSum
             foreach (var num in numbers) 
             {
                 var remainder = sumTarget - num;
-                if (CanSumImproved(remainder, numbers, memo)) { memo[remainder] = true; return true; /*memo[remainder]*/ }   //reminder from the sum
+                if (CanSum(remainder, numbers, memo)) { memo[remainder] = true; return true; /*memo[remainder]*/ }   //reminder from the sum
             }
             memo[sumTarget] = false;
             return false; /*memo[sumTarget]*/
@@ -97,14 +97,14 @@ namespace CanSum_HowSum
 
         // canSum(7, [2, 4]) -> false
 
-        public static bool CanSum(int sumTarget, int[] numbers) //  O(n^m) <-O(n^hmax) space O(m)    m=targer sum n=array length
+        public static bool CanSumBrut(int sumTarget, int[] numbers) //  O(n^m) <-O(n^hmax) space O(m)    m=targer sum n=array length
         {
             if (sumTarget == 0) return true;
             if (sumTarget < 0) return false;
             foreach (var num in numbers)    //after all possibilities
             {
                 var remainder = sumTarget - num;
-                if(CanSum(remainder, numbers)) return true ;    //reminder from the sum
+                if(CanSumBrut(remainder, numbers)) return true ;    //reminder from the sum
             }
             return false;
         }

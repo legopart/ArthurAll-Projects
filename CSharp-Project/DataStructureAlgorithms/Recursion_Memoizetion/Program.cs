@@ -8,9 +8,9 @@
             int[] arr = { 1, 2, 3, 52 };
             Console.WriteLine("Recursion Array: " + ArrayCount(arr));
             Console.WriteLine("Recursion Power: " + Power(5, 3));
-            Console.WriteLine("Recursion Fibonacci: " + Fib(5));
+            Console.WriteLine("Recursion Fibonacci: " + FibBrut(5));
             Console.WriteLine("Recursion Fibonacci: " + FibLoop(5));
-            Console.WriteLine("Recursion Fibonacci: " + FibImprove(5));
+            Console.WriteLine("Recursion Fibonacci: " + Fib(5));
             Console.WriteLine("Recursion GridTraveler: " + GridTraveler(3, 3));
             Console.WriteLine("Recursion GridTravelerImproved: " + GridTravelerImproved(3, 3));
             Console.WriteLine("Recursion GridTravelerImproved: " + GridTravelerImproved(16, 16));
@@ -79,18 +79,18 @@
         //gridTraveler(N,0) -> 0 no grid2
         //Dynamic Programming, memorization
 
-        public static int FibImprove(int a)    //O(n)     ...(3^4)^5^6^4^(*^*).. ////. chain of both, space o(2n) -> o(n)
+        public static int Fib(int a)    //O(n)     ...(3^4)^5^6^4^(*^*).. ////. chain of both, space o(2n) -> o(n)
         {
             if (a < 3) throw new Exception();
             Dictionary<int, int> memo = new() { [1] = 1, [2] = 1 };
             //memo[1] = 1;    //if (a == 1) return 1;
             //memo[2] = 1;    //if (a == 2) return 1;
-            return FibImprove(a, memo);
+            return Fib(a, memo);
         }
-        private static int FibImprove(int a, Dictionary<int, int> memo)
+        private static int Fib(int a, Dictionary<int, int> memo)
         {
             if (memo.ContainsKey(a)) return memo[a];
-            memo[a] = FibImprove(a - 1, memo) + FibImprove(a - 2, memo);
+            memo[a] = Fib(a - 1, memo) + Fib(a - 2, memo);
             return memo[a]; //all recursion will save
         }
 
@@ -119,12 +119,12 @@
 
 
 
-        public static int Fib(int a)    //O(2^n)     ...(3^4)^5^6^4^(3^2).. 
+        public static int FibBrut(int a)    //O(2^n)     ...(3^4)^5^6^4^(3^2).. 
         {
             if (a < 1) throw new Exception();
             if (a == 1) return 1;
             if (a == 2) return 1;
-            return Fib(a - 1) + Fib(a - 2);
+            return FibBrut(a - 1) + FibBrut(a - 2);
         }
         public static int FibLoop(int a)    //O(n)
         {
