@@ -73,7 +73,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graph", "CSharp-Project\Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphUndirected", "CSharp-Project\DataStructure\GraphUndirected\GraphUndirected.csproj", "{057EAFA5-E1F3-4446-8E99-19600A661A58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CanSum", "CSharp-Project\DataStructureAlgorithms\New folder\DynamicProgramming_CanSum\CanSum.csproj", "{22ECFD49-ACA3-471C-8A45-01717D5FCBE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Can_Sum", "CSharp-Project\DataStructureAlgorithms\New folder\DynamicProgramming_CanSum\Can_Sum.csproj", "{22ECFD49-ACA3-471C-8A45-01717D5FCBE2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursion_Memoizetion", "CSharp-Project\DataStructureAlgorithms\DynamicProgramming_Recursion_Memoizetion\Recursion_Memoizetion.csproj", "{3EA2DA9E-88DB-46E5-B3B5-3443F109F929}"
 EndProject
