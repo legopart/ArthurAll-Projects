@@ -35,7 +35,7 @@
         private static int GridTravelerImproved(int m, int n, Dictionary<(int, int), int> memo)    //
         {
             if (m == 0 || n == 0) return 0;
-            // if (m == 1 && n == 1) return 1;
+            if (m == 1 && n == 1) return 1;
             if (memo.ContainsKey((m, n))) return memo[(m, n)];
             if (memo.ContainsKey((n, m))) return memo[(n, m)];  //not important
             memo[(m, n)] = GridTravelerImproved(m - 1, n, memo) + GridTravelerImproved(m, n - 1, memo);
