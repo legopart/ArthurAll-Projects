@@ -16,7 +16,7 @@ private:
         char value;
         bool isEndOfWord;
         std::map<char, struct Node> words;  //map <pair<char, Node>>
-        explicit Node(char data) : words{}, value{data}, isEndOfWord{false}  { }
+        explicit Node(char data) : words{}, value{data}, isEndOfWord{false} { }
         ~Node(){ std::cout << ";";/* << value << ";";*//* << value << "\n";*/ }
         //used Word instead Child !
         bool isEmpty() const { return words.empty(); }
@@ -25,7 +25,7 @@ private:
         void addWord(char ch)
         {
             Node newNode = Node(ch);
-            words.insert(std::pair( ch, newNode));
+            words.insert({ch, newNode});
         }
         void removeWord(const char& ch)  { words.erase(ch); }
         std::vector<struct Node> getWords() const
@@ -37,8 +37,8 @@ private:
         bool hasWords() const { return !isEmpty(); }
     };
 
-    bool isNull(struct Node* node) const { return node == 0; }
-    bool isNull(string word) const { return word.length() == 0; }
+    bool isNull(struct Node* node) const { return node == NULL; }
+    bool isNull(string word) const { return word.length() == NULL; }
     std::string& toLowerCaseSting(const std::string& str)
     {
         std::string lowerCaseString = str;

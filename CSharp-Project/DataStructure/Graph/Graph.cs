@@ -10,50 +10,50 @@ namespace Graph
 {
     public class Graph
     {
-        private class Vertice //Node
+        private class Node //Vertice
         {
-            public String Lable { get; private set; }
-            public Vertice(String lable) { Lable = lable; }
-            public override String ToString() { return Lable; }
+            public String Label { get; private set; }
+            public Node(String lable) { Label = lable; }
+            public override String ToString() { return Label; }
         }
 
-        private Dictionary<String, Vertice> VerticeList { get; set; } //NodeList
-        private Dictionary<Vertice, List<Vertice>> EdgeList { get; set; } //AdjecencyList
-        public Graph() { VerticeList = new(); EdgeList = new(); }
+        private Dictionary<String, Node> Nodes { get; set; } //NodeList
+        private Dictionary<Node, List<Node>> Edges { get; set; } //AdjecencyList
+        public Graph() { Nodes = new(); Edges = new(); }
 
-        private bool IsNull(Vertice node) { return node == null; }
+        private bool IsNull(Node node) { return node == null; }
 
         public void AddNode(String label)
         {
-            VerticeList.TryAdd(label, new Vertice(label));
-            var node = VerticeList[label];
-            EdgeList.TryAdd(node, new());  //new List
+            Nodes.TryAdd(label, new Node(label));
+            var node = Nodes[label];
+            Edges.TryAdd(node, new());  //new List
         }
         public void RemoveNode(String label)
         {
-            var node = VerticeList[label];
+            var node = Nodes[label];
             if (IsNull(node)) return;
-            EdgeList.Remove(node);
-            VerticeList.Remove(label);
+            Edges.Remove(node);
+            Nodes.Remove(label);
         }
 
         public void AddEdge(String fromString, String toString)
         {   //relationship from -> to
-            try { EdgeList[VerticeList[fromString]].Add(VerticeList[toString]); }
+            try { Edges[Nodes[fromString]].Add(Nodes[toString]); }
             catch (Exception) { throw new Exception(); }    //IsNull
         }
         public void RemoveEdge(String fromString, String toString)
         {   //remove from.to
-            try { EdgeList[VerticeList[fromString]].Remove(VerticeList[toString]); }
+            try { Edges[Nodes[fromString]].Remove(Nodes[toString]); }
             catch (Exception) { return; }    //IsNull
         }
 
         //Iteration
         public void TraverseDepthFirsy(String rootString)
         {
-            HashSet<Vertice> visited = new();
-            Stack<Vertice> stack = new();
-            var root = VerticeList?[rootString];
+            HashSet<Node> visited = new();
+            Stack<Node> stack = new();
+            var root = Nodes?[rootString];
             if (IsNull(root!)) return;
             stack.Push(root!);   //Link
             while (stack.Count != 0)
@@ -62,16 +62,16 @@ namespace Graph
                 if (visited.Contains(node)) continue;
                 else visited.Add(node);
                 Console.Write(node + " ");
-                foreach (var neighbour in EdgeList[node])   //Links
+                foreach (var neighbour in Edges[node])   //Links
                     if (!visited.Contains(neighbour)) stack.Push(neighbour);
             }
         }
 
         public void TraverseBreadthFirsy(String rootString)
         {
-            HashSet<Vertice> visited = new();
-            Queue<Vertice> queue = new();
-            var root = VerticeList?[rootString];
+            HashSet<Node> visited = new();
+            Queue<Node> queue = new();
+            var root = Nodes?[rootString];
             if (IsNull(root!)) return;
             queue.Enqueue(root!);   //Link
             while (queue.Count != 0)
@@ -80,7 +80,7 @@ namespace Graph
                 if (visited.Contains(node)) continue;
                 else visited.Add(node);
                 Console.Write(node + " ");
-                foreach (var neighbour in EdgeList[node])   //Links
+                foreach (var neighbour in Edges[node])   //Links
                     if (!visited.Contains(neighbour)) queue.Enqueue(neighbour);
             }
         }
@@ -90,16 +90,16 @@ namespace Graph
         {
             try 
             {
-                Vertice root = VerticeList[rootString];
+                Node root = Nodes[rootString];
                 TraverseDepthFirsy_recursion(root, new());
                 Console.WriteLine();
             } catch (Exception) { return; }
         }
-        private void TraverseDepthFirsy_recursion(Vertice node, HashSet<Vertice> visited)
+        private void TraverseDepthFirsy_recursion(Node node, HashSet<Node> visited)
         {
             Console.Write(node + " ");
             visited.Add(node);
-            foreach (var neighbour in EdgeList[node])
+            foreach (var neighbour in Edges[node])
                 if (!visited.Contains(neighbour)) TraverseDepthFirsy_recursion(neighbour, visited);
         }
 
@@ -108,21 +108,21 @@ namespace Graph
 
         public List<String> TopologicalSort()  //לחזור 
         {
-            Stack<Vertice> stack = new();
-            HashSet<Vertice> visitedSet = new();
-            foreach (var node in VerticeList.Values) TopologicalSort(node, visitedSet, stack);
+            Stack<Node> stack = new();
+            HashSet<Node> visitedSet = new();
+            foreach (var node in Nodes.Values) TopologicalSort(node, visitedSet, stack);
             return ToList(stack);
         }
-        private List<String> ToList(Stack<Vertice> stack) {
+        private List<String> ToList(Stack<Node> stack) {
             List<String> sortedList = new();
-            while (stack.Count != 0) sortedList.Add(stack.Pop().Lable);
+            while (stack.Count != 0) sortedList.Add(stack.Pop().Label);
             return sortedList;
         }
-        private void TopologicalSort(Vertice node, HashSet<Vertice> visitedSet, Stack<Vertice> stack)
+        private void TopologicalSort(Node node, HashSet<Node> visitedSet, Stack<Node> stack)
         {
             if (visitedSet.Contains(node)) return;
             visitedSet.Add(node);
-            foreach (var neighbour in EdgeList[node])
+            foreach (var neighbour in Edges[node])
                 TopologicalSort(neighbour, visitedSet, stack);
             stack.Push(node);
         }
@@ -130,19 +130,19 @@ namespace Graph
 
         public bool HasCycle()
         {   //לחזור
-            HashSet<Vertice> all = new();
-            all.UnionWith(VerticeList.Values);// java: addAll //A.Concat(B).ToHashSet()
-            HashSet<Vertice> visiting = new();
-            HashSet<Vertice> visited = new();
+            HashSet<Node> all = new();
+            all.UnionWith(Nodes.Values);// java: addAll //A.Concat(B).ToHashSet()
+            HashSet<Node> visiting = new();
+            HashSet<Node> visited = new();
             foreach(var current in all)  if (HasCycle(current, all, visiting, visited)) return true; ;
             
             return false;
         }
-        private bool HasCycle(Vertice node, HashSet<Vertice> all, HashSet<Vertice> visiting, HashSet<Vertice> visited)
+        private bool HasCycle(Node node, HashSet<Node> all, HashSet<Node> visiting, HashSet<Node> visited)
         {
             all.Remove(node);
             visiting.Add(node);
-            foreach (var neighbour in EdgeList[node])
+            foreach (var neighbour in Edges[node])
             {
                 if (visited.Contains(neighbour)) continue;
                 if (visiting.Contains(neighbour)) return true;
@@ -157,9 +157,9 @@ namespace Graph
         public override String ToString()
         {
             String str = "";
-            foreach (var source in EdgeList.Keys)
+            foreach (var source in Edges.Keys)
             {
-                var targets = EdgeList[source];
+                var targets = Edges[source];
                 if (targets.Count != 0) str += source + " is connected to [" + String.Join(", ", targets) + "]\n";
             }
             return str;

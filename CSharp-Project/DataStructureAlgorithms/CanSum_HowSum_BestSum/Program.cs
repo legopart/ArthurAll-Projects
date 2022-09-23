@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CanSum_HowSum
+namespace CanSum_HowSum_BestSum
 {
     class Program
     {
@@ -27,8 +27,14 @@ namespace CanSum_HowSum
 
 
 
-        //HowSum
 
+        //BestSum
+
+
+
+
+
+        //HowSum
         public static List<int>? HowSum(int sumTarget, int[] numbers) //  O((m*n) * m) -> O(n*m^2) space O(m^2)   because the list
         {
             Dictionary<int, List<int>> memo = new Dictionary<int, List<int>>() { /*[0] = true*/ };
