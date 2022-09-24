@@ -38,15 +38,15 @@ namespace Graph
             graph2.AddEdge("B", "C");
             graph2.AddEdge("C", "D");
             Console.WriteLine("TraverseDepthFirsy recursion");
-            graph2.TraverseDepthFirsy_recursion("A"); // A B C D E
-            graph2.TraverseDepthFirsy_recursion("C"); // C D
-            graph2.TraverseDepthFirsy_recursion("G"); // 
+            graph2.TraverseDepthFirst_recursion("A"); // A B C D E
+            graph2.TraverseDepthFirst_recursion("C"); // C D
+            graph2.TraverseDepthFirst_recursion("G"); // 
             Console.WriteLine();
             Console.WriteLine("TraverseDepthFirsy");
-            graph2.TraverseDepthFirsy("A"); // A E B C D
+            graph2.TraverseDepthFirst("A"); // A E B C D
             Console.WriteLine();
             Console.WriteLine("TraverseBreadthFirsy");
-            graph2.TraverseBreadthFirsy("A"); // A B E D C
+            graph2.TraverseBreadthFirst("A"); // A B E D C
             Console.WriteLine();
 
             Console.WriteLine();

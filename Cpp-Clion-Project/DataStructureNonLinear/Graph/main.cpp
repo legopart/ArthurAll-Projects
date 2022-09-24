@@ -11,12 +11,22 @@ int main() {
     graph.addNode('a');
     graph.addNode('b');
     graph.addNode('c');
-    graph.removeNode('b');
+
     graph.addNode('d');
     graph.addNode('e');
     cout << "\n";
 
+    graph.addEdge('a', 'b');
+    graph.addEdge('b', 'c');
+    graph.addEdge('a', 'd');
+    graph.addEdge('c', 'a');
+    cout << graph.hasCycle() << "\n";
 
 
+
+    cout << graph.print() << "\n";
+    graph.removeNode('b');
+    cout << "\n";
+    cout << graph.print() << "\n";
     return 0;
 }

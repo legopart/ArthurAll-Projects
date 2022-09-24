@@ -49,7 +49,7 @@ namespace Graph
         }
 
         //Iteration
-        public void TraverseDepthFirsy(String rootString)
+        public void TraverseDepthFirst(String rootString)
         {
             HashSet<Node> visited = new();
             Stack<Node> stack = new();
@@ -67,7 +67,7 @@ namespace Graph
             }
         }
 
-        public void TraverseBreadthFirsy(String rootString)
+        public void TraverseBreadthFirst(String rootString)
         {
             HashSet<Node> visited = new();
             Queue<Node> queue = new();
@@ -86,21 +86,21 @@ namespace Graph
         }
 
 
-        public void TraverseDepthFirsy_recursion(String rootString)
+        public void TraverseDepthFirst_recursion(String rootString)
         {
             try 
             {
                 Node root = Nodes[rootString];
-                TraverseDepthFirsy_recursion(root, new());
+                TraverseDepthFirst_recursion(root, new());
                 Console.WriteLine();
             } catch (Exception) { return; }
         }
-        private void TraverseDepthFirsy_recursion(Node node, HashSet<Node> visited)
+        private void TraverseDepthFirst_recursion(Node node, HashSet<Node> visited)
         {
             Console.Write(node + " ");
             visited.Add(node);
             foreach (var neighbour in Edges[node])
-                if (!visited.Contains(neighbour)) TraverseDepthFirsy_recursion(neighbour, visited);
+                if (!visited.Contains(neighbour)) TraverseDepthFirst_recursion(neighbour, visited);
         }
 
 
@@ -156,13 +156,13 @@ namespace Graph
 
         public override String ToString()
         {
-            String str = "";
+            StringBuilder str = new StringBuilder("");
             foreach (var source in Edges.Keys)
             {
                 var targets = Edges[source];
-                if (targets.Count != 0) str += source + " is connected to [" + String.Join(", ", targets) + "]\n";
+                if (targets.Count != 0) str.Append( source + " is connected to [" + String.Join(", ", targets) + "]\n" );
             }
-            return str;
+            return str.ToString();
         }
     }
 }
