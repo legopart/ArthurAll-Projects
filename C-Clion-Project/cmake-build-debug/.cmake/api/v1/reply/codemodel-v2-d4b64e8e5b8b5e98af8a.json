@@ -24,7 +24,9 @@
 						6,
 						7,
 						8,
-						9
+						9,
+						10,
+						11
 					]
 				}
 			],
@@ -48,7 +50,9 @@
 						6,
 						7,
 						8,
-						9
+						9,
+						10,
+						11
 					]
 				}
 			],
@@ -57,70 +61,84 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "C_Clion_Project::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-C_Clion_Project-Debug-a54dde956f94d84b354d.json",
+					"jsonFile" : "target-C_Clion_Project-Debug-55dc6dd8630632376b42.json",
 					"name" : "C_Clion_Project",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "_exercise1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_exercise1-Debug-1ad3d299e9264a7dfa23.json",
+					"name" : "_exercise1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_exerciseTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_exerciseTest-Debug-61e48307818cc5aee375.json",
+					"name" : "_exerciseTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "const.c::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-const.c-Debug-c54b094e0790d92af6c0.json",
+					"jsonFile" : "target-const.c-Debug-ae100bbac9854a4a82a2.json",
 					"name" : "const.c",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "macros::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-macros-Debug-5a48abc022d6b681516f.json",
+					"jsonFile" : "target-macros-Debug-e5512401505e189b313f.json",
 					"name" : "macros",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "malloc.c::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-malloc.c-Debug-63067df771efe43f7cb8.json",
+					"jsonFile" : "target-malloc.c-Debug-42df769127efd5cc332b.json",
 					"name" : "malloc.c",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "pointers::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-pointers-Debug-e79e9bd51bb4b65525a3.json",
+					"jsonFile" : "target-pointers-Debug-8e19605de1967a6155c2.json",
 					"name" : "pointers",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "scope::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-scope-Debug-07c7c1858c0c45694d19.json",
+					"jsonFile" : "target-scope-Debug-d00086ea7d056dae80c8.json",
 					"name" : "scope",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "static::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-static-Debug-cf7a6086839c18835a69.json",
+					"jsonFile" : "target-static-Debug-d3430ff1a768242b0853.json",
 					"name" : "static",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "string::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-string-Debug-9c70ecadb587cc0b5b25.json",
+					"jsonFile" : "target-string-Debug-49d22b33068b994c2345.json",
 					"name" : "string",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "struct1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-struct1-Debug-cae249bc2601fd587ecc.json",
+					"jsonFile" : "target-struct1-Debug-d779fce44322753a1482.json",
 					"name" : "struct1",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "struct2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-struct2-Debug-3cb5b2f86bb40d26c06c.json",
+					"jsonFile" : "target-struct2-Debug-c90463381cd67b9cef66.json",
 					"name" : "struct2",
 					"projectIndex" : 0
 				}

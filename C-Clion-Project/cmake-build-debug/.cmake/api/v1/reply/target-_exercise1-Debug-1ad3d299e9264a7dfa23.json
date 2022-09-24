@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "malloc.c.exe"
+			"path" : "_exercise1.exe"
 		},
 		{
-			"path" : "malloc.c.pdb"
+			"path" : "_exercise1.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 16,
+				"line" : 8,
 				"parent" : 0
 			}
 		]
@@ -59,7 +59,7 @@
 			]
 		}
 	],
-	"id" : "malloc.c::@6890427a1f51a3e7e1df",
+	"id" : "_exercise1::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -79,8 +79,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "malloc.c",
-	"nameOnDisk" : "malloc.c.exe",
+	"name" : "_exercise1",
+	"nameOnDisk" : "_exercise1.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -101,7 +101,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "malloc.c",
+			"path" : "_exercise1.c",
 			"sourceGroupIndex" : 0
 		}
 	],

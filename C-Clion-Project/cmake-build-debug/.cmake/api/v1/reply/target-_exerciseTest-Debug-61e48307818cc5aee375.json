@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "struct1.exe"
+			"path" : "_exerciseTest.exe"
 		},
 		{
-			"path" : "struct1.pdb"
+			"path" : "_exerciseTest.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 20,
+				"line" : 6,
 				"parent" : 0
 			}
 		]
@@ -59,7 +59,7 @@
 			]
 		}
 	],
-	"id" : "struct1::@6890427a1f51a3e7e1df",
+	"id" : "_exerciseTest::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -79,8 +79,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "struct1",
-	"nameOnDisk" : "struct1.exe",
+	"name" : "_exerciseTest",
+	"nameOnDisk" : "_exerciseTest.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -101,7 +101,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "struct1.c",
+			"path" : "_exerciseTest.c",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -41,6 +41,72 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug/
 # =============================================================================
+# Object build statements for EXECUTABLE target _exerciseTest
+
+
+#############################################
+# Order-only phony target for _exerciseTest
+
+build cmake_object_order_depends_target__exerciseTest: phony || CMakeFiles/_exerciseTest.dir
+
+build CMakeFiles/_exerciseTest.dir/_exerciseTest.c.obj: C_COMPILER___exerciseTest_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/_exerciseTest.c || cmake_object_order_depends_target__exerciseTest
+  DEP_FILE = CMakeFiles\_exerciseTest.dir\_exerciseTest.c.obj.d
+  FLAGS = -g -std=gnu2x
+  OBJECT_DIR = CMakeFiles\_exerciseTest.dir
+  OBJECT_FILE_DIR = CMakeFiles\_exerciseTest.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target _exerciseTest
+
+
+#############################################
+# Link the executable _exerciseTest.exe
+
+build _exerciseTest.exe: C_EXECUTABLE_LINKER___exerciseTest_Debug CMakeFiles/_exerciseTest.dir/_exerciseTest.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\_exerciseTest.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = _exerciseTest.exe
+  TARGET_IMPLIB = lib_exerciseTest.dll.a
+  TARGET_PDB = _exerciseTest.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target _exercise1
+
+
+#############################################
+# Order-only phony target for _exercise1
+
+build cmake_object_order_depends_target__exercise1: phony || CMakeFiles/_exercise1.dir
+
+build CMakeFiles/_exercise1.dir/_exercise1.c.obj: C_COMPILER___exercise1_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/_exercise1.c || cmake_object_order_depends_target__exercise1
+  DEP_FILE = CMakeFiles\_exercise1.dir\_exercise1.c.obj.d
+  FLAGS = -g -std=gnu2x
+  OBJECT_DIR = CMakeFiles\_exercise1.dir
+  OBJECT_FILE_DIR = CMakeFiles\_exercise1.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target _exercise1
+
+
+#############################################
+# Link the executable _exercise1.exe
+
+build _exercise1.exe: C_EXECUTABLE_LINKER___exercise1_Debug CMakeFiles/_exercise1.dir/_exercise1.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\_exercise1.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = _exercise1.exe
+  TARGET_IMPLIB = lib_exercise1.dll.a
+  TARGET_PDB = _exercise1.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target string
 
 
@@ -398,6 +464,10 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build C_Clion_Project: phony C_Clion_Project.exe
 
+build _exercise1: phony _exercise1.exe
+
+build _exerciseTest: phony _exerciseTest.exe
+
 build const.c: phony const.c.exe
 
 build macros: phony macros.exe
@@ -424,7 +494,7 @@ build struct2: phony struct2.exe
 #############################################
 # Folder: C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug
 
-build all: phony string.exe scope.exe static.exe pointers.exe const.c.exe malloc.c.exe macros.exe struct1.exe struct2.exe C_Clion_Project.exe
+build all: phony _exerciseTest.exe _exercise1.exe string.exe scope.exe static.exe pointers.exe const.c.exe malloc.c.exe macros.exe struct1.exe struct2.exe C_Clion_Project.exe
 
 # =============================================================================
 # Built-in targets

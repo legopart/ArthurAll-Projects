@@ -1,3 +1,5 @@
+C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug/CMakeFiles/_exerciseTest.dir
+C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug/CMakeFiles/_exercise1.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug/CMakeFiles/string.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug/CMakeFiles/scope.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug/CMakeFiles/static.dir

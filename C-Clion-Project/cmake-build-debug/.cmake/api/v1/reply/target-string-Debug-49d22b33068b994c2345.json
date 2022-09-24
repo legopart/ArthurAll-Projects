@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "scope.exe"
+			"path" : "string.exe"
 		},
 		{
-			"path" : "scope.pdb"
+			"path" : "string.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 10,
 				"parent" : 0
 			}
 		]
@@ -59,7 +59,7 @@
 			]
 		}
 	],
-	"id" : "scope::@6890427a1f51a3e7e1df",
+	"id" : "string::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -79,8 +79,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "scope",
-	"nameOnDisk" : "scope.exe",
+	"name" : "string",
+	"nameOnDisk" : "string.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -101,7 +101,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "scope.c",
+			"path" : "string.c",
 			"sourceGroupIndex" : 0
 		}
 	],

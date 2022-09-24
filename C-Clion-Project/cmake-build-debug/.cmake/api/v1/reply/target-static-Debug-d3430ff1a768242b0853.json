@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "const.c.exe"
+			"path" : "static.exe"
 		},
 		{
-			"path" : "const.c.pdb"
+			"path" : "static.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -59,7 +59,7 @@
 			]
 		}
 	],
-	"id" : "const.c::@6890427a1f51a3e7e1df",
+	"id" : "static::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -79,8 +79,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "const.c",
-	"nameOnDisk" : "const.c.exe",
+	"name" : "static",
+	"nameOnDisk" : "static.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -101,7 +101,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "const.c",
+			"path" : "static.c",
 			"sourceGroupIndex" : 0
 		}
 	],
