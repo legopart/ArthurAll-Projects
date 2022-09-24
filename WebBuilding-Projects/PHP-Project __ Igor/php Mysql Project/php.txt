@@ -1,0 +1,284 @@
+Classes:	https://www.youtube.com/watch?v=bt4znmLQCZ8s
+		https://www.youtube.com/watch?v=BUdGWoMMPQs
+
+
+Redirector:
+	header('Location: index.php');
+
+$_SERVER['SERVER_NAME']; //localhost
+$_SERVER['REQUEST_METHOD']; /POST/GET
+$_SERVER['SCRIPT_FILENAME']; //full location
+$_SERVER['PHP_SELF']; //this page file // relative to SERVER_NAME /localhost
+$_SERVER['QUERY_STRING']; //The text after ?
+
+
+
+$_SECTION ['var'] = $_POST['var'] ?? 'Defult Value1';
+header('location: ./index.php'); //redirection
+
+//on index
+<?php
+	session_start();
+	$var = $_SECTION ['var'];
+...eccho html...($var);
+
+//overide or cancel
+	$_SECTION ['var']='new string';
+if($_SERVER['QUERY_STRING']=='no____name'){
+	unset($_SECTION ['var']);
+	session_unset();
+}
+
+$var = $_SECTION ['var'] ?? 'Defult Value2';
+
+
+
+
+
+$_COOKIE
+
+if (isset($_POST['submit'])){
+setcookie('gender', $_POST['gender'], time() + 86400); // expire date, after 1 day
+
+}
+
+//on other page
+//get cookie
+$gender=$_COOKIE['gender'] ?? 'Deful  Value';
+
+echo html...($gender);
+
+
+$file = './readme.txt';
+if(file_exists($file)){
+
+
+	//opening a file for reading
+	$handle = fopen($file, 'r'); //r only read
+
+	//read the file
+	echo fread($handle, filesize($file));
+	echo fread($handle, 112); //first 112
+
+	//read a single line
+	echo fgets($handle); //only 1st line (to the end of the line)
+	echo fgets($handle); //only 2nd line
+
+	echo fgetc($handle); //print next line (3rd) 1st letter
+	echo fgetc($handle); //print next line (3rd) 2nd letter
+	// read file
+	echo readfile($file);
+
+
+	//opening a file for reading and writing
+	$handle = fopen($file, 'r+'); //r+ read and write
+	fwrite($handle, "\n...new line will wrote here") // write over from file begin
+
+
+	//opening a file for reading and writing
+	$handle = fopen($file, 'a+'); //r+ read and write from the end
+	fwrite($handle, "\n...new line will wrote here") // write from the end of the text
+
+	w
+	w+
+	a
+	x
+	x+
+
+	fclose($handle); // close file
+	
+	unlink($file); // delete the file
+
+	// copy
+	($file, 'quotes2.txt')
+
+	// absolute path (location)
+	echo realpath($file);
+
+	// file size
+	echo filesize($file);
+
+	//rename
+	rename($file, 'test.txt')
+}
+else{
+	echo 'file not exist';
+}
+
+// make directory
+mkdir('folder_quotes');
+
+
+include('ninjas.php');  
+require('ninjas.php'); //error sensetive!, fatal error if miss
+
+<?php
+
+/*
+*/
+//
+#
+
+$myvar="addition string";
+$myvar2=5;
+$myvar3=true;
+echo "hello world" . $myvar;
+
+//constant!!!!! , cant overide!
+define('NAME', 'Arthur'); 
+echo NAME; 
+
+
+printf ("the string is %s",$myvar) //decimal %.2f (2 places)
+
+
+
+// = +-*/ == != === !==  and or && || !
++= -= /= *= %=  ++var var++
+
+$var1 = 5;
+$var2ref= &$var1; //5
+$var1 = 7; // $var2ref=7
+
+short condition:
+	condition ?  v.true:v.false;
+
+if ($myvar3 == true) {
+		echo "true in";
+	}
+elseif(){}
+else {
+		echo "not true input";
+	}
+
+
+
+
+$var=2;
+switch($var){
+	case 1:
+
+	break;
+	case 2:
+	break;
+	case "a":
+	break;
+	default:
+	break;
+}
+
+
+
+$num=0
+while($num <= 20){
+$num++;
+}
+
+
+for($num=0; $num <= 20; $num++){
+
+if(){
+	break;
+	exit(); // stop all php code
+	}
+
+
+}
+
+
+
+
+
+$people_type_array = array ('Name' => 'Alice', 'Address' => 'Home', 'Phone' => '4604363464');
+foreach($people_type_array as $key => $value) {
+			echo  $key . ' ' . $value;
+		}
+
+$people = array ('Alice', 'Bob', 'Catherine');
+
+$combine_arrays = $people + $people_type_array;
+//compare arrays == != ===
+//array  inside array // multidimention arrays
+
+print_r($people);
+
+echo $people[2];
+
+foreach($people as $person_i) {
+			echo $person_i . ' ';
+		}
+
+$numbers = array(5, 3, 7);
+$sum=0;
+
+foreach($numbers as $i) {
+			$Sum=$Sum+$i;
+		}
+echo $sum;
+
+?>
+
+
+<form action="process.php" method="post">
+	Enter your name: <input name="firstName" type="text" />
+	<input type="submit" />
+</form>
+
+
+
+process.php
+<?php
+	$name=$_POST["firstName"];
+	echo "hello " . $name;
+?>
+
+
+
+
+
+
+
+function addNum($num1, num2){
+		return $num1 + $num2;
+	};
+ addNum(1,2);
+
+
+
+
+
+
+
+
+
+echo date('
+
+
+
+
+	$str= <<<EOD
+text text text text text 
+text text text text text 
+text text text $var text $var2
+var3	<br />
+EOD;
+
+
+
+
+(intager)(5/2) //string double
+
+
+
+
+
+
+
+
+
+
+
+
+
+reqular expression
+object oriented

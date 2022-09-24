@@ -1,0 +1,44 @@
+#sample-div1{ /*overflow content*/
+    height:100px;
+    width: 300px;
+    padding: 15px;
+    background-color: #eee;
+    margin-bottom: 2000px;
+}
+
+/* overflow property
+scroll or clipping content
+for hight specified
+
+visible -default (not clip)
+auto    -scroll only if needed
+hidden  -hide overflowing content
+scroll
+*/
+
+
+#sample-div2{ /*overflow content*/
+    overflow: auto; /* visible auto hidden scroll*/
+    height:100px;
+    width: 300px;
+    padding: 5px;
+    background-color: #eee;
+}
+
+#sample-div3{ /*overflow content*/
+    overflow: hidden; /* visible auto hidden scroll*/
+    height:100px;
+    width: 300px;
+    padding: 5px;
+    background-color: #eee;
+}
+
+#sample-div4{ /*overflow content*/
+    overflow: scroll; /* visible auto hidden scroll*/
+    height:100px;
+    width: 300px;
+    padding: 5px;
+    background-color: #eee;
+}
+
+/* overflow-x overflow-y */

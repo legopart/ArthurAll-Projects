@@ -1,0 +1,42 @@
+#sample-h1{
+    color: blue;
+}
+
+#sample-h2{
+    background-color: lightyellow;
+}
+
+.sample-p{
+    line-height: 30px;
+}
+
+.sample-p1{
+    font-size: 30px;
+    text-decoration: underline overline line-through ; /* none */
+}
+
+.sample-p2{
+    text-align: right;
+    /* direction: rtl; */
+}
+
+.sample-p3{
+    letter-spacing: -5px;
+}
+
+.sample-p32{
+    letter-spacing: 10px;
+}
+
+.sample-p4{
+    font-size: : 24pxl;
+    text-transform: uppercase; /*lowercase, cappitalize*/
+}
+
+.sample-p5{
+    text-indent : 150px;
+}
+
+.sample-p6{
+    word-spacing: 30px
+}

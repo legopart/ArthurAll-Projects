@@ -1,0 +1,48 @@
+#sample-div1 p{
+    border: 1px solid #111;
+    padding: 20px
+}
+
+#sample-div2 p{
+    border: 1px solid #111;
+    padding: 5%; /*dynamic*/
+}
+
+#sample-p1{
+    border: 1px solid #111;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
+
+#sample-p2{
+    border: 1px solid #111;
+    padding:10px 20px 30px 40px; /* T R B L */
+}
+
+#sample-p3{
+    border: 1px solid #111;
+    padding:10px 20px 30px; /* T RL B  */
+}
+
+#sample-p4{
+    border: 1px solid #111;
+    padding:10px 20px; /* TB RL  */
+}
+
+
+#sample-p5{
+    border: 1px solid #111;
+    padding:10px; /* TBRL  */
+}
+
+#sample-div3{
+    border: 1px solid #111;
+    padding:10px; /* TBRL  */
+}
+
+#sample-div3 p{  /* ^Inhirit  */
+    border: 1px solid #111;
+    padding:inherit; /* Inhirit  */
+}

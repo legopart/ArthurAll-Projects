@@ -1,0 +1,23 @@
+#signup-form label{
+    font-size: 24px;
+    display:block; /*div size*/
+    margin-bottom: 10px;
+}
+
+#signup-form input {
+    display: block;
+    width:100%;
+    padding: 15px 10px;
+    border:  1px solid #111;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+#signup-form input[type=submit] {
+    background-color: lightgreen;
+}
+
+#signup-form input[type=reset] {
+    background-color: #ddd;
+}

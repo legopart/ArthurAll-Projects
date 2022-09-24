@@ -1,0 +1,87 @@
+body{
+    padding:0;
+    margin: 0;
+}
+
+div{
+    padding:5px;
+}
+
+#header, #footer {
+    background-color: lightblue;
+}
+
+#container {
+    background-color: lightgray;
+}
+
+#div-1 {
+    background-color: lightsalmon;
+}
+
+#div-2{
+    background-color: lightgreen;
+}
+
+#div-3{
+    background-color: lightpink;
+}
+
+#div-4{
+    background-color: lightyellow;
+}
+/* float properties:
+left
+right
+
+
+*/
+
+/*
+#div-2 {
+    float:left
+}
+*/
+
+/*
+#div-2 {
+    float:right
+}
+*/
+
+
+#div-1 {
+    float:left
+}
+
+#div-3 {
+    float:right
+}
+
+
+#div-2 {
+    clear:both;
+}
+
+
+
+
+/*clear - not floating elements from the side
+left
+right
+both
+*/
+
+/*
+#div-3 {
+    clear:left
+}
+*/
+
+/*
+#div-3 {
+    clear:right;
+}
+*/
+
+
