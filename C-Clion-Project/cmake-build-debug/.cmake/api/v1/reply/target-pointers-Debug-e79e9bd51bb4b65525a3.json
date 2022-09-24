@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C_Clion_Project.exe"
+			"path" : "pointers.exe"
 		},
 		{
-			"path" : "C_Clion_Project.pdb"
+			"path" : "pointers.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 12,
 				"parent" : 0
 			}
 		]
@@ -59,7 +59,7 @@
 			]
 		}
 	],
-	"id" : "C_Clion_Project::@6890427a1f51a3e7e1df",
+	"id" : "pointers::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -79,8 +79,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "C_Clion_Project",
-	"nameOnDisk" : "C_Clion_Project.exe",
+	"name" : "pointers",
+	"nameOnDisk" : "pointers.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -101,7 +101,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.c",
+			"path" : "pointers.c",
 			"sourceGroupIndex" : 0
 		}
 	],

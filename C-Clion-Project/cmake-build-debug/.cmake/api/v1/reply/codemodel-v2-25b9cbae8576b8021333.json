@@ -1,0 +1,141 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "C_Clion_Project",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "C_Clion_Project::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-C_Clion_Project-Debug-a54dde956f94d84b354d.json",
+					"name" : "C_Clion_Project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "const.c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-const.c-Debug-c54b094e0790d92af6c0.json",
+					"name" : "const.c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "macros::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-macros-Debug-5a48abc022d6b681516f.json",
+					"name" : "macros",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "malloc.c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-malloc.c-Debug-63067df771efe43f7cb8.json",
+					"name" : "malloc.c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pointers::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pointers-Debug-e79e9bd51bb4b65525a3.json",
+					"name" : "pointers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "scope::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-scope-Debug-07c7c1858c0c45694d19.json",
+					"name" : "scope",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "static::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-static-Debug-cf7a6086839c18835a69.json",
+					"name" : "static",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "string::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-string-Debug-9c70ecadb587cc0b5b25.json",
+					"name" : "string",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "struct1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-struct1-Debug-cae249bc2601fd587ecc.json",
+					"name" : "struct1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "struct2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-struct2-Debug-3cb5b2f86bb40d26c06c.json",
+					"name" : "struct2",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug",
+		"source" : "C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

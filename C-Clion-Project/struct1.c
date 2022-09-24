@@ -8,9 +8,6 @@
 
 
 
-//book http://aelinik.free.fr/c/
-
-
 struct Person{
     int age;
     char *name;
