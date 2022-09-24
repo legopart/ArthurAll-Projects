@@ -1,0 +1,190 @@
+<script type=text/javascript" src="*.js"></script>
+alert(''); //window.alert('');
+document.print('');
+consule.log(''); /*F12*/
+
+var username;
+username="Acvcv Vasfafa";
+var a,b,c; //underfing
+
+var studentObj= {
+		name: "Tom",
+		studentid: "A123",
+		score: 120.5,
+		greetings: function () { return console.log("hello world");},
+		getscore: function () {return this.score;} // this. (from this object)
+		}
+consule.log(typeof(studentObj.name));  //get
+studentObj.score = 200; //set
+consule.log(studentObj.getscore());
+
+/*data types:
+	primitive 	var (boolean, null, undefind, number, string)
+				consule.log(typeof(username)); // string
+	object		(null, undefined, number, string, object, function, array)
+			var obj1 = {
+				a1: null,
+				a2:undefined,
+				a3:123,
+				a4: "hello world"
+				a5:  {
+					a:1, 
+					b:"hi"
+				}, //obj
+				a6: function f(x){return x;},
+				a7: [1,2,3] // o -> 1, 1 -> 2, 2 -> 3  
+			};
+			
+*/
+
+function activateme(x, y){
+			console.log("Hello World");
+			return x+y; //return undefined
+		};
+activateme(1, 2); // activate
+
+
+ 
+
+var x=10;
+
+if (x>100){
+	console.log("greater then 100");
+}
+else if (x=100) {console.log("equals 100");}
+else {
+	console.log("not greater then 100");
+};
+
+
+var x=1; //VALUE
+switch (x) {
+	case 1:
+		console.log("entered 1");
+	break;
+	case 2:case 3:case 4:
+		console.log("entered 2 or 3 or 4");
+	break;
+	case 'a':
+	break;
+	case 'something':
+	break;
+	defult:
+	;
+}
+
+var x=5;
+do{	document.write('hi'+x+'\n');
+	x--;
+}
+while(x==1); // hi5 hi4 hi3 hi2 hi1
+
+while(x==1){
+	document.write('hi'+x+'\n');
+	x--;
+}; // hi5 hi4 hi3 hi2
+
+
+
+
+
+for(var i=1;c<=5;i++){
+	document.write('hi'+i+'\n');
+}// hi1 hi2 hi3 hi4 hi5
+
+
+for(var i=c;c<=5;c++){
+	if(c==4) {break;}
+	document.write('hi'+c+'\n');
+}// hi1 hi2 hi3
+
+for(var i=c;c<=5;c++){
+	if(c==4) {continue; document.write('++');}
+	document.write('hi'+c+'\n');
+}// ++hi1 ++hi2 ++hi3 hi5
+
+
+
+
+var fruits= ["Apple", "Mango", "Orange"]; //i=0..2
+console.log(fruits); 0 "Apple" 1 "Mango" 2 "Orange"
+console.log(fruits[0]); // "Apple"
+for(var i=0; i<fruits.length /*3*/; i++){
+		document.write(fruits[i]+" ")
+} //Apple Mango Orange
+
+var fruits = new Array();
+fruits[1]= "Apple";
+fruits[3]= "Mango";
+fruits[4]=  "Orange";
+// 0 and 2 undefind
+console.log(fruits);
+console.log(fruits.length); //
+
+
+var arr1=['a', 'b'];
+var arr2=['c'];
+var arr12=arr1.concat(arr2); // "a","b","c"
+
+var pop1= arr12.pop(); // pop1="c"; arr12=["a", "b"]
+arr12.push('d'); // arr12=["a", "b", "d"]
+var a=arr.indexOf('d'); //a=2
+if (arr.indexOf('d')>-1){/*pressent*/}
+else{}
+
+array_name.slice(start, stop);
+array_name.splice(start, numberOfElem, new_elem);
+array_name.toString( )
+filter( )
+fruits.forEach(function(elem){
+	console.log(elem);
+});
+
+https://dyclassroom.com/js/js-array
+
+
+
+String https://www.youtube.com/watch?v=qoUNHpQFAno
+
+
+/*string escape sequence:
+	\'	'
+	\"	"
+	\\	\
+	\n	
+
+	\r	<--- one letter back
+	\t	|	| tab
+*/
+
+
+/* operators
+	+
+	-
+	*
+	/
+	%
+
+	++
+	--
+
+	+=
+	-=
+	*=
+	/=
+	%=
+
+	==
+	===
+	!=
+	!==
+	>
+	<
+	>=
+	<=
+
+	&&	logic and
+	||	logic or
+
+	!	not	!x	!()
+*/

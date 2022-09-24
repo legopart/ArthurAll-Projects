@@ -1,0 +1,10 @@
+docker build -t hello-docker .
+
+
+
+docker run -p 27017:27017 -d -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin --name mongodb --net mongo-network mongo
+docker logs bd090ee1322505bed1485f125c97111187f3440f75369f33071fba0e8268b914
+
+
+docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_SERVER=mongodb -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=admin --net mongo-network --name mongo-express mongo-express
+docker logs 7a454bbcf64397c5e428c9b20839e1e17f9c51384ddbc60000d71275dafca95c

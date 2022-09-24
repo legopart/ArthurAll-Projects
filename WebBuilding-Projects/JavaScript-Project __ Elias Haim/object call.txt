@@ -1,0 +1,11 @@
+
+
+
+<script type="text/javascript">
+var myObj = {"aaa":"aaaa"};
+   
+
+
+alert(myObj.bbb==undefined);
+    
+</script>

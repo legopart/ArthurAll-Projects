@@ -1,0 +1,211 @@
+
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            box-sizing:border-box;
+            border-width: 6px;
+            border-color: black;
+        }
+
+        html{
+            font-family: 'Montserrat', sans-serif;
+            font-size:18px;
+            font-weight: bold;
+            --bg:#ffffff ;
+            --bg-box:#f4f4f4;
+            --button-bg: #f4f4f4;
+            --button-clr:black;
+            --operator-bg:#afacaf;
+            --equal-bg: #590fcf;
+            --clear-bg:#948484;
+            --display-clr:rgb(74, 78, 78);
+            --display-bg:rgb(147, 173, 165);
+            --minus: rgb(196, 52, 160);
+            --mult: rgb(201, 204, 19);
+            --div: rgb(52, 155, 196);
+            --plus: rgb(17, 83, 128);
+        }
+
+        body{
+            height:100vh;
+            width:100%;
+            display:grid;
+            justify-items: center;
+            align-content:center;
+            position: relative;
+            background:var(--bg)
+        }
+
+        label {
+            cursor: pointer;
+            display:block;
+            width: 52px;
+            height: 27px;
+            background: grey;
+            border-radius: 100px;
+            position: relative;
+            margin-left:2.5rem;
+        }
+
+        label:after{
+            content:"";
+            position: absolute;
+            top:1px;
+            left:1px;
+            background: white;
+            width:25px;
+            height:25px;
+            border-radius:50%;
+            transition:1s;
+        }
+
+        input:checked + label { background:black; }
+
+        input:checked + label:after {
+            left: calc(100% - 2px);
+            transform: translateX(-100%);
+        }
+
+        .grid-container{
+        display:grid;
+        grid-template-columns: repeat(4 ,70px );
+        grid-template-rows:minmax(100px, auto) repeat(5 ,70px);
+        background:var(--bg-box);
+        padding:1rem;
+        grid-gap:1rem;
+        text-align:center;
+        box-shadow:1px 1px 10px 1px rgba(0, 0, 0, 0.4), 1px 1px 13px 1px rgba(0, 0, 0, 0.4);
+        }
+
+        .display{
+            grid-column: 1/5;
+            background:var(--bg-box);
+            color: var(--display-clr);
+            display:flex;
+            flex-flow:column;
+            justify-content: space-around;
+            border-style: solid;
+        }
+
+        .previousoperand{
+            opacity:0.8;
+            font-size:0.8rem;
+            color: var(--button-clr);
+            align-self:flex-end;
+        }
+
+        .currentoperand{
+            color: var(--button-clr);
+            align-self:flex-end;
+        }
+
+        .button{
+            background:var(--button-bg);
+            opacity:0.8;
+            color:var(--button-clr);
+            border-radius:15px;
+            padding-top: calc(70px - 35px - 0.5rem);
+        }
+
+        .Turquoise .purple .pink .Turquoise{ border-radius:15px; }
+        .equal, .all-clear{ grid-column-end: span 1; }
+        .button :hover{ opacity:1; }
+        .operator{  background:var(--operator-bg); border-radius: 50%; }
+        .equal{ background: var(--equal-bg); border-radius: 50%; }
+        .all-clear{ background:var(--clear-bg); border-radius: 50%; }
+        #plus{ background:var(--plus); }
+        #minus{ background:var(--minus); }
+        #mult{ background:var(--mult);}
+        #div{ background:var(--div);}
+        html.transition, html.transition *, html.transition *:before, html.transition *:after { transition: all 750ms !important; transition-delay: 0 !important; }
+    </style>
+</head>
+<body>
+        
+  <div class="grid-container">
+
+    <div class="display">
+        <div class="previousoperand" data-previousoperand></div>
+        <div class="currentoperand" data-currentoperand></div>
+    </div>
+
+    <div class="button all-clear" data-clear>AC</div>
+    <div class="button " data-delete></div>
+    <div class="button"></div>
+    <div class="button operator" id= "div" data-operator>÷</div>
+
+    <div class="button" data-number>1</div>
+    <div class="button" data-number>2</div>
+    <div class="button" data-number>3</div>
+    <div class="button operator" id= "mult" data-operator>*</div>
+
+    <div class="button" data-number>4</div>
+    <div class="button" data-number>5</div>
+    <div class="button" data-number>6</div>
+    <div class="button operator" id= "minus" data-operator>-</div>
+
+    <div class="button" data-number>7</div>
+    <div class="button" data-number>8</div>
+    <div class="button" data-number>9</div>
+    <div class="button operator" id= "plus" data-operator>+</div>
+
+    <div class="button " ></div>
+    <div class="button" data-number>0</div>
+    <div class="button"  ></div>
+    <div class="button equal" data-equal>=</div>
+</div>
+
+<script>
+    function quAll(cls){return document.querySelectorAll(cls);}
+    function qu(cls){return document.querySelector(cls);}
+    const numberButton = quAll('[data-number]'), operatorButton = quAll('[data-operator]')
+    const equal = qu('[data-equal]'), del = qu('[data-delete]'), clear = qu('[data-clear]')
+                , previousoperand = qu('[data-previousoperand'), currentoperand = qu('[data-currentoperand')
+
+    var operatorchoosed
+    var computed
+
+    numberButton.forEach((div) => div.addEventListener('click', () => { appendNumber(div.innerText) }) )
+    operatorButton.forEach((div) =>  div.addEventListener('click', () => { varassign(div.innerText) }) )
+
+    document.body.addEventListener('keydown', function keypress(e) {
+        const char = e.keyCode
+        if ( !(char < 58 && char > 47 || char < 106 && char > 95) ) return
+        if (char < 106 && char > 95)  char = char - 48
+        currentoperand.innerText = currentoperand.innerText.toString() + String.fromCharCode(char)
+    })
+    equal.addEventListener('click', () => { varassign('') })
+    del.addEventListener('click', () => { currentoperand.innerText = currentoperand.innerText.toString().slice(0, -1) })
+    clear.addEventListener('click', () => { currentoperand.innerText = null; previousoperand.innerText = null })
+
+    function appendNumber(number) { currentoperand.innerText = currentoperand.innerText + number }
+
+    function varassign(operator) {
+        if (previousoperand.innerText != '' && currentoperand.innerText != '') computed() 
+        previousoperand.innerText = previousoperand.innerText + currentoperand.innerText + operator
+        currentoperand.innerText = ''
+        operatorchoosed = operator
+    }
+
+    function computed() {
+        compute = operatorchoosed == '+' ? parseFloat(previousoperand.innerText) + parseFloat(currentoperand.innerText)
+        : operatorchoosed == '-' ? parseFloat(previousoperand.innerText) -  parseFloat(currentoperand.innerText)
+        : operatorchoosed == '*' ?  parseFloat(previousoperand.innerText) * parseFloat(currentoperand.innerText)
+        : operatorchoosed == '÷' ? parseFloat(previousoperand.innerText) / parseFloat(currentoperand.innerText)
+        : undefined;
+        if(compute == undefined) return
+        previousoperand.innerText = ''
+        currentoperand.innerText = compute
+    }
+</script>
+</body>
+</html>
