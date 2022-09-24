@@ -9,17 +9,10 @@ int main() {
 
     Graph graph{};
     graph.addNode('a');
-
-
-    cout << "asfasfas";
-
     graph.addNode('b');
-
     graph.addNode('c');
     graph.removeNode('b');
     graph.addNode('d');
-    cout << "\n";
-
     graph.addNode('e');
     cout << "\n";
 
