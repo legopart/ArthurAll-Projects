@@ -8,6 +8,7 @@ int main()
     cout << "LinkedList\n";
     List list{};
     list.insertLast(10);
+    cout << "after10";
     list.insertLast(20);
     list.insertLast(30);
     list.insertLast(40);
@@ -18,8 +19,11 @@ int main()
     list.insertLast(90);
     list.insertLast(100);
 
-    list.removeFirst();
-    list.removeLast();
+    cout << "\nend\n";
+
+
+    //list.removeFirst();
+    //list.removeLast();
 
     cout << "KTH " <<list.kth(3) <<"\n";
     cout << list.print();

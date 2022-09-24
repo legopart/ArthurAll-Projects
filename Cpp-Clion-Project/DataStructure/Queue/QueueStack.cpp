@@ -17,7 +17,7 @@ public:
     void enqueue(int value) { queueStack.push(value);  }
     int dequeue()
     {
-        if(queueStack.empty()) throw new std::exception();
+        if(queueStack.empty()) throw std::exception();
         while(!queueStack.empty()) {enqueueStack.push(queueStack.top()); queueStack.pop();}
         int value = enqueueStack.top();
         enqueueStack.pop();

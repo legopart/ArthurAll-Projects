@@ -40,7 +40,7 @@ namespace Graph
         public void AddEdge(String fromString, String toString)
         {   //relationship from -> to
             try { Edges[Nodes[fromString]].Add(Nodes[toString]); }
-            catch (Exception) { throw new Exception(); }    //IsNull
+            catch (Exception) { throw new ArgumentException(); }    //IsNull
         }
         public void RemoveEdge(String fromString, String toString)
         {   //remove from.to

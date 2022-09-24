@@ -110,7 +110,7 @@ public:
     void insert(const std::string& word)
     {
         std::string lowerCaseString = word;//toLowerCaseSting(word);
-        if (isNull(word)) throw new std::exception();
+        if (isNull(word)) throw std::exception();
         struct Node *current = root ;
         for(char& ch : lowerCaseString)
         {

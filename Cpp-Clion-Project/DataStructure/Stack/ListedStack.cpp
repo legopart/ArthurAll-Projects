@@ -17,7 +17,7 @@ public:
 
     void push(int value){ items.push_back(value); }
     int peak(){
-        if(isEmpty()) throw new std::exception();
+        if(isEmpty()) throw std::exception();
         return items.back();
     }
     int pop(){

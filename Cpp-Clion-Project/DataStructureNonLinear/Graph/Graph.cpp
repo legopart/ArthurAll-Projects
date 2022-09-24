@@ -9,9 +9,15 @@
 #include <queue>
 #include <memory>
 #include <iterator>
-using std::string, std::to_string, std::cout;
+
+using std::string, std::to_string, std::cout, std::map, std::pair, std::set;
+using std::stack, std::queue, std::list, std::shared_ptr, std::make_shared, std::exception;
+
 class Graph {   //for example only
 private:
+    typedef shared_ptr<struct Node> p_Node;
+    typedef std::_Rb_tree_iterator<pair<const char, p_Node>> it_Node;
+
     struct Node {
      char label;
      explicit Node(char& label) : label{label} {   }
@@ -19,22 +25,23 @@ private:
      bool operator<(const struct Node& other) const { return this->label < other.label; }
      char print() const { return label; }
     };
-    std::map<char, std::shared_ptr<struct Node>> nodes;
-    std::map< std::shared_ptr<struct Node>, std::list<std::shared_ptr<struct Node>>> edges;
-    bool isNull(std::_Rb_tree_iterator<std::pair<const char, std::shared_ptr<struct Node>>> itNode) { return itNode == nodes.end();}
-    void traverseDepthFirst_recursion(std::shared_ptr<struct Node> node, std::set<std::shared_ptr<struct Node>>& visited)
+
+    map<char, p_Node> nodes;
+    map<p_Node, list<p_Node>> edges;
+    bool isNull(it_Node itNode) { return itNode == nodes.end();}
+    void traverseDepthFirst_recursion(p_Node node, set<p_Node>& visited)
     {
-        std::cout << node->print() << " ";
+        cout << node->print() << " ";
         visited.insert(node);
         for (auto neighbour : edges.find(node)->second)
         if (!visited.contains(neighbour)) traverseDepthFirst_recursion(neighbour, visited);
     }
-    std::list<char> ToList(std::stack<std::shared_ptr<struct Node>>& stack) {
-        std::list<char> sortedList{};
+    list<char> ToList(stack<p_Node>& stack) {
+        list<char> sortedList{};
         while (stack.empty()) {sortedList.push_back(stack.top()->label); stack.pop();}
         return sortedList;
     }
-    void topologicalSort(std::shared_ptr<struct Node> node, std::set<std::shared_ptr<struct Node>> visitedSet, std::stack<std::shared_ptr<struct Node>> stack)
+    void topologicalSort(p_Node node, set<p_Node> visitedSet, stack<p_Node> stack)
     {
         if (visitedSet.contains(node)) return;
         visitedSet.insert(node);
@@ -42,7 +49,7 @@ private:
             topologicalSort(neighbour, visitedSet, stack);
         stack.push(node);
     }
-    bool hasCycle(std::shared_ptr<struct Node> node, std::set<std::shared_ptr<struct Node>> all, std::set<std::shared_ptr<struct Node>> visiting, std::set<std::shared_ptr<struct Node>> visited)
+    bool hasCycle(p_Node node, set<p_Node> all, set<p_Node> visiting, set<p_Node> visited)
     {
         all.erase(node);
         visiting.insert(node);
@@ -61,10 +68,10 @@ public:
     ~Graph() {}
     void addNode(char label)
     {
-        auto newNode= std::make_shared<Node>(label);
+        auto newNode= make_shared<Node>(label);
         nodes.insert({label, newNode});
         auto node = nodes.find(label)->second;
-        std::list<std::shared_ptr<struct Node>> newNodeList{};
+        list<p_Node> newNodeList{};
         edges.insert({node, newNodeList});  //new List
     }
     void removeNode(char label)
@@ -80,9 +87,9 @@ public:
 
         try
         {
-            if(nodes.find(from) == nodes.end() || nodes.find(to) == nodes.end()) throw std::exception();
+            if(nodes.find(from) == nodes.end() || nodes.find(to) == nodes.end()) throw exception();
             edges.find(nodes.find(from)->second)->second.push_back(nodes.find(to)->second);
-        } catch (...) { throw std::exception(); }    //IsNull
+        } catch (...) { throw exception(); }    //IsNull
     }
     void removeEdge(char from, char to)
     {   //remove from.to
@@ -95,8 +102,8 @@ public:
     //Iteration
     void traverseDepthFirst(char root)
     {
-        std::set<std::shared_ptr<struct Node>> visited{};
-        std::stack<std::shared_ptr<struct Node>> stack{};
+        set<p_Node> visited{};
+        stack<p_Node> stack{};
         auto rootNode = nodes.find(root);
         if (isNull(rootNode)) return;
         stack.push(rootNode->second);   //Link
@@ -106,7 +113,7 @@ public:
             stack.pop();
             if (visited.contains(node)) continue;
             else visited.insert(node);
-            std::cout << node << " ";
+            cout << node << " ";
             for (auto neighbour : edges.find(node)->second)   //Links
                 if (!visited.contains(neighbour)) stack.push(neighbour);
         }
@@ -114,8 +121,8 @@ public:
 
     void traverseBreadthFirst(char root)
     {
-        std::set<std::shared_ptr<struct Node>> visited{};
-        std::queue<std::shared_ptr<struct Node>> queue{};
+        set<p_Node> visited{};
+        queue<p_Node> queue{};
         auto rootNode = nodes.find(root);
         if (isNull(rootNode)) return;
         queue.push(rootNode->second);   //Link
@@ -125,7 +132,7 @@ public:
             queue.pop();
             if (visited.contains(node)) continue;
             else visited.insert(node);
-            std::cout << node << " ";
+            cout << node << " ";
             for (auto neighbour : edges.find(node)->second)   //Links
                 if (!visited.contains(neighbour)) queue.push(neighbour);
         }
@@ -135,27 +142,27 @@ public:
     {
         try
         {
-            std::set<std::shared_ptr<struct Node>> visited{};
+            set<p_Node> visited{};
             auto rootNode = nodes.find(root)->second;
             traverseDepthFirst_recursion(rootNode, visited);
-            std::cout << "\n";
+            cout << "\n";
         } catch (...) { return; }
     }
 
     bool hasCycle()
     {   //לחזור
-        std::set<std::shared_ptr<struct Node>> allNodes{};
+        set<p_Node> allNodes{};
                 for(auto it : nodes) { allNodes.insert(it.second);}
-        std::set<std::shared_ptr<struct Node>> visiting{};
-        std::set<std::shared_ptr<struct Node>> visited{};
+        set<p_Node> visiting{};
+        set<p_Node> visited{};
         for(auto current : allNodes)  if (hasCycle(current, allNodes, visiting, visited)) return true;
         return false;
     }
 
 
-    std::string print()
+    string print()
     {
-        std::string str = "";
+        string str = "";
         for (auto itMap : edges)
         {
             auto targets = edges.find(itMap.first)->second;

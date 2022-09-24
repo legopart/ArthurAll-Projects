@@ -15,7 +15,7 @@ struct node
 
 struct node* createNode()
 {
-    struct node *newNode = static_cast<node *>(malloc(sizeof *newNode));
+    struct node *newNode = malloc(sizeof *newNode);
     for (int i = 0; i < NUM_CHAR; ++i) newNode->nodeWords[i] = NULL;
     newNode->terminal = false;
     return newNode;

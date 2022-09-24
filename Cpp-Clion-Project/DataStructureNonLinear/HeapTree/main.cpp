@@ -39,7 +39,7 @@ int main() {
 
  int getKthLargest (const int* array, const int& arrayLength,const int& kth)
 {
-    if (kth > arrayLength || kth < 1) throw new std::exception();
+    if (kth > arrayLength || kth < 1) throw std::exception();
     Heap heap{};
     for (int i{}; i < arrayLength; ++i) heap.insert(array[i]);
     for (int i = 0; i < kth - 1; i++) heap.remove();

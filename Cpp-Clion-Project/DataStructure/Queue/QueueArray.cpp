@@ -27,13 +27,13 @@ public:
     ~QueueArray(){ delete[](items); }
     void enqueue(int value)
     {
-        if(count == itemsLength) allocate();//throw new std::exception();
+        if(count == itemsLength) allocate();//throw std::exception();
         items[count] = value;
         count ++;
     }
     int dequeue()
     {
-        if(isEmpty()) throw new std::exception();
+        if(isEmpty()) throw std::exception();
         int value = items[first];
         first++;
         return value;   //return items[--count];

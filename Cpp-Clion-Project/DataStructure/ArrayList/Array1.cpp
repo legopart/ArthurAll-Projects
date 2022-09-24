@@ -36,13 +36,13 @@ public:
         return item;
     }
     int set(const int index, const int item) {
-        if (needToReSize(index)) throw new std::exception();
+        if (needToReSize(index)) throw std::exception();
         itemArray[index] = item;
         return item;
     };
     int remove(const int index) {
         int item = itemArray[index];
-        if (needToReSize(index)) throw new std::exception();
+        if (needToReSize(index)) throw std::exception();
         for (int i = index; i < count; i++) itemArray[i] = itemArray[i + 1];
         count--;
         return item;

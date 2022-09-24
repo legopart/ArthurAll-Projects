@@ -67,19 +67,19 @@ public:
     bool isEmpty() const { return count == 0; }
     void insert(const int data)
     {
-        if(isFull()) throw new std::exception(); //or extend
+        if(isFull()) throw std::exception(); //or extend
         itemArray[count] = data;
         count ++;
         bubbleUp();
     }
     int max() const
     {
-        if (isEmpty()) throw new std::exception();
+        if (isEmpty()) throw std::exception();
         return itemArray[0];    //root
     }
     int remove() //remove top
     {
-        if (isEmpty()) throw new std::exception();
+        if (isEmpty()) throw std::exception();
         int temp = itemArray[0];
         count--;
         itemArray[0] = itemArray[count];

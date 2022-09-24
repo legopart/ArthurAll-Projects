@@ -70,8 +70,8 @@ public:
     }
 
     int kth(int subPlace){
-        if(isEmpty()) throw new std::exception();
-        if(subPlace > count || subPlace <= 0) throw new std::exception();
+        if(isEmpty()) throw std::exception();
+        if(subPlace > count || subPlace <= 0) throw std::exception();
         Node* kth = root;
         Node* current = root;
         for (int i{}; i < subPlace - 1; ++i) current = current->next;

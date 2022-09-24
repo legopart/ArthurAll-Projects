@@ -58,14 +58,14 @@ template<typename T> T Array2<T>::add(T item)
 }
 template<typename T> int Array2<T>::set(int& index, T& item)
 {
-    if (needToReSize(index)) throw new std::exception();
+    if (needToReSize(index)) throw std::exception();
     itemArray[index] = item;
     return item;
 }
 template<typename T> T Array2<T>::remove(int& index)
 {
     int item = itemArray[index];
-    if (needToReSize(index)) throw new std::exception();
+    if (needToReSize(index)) throw std::exception();
     for (int i = index; i < count; i++)
         itemArray[i] = itemArray[i + 1];
     count--;

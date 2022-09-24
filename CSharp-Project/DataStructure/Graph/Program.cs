@@ -35,6 +35,7 @@ namespace Graph
             graph2.AddEdge("A", "B");
             graph2.AddEdge("A", "E");
             graph2.AddEdge("B", "D");
+            graph2.AddEdge("B", "H");
             graph2.AddEdge("B", "C");
             graph2.AddEdge("C", "D");
             Console.WriteLine("TraverseDepthFirsy recursion");

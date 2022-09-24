@@ -9,45 +9,51 @@
 #include <list>
 #include <memory>
 
-using std::string, std::to_string, std::cout;
+using std::string, std::to_string, std::cout,  std::vector, std::map;
+using std::pair, std::list, std::shared_ptr, std::make_shared, std::exception;
+
 class Trie {   //for example only
+
 private:
     struct Node
     {
+        typedef std::shared_ptr<struct Node> p_Node;
         char value;
         bool isEndOfWord;
-        std::map<char, std::shared_ptr<struct Node>> words;  //map <pair<char, Node>>
+        map<char, p_Node> words;  //map <pair<char, Node>>
         explicit Node(char data) : words{}, value{data}, isEndOfWord{false} { }
-        ~Node(){ std::cout << "del:" << value << "; "; }
+        ~Node(){ cout << "del:" << value << "; "; }
         //used Word instead Child !
         bool isEmpty() const { return words.empty(); }
-        std::shared_ptr<struct Node> getWord(const char& ch)  {  return words.find(ch)->second; }
+        p_Node getWord(const char& ch)  {  return words.find(ch)->second; }
         bool hasWord(char& ch) const { return words.contains(ch); }
         void addWord(char ch)
         {
-            auto newNode = std::make_shared<struct Node>(ch);
+            auto newNode = make_shared<struct Node>(ch);
             words.insert({ch, newNode});
         }
         void removeWord(const char& ch)  { words.erase(ch); }
-        std::vector<std::shared_ptr<struct Node>> getWords() const
+        vector<p_Node> getWords() const
         {
-            std::vector<std::shared_ptr<struct Node>> wordsVector{};
+            vector<p_Node> wordsVector{};
             for( auto it = words.begin(); it != words.end(); ++it )  wordsVector.push_back(it->second);
             return wordsVector;
         }
         bool hasWords() const { return !isEmpty(); }
     };
 
-    bool isNull(std::shared_ptr<struct Node> node) const { return node == NULL; }
+    typedef std::shared_ptr<struct Node> p_Node;
+
+    bool isNull(p_Node node) const { return node == NULL; }
     bool isNull(string word) const { return word.length() == NULL; }
-    std::string& toLowerCaseSting(const std::string& str)
+    string& toLowerCaseSting(const string& str)
     {
-        std::string lowerCaseString = str;
-        std::transform(lowerCaseString.begin(), lowerCaseString.end(), lowerCaseString.begin(),
-                       [](unsigned char ch){ return std::tolower(ch); });
+        string lowerCaseString = str;
+        transform(lowerCaseString.begin(), lowerCaseString.end(), lowerCaseString.begin(),
+                       [](unsigned char ch){ return tolower(ch); });
         return lowerCaseString;
     }
-    std::string& trim(std::string& str){
+    string& trim(string& str){
         size_t space = str.find_first_not_of(" \t");
         if( string::npos != space )
         {
@@ -55,14 +61,14 @@ private:
         }
         return str;
     }
-    bool contains(string& word, int index, std::shared_ptr<struct Node> node) const
+    bool contains(string& word, int index, p_Node node) const
     {
         if (index == word.length()) return node->isEndOfWord;
         char ch = word[index];
         if (!node->hasWord(ch)) return false;
         else return contains(word, index + 1, node->getWord(ch));
     }
-    void remove(const std::string& word, const int& index, std::shared_ptr<struct Node> node)
+    void remove(const string& word, const int& index, p_Node node)
     {   //לחזור
         if (index == word.length())
         {
@@ -76,24 +82,24 @@ private:
         if (!next->hasWords() && !next->isEndOfWord) node->removeWord(ch); //!!!
     }
 
-    void traversePreOrder(std::shared_ptr<struct Node> node, std::string& str)
+    void traversePreOrder(p_Node node, string& str)
     {
         str += node->value;
         for (auto chNode : node->getWords()) traversePreOrder(chNode, str);
         str += " ";
     }
-    void traversePostOrder(std::shared_ptr<struct Node> node)
+    void traversePostOrder(p_Node node)
     {
-        std::cout << " ";
+        cout << " ";
         for (auto chNode : node->getWords()) traversePostOrder(chNode);
-        std::cout << node->value;
+        cout << node->value;
     }
-    void findWords(std::string word, /*ref*/ std::list<std::string>& wordList, std::shared_ptr<struct Node> node)
+    void findWords(string word, /*ref*/ list<string>& wordList, p_Node node)
     {
         if (node->isEndOfWord) wordList.push_back(word);
-        for(auto chNode : node->getWords()) findWords(word + std::to_string(chNode->value), wordList, chNode);
+        for(auto chNode : node->getWords()) findWords(word + to_string(chNode->value), wordList, chNode);
     }
-    std::shared_ptr<struct Node> findWordEnd(string word)
+    p_Node findWordEnd(string word)
     {
         auto current = root;
         for (auto ch : word)
@@ -105,13 +111,13 @@ private:
         return current;
     }
 public:
-    explicit Trie() : root{std::make_shared<struct Node>('\0')} { }
+    explicit Trie() : root{make_shared<struct Node>('\0')} { }
     ~Trie() {  }
-    std::shared_ptr<struct Node> root;
-    void insert(const std::string& word)
+    p_Node root;
+    void insert(const string& word)
     {
-        std::string lowerCaseString = word;//toLowerCaseSting(word);
-        if (isNull(word)) throw new std::exception();
+        string lowerCaseString = word;//toLowerCaseSting(word);
+        if (isNull(word)) throw exception();
         auto current = root ;
         for(char& ch : lowerCaseString)
         {
@@ -120,21 +126,21 @@ public:
         }
         current->isEndOfWord = true;
     }
-    bool contains(std::string word)   //recursion
+    bool contains(string word)   //recursion
     {
-        std::string lowerCaseString = word;//toLowerCaseSting(word);
+        string lowerCaseString = word;//toLowerCaseSting(word);
         if (isNull(word)) return false;
         return contains(lowerCaseString, 0, root);
     }
-    void remove(std::string word) { remove(word, 0, root); }
-    std::string traversePreOrder() { std::string str=""; traversePreOrder(root, str);str = trim(str) ;str += "\n"; return str  ; }
+    void remove(string word) { remove(word, 0, root); }
+    string traversePreOrder() { string str=""; traversePreOrder(root, str);str = trim(str) ;str += "\n"; return str  ; }
     void traversePostOrder() { traversePostOrder(root); }
-    std::list<std::string>& findWords(string word) //לחזור
+    list<string>& findWords(string word) //לחזור
     {
-        std::list<std::string> wordList{};    //java ArrayList<>
+        list<string> wordList{};    //java ArrayList<>
         auto startNode = findWordEnd(word);    //startPoint
         findWords(word, wordList, startNode);
         return wordList;
     }
-    std::string print() { return traversePreOrder();  }
+    string print() { return traversePreOrder();  }
 };
