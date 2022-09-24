@@ -61,7 +61,7 @@ public:
     ~Graph() {}
     void addNode(char label)
     {
-        auto newNode= std::make_shared<Node>(Node(label));
+        auto newNode= std::make_shared<Node>(label);
         nodes.insert({label, newNode});
         auto node = nodes.find(label)->second;
         std::list<std::shared_ptr<struct Node>> newNodeList{};
