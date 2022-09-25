@@ -1,3 +1,6 @@
+//
+// Created by pc1 on 25/09/2022.
+//
 
 #include <iostream>
 #include <string>
@@ -13,47 +16,56 @@
 using std::string, std::to_string, std::cout, std::map, std::pair, std::set;
 using std::stack, std::queue, std::list, std::shared_ptr, std::make_shared, std::exception;
 
+struct Node;
+struct Edge {
+    typedef std::weak_ptr<struct Node> wp_Node;
+    typedef std::shared_ptr<struct Node> sp_Node;
+    int weight;
+    sp_Node from;
+    sp_Node to;
+    explicit Edge(sp_Node from, sp_Node to, int weight) : from{from}, to{to}, weight{weight} {   }
+    ~Edge(){cout << "del: (" << weight << ") ";}
+    string print() const {return "<" + to_string(weight) + ">" ;}
+};
+
+struct Node {
+    typedef std::shared_ptr<struct Node> sp_Node;
+    typedef std::shared_ptr<struct Edge> sp_Edge;
+    typedef std::weak_ptr<struct Edge> wp_Edge;
+    char label;
+    list<sp_Edge> edges; /*!*/
+    explicit Node(char& label) : label{label}, edges{} {   }
+    ~Node(){cout << "del:" << label << " ";}
+    void addEdge(sp_Node to, int weight) /*!*/
+    {
+        auto thisNode = sp_Node(this);
+        auto newEdge = make_shared<Edge>( thisNode, to, weight );
+        edges.push_back(newEdge);
+    }
+    char print() const { return label; }
+};
 
 
 
 
 class Graph {   //for example only
 private:
-    struct Node {
-        struct Edge {
-            typedef shared_ptr<struct Node> p_Node;
-            int weight;
-            p_Node from;
-            p_Node to;
-            explicit Edge(Node* from, p_Node to, int weight) : from{from}, to{to}, weight{weight} {   }
-            ~Edge(){cout << "del:" << from->label << ">" << to->label << "(" << weight << ") ";}
-            //bool operator<(const struct Node& other) const { return this->label < other.label; }
-            string print() const {return "<" + to_string(weight) + ">" + to->print();}
-        };
-        typedef shared_ptr<struct Node> p_Node;
-        typedef shared_ptr<struct Edge> p_Edge;
-        char label;
-        list<p_Edge> edges; /*!*/
-        explicit Node(char& label) : label{label}, edges{} {   }
-        ~Node(){cout << "del:" << label << " ";}
-        //bool operator<(const struct Node& other) const { return this->label < other.label; }
-        int a = 5;
-        void addEdge(p_Node to, int weight) /*!*/
-        {
-            auto thisNode = this;
-            p_Edge newEdge =  make_shared<struct Edge>(thisNode, to, weight);
-            edges.push_back(newEdge);
-        }
-        char print() const { return label; }
-    };
 
-    typedef shared_ptr<struct Node> p_Node;
-    typedef shared_ptr<struct Node::Edge> p_Edge;
-    typedef std::_Rb_tree_iterator<pair<const char, p_Node>> it_Node;
+    struct NodePriority
+    {
+        typedef std::shared_ptr<struct Node> p_Node;
+        p_Node node;
+        int priority;
+        explicit  NodePriority(p_Node node, int priority) : node{node}, priority{priority} { }
+        ~NodePriority(){cout << "del_priority:" << "" + node->label;}
+        /*!*/ bool operator<(const struct NodePriority& other) const { return this->priority < other.priority; } /*!*/
+    };
+    typedef std::shared_ptr<struct Node> p_Node;
+    typedef std::shared_ptr<struct Edge> p_Edge;
 
     map<char, p_Node> nodes;
 
-    bool isNull(it_Node itNode) { return itNode == nodes.end();}
+    bool isNull(auto itNode) { return itNode == nodes.end();}
     void addNode(p_Node node) { addNode(node->label); }
     void addEdge(p_Node from, p_Node to, p_Edge edge) { addEdge(from->label, to->label, edge->weight); }
 
@@ -80,7 +92,7 @@ private:
     }
 public:
     explicit Graph() : nodes{} {}
-    ~Graph() {}
+    ~Graph() {cout << "graph end";}
     void addNode(char label)
     {
         auto newNode = make_shared<Node>(label);
@@ -95,16 +107,6 @@ public:
         toNode->addEdge(fromNode, weight);
     }
 
-
-    struct NodePriority
-    {
-        typedef shared_ptr<struct Node> p_Node;
-        p_Node node;
-        int priority;
-        explicit  NodePriority(p_Node node, int priority) : node{node}, priority{priority} { }
-        ~NodePriority(){cout << "del_priority:" << "" + node->label;}
-        /*!*/ bool operator<(const struct NodePriority& other) const { return this->priority < other.priority; } /*!*/
-    };
     typedef shared_ptr<struct NodePriority> p_NodePriority;
 
     list<char> getShortestPath(char from, char to)
@@ -128,14 +130,14 @@ public:
 
             for (auto edge : current->node->edges)
             {
-                if (visited.contains(edge->to)) continue;
-                /*!*/   int newDistance = distances.find(current->node)->second + edge->weight;
-                if (newDistance < distances.find(edge->to)->second)
-                {
-                    distances[edge->to] = newDistance; // java: replace(,)
-                    previousNodes.insert({edge->to, current->node});
-                    queue.push(make_shared<NodePriority>(edge->to, newDistance));
-                }
+//                if (visited.contains(edge->to)) continue;
+//                /*!*/   int newDistance = distances.find(current->node)->second + edge->weight;
+//                if (newDistance < distances.find(edge->to)->second)
+//                {
+//                    distances[edge->to] = newDistance; // java: replace(,)
+//                    previousNodes.insert({edge->to, current->node});
+//                    queue.push(make_shared<NodePriority>(edge->to, newDistance));
+//                }
             }
         }
         //return distances.get(toNode);
@@ -150,14 +152,16 @@ public:
         for (auto node : nodes)
         {
             auto targets = node.second->edges;// adjecencyList.get(source);
-            if (!targets.empty())
-                str += (char)node.second->print();
-                str += " is connected to [";
-                for(auto t: targets){
+            str += (char)node.second->print();
+            str += " is connected to [";
+            if (!targets.empty()) {
+
+                for (auto t: targets) {
                     str += t->print();
                     str += ",";
                 }
-                str += "]\n";
+            }
+            str += "]\n";
         }
         return str;
     }
