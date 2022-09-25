@@ -1,3 +1,6 @@
+//
+// Created by pc1 on 25/09/2022.
+//
 
 #include <iostream>
 #include <string>
@@ -23,26 +26,26 @@ private:
         struct Edge {
             typedef shared_ptr<struct Node> p_Node;
             int weight;
-            Node* from;
+            p_Node from;
             p_Node to;
-            explicit Edge(Node* from, p_Node to, int weight) : from{from}, to{to}, weight{weight} {   }
+            explicit Edge(p_Node from, p_Node to, int weight) : from{from}, to{to}, weight{weight} {   }
             ~Edge(){cout << "del:" << from->label << ">" << to->label << "(" << weight << ") ";}
             //bool operator<(const struct Node& other) const { return this->label < other.label; }
-            string print() const {return "<" + to_string(weight) + ">" + to->print();}
+            string print() const {return "<" + to_string(weight) + ">" ;}
         };
         typedef shared_ptr<struct Node> p_Node;
         typedef shared_ptr<struct Edge> p_Edge;
         char label;
-        list<Edge*> edges; /*!*/
+        list<p_Edge> edges; /*!*/
         explicit Node(char& label) : label{label}, edges{} {   }
-        ~Node(){cout << "del:" << label << " ";}
+        ~Node(){cout << "del:" << label << " "; edges.clear();}
         //bool operator<(const struct Node& other) const { return this->label < other.label; }
         int a = 5;
         void addEdge(p_Node to, int weight) /*!*/
         {
-            auto thisNode = this;
-            auto newEdge =  Edge(thisNode, to, weight);
-            edges.push_back(&newEdge);
+            auto thisNode = p_Node(this);
+            auto newEdge = make_shared<Edge>( thisNode, to, weight );
+            edges.push_back(newEdge);
         }
         char print() const { return label; }
     };
@@ -151,12 +154,12 @@ public:
             auto targets = node.second->edges;// adjecencyList.get(source);
             if (!targets.empty())
                 str += (char)node.second->print();
-                str += " is connected to [";
-                for(auto t: targets){
-                    str += t->print();
-                    str += ",";
-                }
-                str += "]\n";
+            str += " is connected to [";
+            for(auto t: targets){
+                str += t->print();
+                str += ",";
+            }
+            str += "]\n";
         }
         return str;
     }
