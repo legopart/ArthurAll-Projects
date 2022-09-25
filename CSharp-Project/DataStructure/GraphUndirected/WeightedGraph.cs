@@ -11,23 +11,24 @@ namespace GraphUndirected
 {
     public class WeightedGraph
     { // Weighted
-        private class Vertice   //Node
+        private class Node   //Vertice
         {
+            public class Edge
+            {
+                public Node From { get; private set; }
+                public Node To { get; private set; }
+                public int Weight { get; private set; }
+                public Edge(Node from, Node to, int weight) { From = from; To = to; Weight = weight; }
+                public override String ToString() { return "<" + Weight + ">" + To; } // A->B
+            }
             public String Label { get; private set; }
      /*!*/  public List<Edge> EdgeList { get; private set; } // better Map
-            public Vertice(String lable) { Label = lable; EdgeList = new(); }
-     /*!*/  public void AddEdge(Vertice to, int weight) { EdgeList.Add(new Edge(this, to, weight)); }
+            public Node(String label) { Label = label; EdgeList = new(); }
+     /*!*/  public void AddEdge(Node to, int weight) { EdgeList.Add(new Edge(this, to, weight)); }
             public override String ToString() { return Label; }
         }
 
-        private class Edge
-        {
-            public Vertice From { get; private set; }
-            public Vertice To { get; private set; }
-            public int Weight { get; private set; }
-            public Edge(Vertice from, Vertice to, int weight) { From = from; To = to; Weight = weight; }
-            public override String ToString() { return "<" + Weight + ">" + To; } // A->B
-        }
+
     /*   private class NodePriority
          {
             public Vertice Node { get; set; }
@@ -35,17 +36,17 @@ namespace GraphUndirected
             public NodePriority(Vertice node, int priority) { Node = node; Priority = priority; }
          }*/
 
-        private Dictionary<String, Vertice> Nodes { get; set; }
-        // private Map<Node, List<Edge>> adjecencyList;
-        
+        private Dictionary<String, Node> Nodes { get; set; }
+        // private Dictionary<Node, List<Edge>> Edges;
+
         public WeightedGraph() { Nodes = new(); }
 
-        private bool IsNull(Vertice node) { return node == null; }
+        private bool IsNull(Node node) { return node == null; }
 
-        private void AddNode(Vertice node) { AddNode(node.Label); }
-        public void AddNode(String lable) { Nodes.TryAdd(lable, new Vertice(lable)); }
+        private void AddNode(Node node) { AddNode(node.Label); }
+        public void AddNode(String lable) { Nodes.TryAdd(lable, new Node(lable)); }
 
-        private void AddEdge(Vertice from, Vertice to, Edge edge) { AddEdge(from.Label, to.Label, edge.Weight); }
+        private void AddEdge(Node from, Node to, Node.Edge edge) { AddEdge(from.Label, to.Label, edge.Weight); }
         public void AddEdge(String fromString, String toString, int weight)
         { // relationship
             var from = Nodes?[fromString];
@@ -63,15 +64,15 @@ namespace GraphUndirected
             var to = Nodes?[toString];
             if (IsNull(from!) || IsNull(to!)) throw new Exception();
 
-            Dictionary<Vertice, int> distances = new();
+            Dictionary<Node, int> distances = new();
             foreach (var node in Nodes!.Values) distances.Add(node, int.MaxValue);
             distances[from!] = 0; // java: replace(,) // A 0
 
-            Dictionary<Vertice, Vertice> previousNodes = new();
+            Dictionary<Node, Node> previousNodes = new();
 
-            HashSet<Vertice> visited = new();
+            HashSet<Node> visited = new();
 
-            PriorityQueue<Vertice, int> queue = new (); //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
+            PriorityQueue<Node, int> queue = new (); //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
             queue.Enqueue(from!, 0);  // only item in the queue
 
             while (queue.Count != 0)
@@ -92,11 +93,11 @@ namespace GraphUndirected
                 }
             }
             //return distances.get(toNode);
-            return buildPath(previousNodes, to!);
+            return BuildPath(previousNodes, to!);
         }
-        private List<String> buildPath(Dictionary<Vertice, Vertice> previousNodes, Vertice toNode)
+        private List<String> BuildPath(Dictionary<Node, Node> previousNodes, Node toNode)
         {
-            Stack<Vertice> stack = new();
+            Stack<Node> stack = new();
             stack.Push(toNode);
             var previous = previousNodes?[toNode];
             while (true) //!IsNull(previous!)
@@ -108,7 +109,7 @@ namespace GraphUndirected
             return ToList(stack);
         }
 
-        private List<String> ToList(Stack<Vertice> stack)
+        private List<String> ToList(Stack<Node> stack)
         {
             List<String> NodeList = new();
             foreach (var node in stack) NodeList.Add(node.Label);
@@ -120,7 +121,7 @@ namespace GraphUndirected
 
         public bool HasCycle()
         {
-            HashSet<Vertice> visited = new();
+            HashSet<Node> visited = new();
             foreach (var node in  Nodes.Values)
                 if (!visited.Contains(node)
                         && HasCycle(node, null, visited)) return true;
@@ -128,7 +129,7 @@ namespace GraphUndirected
         }
 
         //לחזור !
-        private bool HasCycle(Vertice node, Vertice? parant, HashSet<Vertice> visited)
+        private bool HasCycle(Node node, Node? parant, HashSet<Node> visited)
         {
             visited.Add(node);
             foreach (var edge in node.EdgeList)
@@ -144,7 +145,7 @@ namespace GraphUndirected
         {
             WeightedGraph tree = new WeightedGraph();
             if (Nodes.Count == 0) return tree;
-            PriorityQueue<Edge, int> edges = new();
+            PriorityQueue<Node.Edge, int> edges = new();
             var startNode = Nodes.First().Value; //java: nodes.values().iterator().next();
             foreach (var edge in startNode.EdgeList) edges.Enqueue(edge, edge.Weight);
             tree.AddNode(startNode.Label);
@@ -167,8 +168,9 @@ namespace GraphUndirected
 
 
         public bool ContainsNode(String label) { return Nodes.ContainsKey(label); }
-        private bool ContainsNode(Vertice node) { return Nodes.ContainsKey(node.Label); }
+        private bool ContainsNode(Node node) { return Nodes.ContainsKey(node.Label); }
         // להוסיף remove node
+
 
         public override String ToString()
         {

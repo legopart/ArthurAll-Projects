@@ -15,9 +15,6 @@ using std::stack, std::queue, std::list, std::shared_ptr, std::make_shared, std:
 
 class Graph {   //for example only
 private:
-    typedef shared_ptr<struct Node> p_Node;
-    typedef std::_Rb_tree_iterator<pair<const char, p_Node>> it_Node;
-
     struct Node {
      char label;
      explicit Node(char& label) : label{label} {   }
@@ -25,6 +22,9 @@ private:
      bool operator<(const struct Node& other) const { return this->label < other.label; }
      char print() const { return label; }
     };
+
+    typedef shared_ptr<struct Node> p_Node;
+    typedef std::_Rb_tree_iterator<pair<const char, p_Node>> it_Node;
 
     map<char, p_Node> nodes;
     map<p_Node, list<p_Node>> edges;
@@ -36,7 +36,7 @@ private:
         for (auto neighbour : edges.find(node)->second)
         if (!visited.contains(neighbour)) traverseDepthFirst_recursion(neighbour, visited);
     }
-    list<char> ToList(stack<p_Node>& stack) {
+    list<char> toList(stack<p_Node>& stack) {   //fix to insert with it
         list<char> sortedList{};
         while (stack.empty()) {sortedList.push_back(stack.top()->label); stack.pop();}
         return sortedList;

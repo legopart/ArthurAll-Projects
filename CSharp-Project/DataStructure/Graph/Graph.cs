@@ -93,7 +93,7 @@ namespace Graph
                 Node root = Nodes[rootString];
                 TraverseDepthFirst_recursion(root, new());
                 Console.WriteLine();
-            } catch (Exception) { return; }
+            } catch (ArgumentNullException) { return; }
         }
         private void TraverseDepthFirst_recursion(Node node, HashSet<Node> visited)
         {
@@ -107,7 +107,7 @@ namespace Graph
 
 
         public List<String> TopologicalSort()  //לחזור 
-        {
+        {   //right order
             Stack<Node> stack = new();
             HashSet<Node> visitedSet = new();
             foreach (var node in Nodes.Values) TopologicalSort(node, visitedSet, stack);

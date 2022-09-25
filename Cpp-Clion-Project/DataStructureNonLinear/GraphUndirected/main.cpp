@@ -1,5 +1,21 @@
-//
-// Created by pc1 on 25/09/2022.
-//
+//fix the issue with too much destructures
 
-#include "main.h"
+#include <iostream>
+#include "Graph.cpp"
+using  std::cout;
+int main() {
+
+    cout << "Graph\n";   //retrieval
+    {
+        Graph graph{};
+        graph.addNode('a');
+        graph.addNode('b');
+        graph.addNode('c');
+        graph.addEdge('a', 'b', 3);
+        graph.addEdge('a', 'c', 6);
+
+        cout << graph.print() << "\n";
+    }
+
+    return 0;
+}
