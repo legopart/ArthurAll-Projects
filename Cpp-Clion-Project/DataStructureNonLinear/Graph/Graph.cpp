@@ -23,25 +23,25 @@ private:
      char print() const { return label; }
     };
 
-    typedef shared_ptr<struct Node> p_Node;
-    typedef std::_Rb_tree_iterator<pair<const char, p_Node>> it_Node;
+    typedef shared_ptr<struct Node> sp_Node;
+    typedef std::_Rb_tree_iterator<pair<const char, sp_Node>> it_Node;
 
-    map<char, p_Node> nodes;
-    map<p_Node, list<p_Node>> edges;
+    map<char, sp_Node> nodes;
+    map<sp_Node, list<sp_Node>> edges;
     bool isNull(it_Node itNode) { return itNode == nodes.end();}
-    void traverseDepthFirst_recursion(p_Node node, set<p_Node>& visited)
+    void traverseDepthFirst_recursion(sp_Node node, set<sp_Node>& visited)
     {
         cout << node->print() << " ";
         visited.insert(node);
         for (auto neighbour : edges.find(node)->second)
         if (!visited.contains(neighbour)) traverseDepthFirst_recursion(neighbour, visited);
     }
-    list<char> toList(stack<p_Node>& stack) {   //fix to insert with it
+    list<char> toList(stack<sp_Node>& stack) {   //fix to insert with it
         list<char> sortedList{};
         while (stack.empty()) {sortedList.push_back(stack.top()->label); stack.pop();}
         return sortedList;
     }
-    void topologicalSort(p_Node node, set<p_Node> visitedSet, stack<p_Node> stack)
+    void topologicalSort(sp_Node node, set<sp_Node> visitedSet, stack<sp_Node> stack)
     {
         if (visitedSet.contains(node)) return;
         visitedSet.insert(node);
@@ -49,7 +49,7 @@ private:
             topologicalSort(neighbour, visitedSet, stack);
         stack.push(node);
     }
-    bool hasCycle(p_Node node, set<p_Node> all, set<p_Node> visiting, set<p_Node> visited)
+    bool hasCycle(sp_Node node, set<sp_Node> all, set<sp_Node> visiting, set<sp_Node> visited)
     {
         all.erase(node);
         visiting.insert(node);
@@ -71,7 +71,7 @@ public:
         auto newNode= make_shared<Node>(label);
         nodes.insert({label, newNode});
         auto node = nodes.find(label)->second;
-        list<p_Node> newNodeList{};
+        list<sp_Node> newNodeList{};
         edges.insert({node, newNodeList});  //new List
     }
     void removeNode(char label)
@@ -102,8 +102,8 @@ public:
     //Iteration
     void traverseDepthFirst(char root)
     {
-        set<p_Node> visited{};
-        stack<p_Node> stack{};
+        set<sp_Node> visited{};
+        stack<sp_Node> stack{};
         auto rootNode = nodes.find(root);
         if (isNull(rootNode)) return;
         stack.push(rootNode->second);   //Link
@@ -121,8 +121,8 @@ public:
 
     void traverseBreadthFirst(char root)
     {
-        set<p_Node> visited{};
-        queue<p_Node> queue{};
+        set<sp_Node> visited{};
+        queue<sp_Node> queue{};
         auto rootNode = nodes.find(root);
         if (isNull(rootNode)) return;
         queue.push(rootNode->second);   //Link
@@ -142,7 +142,7 @@ public:
     {
         try
         {
-            set<p_Node> visited{};
+            set<sp_Node> visited{};
             auto rootNode = nodes.find(root)->second;
             traverseDepthFirst_recursion(rootNode, visited);
             cout << "\n";
@@ -151,10 +151,10 @@ public:
 
     bool hasCycle()
     {   //לחזור
-        set<p_Node> allNodes{};
+        set<sp_Node> allNodes{};
                 for(auto it : nodes) { allNodes.insert(it.second);}
-        set<p_Node> visiting{};
-        set<p_Node> visited{};
+        set<sp_Node> visiting{};
+        set<sp_Node> visited{};
         for(auto current : allNodes)  if (hasCycle(current, allNodes, visiting, visited)) return true;
         return false;
     }

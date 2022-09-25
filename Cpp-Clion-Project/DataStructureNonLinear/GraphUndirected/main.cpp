@@ -12,7 +12,7 @@ int main() {
         graph.addNode('b');
         graph.addNode('c');
         graph.addEdge('a', 'b', 3);
-        graph.addEdge('a', 'c', 6);
+         graph.addEdge('a', 'c', 6);
 
         cout << graph.print() << "\n";
     }

@@ -17,82 +17,76 @@ using std::string, std::to_string, std::cout, std::map, std::pair, std::set;
 using std::stack, std::queue, std::list, std::shared_ptr, std::make_shared, std::exception;
 
 
+struct Node
+{
+    typedef std::shared_ptr<struct Node> sp_Node;
+    typedef std::shared_ptr<struct Edge> sp_Edge;
+    typedef std::weak_ptr<struct Edge> wp_Edge;
+    char label;
+    list<sp_Edge> edges; /*!*/
+    explicit Node(char& label) : label{label}, edges{} {   }
+    ~Node(){cout << "del:" << label << "; ";}
+    void addEdge(sp_Node to, int weight) /*!*/
+    {
+        auto newEdge = make_shared<Edge>(this, to, weight);
+        edges.push_back(newEdge);
+    }
+    string print() const { string toString{}; return toString+label; }
+};
+struct Edge {
+    typedef std::weak_ptr<struct Node> wp_Node;
+    typedef std::shared_ptr<struct Node> sp_Node;
+    int weight;
+    Node* from;
+    wp_Node to;
+    explicit Edge(Node* from, sp_Node to, int weight) : from{from}, to{to}, weight{weight} {   }
+    ~Edge(){ cout << "del:" << print() << "; "; }
+    string print() const {return from->print() + ">" + (!to.expired() ? sp_Node(to)->print() : "*") + "(" + to_string(weight) + ")";}
+};
 
+struct NodePriority {
+    typedef std::shared_ptr<struct Node> sp_Node;
+    sp_Node node;
+    int priority;
+    explicit NodePriority(sp_Node node, int priority) : node{node}, priority{priority} {}
+    ~NodePriority() { cout << "del_priority:" << "" + node->label; }
+    /*!*/ bool operator<(const struct NodePriority &other) const { return this->priority < other.priority; } /*!*/
+};
 
 
 class Graph {   //for example only
 private:
-    struct Node {
-        struct Edge {
-            typedef shared_ptr<struct Node> p_Node;
-            int weight;
-            p_Node from;
-            p_Node to;
-            explicit Edge(p_Node from, p_Node to, int weight) : from{from}, to{to}, weight{weight} {   }
-            ~Edge(){cout << "del:" << from->label << ">" << to->label << "(" << weight << ") ";}
-            //bool operator<(const struct Node& other) const { return this->label < other.label; }
-            string print() const {return "<" + to_string(weight) + ">" ;}
-        };
-        typedef shared_ptr<struct Node> p_Node;
-        typedef shared_ptr<struct Edge> p_Edge;
-        char label;
-        list<p_Edge> edges; /*!*/
-        explicit Node(char& label) : label{label}, edges{} {   }
-        ~Node(){cout << "del:" << label << " "; edges.clear();}
-        //bool operator<(const struct Node& other) const { return this->label < other.label; }
-        int a = 5;
-        void addEdge(p_Node to, int weight) /*!*/
-        {
-            auto thisNode = p_Node(this);
-            auto newEdge = make_shared<Edge>( thisNode, to, weight );
-            edges.push_back(newEdge);
-        }
-        char print() const { return label; }
-    };
-    struct NodePriority
-    {
-        typedef shared_ptr<struct Node> p_Node;
-        p_Node node;
-        int priority;
-        explicit  NodePriority(p_Node node, int priority) : node{node}, priority{priority} { }
-        ~NodePriority(){cout << "del_priority:" << "" + node->label;}
-        /*!*/ bool operator<(const struct NodePriority& other) const { return this->priority < other.priority; } /*!*/
-    };
-
-    typedef shared_ptr<struct Node> p_Node;
-    typedef shared_ptr<struct Node::Edge> p_Edge;
-    typedef std::_Rb_tree_iterator<pair<const char, p_Node>> it_Node;
-
-    map<char, p_Node> nodes;
-
-    bool isNull(it_Node itNode) { return itNode == nodes.end();}
-    void addNode(p_Node node) { addNode(node->label); }
-    void addEdge(p_Node from, p_Node to, p_Edge edge) { addEdge(from->label, to->label, edge->weight); }
-
-    list<char> buildPath(map<p_Node, p_Node> previousNodes, p_Node toNode)
-    {
-        stack<p_Node> stack{};
+    typedef std::shared_ptr<struct Node> sp_Node;
+    typedef std::shared_ptr<struct Edge> sp_Edge;
+    typedef shared_ptr<struct NodePriority> sp_NodePriority;
+    map<char, sp_Node> nodes;
+    bool isNull(auto itNode) { return itNode == nodes.end(); }
+    void addNode(sp_Node node) { addNode(node->label); }
+    void addEdge(sp_Node from, sp_Node to, sp_Edge edge) { addEdge(from->label, to->label, edge->weight); }
+    list<char> buildPath(map<sp_Node, sp_Node> previousNodes, sp_Node toNode) {
+        stack<sp_Node> stack{};
         stack.push(toNode);
         auto previous = previousNodes.find(toNode)->second;
         while (true) //!IsNull(previous!)
         {
             stack.push(previous);
-            try {
+            try
+            {
                 previous = previousNodes.find(previous)->second;
-                if(previous == NULL) throw exception();
+                if (previous == NULL) throw exception();
             }
             catch (...) { break; } //previous = previousNodes.GetValueOrDefault(previous, null);
         }
         return toList(stack);
     }
-    list<char> toList(stack<p_Node>& stack) {   //fix to insert with it
+    list<char> toList(stack<sp_Node> &stack) {   //fix to insert with it
         list<char> sortedList{};
-        while (stack.empty()) {sortedList.push_back(stack.top()->label); stack.pop();}
+        while (stack.empty()) { sortedList.push_back(stack.top()->label); stack.pop(); }
         return sortedList;
     }
 public:
     explicit Graph() : nodes{} {}
-    ~Graph() {cout << "graph end";}
+    ~Graph() { }
     void addNode(char label)
     {
         auto newNode = make_shared<Node>(label);
@@ -100,68 +94,52 @@ public:
     }
     void addEdge(char from, char to, int weight)
     { // relationship
-        if(isNull(nodes.find(from)) || isNull(nodes.find(to))) throw exception();
-        auto fromNode =nodes.find(from)->second;
+        if (isNull(nodes.find(from)) || isNull(nodes.find(to))) throw exception();
+        auto fromNode = nodes.find(from)->second;
         auto toNode = nodes.find(to)->second;
         fromNode->addEdge(toNode, weight);
         toNode->addEdge(fromNode, weight);
     }
-
-    typedef shared_ptr<struct NodePriority> p_NodePriority;
-
     list<char> getShortestPath(char from, char to)
     {
         if (isNull(nodes.find(from)) || isNull(nodes.find(to))) throw exception();
         auto fromNode = nodes.find(from)->second;
         auto toNode = nodes.find(to)->second;
-        map<p_Node, int> distances{};
-        for (auto node : nodes) distances.insert({node.second, INT_MAX});
+        map<sp_Node, int> distances{};
+        for (auto node: nodes) distances.insert({node.second, INT_MAX});
         distances[fromNode] = 0;//.insert({fromNode, 0}); // java: replace(,) // A 0
-        map<p_Node, p_Node> previousNodes{};
-        set<p_Node> visited{};
-        std::queue<p_NodePriority> queue{}; //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
+        map<sp_Node, sp_Node> previousNodes{};
+        set<sp_Node> visited{};
+        std::queue<sp_NodePriority> queue{}; //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
         queue.push(make_shared<NodePriority>(fromNode, 0)); // only item in the queue
-
-        while (!queue.empty())
-        {
+        while (!queue.empty()) {
             auto current = queue.front();
             queue.pop();
             visited.insert(current->node);
-
-            for (auto edge : current->node->edges)
-            {
-                if (visited.contains(edge->to)) continue;
+            for (auto edge: current->node->edges) {
+                auto edgeToNode = sp_Node(edge->to);
+                if (visited.contains(edgeToNode)) continue;
                 /*!*/   int newDistance = distances.find(current->node)->second + edge->weight;
-                if (newDistance < distances.find(edge->to)->second)
+                if (newDistance < distances.find(edgeToNode)->second)
                 {
-                    distances[edge->to] = newDistance; // java: replace(,)
-                    previousNodes.insert({edge->to, current->node});
-                    queue.push(make_shared<NodePriority>(edge->to, newDistance));
+                    distances[edgeToNode] = newDistance; // java: replace(,)
+                    previousNodes.insert({edgeToNode, current->node});
+                    queue.push(make_shared<NodePriority>(edgeToNode, newDistance));
                 }
             }
         }
         //return distances.get(toNode);
         return buildPath(previousNodes, toNode);
     }
-
-
-
     string print()
     {
         string str = "";
-        for (auto node : nodes)
-        {
+        for (auto node: nodes) {
             auto targets = node.second->edges;// adjecencyList.get(source);
-            if (!targets.empty())
-                str += (char)node.second->print();
-            str += " is connected to [";
-            for(auto t: targets){
-                str += t->print();
-                str += ",";
-            }
+            str += node.second->print() += " is connected to [";
+            if (!targets.empty()) for (auto t: targets) str += t->print() += ", ";
             str += "]\n";
         }
         return str;
     }
-
 };

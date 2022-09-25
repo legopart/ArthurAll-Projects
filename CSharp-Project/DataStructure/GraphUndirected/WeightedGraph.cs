@@ -11,16 +11,9 @@ namespace GraphUndirected
 {
     public class WeightedGraph
     { // Weighted
+
         private class Node   //Vertice
         {
-            public class Edge
-            {
-                public Node From { get; private set; }
-                public Node To { get; private set; }
-                public int Weight { get; private set; }
-                public Edge(Node from, Node to, int weight) { From = from; To = to; Weight = weight; }
-                public override String ToString() { return "<" + Weight + ">" + To; } // A->B
-            }
             public String Label { get; private set; }
      /*!*/  public List<Edge> EdgeList { get; private set; } // better Map
             public Node(String label) { Label = label; EdgeList = new(); }
@@ -28,13 +21,21 @@ namespace GraphUndirected
             public override String ToString() { return Label; }
         }
 
+        private class Edge
+        {
+            public Node From { get; private set; }
+            public Node To { get; private set; }
+            public int Weight { get; private set; }
+            public Edge(Node from, Node to, int weight) { From = from; To = to; Weight = weight; }
+            public override String ToString() { return "<" + Weight + ">" + To; } // A->B
+        }
 
-    /*   private class NodePriority
-         {
-            public Vertice Node { get; set; }
-            public int Priority { get; set; }
-            public NodePriority(Vertice node, int priority) { Node = node; Priority = priority; }
-         }*/
+        /*   private class NodePriority
+             {
+                public Vertice Node { get; set; }
+                public int Priority { get; set; }
+                public NodePriority(Vertice node, int priority) { Node = node; Priority = priority; }
+             }*/
 
         private Dictionary<String, Node> Nodes { get; set; }
         // private Dictionary<Node, List<Edge>> Edges;
@@ -46,7 +47,7 @@ namespace GraphUndirected
         private void AddNode(Node node) { AddNode(node.Label); }
         public void AddNode(String lable) { Nodes.TryAdd(lable, new Node(lable)); }
 
-        private void AddEdge(Node from, Node to, Node.Edge edge) { AddEdge(from.Label, to.Label, edge.Weight); }
+        private void AddEdge(Node from, Node to, Edge edge) { AddEdge(from.Label, to.Label, edge.Weight); }
         public void AddEdge(String fromString, String toString, int weight)
         { // relationship
             var from = Nodes?[fromString];
@@ -145,7 +146,7 @@ namespace GraphUndirected
         {
             WeightedGraph tree = new WeightedGraph();
             if (Nodes.Count == 0) return tree;
-            PriorityQueue<Node.Edge, int> edges = new();
+            PriorityQueue<Edge, int> edges = new();
             var startNode = Nodes.First().Value; //java: nodes.values().iterator().next();
             foreach (var edge in startNode.EdgeList) edges.Enqueue(edge, edge.Weight);
             tree.AddNode(startNode.Label);
