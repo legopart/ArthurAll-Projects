@@ -1,6 +1,4 @@
-//
-// Created by pc1 on 25/09/2022.
-//
+// להוסיף remove node
 
 #include <iostream>
 #include <string>
@@ -25,7 +23,7 @@ struct Node
     char label;
     list<sp_Edge> edges; /*!*/
     explicit Node(char& label) : label{label}, edges{} {   }
-    ~Node(){cout << "del:" << label << "; ";}
+    ~Node(){ cout << "del:" << label << "; "; }
     void addEdge(sp_Node to, int weight) /*!*/
     {
         auto newEdge = make_shared<Edge>(this, to, weight);
@@ -50,7 +48,7 @@ struct NodePriority {
     int priority;
     explicit NodePriority(sp_Node node, int priority) : node{node}, priority{priority} {}
     ~NodePriority() { cout << "del_priority:" << "" + node->label; }
-    /*!*/ bool operator<(const struct NodePriority &other) const { return this->priority < other.priority; } /*!*/
+    /*!*/// bool operator<(const struct NodePriority &other) const { return this->priority < other.priority; } /*!*/
 };
 
 
@@ -60,15 +58,15 @@ private:
     typedef std::shared_ptr<struct Edge> sp_Edge;
     typedef shared_ptr<struct NodePriority> sp_NodePriority;
     map<char, sp_Node> nodes;
-    bool isNull(auto itNode) { return itNode == nodes.end(); }
-    void addNode(sp_Node node) { addNode(node->label); }
-    void addEdge(sp_Node from, sp_Node to, sp_Edge edge) { addEdge(from->label, to->label, edge->weight); }
-    list<char> buildPath(map<sp_Node, sp_Node> previousNodes, sp_Node toNode) {
+    bool isNull(auto itNode) const { return itNode == nodes.end(); }
+    void addNode(sp_Node& node) { addNode(node->label); }
+    void addEdge(sp_Node& from, sp_Node& to, sp_Edge& edge) const { addEdge(from->label, to->label, edge->weight); }
+    list<char> buildPath(map<sp_Node, sp_Node>& previousNodes, sp_Node& toNode) const {
         stack<sp_Node> stack{};
         stack.push(toNode);
         auto previous = previousNodes.find(toNode)->second;
-        while (true) //!IsNull(previous!)
-        {
+        while (true)
+        { //!IsNull(previous!)
             stack.push(previous);
             try
             {
@@ -79,20 +77,35 @@ private:
         }
         return toList(stack);
     }
-    list<char> toList(stack<sp_Node> &stack) {   //fix to insert with it
+    list<char> toList(stack<sp_Node> &stack) const {   //fix to insert with it
         list<char> sortedList{};
         while (stack.empty()) { sortedList.push_back(stack.top()->label); stack.pop(); }
         return sortedList;
     }
+    bool hasCycle(sp_Node node, sp_Node parent, set<sp_Node> visited)
+    {
+        visited.insert(node);
+        for (auto edge : node->edges)
+        {
+            auto edgeTo = sp_Node(edge->to);
+            if (edgeTo == sp_Node(parent)) continue;
+            if (visited.contains(edgeTo)
+                || hasCycle(edgeTo, node, visited)) return true;
+        }
+        return false;
+    }
+    bool containsNode(sp_Node node) { return nodes.contains(node->label); }
+
+
 public:
     explicit Graph() : nodes{} {}
     ~Graph() { }
-    void addNode(char label)
+    void addNode(char& label)
     {
         auto newNode = make_shared<Node>(label);
         nodes.insert({label, newNode});
     }
-    void addEdge(char from, char to, int weight)
+    void addEdge(char from, char to, int weight) const
     { // relationship
         if (isNull(nodes.find(from)) || isNull(nodes.find(to))) throw exception();
         auto fromNode = nodes.find(from)->second;
@@ -100,7 +113,7 @@ public:
         fromNode->addEdge(toNode, weight);
         toNode->addEdge(fromNode, weight);
     }
-    list<char> getShortestPath(char from, char to)
+    list<char> getShortestPath(char& from, char& to) const
     {
         if (isNull(nodes.find(from)) || isNull(nodes.find(to))) throw exception();
         auto fromNode = nodes.find(from)->second;
@@ -131,15 +144,58 @@ public:
         //return distances.get(toNode);
         return buildPath(previousNodes, toNode);
     }
-    string print()
+    bool hasCycle()
+    {   //לחזור
+        set<sp_Node> visited{};
+        for(auto node : nodes)
+            if (!visited.contains(node.second)
+                && hasCycle(node.second, sp_Node(NULL), visited)) return true;
+        return false;
+    }
+    bool containsNode(char label) { return nodes.contains(label); }
+
+
+
+    Graph getMinimumSpanningTree()
+    {
+        Graph tree{};
+        if (nodes.empty()) return tree;
+        queue<NodePriority> edges{};
+//        auto startNode = nodes.First().Value; //java: nodes.values().iterator().next();
+//        for (auto edge : startNode.edges) edges.Enqueue(edge, edge.Weight);
+//        tree.AddNode(startNode.Label);
+//
+//        if (edges.Count == 0) return tree;
+//
+//        while (tree.Nodes.Count < Nodes.Count)
+//        {
+//            var minEdge = edges.Dequeue();
+//            var nextNode = minEdge.To;
+//            if (tree.ContainsNode(nextNode.Label)) continue;
+//            tree.AddNode(nextNode);
+//            tree.AddEdge(minEdge.From, nextNode, minEdge);
+//            foreach (var edge in nextNode.EdgeList)
+//            if (!tree.ContainsNode(edge.To))
+//                edges.Enqueue(edge, edge.Weight);
+//        }
+        return tree;
+    }
+
+
+    string print() const
     {
         string str = "";
         for (auto node: nodes) {
-            auto targets = node.second->edges;// adjecencyList.get(source);
+            auto targets = node.second->edges;// adjacencyList.get(source);
             str += node.second->print() += " is connected to [";
             if (!targets.empty()) for (auto t: targets) str += t->print() += ", ";
             str += "]\n";
         }
         return str;
     }
+
+
+
+
+
 };

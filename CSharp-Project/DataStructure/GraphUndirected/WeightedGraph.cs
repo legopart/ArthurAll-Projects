@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
+// להוסיף remove node
+
 namespace GraphUndirected
 {
     public class WeightedGraph
@@ -56,7 +58,6 @@ namespace GraphUndirected
             from!.AddEdge(to!, weight);
             to!.AddEdge(from!, weight);
         }
-
 
 
         public List<String> GetShortestPath(String fromString, String toString)
@@ -130,12 +131,12 @@ namespace GraphUndirected
         }
 
         //לחזור !
-        private bool HasCycle(Node node, Node? parant, HashSet<Node> visited)
+        private bool HasCycle(Node node, Node? parent, HashSet<Node> visited)
         {
             visited.Add(node);
             foreach (var edge in node.EdgeList)
             {
-                if (edge.To == parant) continue;
+                if (edge.To == parent) continue;
                 if (visited.Contains((edge.To))
                         || HasCycle(edge.To, node, visited)) return true;
             }
