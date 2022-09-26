@@ -2,7 +2,8 @@
 #include <string>
 #include <list>
 #include <cmath>
-using std::string, std::to_string, std::cout, std::max;
+using std::string, std::to_string, std::cout, std::list, std::exception;
+//std::max
 class Tree {
 private:
     struct Node
@@ -27,7 +28,7 @@ private:
         if (isNull(node)) node = newNode;
         else if (value < node->data) node->left =  insert(value, node->left, newNode);
         else if (value > node->data) node->right =  insert(value, node->right, newNode);
-        else throw std::exception();
+        else throw exception();
         node->height = getMaxHeight(node); // for balancing
 
         return balance(node); //node;
@@ -77,7 +78,7 @@ private:
         if (isLeaf(node)) return 0; // base condition
         return 1 + std::max(height(node->left), height(node->right));
     }
-    void getNodesAtDistance(Node* node, int distance, std::list<int>* list)
+    void getNodesAtDistance(Node* node, int distance, list<int>* list)
     {
         if (isNull(node)) return;
         if (distance == 0) { list->push_back(node->data); return; }
@@ -101,25 +102,25 @@ public:
     }
     int height() { return height(root); }
 
-    std::list<int> getNodesAtDistance(int distance)
+    list<int> getNodesAtDistance(int distance)
     {
-        std::list<int> list{};
+        list<int> list{};
         getNodesAtDistance(root, distance, &list);
         return list;
     }
     string traverseLevelOrder() {
         string str{};
         for (int i{}; i <= height(); i++) {
-            str += std::to_string(i) + "| ";
+            str += to_string(i) + "| ";
             for (auto data: getNodesAtDistance(i))
-                str += std::to_string(data) + ", ";
+                str += to_string(data) + ", ";
             str += "\n";
         }
         return str;
     }
     string print() {  return traverseLevelOrder(); }
     /*1*/
-    bool isBalanced() { return std::abs(balanceFactor(root)) <= 1 ; }
+    bool isBalanced() { return abs(balanceFactor(root)) <= 1 ; }
     /*2*/
     bool isPerfect() { return isPerfect(root); }
 };

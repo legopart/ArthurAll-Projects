@@ -3,9 +3,9 @@
 #include <iostream>
 #include <list>
 #include "Tree.cpp"
-using  std::cout;
+using  std::cout, std::endl;
 int main() {
-    cout << "BinaryTree\n";
+    cout << "BinaryTree" << endl;
     Tree tree{};
     tree.insert(5);
     tree.insert(10);
@@ -18,15 +18,16 @@ int main() {
     tree2.insert(20);
     tree2.insert(435643);
 
-    cout << "height: " << tree.height() << "\n";
-    cout << "min tree: "  << tree.min() << "\n";
-    cout << "min binary tree: " <<tree.min_binarySearchTree() << "\n";
-    cout << "equals: " << tree.equals(&tree2) << "\n";
+    cout << "height: " << tree.height() << endl;
+    cout << "min tree: "  << tree.min() << endl;
+    cout << "min binary tree: " <<tree.min_binarySearchTree() << endl;
+    cout << "equals: " << tree.equals(&tree2) << endl;
     for(auto data: tree.getNodesAtDistance(1)) cout << data << ", ";
-    cout << "\n\n";
+    cout << endl << endl;
     tree.traverseLevelOrder();
-    cout << "print: " << tree.print() << "\n";
-    cout << "\nend\n";
+    cout << "print: " << tree.print() << endl;
+    cout << endl;
+    cout << "end" << endl;
 
     return 0;
 }

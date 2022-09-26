@@ -2,17 +2,17 @@
 #include <string>
 #include <vector>
 
-using std::string, std::to_string, std::cout;
+using std::string, std::to_string, std::vector, std::swap, std::cout;
 class HeapVector {
 private:
     int _size;
-    std::vector<int> vector ;
+    vector<int> vector ;
     int parent(int& i) const {return i >> 1;}    // i/2
     void shiftUp(int i)
     {
         if(i > _size) return;
         if(i == 0) return;  //top
-        if(vector[i] > vector[parent(i)]) std::swap(vector[i], vector[parent(i)]);
+        if(vector[i] > vector[parent(i)]) swap(vector[i], vector[parent(i)]);
         shiftUp(parent(i));
     }
 
@@ -23,7 +23,7 @@ private:
     {
         if(i > _size) return;
         int swapId = largerChildIndex(i);
-        if(swapId != i) std::swap(vector[i], vector[swapId]);
+        if(swapId != i) swap(vector[i], vector[swapId]);
         if( i <= _size && !isValidParent(swapId) ) shiftDown(swapId);//1-2 parents
     }
     bool hasLeftChild(int& i) const { return left(i) <= _size; }
@@ -63,7 +63,7 @@ public:
     int extractMax() //remove()
     {
         int maxNum = vector[0];
-        std::swap(vector[0], vector[_size]);
+        swap(vector[0], vector[_size]);
         vector.pop_back();
         _size --;
         shiftDown(0);
@@ -71,8 +71,8 @@ public:
     }
     string print() const {
         string str{};
-        for(int i{}; i < _size; i++) str += std::to_string(vector[i]) + ", ";
-        //for(auto data : vector) str += std::to_string(data) + ", ";
+        for(int i{}; i < _size; i++) str += to_string(vector[i]) + ", ";
+        //for(auto data : vector) str += to_string(data) + ", ";
         str += "\n";
         return str;
     }

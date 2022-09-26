@@ -1,6 +1,6 @@
 //#pragma once
 #include <iostream>
-using std::string, std::to_string, std::cout;
+using std::string, std::to_string, std::cout, std::exception;
 class Array1
 {
 private:
@@ -36,13 +36,13 @@ public:
         return item;
     }
     int set(const int index, const int item) {
-        if (needToReSize(index)) throw std::exception();
+        if (needToReSize(index)) throw exception();
         itemArray[index] = item;
         return item;
     };
     int remove(const int index) {
         int item = itemArray[index];
-        if (needToReSize(index)) throw std::exception();
+        if (needToReSize(index)) throw exception();
         for (int i = index; i < count; i++) itemArray[i] = itemArray[i + 1];
         count--;
         return item;

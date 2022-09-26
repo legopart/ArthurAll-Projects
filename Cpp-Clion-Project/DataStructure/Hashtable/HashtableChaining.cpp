@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <list>
-using std::pair, std::list, std::string, std::to_string, std::begin, std::end, std::cout ;
+using std::pair, std::list, std::string, std::to_string, std::begin, std::end, std::cout, std::endl ;
 class HashtableChaining
 {
 private:
@@ -31,7 +31,7 @@ public:
     {
         auto& cell = hashtable[hashFunction(key)];
         bool keyExists = false;
-        //for(auto it = std::begin(cell);it != std::end(cell); it++){
+        //for(auto it = begin(cell);it != end(cell); it++){
         for(auto& it : cell)
             if(it.key == key) /*first in pair*/
             {
@@ -46,14 +46,14 @@ public:
         auto& cell = hashtable[hashFunction(key)];
         bool keyExists = false;
 
-        for(auto it = std::begin(cell);it != std::end(cell); it++)
+        for(auto it = begin(cell);it != end(cell); it++)
             if(it->key == key)   /*first in pair*/
             {
                 keyExists = true;
                 it = cell.erase(it); //new iterator
                 break;
             }
-        if(!keyExists) {cout << "item not found to delete " << to_string(key) << "\n"; } //?
+        if(!keyExists) {cout << "item not found to delete " << to_string(key) << endl; } //?
     }
     string print() const
     {

@@ -1,7 +1,7 @@
 
 #include <iostream>
 #include <string>
-using std::string, std::to_string;
+using std::string, std::to_string, std::cout;
 class Stack
 {
 private:

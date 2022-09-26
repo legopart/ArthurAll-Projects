@@ -4,7 +4,7 @@
 #include <array>
 #import "Stack.cpp"
 #import "ListedStack.cpp"
-using std::cout, std::string;
+using std::string, std::endl, std::cout;
 
 static bool isBalanced(const string &input);
 static string reverseString(const string &str);
@@ -13,7 +13,7 @@ int main()
 {
     Stack stack{};
     stack.push(10);
-    cout << stack.pop() << "\n";
+    cout << stack.pop() << endl;
     stack.push(20);
     stack.push(30);
     stack.push(40);
@@ -30,11 +30,11 @@ int main()
     stack.push(150);
     stack.push(160);
 
-    cout << stack.pop() << "\n";
-    cout << "Stack: "<< stack.print() + "\n";
+    cout << stack.pop() << endl;
+    cout << "Stack: "<< stack.print() << endl;
 
 
-    cout << "\nStack wit Linked List\n";
+    cout << endl << "Stack wit Linked List" << endl;
     LinkedStack stack2{};
 
     stack2.push(10);
@@ -42,15 +42,15 @@ int main()
     stack2.push(30);
     stack2.push(40);
     stack2.push(50);
-    cout << stack2.pop() << "\n";
+    cout << stack2.pop() << endl;
     cout << stack2.print();
 
-    cout << "\n";
-    cout << reverseString("Apple") << "\n";
+    cout << endl;
+    cout << reverseString("Apple") << endl;
 
-    cout << (isBalanced(")Apple(") ? "true" : "false") << "\n";
-    cout << (isBalanced("[abc]") ? "true" : "false") << "\n";
-    cout << (isBalanced("[a>bc]") ? "true" : "false") << "\n";
+    cout << (isBalanced(")Apple(") ? "true" : "false") << endl;
+    cout << (isBalanced("[abc]") ? "true" : "false") << endl;
+    cout << (isBalanced("[a>bc]") ? "true" : "false") << endl;
 
 
     return EXIT_SUCCESS;

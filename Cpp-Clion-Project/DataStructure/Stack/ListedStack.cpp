@@ -5,7 +5,7 @@
 #include <string>
 #include <list>
 #include <iterator>
-using std::list, std::string, std::to_string;
+using std::list, std::string, std::to_string, std::exception, std::cout;
 class LinkedStack
 {
 private:
@@ -17,7 +17,7 @@ public:
 
     void push(int value){ items.push_back(value); }
     int peak(){
-        if(isEmpty()) throw std::exception();
+        if(isEmpty()) throw exception();
         return items.back();
     }
     int pop(){

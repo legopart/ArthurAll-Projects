@@ -8,7 +8,6 @@ using namespace std;
 
 
 
-
 struct B2;
 struct B1
 {
@@ -49,5 +48,5 @@ int main() {
 //    std::cout << x << std::endl;
 //    std::cout << y << std::endl;
     cout << "end\n";
-    return 0;
+    return EXIT_SUCCESS;
 }

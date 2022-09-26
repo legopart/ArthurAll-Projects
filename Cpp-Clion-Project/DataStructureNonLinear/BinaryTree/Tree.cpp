@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 #include <list>
-using std::string, std::to_string, std::cout, std::max;
+using std::string, std::to_string, std::cout, std::list, std::exception;
+//std::min, std::max;
+
 class Tree {
 private:
     struct Node
@@ -47,7 +49,7 @@ private:
             isBinarySearchTree(node->left, min, node->data)
             && isBinarySearchTree(node->right, node->data, max);
     }
-    void getNodesAtDistance(Node *node, int distance, std::list<int> *list)
+    void getNodesAtDistance(Node *node, int distance, list<int> *list)
     {
         if (isNull(node)) return;
         if (distance == 0) { list->push_back(node->data); /*System.out.print( node.value + " " );*/ return; }
@@ -92,7 +94,7 @@ private:
     void traversePreOrder(Node *node)
     {
         if (isNull(node)) return;   //base condition
-        std::cout << node->data << " ";
+        cout << node->data << " ";
         traversePreOrder(node->left);
         traversePreOrder(node->right);
     }
@@ -100,7 +102,7 @@ private:
     {
         if (isNull(node)) return;   //base condition
         traverseInOrder(node->left);
-        std::cout << node->data << " ";
+        cout << node->data << " ";
         traverseInOrder(node->right);
     }
     void traversePostOrder(Node *node)
@@ -108,9 +110,9 @@ private:
         if (isNull(node)) return;   //base condition
         traversePostOrder(node->left);
         traversePostOrder(node->right);
-        std::cout << node->data << " "; //Root
+        cout << node->data << " "; //Root
     }
-    void TraverseInOrder2(Node* node, std::list<int>* list)    //the recursion
+    void TraverseInOrder2(Node* node, list<int>* list)    //the recursion
     {   // from low to high  1 2 3 4 ...
         if (isNull(node)) return;   //base condition
         TraverseInOrder2(node->left, list);
@@ -122,7 +124,7 @@ private:
     bool isBalanced(Node* node)
     {
         if (isNull(node)) return true;
-        return std::abs(height(node->left) - height(node->right))  <= 1
+        return abs(height(node->left) - height(node->right))  <= 1
                && isBalanced(node->left)
                && isBalanced(node->right);
     }
@@ -171,7 +173,7 @@ public:
     int min(){ return min(root); }
     int min_binarySearchTree()
     {
-        if(isNull(root)) throw std::exception();
+        if(isNull(root)) throw exception();
         auto* current = root;
         while(!isNull(current->left)) current = current->left;
         int data = current->data;
@@ -185,9 +187,9 @@ public:
     }
     bool isBinarySearchTree() { return isBinarySearchTree(root, INT_MIN, INT_MAX); }
     void swapRoot(){ auto* temp = root->left; root->left= root->right; root->right = temp; }
-    std::list<int> getNodesAtDistance(int distance)
+    list<int> getNodesAtDistance(int distance)
     {
-        std::list<int> list{};
+        list<int> list{};
         getNodesAtDistance(root, distance, &list); /*Console.WriteLine("");*/
         return list;
     }
@@ -196,9 +198,9 @@ public:
         for (int i{}; i <= height(); ++i)
         {
             auto list = getNodesAtDistance(i);
-            std::cout << i << "| ";
-            for(auto data: list) std::cout << data << ", ";
-            std::cout << "\n";
+            cout << i << "| ";
+            for(auto data: list) cout << data << ", ";
+            cout << "\n";
         }
     };
 
@@ -209,39 +211,39 @@ public:
     /*3*/
     int max()
     {
-        if (isNull(root)) throw std::exception();
+        if (isNull(root)) throw exception();
         return std::max(max(root), root->data);
     }
     bool contains(int data) { return contains(root, data); }
     void traversePreOrder()      // Root, Left, Right
     {
         traversePreOrder(root);
-        std::cout <<"\n";
+        cout <<"\n";
     }
     void traverseInOrder()       // Left, Root, Right
     {
         traverseInOrder(root);
-        std::cout <<"\n";
+        cout <<"\n";
     }
     void traversePostOrder()     // Left, Right, Root
     {
         traversePostOrder(root);
-        std::cout <<"\n";
+        cout <<"\n";
     }
     int Size2()  //with recursion
     {
-        std::list<int> list{};
+        list<int> list{};
         TraverseInOrder2(root, &list);
         int size = list.size();
         return size;
     }
     string print()
     {
-        std::list<int> list{};
+        list<int> list{};
         TraverseInOrder2(root, &list);
         string str{};
         for(auto data: list){
-            str += std::to_string(data) + ", ";
+            str += to_string(data) + ", ";
         }
         return str;
     }

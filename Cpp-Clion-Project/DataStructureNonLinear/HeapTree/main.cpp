@@ -5,9 +5,9 @@
 #include<bits/stdc++.h>
 #include "Heap.cpp"
 #include "HeapVector.cpp"
-using  std::cout;
+using  std::cout, std::endl;
 int main() {
-    cout << "HeapTree\n";
+    cout << "HeapTree" << endl;
 
     Heap heap{};
     heap.insert(20);
@@ -16,23 +16,23 @@ int main() {
     heap.insert(2);
     heap.insert(6);
     heap.insert(26); // will remove
-    cout <<  heap.remove() << "\n";
-    cout <<  heap.remove() << "\n";
-    cout << heap.print() << "\n";
+    cout <<  heap.remove() << endl;
+    cout <<  heap.remove() << endl;
+    cout << heap.print() << endl;
 
-    cout << "\nHeap2\n";
+    cout << endl << "Heap2" << endl;
     HeapVector heap2{};     //To fix removing and bubble down  !!!
 
     heap2.insert(20);
     heap2.insert(10);
     heap2.insert(5);
     heap2.insert(2);
-    cout << heap2.print() << "\n";
+    cout << heap2.print() << endl;
     //to fix !!!! remove() and shiftDown
-    cout <<  heap2.extractMax() << "\n";
-    cout <<  heap2.extractMax() << "\n";    //WRONG !!!
+    cout <<  heap2.extractMax() << endl;
+    cout <<  heap2.extractMax() << endl;    //WRONG !!!
 
-    cout << heap2.print() << "\n";
+    cout << heap2.print() << endl;
     return EXIT_SUCCESS;
 
 }

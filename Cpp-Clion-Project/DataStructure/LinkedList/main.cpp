@@ -2,10 +2,10 @@
 
 #include <iostream>
 #include "LinkedList.cpp"
-using  std::cout;
+using  std::cout, std::endl;
 int main()
 {
-    cout << "LinkedList\n";
+    cout << "LinkedList" << endl;
     List list{};
     list.insertLast(10);
     cout << "after10";
@@ -19,13 +19,13 @@ int main()
     list.insertLast(90);
     list.insertLast(100);
 
-    cout << "\nend\n";
+    cout << endl << "end" << endl;
 
 
     //list.removeFirst();
     //list.removeLast();
 
-    cout << "KTH " <<list.kth(3) <<"\n";
+    cout << "KTH " <<list.kth(3) << endl;
     cout << list.print();
     list.reverse();
     cout << list.print();

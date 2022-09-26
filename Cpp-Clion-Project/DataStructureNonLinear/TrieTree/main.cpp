@@ -5,10 +5,10 @@
 
 #include "Trie.cpp"
 #include "TrieC.c"
-using  std::cout;
+using  std::cout, std::endl;
 int main() {
 
-    cout << "TrieTree\n";   //retrieval
+    cout << "TrieTree" << endl;   //retrieval
     {
         Trie trie{};
         trie.insert("cat");
@@ -16,9 +16,9 @@ int main() {
         trie.insert("cant");
         trie.insert("cada");
         trie.remove("cada");
-        cout << "\n" << trie.print() + "\n";
-        cout << trie.contains("cat") << "\n";
-        cout << trie.contains("caty") << "\n";
+        cout << endl << trie.print() << endl;
+        cout << trie.contains("cat") << endl;
+        cout << trie.contains("caty") << endl;
         //trie.traversePostOrder();
         auto x = trie.root;
         cout << "";

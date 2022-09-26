@@ -4,13 +4,13 @@
 #include <stack>
 #import "QueueArray.cpp"
 #import "QueueStack.cpp"
-using std::cout, std::queue, std::stack;
+using std::cout, std::endl, std::queue, std::stack;
 static void reverse(std::queue<int> &queue);
 int main()
 {
     QueueArray queue{};
     queue.enqueue(10);
-    cout << queue.dequeue() << "\n";
+    cout << queue.dequeue() << endl;
     queue.enqueue(20);
     queue.enqueue(30);
     queue.enqueue(40);
@@ -28,12 +28,12 @@ int main()
     queue.enqueue(150);
     queue.enqueue(160);
 
-    cout << "QueueArray: " << queue.print() << "\n";
+    cout << "QueueArray: " << queue.print() << endl;
 
 
     QueueStack queue2{};
     queue2.enqueue(10);
-    cout << queue2.dequeue() << "\n";
+    cout << queue2.dequeue() << endl;
     queue2.enqueue(20);
     queue2.enqueue(30);
     queue2.enqueue(40);
@@ -51,7 +51,7 @@ int main()
     queue2.enqueue(150);
     queue2.enqueue(160);
     //cout << queue2.dequeue() << "\n";
-    cout << "QueueStack: " << queue2.print() << "\n\n\n\n\n";
+    cout << "QueueStack: " << queue2.print() << endl << endl << endl << endl << endl;
 
 
     std::queue<int> queueCpp{};

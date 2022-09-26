@@ -4,7 +4,7 @@
 //move to string_view to print
 //fix destructures!     List.root   List.last
 //delete in the middle
-using std::string, std::to_string, std::cout;
+using std::string, std::to_string, std::cout, std::exception;
 class List
 {
 private:
@@ -13,7 +13,7 @@ private:
         int data;
         struct Node* next;
         explicit Node(int data) : data{data}, next{NULL} { }
-        ~Node(){ cout << "del:" << data << "\n"; }
+        ~Node(){ cout << "del:" << data << "; "; }
     };
     struct Node* root;
     struct Node* last;
@@ -70,8 +70,8 @@ public:
     }
 
     int kth(int subPlace){
-        if(isEmpty()) throw std::exception();
-        if(subPlace > count || subPlace <= 0) throw std::exception();
+        if(isEmpty()) throw exception();
+        if(subPlace > count || subPlace <= 0) throw exception();
         Node* kth = root;
         Node* current = root;
         for (int i{}; i < subPlace - 1; ++i) current = current->next;

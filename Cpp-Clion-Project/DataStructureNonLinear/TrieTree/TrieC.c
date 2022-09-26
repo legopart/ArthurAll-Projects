@@ -5,7 +5,6 @@
 
 #define NUM_CHAR 256    //try with 26 -'a' version for lower case only
 
-
 //Trie
 struct node
 {

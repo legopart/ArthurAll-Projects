@@ -16,7 +16,6 @@
 using std::string, std::to_string, std::cout, std::map, std::pair, std::set, std::list, std::vector;
 using std::stack, std::queue, std::priority_queue, std::shared_ptr, std::make_shared, std::exception;
 
-
 struct Node
 {
     typedef std::shared_ptr<struct Node> sp_Node;
@@ -41,10 +40,10 @@ struct Edge {
     wp_Node to;
     explicit Edge(Node* from, sp_Node to, int weight) : from{from}, to{to}, weight{weight} {   }
     ~Edge(){ cout << "del:" << print() << "; "; }
+    sp_Node getTo(){ return sp_Node(to); }
    // /*!*/ bool operator<(const struct Edge &other) const { return this->weight < other.weight; } /*!*/
     string print() const {return from->print() + ">" + (!to.expired() ? sp_Node(to)->print() : "*") + "(" + to_string(weight) + ")";}
 };
-
 struct NodePriority {
     typedef std::shared_ptr<struct Node> sp_Node;
     sp_Node node;
@@ -89,8 +88,8 @@ private:
         visited.insert(node);
         for (auto edge : node->edges)
         {
-            auto edgeTo = sp_Node(edge->to);
-            if (edgeTo == sp_Node(parent)) continue;
+            auto edgeTo = edge->getTo();
+            if (edgeTo == parent) continue;
             if (visited.contains(edgeTo)
                 || hasCycle(edgeTo, node, visited)) return true;
         }
@@ -133,7 +132,7 @@ public:
             queue.pop();
             visited.insert(current->node);
             for (auto edge: current->node->edges) {
-                auto edgeToNode = sp_Node(edge->to);
+                auto edgeToNode = edge->getTo();
                 if (visited.contains(edgeToNode)) continue;
                 /*!*/   int newDistance = distances.find(current->node)->second + edge->weight;
                 if (newDistance < distances.find(edgeToNode)->second)
@@ -152,7 +151,7 @@ public:
         set<sp_Node> visited{};
         for(auto node : nodes)
             if (!visited.contains(node.second)
-                && hasCycle(node.second, sp_Node(NULL), visited)) return true;
+                && hasCycle(node.second, NULL, visited)) return true;
         return false;
     }
     bool containsNode(char label) { return nodes.contains(label); }
@@ -172,16 +171,15 @@ public:
         {
             auto minEdge = edges.top();
             edges.pop();
-            auto nextNode = minEdge->to;
-            if (tree.containsNode(sp_Node(nextNode)->label)) continue;
-            tree.addNode(sp_Node(nextNode)->label);
-            tree.addEdge(minEdge->from->label, sp_Node(nextNode)->label, minEdge->weight);
-            for (auto edge : sp_Node(nextNode)->edges)
-            if (!tree.containsNode(sp_Node(edge->to))) edges.push(edge);
+            auto nextNode = minEdge->getTo();
+            if (tree.containsNode(nextNode->label)) continue;
+            tree.addNode(nextNode->label);
+            tree.addEdge(minEdge->from->label, nextNode->label, minEdge->weight);
+            for (auto edge : nextNode->edges)
+            if (!tree.containsNode(edge->getTo())) edges.push(edge);
         }
         return tree;
     }
-
 
     string print() const
     {
@@ -194,9 +192,5 @@ public:
         }
         return str;
     }
-
-
-
-
 
 };

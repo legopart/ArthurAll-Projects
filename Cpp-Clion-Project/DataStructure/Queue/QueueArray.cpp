@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-using std::string, std::to_string;
+using std::string, std::to_string, std::exception;
 class QueueArray
 {
 private:
@@ -27,13 +27,13 @@ public:
     ~QueueArray(){ delete[](items); }
     void enqueue(int value)
     {
-        if(count == itemsLength) allocate();//throw std::exception();
+        if(count == itemsLength) allocate();//throw exception();
         items[count] = value;
         count ++;
     }
     int dequeue()
     {
-        if(isEmpty()) throw std::exception();
+        if(isEmpty()) throw exception();
         int value = items[first];
         first++;
         return value;   //return items[--count];

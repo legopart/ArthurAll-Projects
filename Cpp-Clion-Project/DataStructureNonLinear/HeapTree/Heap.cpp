@@ -7,13 +7,13 @@
 //move to string_view to print
 //fix destructures!     List.root   List.last
 //delete in the middle
-using std::string, std::to_string, std::cout;
+using std::string, std::to_string, std::exception, std::cout;
 class Heap {
 private:
     int count;
     int* itemArray;
     int arrayLength;
-    void swap(int& a, int b) const { std::swap(itemArray[a], itemArray[b]); }
+    void swap(int& a, int b) const { swap(itemArray[a], itemArray[b]); }
     int parent(int& index) const {return index / 2;} // index/2
     int child(int& index) const {return index * 2;} // index*2
     int left(int& index) const { return  child(index) + 1; } // index*2+1
@@ -23,7 +23,7 @@ private:
         auto index = count - 1; //last
         while (index > 0 && itemArray[index] > itemArray[parent(index)])
         {
-            std::swap(itemArray[index], itemArray[parent(index)]);
+            swap(itemArray[index], itemArray[parent(index)]);
             index = parent(index);
         }
     }
@@ -34,7 +34,7 @@ private:
         while (index <= count && !isValidParent(index))
         {
             int largerIndex = largerChildIndex(index);
-            std::swap(itemArray[index], itemArray[largerIndex]);
+            swap(itemArray[index], itemArray[largerIndex]);
             index = largerIndex;
         }
     }
@@ -67,19 +67,19 @@ public:
     bool isEmpty() const { return count == 0; }
     void insert(const int data)
     {
-        if(isFull()) throw std::exception(); //or extend
+        if(isFull()) throw exception(); //or extend
         itemArray[count] = data;
         count ++;
         bubbleUp();
     }
     int max() const
     {
-        if (isEmpty()) throw std::exception();
+        if (isEmpty()) throw exception();
         return itemArray[0];    //root
     }
     int remove() //remove top
     {
-        if (isEmpty()) throw std::exception();
+        if (isEmpty()) throw exception();
         int temp = itemArray[0];
         count--;
         itemArray[0] = itemArray[count];
@@ -88,7 +88,7 @@ public:
     }
     string print() const {
         string str{};
-        for(int i{}; i < count; i++) str += std::to_string(itemArray[i]) + ", ";
+        for(int i{}; i < count; i++) str += to_string(itemArray[i]) + ", ";
         str += "\n";
         return str;
     }

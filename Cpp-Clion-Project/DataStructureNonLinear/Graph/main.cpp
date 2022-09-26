@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include "Graph.cpp"
-using  std::cout;
+using  std::cout, std::endl;
 int main() {
 
     cout << "Graph\n";   //retrieval
@@ -14,7 +14,7 @@ int main() {
 
     graph.addNode('d');
     graph.addNode('e');
-    cout << "\n";
+    cout << endl;
 
     graph.addEdge('a', 'b');
     graph.addEdge('b', 'c');
@@ -26,7 +26,7 @@ int main() {
 
     cout << graph.print() << "\n";
     graph.removeNode('b');
-    cout << "\n";
+    cout << endl;
     cout << graph.print() << "\n";
     return EXIT_SUCCESS;
 }

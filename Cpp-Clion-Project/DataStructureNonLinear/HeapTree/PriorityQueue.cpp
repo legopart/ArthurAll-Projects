@@ -15,5 +15,4 @@ public:
     void Enqueue(int item) { heap.insert(item); }
     int Dequeue() { return heap.remove(); }
     bool IsEmpty() { return heap.isEmpty(); }
-
 };

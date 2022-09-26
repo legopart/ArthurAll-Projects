@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-using std::string, std::to_string;
+using std::string, std::to_string, std::exception;
 class QueueCircular
 {
 private:
@@ -19,14 +19,14 @@ public:
     ~QueueCircular(){ delete[](items); }
     void enqueue(int value)
     {
-        if(isFull()) throw std::exception();
+        if(isFull()) throw exception();
         items[last] = value;
         last = (last + 1) % itemsLength;
         count ++;
     }
     int dequeue()
     {
-        if(isEmpty()) throw std::exception();
+        if(isEmpty()) throw exception();
         int value = items[first];
         first = (first +1) % itemsLength;
         count --;

@@ -3,9 +3,9 @@
 #include <iostream>
 #include <list>
 #include "Tree.cpp"
-using  std::cout;
+using  std::cout, std::endl;
 int main() {
-    cout << "AVLTree\n";
+    cout << "AVLTree" << endl;
 
     Tree tree{};
     tree.insert(30);
@@ -18,6 +18,6 @@ int main() {
     tree.insert(6);
     tree.insert(5);
     tree.insert(4);
-    cout << tree.print() << "\n";
+    cout << tree.print() << endl;
     return EXIT_SUCCESS;
 }

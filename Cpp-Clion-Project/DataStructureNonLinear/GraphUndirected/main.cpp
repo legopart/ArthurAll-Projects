@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include "Graph.cpp"
-using  std::cout, std::list;
+using  std::cout, std::endl, std::list;
 int main() {
 
     cout << "Graph\n";   //retrieval
@@ -14,9 +14,9 @@ int main() {
         graph1.addEdge('a', 'b', 3);
          graph1.addEdge('a', 'c', 6);
         graph1.addEdge('b', 'c', 6);
-        cout << graph1.print() << "\n";
+        cout << graph1.print() << endl;
 
-        cout << graph1.hasCycle() << "\n";
+        cout << graph1.hasCycle() << endl;
 
         Graph graph2{};
         graph2.addNode('a');
@@ -26,9 +26,9 @@ int main() {
         graph2.addEdge('b', 'c', 2);
         graph2.addEdge('b', 'c', 10);
         auto path = graph2.getShortestPath('a', 'c');
-        cout << "\n";
+        cout << endl;
         for(auto node : path) cout << node << ", "; // a, b, c
-        cout << "\n\n\n\n";
+        cout << endl << endl << endl << endl;
 
         Graph graph{};  //to fix !
         graph.addNode('a');
@@ -41,7 +41,8 @@ int main() {
         graph.addEdge('a', 'c', 1);
         graph.addEdge('b', 'c', 2);
         auto tree = graph.getMinimumSpanningTree();
-        cout << "Get Minimum Spanning Tree:\n " << tree.print() << "\n\n";
+        cout << "Get Minimum Spanning Tree:" << endl;
+        cout << tree.print() << endl << endl;
 
 
 

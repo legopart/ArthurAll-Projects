@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stack>
 #include <string>
-using std::stack, std::string, std::to_string;
+using std::stack, std::string, std::to_string, std::exception;
 class QueueStack
 {
 private:
@@ -17,7 +17,7 @@ public:
     void enqueue(int value) { queueStack.push(value);  }
     int dequeue()
     {
-        if(queueStack.empty()) throw std::exception();
+        if(queueStack.empty()) throw exception();
         while(!queueStack.empty()) {enqueueStack.push(queueStack.top()); queueStack.pop();}
         int value = enqueueStack.top();
         enqueueStack.pop();
