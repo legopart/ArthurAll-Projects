@@ -31,7 +31,7 @@ int main()
     cout << firstNonRepeatedChar("A Green Apple") << "\n"; //g
     cout << firstRepeatedChar("A Green Apple") << "\n"; //e
 
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 

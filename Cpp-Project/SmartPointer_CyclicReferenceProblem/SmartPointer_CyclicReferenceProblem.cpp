@@ -40,5 +40,6 @@ int main()
     b2->adjast = b1;
 
     cout << "Hello World!\n";
+    return EXIT_SUCCESS;
 }
 

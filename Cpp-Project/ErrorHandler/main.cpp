@@ -60,5 +60,5 @@ int main() {    // run arthur Object
 
     cout << "after all message" << endl;
 
-    return 0;
+    return  EXIT_SUCCESS;
 }

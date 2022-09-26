@@ -5,4 +5,5 @@ using std::string, std::to_string, std::cout;
 
 int main(){
 
+	return EXIT_SUCCESS;
 }

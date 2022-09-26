@@ -60,5 +60,5 @@ int main()
 
     //for(auto& a : array3 ) finish Iterator
 
-    return 0;
+    return EXIT_SUCCESS;
 }

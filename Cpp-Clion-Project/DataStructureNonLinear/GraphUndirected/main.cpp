@@ -17,5 +17,5 @@ int main() {
         cout << graph.print() << "\n";
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

@@ -46,5 +46,5 @@ int main() {
     aa();
 
     // in class you can use [this]() {  ... 
-    return 0;
+    return EXIT_SUCCESS;
 }

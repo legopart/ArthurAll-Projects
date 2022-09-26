@@ -35,5 +35,5 @@ int main() {
     print(root);
 
 
-    return 0;
+    return EXIT_SUCCESS;
 }

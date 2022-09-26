@@ -30,5 +30,5 @@ int main()
     list.reverse();
     cout << list.print();
 
-    return 0;
+    return EXIT_SUCCESS;
 }

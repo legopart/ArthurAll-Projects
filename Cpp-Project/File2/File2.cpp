@@ -52,5 +52,5 @@ int main() {
     cout << someoneElse.name << ". " << someoneElse.age << ". " << someoneElse.weight << endl;
 
 
-    return 0;
+    return EXIT_SUCCESS;
 }

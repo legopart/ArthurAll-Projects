@@ -52,5 +52,5 @@ int main(int argc, char** argv) {
         Sleep(milli_seconds);
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }

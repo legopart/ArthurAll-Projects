@@ -28,5 +28,5 @@ int main() {
     graph.removeNode('b');
     cout << "\n";
     cout << graph.print() << "\n";
-    return 0;
+    return EXIT_SUCCESS;
 }

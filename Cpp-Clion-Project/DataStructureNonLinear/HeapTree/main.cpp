@@ -33,7 +33,7 @@ int main() {
     cout <<  heap2.extractMax() << "\n";    //WRONG !!!
 
     cout << heap2.print() << "\n";
-    return 0;
+    return EXIT_SUCCESS;
 
 }
 

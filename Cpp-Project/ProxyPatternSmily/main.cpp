@@ -20,4 +20,5 @@ int main() {
 
 	}
 	delete img;
+	return EXIT_SUCCESS;
 }

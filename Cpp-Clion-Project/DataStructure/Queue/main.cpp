@@ -65,7 +65,7 @@ int main()
     while(!queueCpp.empty())  { cout << queueCpp.front() << " "; queueCpp.pop(); }
 
 
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 static void reverse(std::queue<int> &queue)

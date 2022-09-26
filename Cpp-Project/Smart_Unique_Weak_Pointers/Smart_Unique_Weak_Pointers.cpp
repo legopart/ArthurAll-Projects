@@ -41,5 +41,5 @@ int main() {
 
 	std::cout << "\n\n";
 	std::cin.get();
-	return 0;
+	return EXIT_SUCCESS;
 }

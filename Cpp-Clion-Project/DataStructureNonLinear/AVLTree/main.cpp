@@ -19,5 +19,5 @@ int main() {
     tree.insert(5);
     tree.insert(4);
     cout << tree.print() << "\n";
-    return 0;
+    return EXIT_SUCCESS;
 }

@@ -77,5 +77,5 @@ int main() {
     cout << strings[3] << endl;
     cout << strings.size() << endl;
     cout << strings.capacity() << endl;
-    return 0;
+    return EXIT_SUCCESS;
 }

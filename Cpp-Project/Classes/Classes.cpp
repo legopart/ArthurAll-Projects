@@ -166,6 +166,6 @@ int main() {
     cout << "Operator Print: " << test21 << endl;
     cout << endl;
     //Test test4=test1; //copy initialization!!! using copy constructure
-    return 0;
+    return EXIT_SUCCESS;
 }
 

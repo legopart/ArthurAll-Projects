@@ -129,7 +129,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArthurClass.cpp" />
-    <ClCompile Include="Class4.cpp" />
     <ClCompile Include="ParentClass.cpp" />
     <ClCompile Include="ProjectCppCopy1.cpp" />
   </ItemGroup>

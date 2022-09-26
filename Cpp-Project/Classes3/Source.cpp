@@ -122,5 +122,5 @@ int main(int argc, char** argv) {    // run arthur Object
     arthur::main();
     //throw string("error #1");   //no new
 
-    return 0;
+    return EXIT_SUCCESS;
 }
