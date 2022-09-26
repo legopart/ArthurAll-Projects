@@ -1,4 +1,7 @@
 // להוסיף remove node
+// להוסיף remove edge
+
+//fix!!!  getMinimumSpanningTree
 
 #include <iostream>
 #include <string>
@@ -9,10 +12,9 @@
 #include <stack>
 #include <queue>
 #include <memory>
-#include <iterator>
 
-using std::string, std::to_string, std::cout, std::map, std::pair, std::set;
-using std::stack, std::queue, std::list, std::shared_ptr, std::make_shared, std::exception;
+using std::string, std::to_string, std::cout, std::map, std::pair, std::set, std::list, std::vector;
+using std::stack, std::queue, std::priority_queue, std::shared_ptr, std::make_shared, std::exception;
 
 
 struct Node
@@ -39,6 +41,7 @@ struct Edge {
     wp_Node to;
     explicit Edge(Node* from, sp_Node to, int weight) : from{from}, to{to}, weight{weight} {   }
     ~Edge(){ cout << "del:" << print() << "; "; }
+   // /*!*/ bool operator<(const struct Edge &other) const { return this->weight < other.weight; } /*!*/
     string print() const {return from->print() + ">" + (!to.expired() ? sp_Node(to)->print() : "*") + "(" + to_string(weight) + ")";}
 };
 
@@ -47,10 +50,9 @@ struct NodePriority {
     sp_Node node;
     int priority;
     explicit NodePriority(sp_Node node, int priority) : node{node}, priority{priority} {}
-    ~NodePriority() { cout << "del_priority:" << "" + node->label; }
-    /*!*/// bool operator<(const struct NodePriority &other) const { return this->priority < other.priority; } /*!*/
+    ~NodePriority() { cout << "delQPN:" << "" + node->print() << "; "; }
+    /*!*/ bool operator<(const struct NodePriority &other) const { return this->priority < other.priority; } /*!*/
 };
-
 
 class Graph {   //for example only
 private:
@@ -79,7 +81,7 @@ private:
     }
     list<char> toList(stack<sp_Node> &stack) const {   //fix to insert with it
         list<char> sortedList{};
-        while (stack.empty()) { sortedList.push_back(stack.top()->label); stack.pop(); }
+        while (!stack.empty()) { sortedList.push_back(stack.top()->label); stack.pop(); }
         return sortedList;
     }
     bool hasCycle(sp_Node node, sp_Node parent, set<sp_Node> visited)
@@ -100,7 +102,7 @@ private:
 public:
     explicit Graph() : nodes{} {}
     ~Graph() { }
-    void addNode(char& label)
+    void addNode(char label)
     {
         auto newNode = make_shared<Node>(label);
         nodes.insert({label, newNode});
@@ -113,7 +115,7 @@ public:
         fromNode->addEdge(toNode, weight);
         toNode->addEdge(fromNode, weight);
     }
-    list<char> getShortestPath(char& from, char& to) const
+    list<char> getShortestPath(char from, char to) const
     {
         if (isNull(nodes.find(from)) || isNull(nodes.find(to))) throw exception();
         auto fromNode = nodes.find(from)->second;
@@ -123,10 +125,11 @@ public:
         distances[fromNode] = 0;//.insert({fromNode, 0}); // java: replace(,) // A 0
         map<sp_Node, sp_Node> previousNodes{};
         set<sp_Node> visited{};
-        std::queue<sp_NodePriority> queue{}; //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
+        priority_queue<sp_NodePriority> queue{}; //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
+        // priority_queue<int, list<int>, std::greater<int>> a{};
         queue.push(make_shared<NodePriority>(fromNode, 0)); // only item in the queue
         while (!queue.empty()) {
-            auto current = queue.front();
+            auto current = queue.top();
             queue.pop();
             visited.insert(current->node);
             for (auto edge: current->node->edges) {
@@ -156,28 +159,26 @@ public:
 
 
 
-    Graph getMinimumSpanningTree()
+    Graph getMinimumSpanningTree() //to fix !!!
     {
         Graph tree{};
         if (nodes.empty()) return tree;
-        queue<NodePriority> edges{};
-//        auto startNode = nodes.First().Value; //java: nodes.values().iterator().next();
-//        for (auto edge : startNode.edges) edges.Enqueue(edge, edge.Weight);
-//        tree.AddNode(startNode.Label);
-//
-//        if (edges.Count == 0) return tree;
-//
-//        while (tree.Nodes.Count < Nodes.Count)
-//        {
-//            var minEdge = edges.Dequeue();
-//            var nextNode = minEdge.To;
-//            if (tree.ContainsNode(nextNode.Label)) continue;
-//            tree.AddNode(nextNode);
-//            tree.AddEdge(minEdge.From, nextNode, minEdge);
-//            foreach (var edge in nextNode.EdgeList)
-//            if (!tree.ContainsNode(edge.To))
-//                edges.Enqueue(edge, edge.Weight);
-//        }
+        priority_queue<sp_Edge> edges{};
+        auto startNode = nodes.begin()->second; //java: nodes.values().iterator().next();
+        for (auto edge : startNode->edges) edges.push(edge);
+        tree.addNode(startNode->label);
+        if (edges.empty()) return tree;
+        while (tree.nodes.size() < nodes.size())
+        {
+            auto minEdge = edges.top();
+            edges.pop();
+            auto nextNode = minEdge->to;
+            if (tree.containsNode(sp_Node(nextNode)->label)) continue;
+            tree.addNode(sp_Node(nextNode)->label);
+            tree.addEdge(minEdge->from->label, sp_Node(nextNode)->label, minEdge->weight);
+            for (auto edge : sp_Node(nextNode)->edges)
+            if (!tree.containsNode(sp_Node(edge->to))) edges.push(edge);
+        }
         return tree;
     }
 
