@@ -1,7 +1,6 @@
 
 
 #include <iostream>
-#include <list>
 #include "Tree.cpp"
 using  std::cout, std::endl;
 int main() {

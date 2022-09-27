@@ -2,7 +2,7 @@
 #include <string>
 #include <list>
 #include <cmath>
-using std::string, std::to_string, std::cout, std::list, std::exception;
+using std::string, std::to_string, std::cout, std::endl, std::list, std::exception;
 //std::max
 class Tree {
 private:
@@ -12,18 +12,18 @@ private:
         int height;
         struct Node *left;
         struct Node *right;
-        explicit Node(int data) : data{data}, left{NULL}, right{NULL}, height{} {}
-        ~Node() { if(left != 0) delete(left);if(right != 0) delete(right); cout << "del:" << data << "\n"; }
+        explicit Node(int data) : data{data}, left{nullptr}, right{nullptr}, height{} {}
+        ~Node() { delete(left); delete(right); cout << "del:" << data << endl; }
     };
 
     struct Node *root;
-    bool isNull(const Node *node) { return node == NULL; }
-    bool isLeaf(const Node *node) { return isNull(node->left) && isNull(node->right) ; }
-    int getHeight(Node *node) { return isNull(node) ? -1 : node->height; }
-    int getMaxHeight(Node *node) { return 1 + std::max(getHeight(node->left), getHeight(node->right)); }
-    int balanceFactor(Node *node) { return isNull(node) ? 0 : getHeight(node->left) - getHeight(node->right); }
+    static bool isNull(const Node *node) { return node == nullptr; }
+    static bool isLeaf(const Node *node) { return isNull(node->left) && isNull(node->right) ; }
+    static int getHeight(Node *node) { return isNull(node) ? -1 : node->height; }
+    static int getMaxHeight(Node *node) { return 1 + std::max(getHeight(node->left), getHeight(node->right)); }
+    static int balanceFactor(Node *node) { return isNull(node) ? 0 : getHeight(node->left) - getHeight(node->right); }
 
-    Node* insert(int value, Node* node, Node* newNode)
+    Node* insert(int value, Node* node, Node* newNode) const
     {
         if (isNull(node)) node = newNode;
         else if (value < node->data) node->left =  insert(value, node->left, newNode);
@@ -34,7 +34,7 @@ private:
         return balance(node); //node;
     }
 
-    Node* balance(Node *node)
+    static Node* balance(Node *node)
     {
         if (balanceFactor(node) > 1)    // RR
         {
@@ -48,7 +48,7 @@ private:
         }
         else return node;   // balance ok -1 <=> 1
     }
-    Node* rotateLeft(Node* node)
+    static Node* rotateLeft(Node* node)
     {   //maybe new root
         auto* topNode = node->right;
         node->right = topNode->left;
@@ -60,7 +60,7 @@ private:
         //  20	=>	10  30
         //   30
     }
-    Node* rotateRight(Node* node)
+    static Node* rotateRight(Node* node)
     {   //maybe new root
         auto* topNode = node->left;
         node->left = topNode->right; // node.ChildLeft.ChildRight;
@@ -72,27 +72,27 @@ private:
         //  20	=>	10  30
         // 10
     }
-    int height(Node *node)
+    int height(Node *node) const
     {
         if (isNull(node)) return INT_MIN;//-1;
         if (isLeaf(node)) return 0; // base condition
         return 1 + std::max(height(node->left), height(node->right));
     }
-    void getNodesAtDistance(Node* node, int distance, list<int>* list)
+    void getNodesAtDistance(Node* node, int distance, list<int>* list) const
     {
         if (isNull(node)) return;
         if (distance == 0) { list->push_back(node->data); return; }
         getNodesAtDistance(node->left, distance - 1, list);
         getNodesAtDistance(node->right, distance - 1, list);
     }
-    bool isPerfect(Node* node)
+    bool isPerfect(Node* node) const
     {
         if (isNull(node)) return true;
         if (isNull(node->left) && !isNull(node->right) || !isNull(node->right) && isNull(node->left)) return false;
         return isPerfect(node->left) && isPerfect(node->right);
     }
 public:
-    explicit Tree() : root{NULL} { }
+    explicit Tree() : root{nullptr} { }
     ~Tree(){ delete(root); }
     void insert(int data)
     {
@@ -120,7 +120,7 @@ public:
     }
     string print() {  return traverseLevelOrder(); }
     /*1*/
-    bool isBalanced() { return abs(balanceFactor(root)) <= 1 ; }
+    [[maybe_unused]] bool isBalanced() { return abs(balanceFactor(root)) <= 1 ; }
     /*2*/
-    bool isPerfect() { return isPerfect(root); }
+    [[maybe_unused]] bool isPerfect() { return isPerfect(root); }
 };

@@ -10,10 +10,10 @@ class QueueStack
 private:
     stack<int> queueStack; //stackA
     stack<int> enqueueStack; //stackB
-    bool isEmpty() const { return queueStack.size() == 0;}
+    [[maybe_unused]] [[nodiscard]] bool isEmpty() const { return queueStack.empty();}
 public:
     explicit QueueStack() : queueStack{}, enqueueStack{} {  }
-    ~QueueStack(){ }
+    ~QueueStack()= default;
     void enqueue(int value) { queueStack.push(value);  }
     int dequeue()
     {
@@ -27,8 +27,8 @@ public:
     string print()
     {
         string str{};
-        while(queueStack.size() != 0) {enqueueStack.push(queueStack.top()); queueStack.pop();}
-        while(enqueueStack.size() != 0) {
+        while(!queueStack.empty()) {enqueueStack.push(queueStack.top()); queueStack.pop();}
+        while(!enqueueStack.empty()) {
             str += to_string(enqueueStack.top()) + " ";
             queueStack.push(enqueueStack.top());
             enqueueStack.pop();

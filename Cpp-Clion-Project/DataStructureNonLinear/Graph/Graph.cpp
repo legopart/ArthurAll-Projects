@@ -3,12 +3,11 @@
 #include <string>
 #include <map>
 #include <set>
-#include <vector>
+//#include <vector>
 #include <list>
 #include <stack>
 #include <queue>
 #include <memory>
-#include <iterator>
 
 using std::string, std::to_string, std::cout, std::map, std::pair, std::set;
 using std::stack, std::queue, std::list, std::shared_ptr, std::make_shared, std::exception;
@@ -20,7 +19,7 @@ private:
      explicit Node(char& label) : label{label} {   }
      ~Node(){cout << "del:" << label << " ";}
      bool operator<(const struct Node& other) const { return this->label < other.label; }
-     char print() const { return label; }
+     [[nodiscard]] char print() const { return label; }
     };
 
     typedef shared_ptr<struct Node> sp_Node;
@@ -29,31 +28,32 @@ private:
     map<char, sp_Node> nodes;
     map<sp_Node, list<sp_Node>> edges;
     bool isNull(it_Node itNode) { return itNode == nodes.end();}
-    void traverseDepthFirst_recursion(sp_Node node, set<sp_Node>& visited)
+    void traverseDepthFirst_recursion(sp_Node& node, set<sp_Node>& visited)
     {
         cout << node->print() << " ";
         visited.insert(node);
         for (auto neighbour : edges.find(node)->second)
         if (!visited.contains(neighbour)) traverseDepthFirst_recursion(neighbour, visited);
     }
-    list<char> toList(stack<sp_Node>& stack) {   //fix to insert with it
+
+    [[maybe_unused]] static list<char> toList(stack<sp_Node>& stack) {   //fix to insert with it
         list<char> sortedList{};
         while (stack.empty()) {sortedList.push_back(stack.top()->label); stack.pop();}
         return sortedList;
     }
-    void topologicalSort(sp_Node node, set<sp_Node> visitedSet, stack<sp_Node> stack)
+    void topologicalSort(const sp_Node& node, set<sp_Node> visitedSet, stack<sp_Node> stack)
     {
         if (visitedSet.contains(node)) return;
         visitedSet.insert(node);
-        for (auto neighbour : edges.find(node)->second)
+        for (const auto& neighbour : edges.find(node)->second)
             topologicalSort(neighbour, visitedSet, stack);
         stack.push(node);
     }
-    bool hasCycle(sp_Node node, set<sp_Node> all, set<sp_Node> visiting, set<sp_Node> visited)
+    bool hasCycle(const sp_Node& node, set<sp_Node> all, set<sp_Node> visiting, set<sp_Node> visited)
     {
         all.erase(node);
         visiting.insert(node);
-        for (auto neighbour : edges.find(node)->second)
+        for (const auto& neighbour : edges.find(node)->second)
         {
             if (visited.contains(neighbour)) continue;
             if (visiting.contains(neighbour)) return true;
@@ -65,7 +65,7 @@ private:
     }
 public:
     explicit Graph() : nodes{}, edges{} {}
-    ~Graph() {}
+    ~Graph() = default;
     void addNode(char label)
     {
         auto newNode= make_shared<Node>(label);
@@ -91,7 +91,8 @@ public:
             edges.find(nodes.find(from)->second)->second.push_back(nodes.find(to)->second);
         } catch (...) { throw exception(); }    //IsNull
     }
-    void removeEdge(char from, char to)
+
+    [[maybe_unused]] void removeEdge(char from, char to)
     {   //remove from.to
         try {edges.find(nodes.find(from)->second)->second.remove(nodes.find(to)->second);}
         catch (...) { return; }    //IsNull
@@ -100,7 +101,7 @@ public:
 
 
     //Iteration
-    void traverseDepthFirst(char root)
+    [[maybe_unused]] void traverseDepthFirst(char root)
     {
         set<sp_Node> visited{};
         stack<sp_Node> stack{};
@@ -114,12 +115,12 @@ public:
             if (visited.contains(node)) continue;
             else visited.insert(node);
             cout << node << " ";
-            for (auto neighbour : edges.find(node)->second)   //Links
+            for (const auto& neighbour : edges.find(node)->second)   //Links
                 if (!visited.contains(neighbour)) stack.push(neighbour);
         }
     }
 
-    void traverseBreadthFirst(char root)
+    [[maybe_unused]] void traverseBreadthFirst(char root)
     {
         set<sp_Node> visited{};
         queue<sp_Node> queue{};
@@ -133,12 +134,12 @@ public:
             if (visited.contains(node)) continue;
             else visited.insert(node);
             cout << node << " ";
-            for (auto neighbour : edges.find(node)->second)   //Links
+            for (const auto& neighbour : edges.find(node)->second)   //Links
                 if (!visited.contains(neighbour)) queue.push(neighbour);
         }
     }
 
-    void traverseDepthFirst_recursion(char root)
+    [[maybe_unused]] void traverseDepthFirst_recursion(char root)
     {
         try
         {
@@ -152,25 +153,25 @@ public:
     bool hasCycle()
     {   //לחזור
         set<sp_Node> allNodes{};
-                for(auto it : nodes) { allNodes.insert(it.second);}
+                for(const auto& it : nodes) { allNodes.insert(it.second);}
         set<sp_Node> visiting{};
         set<sp_Node> visited{};
-        for(auto current : allNodes)  if (hasCycle(current, allNodes, visiting, visited)) return true;
+        for(const auto& current : allNodes)  if (hasCycle(current, allNodes, visiting, visited)) return true;
         return false;
     }
 
 
     string print()
     {
-        string str = "";
-        for (auto itMap : edges)
+        string str{};
+        for (const auto& itMap : edges)
         {
             auto targets = edges.find(itMap.first)->second;
             if (!targets.empty()) {
                 str += itMap.first->print();
                 str += " is connected to [";
-                for(auto itList: targets) {
-                    if(itList == NULL) continue;
+                for(const auto& itList: targets) {
+                    if(itList == nullptr) continue;
                     str += itList->print();
                     str +=  ", ";
                 }

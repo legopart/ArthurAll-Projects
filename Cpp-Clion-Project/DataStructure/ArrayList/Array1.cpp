@@ -4,9 +4,9 @@ using std::string, std::to_string, std::cout, std::exception;
 class Array1
 {
 private:
-    int* itemArray;
-    int arrayLength;
-    int count; //count
+    int* itemArray{};
+    int arrayLength{};
+    int count{}; //count
     void resize() {
         int* newArray = new int[arrayLength * 2];
         for (int i = 0; i < arrayLength; ++i)
@@ -15,27 +15,27 @@ private:
         itemArray = newArray;
         arrayLength *= 2;
     };
-    bool needToReSize() const { return arrayLength == count; };
-    bool needToReSize(int index) const { return index >= count; };
+    [[nodiscard]] bool needToReSize() const { return arrayLength == count; };
+    [[nodiscard]] bool needToReSize(int index) const { return index >= count; };
 public:
-    Array1(int length) : count{}, arrayLength{length}, itemArray{new int[arrayLength]}  { }
+    explicit Array1(int length) : count{}, arrayLength{length}, itemArray{new int[arrayLength]}  { }
     Array1() { Array1(5); }
-    bool contains(int item) const { return indexOf(item) != -1; };
+    [[nodiscard]] bool contains(int item) const { return indexOf(item) != -1; };
     int indexOf(int& item) const {
         for (int i{}; i < count; ++i) if (itemArray[i] == item) return i;
         return -1;
     };
     ~Array1(){delete[](itemArray);}
-    int lastIndexOf(int item) { return itemArray[indexOf(item)]; };
-    int get(int index) { return itemArray[index]; };
-    int size() const { return count; };
+    [[maybe_unused]] int lastIndexOf(int item) { return itemArray[indexOf(item)]; };
+    [[maybe_unused]] int get(int index) { return itemArray[index]; };
+    [[nodiscard]] int size() const { return count; };
     int add(int item) {
         if (needToReSize()) resize();
         itemArray[count] = item;
         count++;
         return item;
     }
-    int set(const int index, const int item) {
+    [[maybe_unused]] int set(const int index, const int item) {
         if (needToReSize(index)) throw exception();
         itemArray[index] = item;
         return item;
@@ -47,7 +47,7 @@ public:
         count--;
         return item;
     };
-    int removeItem(int& item) { return remove(indexOf(item)); };
+    [[maybe_unused]] int removeItem(int& item) { return remove(indexOf(item)); };
     void print() const {
         for (int i = 0; i < count; ++i) cout << itemArray[i] << ", ";
         cout << "\n";

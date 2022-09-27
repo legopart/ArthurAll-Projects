@@ -40,7 +40,8 @@ private:
 
     bool isNull(struct Node* node) const { return node == NULL; }
     bool isNull(string word) const { return word.length() == NULL; }
-    string& toLowerCaseSting(const string& str)
+
+    [[maybe_unused]] string& toLowerCaseSting(const string& str)
     {
         string lowerCaseString = str;
         transform(lowerCaseString.begin(), lowerCaseString.end(), lowerCaseString.begin(),
@@ -128,7 +129,8 @@ public:
     }
     void remove(string word) { remove(word, 0, root); }
     string traversePreOrder() { string str=""; traversePreOrder(root, str);str = trim(str) ;str += "\n"; return str  ; }
-    void traversePostOrder() { traversePostOrder(root); }
+
+    [[maybe_unused]] void traversePostOrder() { traversePostOrder(root); }
     list<string>& findWords(string word) //לחזור
     {
         list<string> wordList{};    //java ArrayList<>

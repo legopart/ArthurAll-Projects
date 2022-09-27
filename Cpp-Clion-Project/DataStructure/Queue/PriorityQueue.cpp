@@ -1,7 +1,6 @@
 //use memcopy to allocate
 // delete[](items);  issue
 
-#include <iostream>
 #include <string>
 using std::string, std::to_string, std::exception;
 class QueueArray

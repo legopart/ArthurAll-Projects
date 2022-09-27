@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <list>
-#include<bits/stdc++.h>
 #include "Heap.cpp"
 #include "HeapVector.cpp"
 using  std::cout, std::endl;
@@ -37,7 +36,7 @@ int main() {
 
 }
 
- int getKthLargest (const int* array, const int& arrayLength,const int& kth)
+[[maybe_unused]] int getKthLargest (const int* array, const int& arrayLength,const int& kth)
 {
     if (kth > arrayLength || kth < 1) throw std::exception();
     Heap heap{};
@@ -47,11 +46,12 @@ int main() {
 }
 
 void arrayHeapify (const int* array, const int& arrayCount) { for (int i = arrayCount / 2 - 1; i >= 0; i--) arrayHeapify(array, i); }
-void arrayHeapify (int* array, const int& arrayCount,  const int& i)
+
+[[maybe_unused]] void arrayHeapify (int* array, const int& arrayCount,  const int& i)
 {
     auto largerIndex = i;
-    auto leftIndex = i << 1  + 1; //i*2+1
-    auto rightIndex = i << 1 + 2; //i*2+2
+    auto leftIndex = (i << 1)  + 1; //i*2+1
+    auto rightIndex = (i << 1) + 2; //i*2+2
     if (leftIndex < arrayCount && array[leftIndex] > array[largerIndex]) largerIndex = leftIndex;
     if (rightIndex < arrayCount && array[rightIndex] > array[largerIndex]) largerIndex = rightIndex;
     if (i == largerIndex) return;

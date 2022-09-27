@@ -12,18 +12,18 @@ private:
     {
         int data;
         struct Node* next;
-        explicit Node(int data) : data{data}, next{NULL} { }
+        explicit Node(int data) : data{data}, next{nullptr} { }
         ~Node(){ cout << "del:" << data << "; "; }
     };
     struct Node* root;
     struct Node* last;
     int count;
     bool isReversed;
-    bool isEmpty() const { return root == NULL; }
-    void resetList(){ delete(root); root=NULL; last=NULL; }
+    [[nodiscard]] bool isEmpty() const { return root == nullptr; }
+    void resetList(){ delete(root); root=nullptr; last=nullptr; }
 public:
-    explicit List() : root{NULL}, last{NULL}, count{}, isReversed{false} { }
-    ~List(){ while(root != NULL && !isReversed) {removeLast();} }
+    explicit List() : root{nullptr}, last{nullptr}, count{}, isReversed{false} { }
+    ~List(){ while(root != nullptr && !isReversed) {removeLast();} }
     void insertLast(int data)
     {
         Node* node = new Node( data );
@@ -38,11 +38,12 @@ public:
         else { node->next = root; root = node; }
         count ++;
     }
-    int removeFirst()
+
+    [[maybe_unused]] int removeFirst()
     {
-        if (isEmpty()) throw 0;
+        if (isEmpty()) throw exception();
         int value = root->data;
-        if (root == last) { resetList();return value;};
+        if (root == last) { resetList();return value;}
         Node *current = root;
         root = root->next;
         delete(current);
@@ -51,18 +52,18 @@ public:
     }
     int removeLast()
     {
-        if (isEmpty()) throw 0;
+        if (isEmpty()) throw exception();
         int value = last->data;
-        if (root == last) { resetList();return value;};
+        if (root == last) { resetList();return value;}
 
         Node* current = root->next;
         Node* previous = root;
-        while (current->next != NULL)
+        while (current->next != nullptr)
         {
             previous = previous->next;
             current = current->next;
         }
-        previous->next = NULL;
+        previous->next = nullptr;
         last = previous;
         delete(current);
         count --;
@@ -88,7 +89,7 @@ public:
         List* newList = new List();
         //List* newList = &list;
         Node* current = root;
-        while (current != NULL)
+        while (current != nullptr)
         {
             newList->insertFirst(current->data);
             current = current->next;
@@ -98,11 +99,11 @@ public:
         newList->isReversed = true;
         delete(newList);
     }
-    string print() const
+    [[nodiscard]] string print() const
     {
         Node* current = root;
         string str{};
-        while (current != NULL)
+        while (current != nullptr)
         {
             str += to_string(current->data) + ", ";
             current = current->next;

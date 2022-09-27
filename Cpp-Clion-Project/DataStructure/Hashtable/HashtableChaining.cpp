@@ -2,7 +2,9 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <utility>
 using std::pair, std::list, std::string, std::to_string, std::begin, std::end, std::cout, std::endl ;
+//std::move
 class HashtableChaining
 {
 private:
@@ -10,24 +12,23 @@ private:
     {
         int key;
         string value;
-        explicit Pair(int key, string value) : key{key}, value{value} { }
-        ~Pair(){ }
+        explicit Pair(int key, string value) : key{key}, value{std::move(value)} { }
+        ~Pair()= default;
     };
     static const int HASHTABLE_LENGTH = 10;
     //list<pair<int, string>>* hashtable;
     list<struct Pair>* hashtable;
-    int hashFunction(int key) const { return key % HASHTABLE_LENGTH; };
-    list<Pair> getList(int key) { return hashtable[key]; };
-    bool beginList(int key) {  }
+    static int hashFunction(int key) { return key % HASHTABLE_LENGTH; };
+    [[maybe_unused]] list<Pair> getList(int key) { return hashtable[key]; };
 public:
     HashtableChaining() : hashtable{new list<struct Pair>[HASHTABLE_LENGTH]} { }
     ~HashtableChaining(){ delete[](hashtable); }
-    bool isEmpty() const
+    [[nodiscard]] bool isEmpty() const
     {
-        for (int i{}; i < HASHTABLE_LENGTH; ++i) if(hashtable[i].size() != 0) return false;
+        for (int i{}; i < HASHTABLE_LENGTH; ++i) if(!hashtable[i].empty()) return false;
         return true;
     };
-    void insert (int key, string value)
+    void insert (int key, const string& value)
     {
         auto& cell = hashtable[hashFunction(key)];
         bool keyExists = false;
@@ -50,12 +51,12 @@ public:
             if(it->key == key)   /*first in pair*/
             {
                 keyExists = true;
-                it = cell.erase(it); //new iterator
+                cell.erase(it); //new iterator
                 break;
             }
         if(!keyExists) {cout << "item not found to delete " << to_string(key) << endl; } //?
     }
-    string print() const
+    [[nodiscard]] string print() const
     {
         string str{};
         for(int i{}; i < HASHTABLE_LENGTH; ++i){

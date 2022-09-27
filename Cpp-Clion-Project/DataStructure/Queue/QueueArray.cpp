@@ -1,7 +1,6 @@
 //use memcopy to allocate
 // delete[](items);  issue
 
-#include <iostream>
 #include <string>
 using std::string, std::to_string, std::exception;
 class QueueArray
@@ -11,7 +10,7 @@ private:
     int* items;
     int count;
     int first;
-    bool isEmpty() const { return count == 0;}
+    [[nodiscard]] bool isEmpty() const { return count == 0;}
     void allocate()
     {
         int* newQueue = new int[itemsLength * 2];
@@ -38,7 +37,7 @@ public:
         first++;
         return value;   //return items[--count];
     }
-    string print() const
+    [[nodiscard]] string print() const
     {
         string str{};
         for(int i = first; i < count; ++i) str += to_string(items[i]) + " ";

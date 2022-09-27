@@ -43,6 +43,7 @@ static char firstNonRepeatedChar(string str) {
         else map.insert(std::pair(ch, 1));
     }
     for (auto item : map)  if (item.second == 1) return (char)item.first;
+    return '\0';
 }
 
 static char firstRepeatedChar(string str) {
@@ -52,4 +53,5 @@ static char firstRepeatedChar(string str) {
         if (set.contains(ch)) return ch;
         else set.insert(ch);
     }
+    return '\0';
 }

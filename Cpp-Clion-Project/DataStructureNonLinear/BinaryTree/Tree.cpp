@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <list>
-using std::string, std::to_string, std::cout, std::list, std::exception;
+using std::string, std::to_string, std::cout, std::endl, std::list, std::exception;
 //std::min, std::max;
 
 class Tree {
@@ -11,19 +11,19 @@ private:
         int data;
         struct Node *left;
         struct Node *right;
-        explicit Node(int data) : data{data}, left{NULL}, right{NULL} {}
-        ~Node() { if(left != 0) delete(left);if(right != 0) delete(right); cout << "del:" << data << "\n"; }
+        explicit Node(int data) : data{data}, left{nullptr}, right{nullptr} {}
+        ~Node() { delete(left); delete(right); cout << "del:" << data << endl; }
     };
     struct Node *root;
-    bool isNull(const Node *node){  return node == NULL; }
-    bool isLeaf(const Node *node) { return isNull(node->left) && isNull(node->right) ; }
-    int height(const Node *node)
+    static bool isNull(const Node *node){  return node == nullptr; }
+    static bool isLeaf(const Node *node) { return isNull(node->left) && isNull(node->right) ; }
+    int height(const Node *node) const
     {
         if(isNull(node)) return -1; //INT_MIN
         if(isLeaf(node)) return 0;
         return 1 + std::max(height(node->left), height(node->right));
     }
-    int min(const Node *node)
+    int min(const Node *node) const
     {
         if(isNull(node)) return INT_MAX;
         if(isLeaf(node)) return node->data;
@@ -31,7 +31,7 @@ private:
         auto right = min(node->right);
         return std::min(std::min(left, right), node->data);
     }
-    bool equals(Node *a, Node *b)
+    bool equals(Node *a, Node *b) const
     {
         if(isNull(a) && isNull(b)) return true;
         if(!isNull(a) && !isNull(b))
@@ -41,7 +41,7 @@ private:
                 && equals(a->right, b->right);
         return false;
     }
-    bool isBinarySearchTree(Node *node, int min, int max)
+    bool isBinarySearchTree(Node *node, int min, int max) const
     {
         if (isNull(node)) return true;
         if ( !(node->data >= min && node->data <= max) ) return false;
@@ -49,7 +49,7 @@ private:
             isBinarySearchTree(node->left, min, node->data)
             && isBinarySearchTree(node->right, node->data, max);
     }
-    void getNodesAtDistance(Node *node, int distance, list<int> *list)
+    void getNodesAtDistance(Node *node, int distance, list<int> *list) const
     {
         if (isNull(node)) return;
         if (distance == 0) { list->push_back(node->data); /*System.out.print( node.value + " " );*/ return; }
@@ -57,7 +57,7 @@ private:
         getNodesAtDistance(node->right, distance - 1, list);
     }
     /*1*/
-    int size(Node* node)
+    int size(Node* node) const
     {
         if (isNull(node)) return 0;
         return
@@ -66,7 +66,7 @@ private:
                 + (!isNull(node->right) ? size(node->right) : 0);
     }
     /*2*/
-    int countLevels(Node* node, int level)
+    int countLevels(Node* node, int level) const
     {
         if (isNull(node)) return level;
         return
@@ -77,7 +77,7 @@ private:
                 );
     }
     /*3*/
-    int max(Node *node)
+    int max(Node *node) const
     {
         if (isNull(node)) return INT_MIN;
         return std::max(
@@ -85,34 +85,34 @@ private:
                 , isNull(node->right) ? node->data : max(node->right)
         );
     }
-    bool contains(Node* node, int &data)
+    bool contains(Node* node, int &data) const
     {
         if (isNull(node)) return false;
         if (data == node->data) return true;
         return contains(node->left, data) || contains(node->right, data); //O(n)
     }
-    void traversePreOrder(Node *node)
+    void traversePreOrder(Node *node) const
     {
         if (isNull(node)) return;   //base condition
         cout << node->data << " ";
         traversePreOrder(node->left);
         traversePreOrder(node->right);
     }
-    void traverseInOrder(Node *node)
+    void traverseInOrder(Node *node) const
     {
         if (isNull(node)) return;   //base condition
         traverseInOrder(node->left);
         cout << node->data << " ";
         traverseInOrder(node->right);
     }
-    void traversePostOrder(Node *node)
+    void traversePostOrder(Node *node) const
     {
         if (isNull(node)) return;   //base condition
         traversePostOrder(node->left);
         traversePostOrder(node->right);
         cout << node->data << " "; //Root
     }
-    void TraverseInOrder2(Node* node, list<int>* list)    //the recursion
+    void TraverseInOrder2(Node* node, list<int>* list) const    //the recursion
     {   // from low to high  1 2 3 4 ...
         if (isNull(node)) return;   //base condition
         TraverseInOrder2(node->left, list);
@@ -121,7 +121,7 @@ private:
     }
     /*AVL*/
     /*1*/
-    bool isBalanced(Node* node)
+    bool isBalanced(Node* node) const
     {
         if (isNull(node)) return true;
         return abs(height(node->left) - height(node->right))  <= 1
@@ -129,7 +129,7 @@ private:
                && isBalanced(node->right);
     }
     /*2*/
-    bool isPerfect(Node* node)
+    bool isPerfect(Node* node) const
     {
         if (isNull(node)) return true;
         return height(node->left) - height(node->right) == 0
@@ -137,14 +137,14 @@ private:
                && isPerfect(node->right);
     }
 public:
-    explicit Tree() : root(NULL) { }
+    explicit Tree() : root(nullptr) { }
     ~Tree(){ delete(root); }
     void insert(int data)
     {
         Node* node = new Node( data );
         if(isNull(root)) root = node;
         auto* current = root;
-        while(1)
+        while(true)
         {
             if(data < current->data)
             {
@@ -182,11 +182,12 @@ public:
 
     bool equals(const Tree *other)
     {
-        if(other == NULL) return false;
+        if(other == nullptr) return false;
         return equals(root, other->root);
     }
-    bool isBinarySearchTree() { return isBinarySearchTree(root, INT_MIN, INT_MAX); }
-    void swapRoot(){ auto* temp = root->left; root->left= root->right; root->right = temp; }
+
+    [[maybe_unused]] bool isBinarySearchTree() { return isBinarySearchTree(root, INT_MIN, INT_MAX); }
+    [[maybe_unused]] void swapRoot(){ auto* temp = root->left; root->left= root->right; root->right = temp; }
     list<int> getNodesAtDistance(int distance)
     {
         list<int> list{};
@@ -250,13 +251,13 @@ public:
 
     /*AVL*/
     /*1*/
-    bool isBalanced()
+    [[maybe_unused]] bool isBalanced()
     {
         if (isNull(root)) return true;
         return isBalanced(root);
     }
     /*2*/
-    bool isPerfect()
+    [[maybe_unused]] bool isPerfect()
     {
         if (isNull(root)) return true;
         return isPerfect(root);

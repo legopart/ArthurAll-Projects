@@ -1,12 +1,14 @@
-// להוסיף remove node
-// להוסיף remove edge
+// to add remove node
+// to add remove edge
 
 //fix!!!  getMinimumSpanningTree
+//fix!!!    priority queue issue and comparing function
 
 #include <iostream>
 #include <string>
 #include <map>
 #include <set>
+#include <utility>
 #include <vector>
 #include <list>
 #include <stack>
@@ -20,17 +22,16 @@ struct Node
 {
     typedef std::shared_ptr<struct Node> sp_Node;
     typedef std::shared_ptr<struct Edge> sp_Edge;
-    typedef std::weak_ptr<struct Edge> wp_Edge;
     char label;
     list<sp_Edge> edges; /*!*/
     explicit Node(char& label) : label{label}, edges{} {   }
     ~Node(){ cout << "del:" << label << "; "; }
-    void addEdge(sp_Node to, int weight) /*!*/
+    void addEdge(sp_Node& to, int weight) /*!*/
     {
         auto newEdge = make_shared<Edge>(this, to, weight);
         edges.push_back(newEdge);
     }
-    string print() const { string toString{}; return toString+label; }
+    [[nodiscard]] string print() const { string toString{}; return toString+label; }
 };
 struct Edge {
     typedef std::weak_ptr<struct Node> wp_Node;
@@ -38,19 +39,19 @@ struct Edge {
     int weight;
     Node* from;
     wp_Node to;
-    explicit Edge(Node* from, sp_Node to, int weight) : from{from}, to{to}, weight{weight} {   }
+    explicit Edge(Node* from, sp_Node& to, int weight) : from{from}, to{to}, weight{weight} {   }
     ~Edge(){ cout << "del:" << print() << "; "; }
-    sp_Node getTo(){ return sp_Node(to); }
-   // /*!*/ bool operator<(const struct Edge &other) const { return this->weight < other.weight; } /*!*/
-    string print() const {return from->print() + ">" + (!to.expired() ? sp_Node(to)->print() : "*") + "(" + to_string(weight) + ")";}
+    [[nodiscard]] sp_Node getTo() const { return sp_Node(to); }
+ //   /*!*/ bool operator<(const struct Edge &other) const { return this->weight > other.weight; } /*!*/
+    [[nodiscard]] string print() const {return from->print() + ">" + (!to.expired() ? getTo()->print() : "*") + "(" + to_string(weight) + ")";}
 };
 struct NodePriority {
     typedef std::shared_ptr<struct Node> sp_Node;
     sp_Node node;
-    int priority;
-    explicit NodePriority(sp_Node node, int priority) : node{node}, priority{priority} {}
+    [[maybe_unused]] int priority;
+    explicit NodePriority(sp_Node node, int priority) : node{std::move(node)}, priority{priority} {}
     ~NodePriority() { cout << "delQPN:" << "" + node->print() << "; "; }
-    /*!*/ bool operator<(const struct NodePriority &other) const { return this->priority < other.priority; } /*!*/
+   // /*!*/ bool operator<(const struct NodePriority &other) const { return this->priority < other.priority; } /*!*/
 };
 
 class Graph {   //for example only
@@ -59,10 +60,8 @@ private:
     typedef std::shared_ptr<struct Edge> sp_Edge;
     typedef shared_ptr<struct NodePriority> sp_NodePriority;
     map<char, sp_Node> nodes;
-    bool isNull(auto itNode) const { return itNode == nodes.end(); }
-    void addNode(sp_Node& node) { addNode(node->label); }
-    void addEdge(sp_Node& from, sp_Node& to, sp_Edge& edge) const { addEdge(from->label, to->label, edge->weight); }
-    list<char> buildPath(map<sp_Node, sp_Node>& previousNodes, sp_Node& toNode) const {
+    [[nodiscard]] bool isNull(auto itNode) const { return itNode == nodes.end(); }
+    static list<char> buildPath(map<sp_Node, sp_Node>& previousNodes, const sp_Node& toNode) {
         stack<sp_Node> stack{};
         stack.push(toNode);
         auto previous = previousNodes.find(toNode)->second;
@@ -72,21 +71,21 @@ private:
             try
             {
                 previous = previousNodes.find(previous)->second;
-                if (previous == NULL) throw exception();
+                if (previous == nullptr) throw exception();
             }
             catch (...) { break; } //previous = previousNodes.GetValueOrDefault(previous, null);
         }
         return toList(stack);
     }
-    list<char> toList(stack<sp_Node> &stack) const {   //fix to insert with it
+    static list<char> toList(stack<sp_Node> &stack) {   //fix to insert with it
         list<char> sortedList{};
         while (!stack.empty()) { sortedList.push_back(stack.top()->label); stack.pop(); }
         return sortedList;
     }
-    bool hasCycle(sp_Node node, sp_Node parent, set<sp_Node> visited)
+    bool hasCycle(const sp_Node& node, const sp_Node& parent, set<sp_Node>& visited) const
     {
         visited.insert(node);
-        for (auto edge : node->edges)
+        for (auto& edge : node->edges)
         {
             auto edgeTo = edge->getTo();
             if (edgeTo == parent) continue;
@@ -95,12 +94,12 @@ private:
         }
         return false;
     }
-    bool containsNode(sp_Node node) { return nodes.contains(node->label); }
+    [[nodiscard]] bool containsNode(const sp_Node& node) const { return nodes.contains(node->label); }
 
 
 public:
     explicit Graph() : nodes{} {}
-    ~Graph() { }
+    ~Graph() = default;
     void addNode(char label)
     {
         auto newNode = make_shared<Node>(label);
@@ -114,13 +113,13 @@ public:
         fromNode->addEdge(toNode, weight);
         toNode->addEdge(fromNode, weight);
     }
-    list<char> getShortestPath(char from, char to) const
+    [[nodiscard]] list<char> getShortestPath(char from, char to) const
     {
         if (isNull(nodes.find(from)) || isNull(nodes.find(to))) throw exception();
         auto fromNode = nodes.find(from)->second;
         auto toNode = nodes.find(to)->second;
         map<sp_Node, int> distances{};
-        for (auto node: nodes) distances.insert({node.second, INT_MAX});
+        for (auto& node: nodes) distances.insert({node.second, INT_MAX});
         distances[fromNode] = 0;//.insert({fromNode, 0}); // java: replace(,) // A 0
         map<sp_Node, sp_Node> previousNodes{};
         set<sp_Node> visited{};
@@ -131,7 +130,7 @@ public:
             auto current = queue.top();
             queue.pop();
             visited.insert(current->node);
-            for (auto edge: current->node->edges) {
+            for (auto& edge: current->node->edges) {
                 auto edgeToNode = edge->getTo();
                 if (visited.contains(edgeToNode)) continue;
                 /*!*/   int newDistance = distances.find(current->node)->second + edge->weight;
@@ -147,11 +146,11 @@ public:
         return buildPath(previousNodes, toNode);
     }
     bool hasCycle()
-    {   //לחזור
+    {   // !!! Review
         set<sp_Node> visited{};
-        for(auto node : nodes)
+        for(auto& node : nodes)
             if (!visited.contains(node.second)
-                && hasCycle(node.second, NULL, visited)) return true;
+                && hasCycle(node.second, nullptr, visited)) return true;
         return false;
     }
     bool containsNode(char label) { return nodes.contains(label); }
@@ -164,7 +163,7 @@ public:
         if (nodes.empty()) return tree;
         priority_queue<sp_Edge> edges{};
         auto startNode = nodes.begin()->second; //java: nodes.values().iterator().next();
-        for (auto edge : startNode->edges) edges.push(edge);
+        for (auto& edge : startNode->edges) edges.push(edge);
         tree.addNode(startNode->label);
         if (edges.empty()) return tree;
         while (tree.nodes.size() < nodes.size())
@@ -175,19 +174,19 @@ public:
             if (tree.containsNode(nextNode->label)) continue;
             tree.addNode(nextNode->label);
             tree.addEdge(minEdge->from->label, nextNode->label, minEdge->weight);
-            for (auto edge : nextNode->edges)
+            for (auto& edge : nextNode->edges)
             if (!tree.containsNode(edge->getTo())) edges.push(edge);
         }
         return tree;
     }
 
-    string print() const
+    [[nodiscard]] string print() const
     {
-        string str = "";
-        for (auto node: nodes) {
+        string str{};
+        for (auto& node: nodes) {
             auto targets = node.second->edges;// adjacencyList.get(source);
             str += node.second->print() += " is connected to [";
-            if (!targets.empty()) for (auto t: targets) str += t->print() += ", ";
+            if (!targets.empty()) for (auto& t: targets) str += t->print() += ", ";
             str += "]\n";
         }
         return str;

@@ -14,10 +14,10 @@ private:
     int* itemArray;
     int arrayLength;
     void swap(int& a, int b) const { swap(itemArray[a], itemArray[b]); }
-    int parent(int& index) const {return index / 2;} // index/2
-    int child(int& index) const {return index * 2;} // index*2
-    int left(int& index) const { return  child(index) + 1; } // index*2+1
-    int right(int& index) const { return  child(index) + 2; } // index*2+2
+    static int parent(int& index) {return index / 2;} // index/2
+    static int child(int& index) {return index * 2;} // index*2
+    static int left(int& index) { return  child(index) + 1; } // index*2+1
+    static int right(int& index) { return  child(index) + 2; } // index*2+2
     void bubbleUp() const
     {
         auto index = count - 1; //last
@@ -63,8 +63,8 @@ private:
 public:
     explicit Heap() : arrayLength{20}, itemArray{new int[arrayLength]}, count{} {}
     ~Heap() { delete[](itemArray); }
-    bool isFull() const { return count == arrayLength; }
-    bool isEmpty() const { return count == 0; }
+    [[nodiscard]] bool isFull() const { return count == arrayLength; }
+    [[nodiscard]] bool isEmpty() const { return count == 0; }
     void insert(const int data)
     {
         if(isFull()) throw exception(); //or extend
@@ -72,7 +72,7 @@ public:
         count ++;
         bubbleUp();
     }
-    int max() const
+    [[nodiscard]] int max() const
     {
         if (isEmpty()) throw exception();
         return itemArray[0];    //root
@@ -86,7 +86,7 @@ public:
         bubbleDown();
         return temp;
     }
-    string print() const {
+    [[nodiscard]] string print() const {
         string str{};
         for(int i{}; i < count; i++) str += to_string(itemArray[i]) + ", ";
         str += "\n";

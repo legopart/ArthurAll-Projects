@@ -43,10 +43,6 @@ int main() {
         auto tree = graph.getMinimumSpanningTree();
         cout << "Get Minimum Spanning Tree:" << endl;
         cout << tree.print() << endl << endl;
-
-
-
-
     }
 
     return EXIT_SUCCESS;

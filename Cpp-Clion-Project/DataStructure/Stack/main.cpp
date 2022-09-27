@@ -1,7 +1,6 @@
 
 #include <iostream>
 #include <stack>
-#include <array>
 #import "Stack.cpp"
 #import "ListedStack.cpp"
 using std::string, std::endl, std::cout;

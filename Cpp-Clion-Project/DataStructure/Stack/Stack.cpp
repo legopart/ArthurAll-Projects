@@ -1,14 +1,14 @@
 
 #include <iostream>
 #include <string>
-using std::string, std::to_string, std::cout;
+using std::string, std::to_string, std::cout, std::exception;
 class Stack
 {
 private:
     int itemsLength;
     int* items;
     int count;
-    bool isEmpty() const { return count == 0;}
+    [[nodiscard]] bool isEmpty() const { return count == 0;}
     void allocate()
     {
         int* newStack = new int[itemsLength * 2];
@@ -25,17 +25,18 @@ public:
         items[count] = value;
         count ++;
     }
-    int peak(){
-        if(isEmpty()) throw 0;
+
+    [[maybe_unused]] int peak(){
+        if(isEmpty()) throw exception();
         return items[count - 1];
     }
     int pop(){
-        if(isEmpty()) throw 0;
+        if(isEmpty()) throw exception();
         int value = items[count - 1];
         count --;
         return value;
     }
-    string print() const
+    [[nodiscard]] string print() const
     {
         string str{};
         for (int i{}; i < count; ++i){
