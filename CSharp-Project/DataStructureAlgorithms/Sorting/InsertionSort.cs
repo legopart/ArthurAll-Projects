@@ -8,7 +8,25 @@ namespace Sorting
 {
     public class InsertionSort
     {
+
+
         public static void Sort(int[] array)    //לחזור
+        {
+
+            for (int i = 1; i < array.Length; ++i)
+            {
+                var current = array[i];
+                int j = i;
+                for (; j > 0; --j)
+                {
+                    if (array[j - 1] <= current) break;
+                    array[j] = array[j - 1];    //shiftRight
+                }
+                array[j] = current;
+            }
+        }
+
+        public static void Sort2(int[] array)    //לחזור
         {
 
             for (var i = 1; i < array.Length; ++i)  //sorted half

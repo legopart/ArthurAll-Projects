@@ -22,6 +22,19 @@ namespace Sorting
                 if (isSorted) return;
             }
         }
+
+
+
+        public static void Sort2(int[] array)
+        {
+            for (int i = 0; i < array.Length; ++i)
+            {
+                bool isSorted = true;
+                for (int j = 1; j < array.Length - i; ++j)
+                    if (array[j] > array[j - 1]) { swap(array, j, j - 1); isSorted = false; }
+                if (isSorted) return;
+            }
+        }
         private static void swap(int[] array, int a, int b) 
         {
             var tmp = array[a];
