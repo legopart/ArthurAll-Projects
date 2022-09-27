@@ -20,7 +20,7 @@ add_executable(NonLinear-AVLTree DataStructureNonLinear/AVLTree/main.cpp)
 
 add_executable(NonLinear-BinartTree DataStructureNonLinear/BinaryTree/main.cpp)
 
-add_executable(Cpp_Clion_Project main.cpp DataStructureAlgorithms/Sorting/main.cpp DataStructureAlgorithms/Sorting/bubbleSort.cpp DataStructureAlgorithms/Sorting/selectionSort.cpp DataStructureAlgorithms/Sorting/insertionSort.cpp DataStructureAlgorithms/Sorting/mergeSort.cpp DataStructureAlgorithms/Sorting/quickSort.cpp)
+add_executable(Cpp_Clion_Project main.cpp DataStructureAlgorithms/Sorting/main.cpp DataStructureAlgorithms/Sorting/bubbleSort.cpp DataStructureAlgorithms/Sorting/selectionSort.cpp DataStructureAlgorithms/Sorting/insertionSort.cpp DataStructureAlgorithms/Sorting/mergeSort.cpp DataStructureAlgorithms/Sorting/quickSort.cpp DataStructureAlgorithms/Sorting/countingSort.cpp)
 
 add_executable(Linear-ArrayList DataStructure/ArrayList/main.cpp)
 
