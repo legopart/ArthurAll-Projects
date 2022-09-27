@@ -20,6 +20,5 @@ namespace Sorting
             for (var i = 0; i < counts.Length; ++i) //coping x times TO OUTPUT array
                 for (var j = 0; j < counts[i]; j++) array[index++] = i; 
         }
-
     }
 }
