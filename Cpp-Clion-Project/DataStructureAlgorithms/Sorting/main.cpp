@@ -46,5 +46,8 @@ int main()
     bucketSort(array, arrayLength, 3);
     cout <<"Bucket Sort: " << print(array, arrayLength);
 
+
+    delete[](basicArray);
+    delete[](array);
     return EXIT_SUCCESS;
 }

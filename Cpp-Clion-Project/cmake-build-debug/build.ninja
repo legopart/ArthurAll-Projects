@@ -56,6 +56,20 @@ build CMakeFiles/Algorithms-Sorting.dir/DataStructureAlgorithms/Sorting/main.cpp
   OBJECT_DIR = CMakeFiles\Algorithms-Sorting.dir
   OBJECT_FILE_DIR = CMakeFiles\Algorithms-Sorting.dir\DataStructureAlgorithms\Sorting
 
+build CMakeFiles/Algorithms-Sorting.dir/DataStructureAlgorithms/Searching/main.cpp.obj: CXX_COMPILER__Algorithms-Sorting_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Searching/main.cpp || cmake_object_order_depends_target_Algorithms-Sorting
+  DEP_FILE = CMakeFiles\Algorithms-Sorting.dir\DataStructureAlgorithms\Searching\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Algorithms-Sorting.dir
+  OBJECT_FILE_DIR = CMakeFiles\Algorithms-Sorting.dir\DataStructureAlgorithms\Searching
+
+build CMakeFiles/Algorithms-Sorting.dir/DataStructureAlgorithms/Searching/linearSearch.cpp.obj: CXX_COMPILER__Algorithms-Sorting_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Searching/linearSearch.cpp || cmake_object_order_depends_target_Algorithms-Sorting
+  DEP_FILE = CMakeFiles\Algorithms-Sorting.dir\DataStructureAlgorithms\Searching\linearSearch.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Algorithms-Sorting.dir
+  OBJECT_FILE_DIR = CMakeFiles\Algorithms-Sorting.dir\DataStructureAlgorithms\Searching
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Algorithms-Sorting
@@ -64,7 +78,7 @@ build CMakeFiles/Algorithms-Sorting.dir/DataStructureAlgorithms/Sorting/main.cpp
 #############################################
 # Link the executable Algorithms-Sorting.exe
 
-build Algorithms-Sorting.exe: CXX_EXECUTABLE_LINKER__Algorithms-Sorting_Debug CMakeFiles/Algorithms-Sorting.dir/DataStructureAlgorithms/Sorting/main.cpp.obj
+build Algorithms-Sorting.exe: CXX_EXECUTABLE_LINKER__Algorithms-Sorting_Debug CMakeFiles/Algorithms-Sorting.dir/DataStructureAlgorithms/Sorting/main.cpp.obj CMakeFiles/Algorithms-Sorting.dir/DataStructureAlgorithms/Searching/main.cpp.obj CMakeFiles/Algorithms-Sorting.dir/DataStructureAlgorithms/Searching/linearSearch.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Algorithms-Sorting.dir
