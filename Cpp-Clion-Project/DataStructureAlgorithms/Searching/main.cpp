@@ -3,6 +3,7 @@
 #include <stack>
 #import "LinearSearch.cpp"
 #import "BinarySearch.cpp"
+#import "TernarySearch.cpp"
 using std::string, std::cout, std::endl;
 
 static string print(int&& result) { return (result >= 0 ? to_string(result + 1 ) + " true" : to_string(result) + " false"); }
@@ -18,6 +19,8 @@ int main()
     //using sorted array !
     cout <<"Binary Search: " << print( binarySearch(arraySorted, arrayLength, target) ) << endl;
     cout <<"Binary Search Recursion: " << print( binarySearch_Recursion(arraySorted, arrayLength, target) ) << endl;
+
+    cout <<"Ternary Search: " << print(ternarySearch(arraySorted, arrayLength, target) ) << endl;
 
 
     delete[](array);
