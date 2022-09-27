@@ -5,6 +5,9 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(.)
 
+
+add_executable(Algorithms-Sorting DataStructureAlgorithms/Sorting/main.cpp)
+
 add_executable(NonLinear-GraphUndirected DataStructureNonLinear/GraphUndirected/main.cpp)
 
 add_executable(NonLinear-Graph DataStructureNonLinear/Graph/main.cpp)
@@ -17,7 +20,7 @@ add_executable(NonLinear-AVLTree DataStructureNonLinear/AVLTree/main.cpp)
 
 add_executable(NonLinear-BinartTree DataStructureNonLinear/BinaryTree/main.cpp)
 
-add_executable(Cpp_Clion_Project main.cpp DataStructureAlgorithms/Sorting/main.cpp)
+add_executable(Cpp_Clion_Project main.cpp DataStructureAlgorithms/Sorting/main.cpp DataStructureAlgorithms/Sorting/bubbleSort.cpp)
 
 add_executable(Linear-ArrayList DataStructure/ArrayList/main.cpp)
 

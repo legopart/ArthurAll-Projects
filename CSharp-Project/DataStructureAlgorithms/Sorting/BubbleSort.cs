@@ -13,7 +13,7 @@ namespace Sorting
             for (int i = 0; i < array.Length; ++i)
             {
                 bool isSorted = true;
-                for (int j = i; j < array.Length; ++j)
+                for (int j = i + 1; j < array.Length; ++j)
                     if (array[i] > array[j]) 
                     {
                         swap(array, i, j);
