@@ -45,7 +45,7 @@ private:
     [[maybe_unused]] string& toLowerCaseSting(const string& str)
     {
         string lowerCaseString = str;
-        for (int i = 0; i < str.length(); i++) str[i] = tolower(str[i]);
+        for (int i = 0; i < str.length(); i++) lowerCaseString += tolower(str[i]);
         return lowerCaseString;
     }
     string& trim(string& str){
