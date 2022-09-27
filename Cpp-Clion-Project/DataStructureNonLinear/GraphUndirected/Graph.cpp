@@ -59,8 +59,9 @@ private:
     typedef std::shared_ptr<struct Node> sp_Node;
     typedef std::shared_ptr<struct Edge> sp_Edge;
     typedef shared_ptr<struct NodePriority> sp_NodePriority;
+    typedef std::_Rb_tree_const_iterator<pair<const char, sp_Node>> it_Node;
     map<char, sp_Node> nodes;
-    [[nodiscard]] bool isNull(auto itNode) const { return itNode == nodes.end(); }
+    [[nodiscard]] bool isNull(const it_Node& itNode) const { return itNode == nodes.end(); }
     static list<char> buildPath(map<sp_Node, sp_Node>& previousNodes, const sp_Node& toNode) {
         stack<sp_Node> stack{};
         stack.push(toNode);
@@ -89,12 +90,12 @@ private:
         {
             auto edgeTo = edge->getTo();
             if (edgeTo == parent) continue;
-            if (visited.contains(edgeTo)
+            if (visited.find(edgeTo) != visited.end()
                 || hasCycle(edgeTo, node, visited)) return true;
         }
         return false;
     }
-    [[nodiscard]] bool containsNode(const sp_Node& node) const { return nodes.contains(node->label); }
+    [[nodiscard]] bool containsNode(const sp_Node& node) const { return !isNull(nodes.find(node->label)); }
 
 
 public:
@@ -132,7 +133,7 @@ public:
             visited.insert(current->node);
             for (auto& edge: current->node->edges) {
                 auto edgeToNode = edge->getTo();
-                if (visited.contains(edgeToNode)) continue;
+                if (visited.find(edgeToNode) != visited.end()) continue;
                 /*!*/   int newDistance = distances.find(current->node)->second + edge->weight;
                 if (newDistance < distances.find(edgeToNode)->second)
                 {
@@ -149,11 +150,11 @@ public:
     {   // !!! Review
         set<sp_Node> visited{};
         for(auto& node : nodes)
-            if (!visited.contains(node.second)
+            if (!(visited.find(node.second) != visited.end())
                 && hasCycle(node.second, nullptr, visited)) return true;
         return false;
     }
-    bool containsNode(char label) { return nodes.contains(label); }
+    bool containsNode(char label) { return nodes.find(label) != nodes.end(); }
 
 
 

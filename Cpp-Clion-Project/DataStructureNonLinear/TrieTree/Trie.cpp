@@ -8,7 +8,7 @@
 #include <vector>
 #include <list>
 #include <memory>
-
+#include <cctype>
 using std::string, std::to_string, std::cout,  std::vector, std::map;
 using std::pair, std::list, std::shared_ptr, std::make_shared, std::exception;
 
@@ -26,7 +26,7 @@ private:
         //used Word instead Child !
         [[nodiscard]] bool isEmpty() const { return words.empty(); }
         p_Node getWord(const char& ch)  {  return words.find(ch)->second; }
-        bool hasWord(char& ch) const { return words.contains(ch); }
+        bool hasWord(char& ch) const { return words.find(ch) != words.end(); }
         void addWord(char ch)
         {
             auto newNode = make_shared<struct Node>(ch);
@@ -50,8 +50,7 @@ private:
     [[maybe_unused]] static string& toLowerCaseSting(const string& str)
     {
         string lowerCaseString = str;
-        transform(lowerCaseString.begin(), lowerCaseString.end(), lowerCaseString.begin(),
-                       [](unsigned char ch){ return tolower(ch); });
+        for (int i = 0; i < str.length(); i++) str[i] = tolower(str[i]);
         return lowerCaseString;
     }
     static string& trim(string& str){

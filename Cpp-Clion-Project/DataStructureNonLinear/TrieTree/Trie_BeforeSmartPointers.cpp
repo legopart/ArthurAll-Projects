@@ -7,6 +7,7 @@
 #include <map>
 #include <vector>
 #include <list>
+#include <cctype>
 
 using std::string, std::to_string, std::list, std::vector, std::map;
 using  std::cout, std::exception;
@@ -22,7 +23,7 @@ private:
         //used Word instead Child !
         bool isEmpty() const { return words.empty(); }
         struct Node* getWord(const char& ch)  {  return &words.find(ch)->second; }
-        bool hasWord(char& ch) const { return words.contains(ch); }
+        bool hasWord(char& ch) const { return words.find(ch) != words.end(); }
         void addWord(char ch)
         {
             Node newNode = Node(ch);
@@ -38,14 +39,13 @@ private:
         bool hasWords() const { return !isEmpty(); }
     };
 
-    bool isNull(struct Node* node) const { return node == NULL; }
-    bool isNull(string word) const { return word.length() == NULL; }
+    bool isNull(struct Node* node) const { return node == nullptr; }
+    bool isNull(string word) const { return word.length() == 0; }
 
     [[maybe_unused]] string& toLowerCaseSting(const string& str)
     {
         string lowerCaseString = str;
-        transform(lowerCaseString.begin(), lowerCaseString.end(), lowerCaseString.begin(),
-                       [](unsigned char ch){ return tolower(ch); });
+        for (int i = 0; i < str.length(); i++) str[i] = tolower(str[i]);
         return lowerCaseString;
     }
     string& trim(string& str){

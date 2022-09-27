@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.Text;
 
 // להוסיף remove node
 
@@ -17,9 +10,11 @@ namespace GraphUndirected
         private class Node   //Vertice
         {
             public String Label { get; private set; }
-     /*!*/  public List<Edge> EdgeList { get; private set; } // better Map
+            /*!*/
+            public List<Edge> EdgeList { get; private set; } // better Map
             public Node(String label) { Label = label; EdgeList = new(); }
-     /*!*/  public void AddEdge(Node to, int weight) { EdgeList.Add(new Edge(this, to, weight)); }
+            /*!*/
+            public void AddEdge(Node to, int weight) { EdgeList.Add(new Edge(this, to, weight)); }
             public override String ToString() { return Label; }
         }
 
@@ -74,7 +69,7 @@ namespace GraphUndirected
 
             HashSet<Node> visited = new();
 
-            PriorityQueue<Node, int> queue = new (); //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
+            PriorityQueue<Node, int> queue = new(); //java: PriorityQueue<NodeEntry> queue = new PriorityQueue<>(Comparator.comparingInt(ne->ne.priority));
             queue.Enqueue(from!, 0);  // only item in the queue
 
             while (queue.Count != 0)
@@ -85,7 +80,8 @@ namespace GraphUndirected
                 foreach (var edge in current.EdgeList)
                 {
                     if (visited.Contains(edge.To)) continue;
-            /*!*/   var newDistance = distances[current] + edge.Weight;
+                    /*!*/
+                    var newDistance = distances[current] + edge.Weight;
                     if (newDistance < distances[edge.To])
                     {
                         distances[edge.To] = newDistance; // java: replace(,)
@@ -124,7 +120,7 @@ namespace GraphUndirected
         public bool HasCycle()
         {
             HashSet<Node> visited = new();
-            foreach (var node in  Nodes.Values)
+            foreach (var node in Nodes.Values)
                 if (!visited.Contains(node)
                         && HasCycle(node, null, visited)) return true;
             return false;

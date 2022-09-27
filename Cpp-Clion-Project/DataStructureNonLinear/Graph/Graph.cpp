@@ -3,7 +3,6 @@
 #include <string>
 #include <map>
 #include <set>
-//#include <vector>
 #include <list>
 #include <stack>
 #include <queue>
@@ -33,7 +32,7 @@ private:
         cout << node->print() << " ";
         visited.insert(node);
         for (auto neighbour : edges.find(node)->second)
-        if (!visited.contains(neighbour)) traverseDepthFirst_recursion(neighbour, visited);
+        if (!(visited.find(neighbour) != visited.end())) traverseDepthFirst_recursion(neighbour, visited);
     }
 
     [[maybe_unused]] static list<char> toList(stack<sp_Node>& stack) {   //fix to insert with it
@@ -43,7 +42,7 @@ private:
     }
     void topologicalSort(const sp_Node& node, set<sp_Node> visitedSet, stack<sp_Node> stack)
     {
-        if (visitedSet.contains(node)) return;
+        if (visitedSet.find(node) != visitedSet.end()) return;
         visitedSet.insert(node);
         for (const auto& neighbour : edges.find(node)->second)
             topologicalSort(neighbour, visitedSet, stack);
@@ -55,8 +54,8 @@ private:
         visiting.insert(node);
         for (const auto& neighbour : edges.find(node)->second)
         {
-            if (visited.contains(neighbour)) continue;
-            if (visiting.contains(neighbour)) return true;
+            if (visited.find(neighbour) != visited.end()) continue;
+            if (visiting.find(neighbour) != visiting.end()) return true;
             if (hasCycle(neighbour, all, visiting, visited)) return true;
         }
         visiting.erase(node);
@@ -112,11 +111,11 @@ public:
         {
             auto node = stack.top() ;
             stack.pop();
-            if (visited.contains(node)) continue;
+            if (visited.find(node) != visited.end()) continue;
             else visited.insert(node);
             cout << node << " ";
             for (const auto& neighbour : edges.find(node)->second)   //Links
-                if (!visited.contains(neighbour)) stack.push(neighbour);
+                if (!(visited.find(neighbour) != visited.end())) stack.push(neighbour);
         }
     }
 
@@ -131,11 +130,11 @@ public:
         {
             auto node = queue.front() ;
             queue.pop();
-            if (visited.contains(node)) continue;
+            if (visited.find(node) != visited.end()) continue;
             else visited.insert(node);
             cout << node << " ";
             for (const auto& neighbour : edges.find(node)->second)   //Links
-                if (!visited.contains(neighbour)) queue.push(neighbour);
+                if (!(visited.find(neighbour) != visited.end())) queue.push(neighbour);
         }
     }
 

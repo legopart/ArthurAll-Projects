@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_NonLinear-GraphUndirected: phony || CMak
 
 build CMakeFiles/NonLinear-GraphUndirected.dir/DataStructureNonLinear/GraphUndirected/main.cpp.obj: CXX_COMPILER__NonLinear-GraphUndirected_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureNonLinear/GraphUndirected/main.cpp || cmake_object_order_depends_target_NonLinear-GraphUndirected
   DEP_FILE = CMakeFiles\NonLinear-GraphUndirected.dir\DataStructureNonLinear\GraphUndirected\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\NonLinear-GraphUndirected.dir
   OBJECT_FILE_DIR = CMakeFiles\NonLinear-GraphUndirected.dir\DataStructureNonLinear\GraphUndirected
@@ -85,7 +85,7 @@ build cmake_object_order_depends_target_NonLinear-Graph: phony || CMakeFiles/Non
 
 build CMakeFiles/NonLinear-Graph.dir/DataStructureNonLinear/Graph/main.cpp.obj: CXX_COMPILER__NonLinear-Graph_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureNonLinear/Graph/main.cpp || cmake_object_order_depends_target_NonLinear-Graph
   DEP_FILE = CMakeFiles\NonLinear-Graph.dir\DataStructureNonLinear\Graph\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\NonLinear-Graph.dir
   OBJECT_FILE_DIR = CMakeFiles\NonLinear-Graph.dir\DataStructureNonLinear\Graph
@@ -119,7 +119,7 @@ build cmake_object_order_depends_target_NonLinear-TrieTree: phony || CMakeFiles/
 
 build CMakeFiles/NonLinear-TrieTree.dir/DataStructureNonLinear/TrieTree/main.cpp.obj: CXX_COMPILER__NonLinear-TrieTree_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureNonLinear/TrieTree/main.cpp || cmake_object_order_depends_target_NonLinear-TrieTree
   DEP_FILE = CMakeFiles\NonLinear-TrieTree.dir\DataStructureNonLinear\TrieTree\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\NonLinear-TrieTree.dir
   OBJECT_FILE_DIR = CMakeFiles\NonLinear-TrieTree.dir\DataStructureNonLinear\TrieTree
@@ -153,7 +153,7 @@ build cmake_object_order_depends_target_NonLinear-HeapTree: phony || CMakeFiles/
 
 build CMakeFiles/NonLinear-HeapTree.dir/DataStructureNonLinear/HeapTree/main.cpp.obj: CXX_COMPILER__NonLinear-HeapTree_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureNonLinear/HeapTree/main.cpp || cmake_object_order_depends_target_NonLinear-HeapTree
   DEP_FILE = CMakeFiles\NonLinear-HeapTree.dir\DataStructureNonLinear\HeapTree\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\NonLinear-HeapTree.dir
   OBJECT_FILE_DIR = CMakeFiles\NonLinear-HeapTree.dir\DataStructureNonLinear\HeapTree
@@ -187,7 +187,7 @@ build cmake_object_order_depends_target_NonLinear-AVLTree: phony || CMakeFiles/N
 
 build CMakeFiles/NonLinear-AVLTree.dir/DataStructureNonLinear/AVLTree/main.cpp.obj: CXX_COMPILER__NonLinear-AVLTree_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureNonLinear/AVLTree/main.cpp || cmake_object_order_depends_target_NonLinear-AVLTree
   DEP_FILE = CMakeFiles\NonLinear-AVLTree.dir\DataStructureNonLinear\AVLTree\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\NonLinear-AVLTree.dir
   OBJECT_FILE_DIR = CMakeFiles\NonLinear-AVLTree.dir\DataStructureNonLinear\AVLTree
@@ -221,7 +221,7 @@ build cmake_object_order_depends_target_NonLinear-BinartTree: phony || CMakeFile
 
 build CMakeFiles/NonLinear-BinartTree.dir/DataStructureNonLinear/BinaryTree/main.cpp.obj: CXX_COMPILER__NonLinear-BinartTree_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureNonLinear/BinaryTree/main.cpp || cmake_object_order_depends_target_NonLinear-BinartTree
   DEP_FILE = CMakeFiles\NonLinear-BinartTree.dir\DataStructureNonLinear\BinaryTree\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\NonLinear-BinartTree.dir
   OBJECT_FILE_DIR = CMakeFiles\NonLinear-BinartTree.dir\DataStructureNonLinear\BinaryTree
@@ -255,7 +255,7 @@ build cmake_object_order_depends_target_Cpp_Clion_Project: phony || CMakeFiles/C
 
 build CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/main.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
   DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir
@@ -289,7 +289,7 @@ build cmake_object_order_depends_target_Linear-ArrayList: phony || CMakeFiles/Li
 
 build CMakeFiles/Linear-ArrayList.dir/DataStructure/ArrayList/main.cpp.obj: CXX_COMPILER__Linear-ArrayList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/ArrayList/main.cpp || cmake_object_order_depends_target_Linear-ArrayList
   DEP_FILE = CMakeFiles\Linear-ArrayList.dir\DataStructure\ArrayList\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\Linear-ArrayList.dir
   OBJECT_FILE_DIR = CMakeFiles\Linear-ArrayList.dir\DataStructure\ArrayList
@@ -323,7 +323,7 @@ build cmake_object_order_depends_target_Linear-LinkedList: phony || CMakeFiles/L
 
 build CMakeFiles/Linear-LinkedList.dir/DataStructure/LinkedList/main.cpp.obj: CXX_COMPILER__Linear-LinkedList_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/LinkedList/main.cpp || cmake_object_order_depends_target_Linear-LinkedList
   DEP_FILE = CMakeFiles\Linear-LinkedList.dir\DataStructure\LinkedList\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\Linear-LinkedList.dir
   OBJECT_FILE_DIR = CMakeFiles\Linear-LinkedList.dir\DataStructure\LinkedList
@@ -357,7 +357,7 @@ build cmake_object_order_depends_target_Linear-Stack: phony || CMakeFiles/Linear
 
 build CMakeFiles/Linear-Stack.dir/DataStructure/Stack/main.cpp.obj: CXX_COMPILER__Linear-Stack_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/Stack/main.cpp || cmake_object_order_depends_target_Linear-Stack
   DEP_FILE = CMakeFiles\Linear-Stack.dir\DataStructure\Stack\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\Linear-Stack.dir
   OBJECT_FILE_DIR = CMakeFiles\Linear-Stack.dir\DataStructure\Stack
@@ -391,7 +391,7 @@ build cmake_object_order_depends_target_Linear-Queue: phony || CMakeFiles/Linear
 
 build CMakeFiles/Linear-Queue.dir/DataStructure/Queue/main.cpp.obj: CXX_COMPILER__Linear-Queue_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/Queue/main.cpp || cmake_object_order_depends_target_Linear-Queue
   DEP_FILE = CMakeFiles\Linear-Queue.dir\DataStructure\Queue\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\Linear-Queue.dir
   OBJECT_FILE_DIR = CMakeFiles\Linear-Queue.dir\DataStructure\Queue
@@ -425,7 +425,7 @@ build cmake_object_order_depends_target_Linear-Hashtable: phony || CMakeFiles/Li
 
 build CMakeFiles/Linear-Hashtable.dir/DataStructure/Hashtable/main.cpp.obj: CXX_COMPILER__Linear-Hashtable_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructure/Hashtable/main.cpp || cmake_object_order_depends_target_Linear-Hashtable
   DEP_FILE = CMakeFiles\Linear-Hashtable.dir\DataStructure\Hashtable\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
+  FLAGS = -g
   INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
   OBJECT_DIR = CMakeFiles\Linear-Hashtable.dir
   OBJECT_FILE_DIR = CMakeFiles\Linear-Hashtable.dir\DataStructure\Hashtable
