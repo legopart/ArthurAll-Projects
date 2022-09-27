@@ -40,7 +40,7 @@ int main()
     array2.print();
     cout << endl;
 
-    std::array<int, 5> array;
+    std::array<int, 5> array{};
     //for (int i = 0; i < array.size(); ++i) {
     //	cout << array[i] << endl;
     //}
