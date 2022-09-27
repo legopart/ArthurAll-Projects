@@ -19,12 +19,7 @@ static void insertionSort(int*& array, const int& arrayLength)
 }
 
 
-static void insertionSort2(int*& array, const int& arrayLength)
-{
-
-}
-
-static void insertionSort3(int*& array, const int& arrayLength)
+[[maybe_unused]] static void insertionSort2(int*& array, const int& arrayLength)
 {
     for (int i = 1; i < arrayLength; ++i)
     {

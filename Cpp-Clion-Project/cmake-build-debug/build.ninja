@@ -322,6 +322,13 @@ build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/insertion
   OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting
 
+build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/mergeSort.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Sorting/mergeSort.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
+  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting\mergeSort.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Cpp_Clion_Project
@@ -330,7 +337,7 @@ build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/insertion
 #############################################
 # Link the executable Cpp_Clion_Project.exe
 
-build Cpp_Clion_Project.exe: CXX_EXECUTABLE_LINKER__Cpp_Clion_Project_Debug CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/bubbleSort.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/selectionSort.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/insertionSort.cpp.obj
+build Cpp_Clion_Project.exe: CXX_EXECUTABLE_LINKER__Cpp_Clion_Project_Debug CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/bubbleSort.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/selectionSort.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/insertionSort.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/mergeSort.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir

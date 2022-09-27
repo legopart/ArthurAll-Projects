@@ -31,7 +31,6 @@ namespace Sorting
             // copy remaining items
             while (l < left.Length) array[arr++] = left[l++];
             while (r < right.Length) array[arr++] = right[r++];
-
         }
     }
 }
