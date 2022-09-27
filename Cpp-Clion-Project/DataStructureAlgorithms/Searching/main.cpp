@@ -1,8 +1,8 @@
 
 #include <iostream>
 #include <stack>
-#import "linearSearch.cpp"
-#import "binarySearch.cpp"
+#import "LinearSearch.cpp"
+#import "BinarySearch.cpp"
 using std::string, std::cout, std::endl;
 
 static string print(int&& result) { return (result >= 0 ? to_string(result + 1 ) + " true" : to_string(result) + " false"); }
