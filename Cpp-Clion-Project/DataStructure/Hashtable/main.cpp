@@ -37,7 +37,7 @@ int main()
 
 
 static char firstNonRepeatedChar(string str) {
-    std::map<char, int> map {};
+    map<char, int> map {};
     /*to lower case*/ for (int i = 0; i < str.length(); i++) str[i] = tolower(str[i]);
     for (auto ch : str) {
         if (map.find(ch) != map.end()) map.find(ch)->second ++;
@@ -48,7 +48,7 @@ static char firstNonRepeatedChar(string str) {
 }
 
 static char firstRepeatedChar(string str) {
-    std::set<char> set {};
+    set<char> set {};
     /*to lower case*/ for (int i = 0; i < str.length(); i++) str[i] = tolower(str[i]);
     for (auto ch : str) {
         if (set.find(ch) != set.end()) return ch;
