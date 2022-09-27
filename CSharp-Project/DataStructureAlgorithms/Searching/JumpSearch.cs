@@ -11,15 +11,16 @@ namespace Searching
         public static int Search(int[] array, int target)
         {
             int blockSize = (int)Math.Sqrt(array.Length);
-            int place = 0;
-            int next = blockSize;
-            while (place < array.Length && array[next -1] < target)
+            int left = 0;
+            int right = blockSize;
+            while (array[right -1] < target)
             {
-                place = next;   //if (start >= array.length) break;	//edge case
-                next += blockSize;
-                if (next > array.Length) next = array.Length;
+                if (left >= array.Length) break;
+                left = right;   //if (start >= array.length) break;	//edge case
+                right += blockSize;
+                if (right > array.Length) right = array.Length;
             }
-            for (var i = place; i < next; i++) if (array[i] == target) return i;
+            for (var i = left; i < right; i++) if (array[i] == target) return i;
             return -1;
         }
     }
