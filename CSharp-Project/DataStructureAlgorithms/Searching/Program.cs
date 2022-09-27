@@ -6,7 +6,7 @@
         {
             int[] array = new int[] { 7, 3, 1, 4, 6, 2, 3 };
             int[] arraySorted = new int[] { 1, 2, 3, 3, 4, 6, 7 };
-            int target = 4;
+            int target = 8;
             
             Console.WriteLine("LinearSearch.Search: " + LinearSearch.Search(array, target));
             Console.WriteLine();

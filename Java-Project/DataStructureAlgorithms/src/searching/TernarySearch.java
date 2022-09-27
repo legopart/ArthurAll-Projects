@@ -15,7 +15,7 @@ public class TernarySearch {
 		else if(array[mid2] == target) return mid2;
 		else  if(target < array[mid1]) return search(array, target, left, mid1 - 1);
 		else  if(target < array[mid2]) return search(array, target, mid1, mid2 - 1);
-		else return search(array, target, mid2, right);
+		else return search(array, target, mid2 + 1, right);
 	}
 	
 }
