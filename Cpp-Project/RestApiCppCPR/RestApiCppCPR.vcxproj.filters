@@ -15,14 +15,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RestApiCppCPR.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="vcpkg_rf.txt" />
   </ItemGroup>
   <ItemGroup>
     <Object Include="data.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="RestApiCppCPR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
