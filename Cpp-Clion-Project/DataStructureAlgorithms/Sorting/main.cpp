@@ -8,7 +8,7 @@
 #import "quickSort.cpp"
 #import "countingSort.cpp"
 #import "bucketSort.cpp"
-using std::string, std::cout, std::endl;
+using std::to_string,std::string, std::cout, std::endl;
 
 static string print(int* array, int arrayLength) { string str {"["}; for(int i = 0; i < arrayLength; ++i) str += to_string(array[i]) + ", "; str += "]\n"; return str; }
 

@@ -7,7 +7,7 @@
             int[] array = new int[] { 7, 3, 1, 4, 6, 2, 3 };
             int target = 4;
             
-            Console.WriteLine("LinearSearch.Search: " + LinearSearch.Search(array, target) );
+            Console.WriteLine("LinearSearch.Searp0-=[ch: " + LinearSearch.Search(array, target) );
             Console.WriteLine();
 
             Array.Sort(array);  //!!! after sorting the array!
