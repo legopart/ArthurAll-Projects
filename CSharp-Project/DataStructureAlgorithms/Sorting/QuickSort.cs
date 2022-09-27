@@ -14,7 +14,7 @@ namespace Sorting
         }
         private static void Sort(int[] array, int start, int end)
         { 
-            if (start >= end) return;
+            if (start >= end) return;   //base condition (single element / no elements)
             var pivot = PivotSort(array, start, end);
             Sort(array, start, pivot - 1); //Sort left
             Sort(array, pivot + 1, end); //Sort right

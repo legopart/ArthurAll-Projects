@@ -12,7 +12,7 @@ static void quickSort(int*& array, const int& arrayLength)
 static int pivotSort(int*& array, int start, int end);
 static void quickSort(int*& array, int start, int end)
 {
-    if (start >= end) return;
+    if (start >= end) return;   //base condition (single element / no elements)
     auto pivot = pivotSort(array, start, end);
     quickSort(array, start, pivot - 1); //Sort left
     quickSort(array, pivot + 1, end); //Sort right
