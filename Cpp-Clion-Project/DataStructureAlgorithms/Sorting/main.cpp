@@ -7,6 +7,7 @@
 #import "mergeSort.cpp"
 #import "quickSort.cpp"
 #import "countingSort.cpp"
+#import "bucketSort.cpp"
 using std::string, std::cout, std::endl;
 
 static string print(int* array, int arrayLength) { string str {"["}; for(int i = 0; i < arrayLength; ++i) str += to_string(array[i]) + ", "; str += "]\n"; return str; }
@@ -40,6 +41,9 @@ int main()
     countingSort(array, arrayLength);
     cout <<"Counting Sort: " << print(array, arrayLength);
 
+    array = new int[arrayLength] { 7, 3, 1, 4, 6, 2, 3 };
+    bucketSort(array, arrayLength, 3);
+    cout <<"Bucket Sort: " << print(array, arrayLength);
 
     return EXIT_SUCCESS;
 }

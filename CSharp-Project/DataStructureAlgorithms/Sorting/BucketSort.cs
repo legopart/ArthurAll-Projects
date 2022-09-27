@@ -21,7 +21,7 @@ namespace Sorting
         private static List<List<int>> CreatBuckets(int[] array, int numberOfBuckets)
         {
             List<List<int>> buckets = new();    //not initialized
-            for (var i = 0; i < numberOfBuckets; i++) buckets.Add(new()); //initialize each element as list
+            for (var i = 0; i < numberOfBuckets; ++i) buckets.Add(new()); //initialize each element as list
             foreach (var item in array) buckets[item / numberOfBuckets].Add(item);
             return buckets;
         }
