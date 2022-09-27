@@ -15,33 +15,34 @@ static string print(int* array, int arrayLength) { string str {"["}; for(int i =
 int main()
 {
     int arrayLength = 7;
-    int* array;
+    int* basicArray = new int[arrayLength] { 7, 3, 1, 4, 6, 2, 3};
+    int* array = new int[arrayLength];
 
-    array = new int[arrayLength] { 7, 3, 1, 4, 6, 2, 3 };
+    memcpy(array, basicArray, arrayLength * sizeof(int));
     bubbleSort(array, arrayLength);
     cout <<"Bubble Sort: " << print(array, arrayLength);
 
-    array = new int[arrayLength] { 7, 3, 1, 4, 6, 2, 3 };
+    memcpy(array, basicArray, arrayLength * sizeof(int));
     selectionSort(array, arrayLength);
     cout <<"Selection Sort: " << print(array, arrayLength);
 
-    array = new int[arrayLength] { 7, 3, 1, 4, 6, 2, 3 };
+    memcpy(array, basicArray, arrayLength * sizeof(int));
     insertionSort(array, arrayLength);
     cout <<"Insertion Sort: " << print(array, arrayLength);
 
-    array = new int[arrayLength] { 7, 3, 1, 4, 6, 2, 3 };
+    memcpy(array, basicArray, arrayLength * sizeof(int));
     mergeSort(array, arrayLength);
     cout <<"Merge Sort: " << print(array, arrayLength);
 
-    array = new int[arrayLength] { 7, 3, 1, 4, 6, 2, 3 };
+    memcpy(array, basicArray, arrayLength * sizeof(int));
     quickSort(array, arrayLength);
     cout <<"Quick Sort: " << print(array, arrayLength);
 
-    array = new int[arrayLength] { 7, 3, 1, 4, 6, 2, 3 };
+    memcpy(array, basicArray, arrayLength * sizeof(int));
     countingSort(array, arrayLength);
     cout <<"Counting Sort: " << print(array, arrayLength);
 
-    array = new int[arrayLength] { 7, 3, 1, 4, 6, 2, 3 };
+    memcpy(array, basicArray, arrayLength * sizeof(int));
     bucketSort(array, arrayLength, 3);
     cout <<"Bucket Sort: " << print(array, arrayLength);
 

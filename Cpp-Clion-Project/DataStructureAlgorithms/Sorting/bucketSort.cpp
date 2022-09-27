@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <cmath>
 using std::string, std::to_string, std::list, std::swap, std::cout, std::exception;
 
 static list<int>* creatBuckets(int*& array, const int& arrayLength , int numberOfBuckets);
@@ -25,6 +26,6 @@ static list<int>* creatBuckets(int*& array, const int& arrayLength , const int n
     auto* buckets = new list<int>[numberOfBuckets];    //not initialized
     for (int i{}; i < numberOfBuckets; ++i) buckets[i] = list<int>{}; //initialize each element as list
     for(int item{}; item < arrayLength; ++item)
-        buckets[item / numberOfBuckets + 1].push_back(item);
+        buckets[ array[item]  / numberOfBuckets ].push_back(array[item]);
     return buckets;
 }
