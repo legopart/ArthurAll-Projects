@@ -14,7 +14,7 @@ namespace Sorting
             for (var i = 0; i < array.Length; ++i)
             {
                 var selection = i;  //minValue
-                for (var j = i; j < array.Length - 1; ++j)
+                for (var j = i; j < array.Length; ++j)
                     if (array[selection] > array[j]) selection = j;
                 swap(array, i, selection);
             }
@@ -29,8 +29,8 @@ namespace Sorting
         }
         public static int FindMinIndex(int[] array, int i)
         {
-            var selection = i;
-            for (var j = 0; j < array.Length; ++j)
+            var selection = i;  //minValue
+            for (var j = i; j < array.Length; ++j)
                 if (array[selection] > array[j]) selection = j;
             return selection;
         }

@@ -13,5 +13,17 @@ static void bubbleSort(int*& array, const int& arrayLength)
             if (array[i] > array[j]) { swap( array[i], array[j]); isSorted = false; }
         if (isSorted) return;
     }
-    return;
+}
+
+
+[[maybe_unused]] static void bubbleSort2(int*& array, const int& arrayLength)
+{
+
+    for (int i = 0; i < arrayLength; ++i)
+    {
+        bool isSorted = true;
+        for (int j = 1; j < arrayLength - i; ++j)
+            if (array[j] > array[j - 1]) { swap( array[j], array[j - 1]); isSorted = false; }
+        if (isSorted) return;
+    }
 }

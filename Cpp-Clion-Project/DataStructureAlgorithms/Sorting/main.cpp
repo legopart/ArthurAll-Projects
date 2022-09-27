@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stack>
 #import "bubbleSort.cpp"
+#import "selectionSort.cpp"
 //#import "ListedStack.cpp"
 using std::string, std::cout, std::endl;
 
@@ -17,8 +18,8 @@ int main()
     cout <<"Bubble Sort: " << print(array, arrayLength);
 
     array = new int[arrayLength] { 7, 3, 1, 4, 6, 2, 3 };
-    bubbleSort(array, arrayLength);
-    cout <<"Bubble Sort: " << print(array, arrayLength);
+    selectionSort(array, arrayLength);
+    cout <<"Selection Sort: " << print(array, arrayLength);
 
 
 
