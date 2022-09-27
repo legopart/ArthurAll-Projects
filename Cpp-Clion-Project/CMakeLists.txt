@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(.)
 
-add_executable(Algorithms-Searching DataStructureAlgorithms/Searching/main.cpp DataStructureAlgorithms/Searching/BinarySearch.cpp DataStructureAlgorithms/Searching/TernarySearch.cpp)
+add_executable(Algorithms-Searching DataStructureAlgorithms/Searching/main.cpp DataStructureAlgorithms/Searching/BinarySearch.cpp DataStructureAlgorithms/Searching/TernarySearch.cpp DataStructureAlgorithms/Searching/JumpSearch.cpp)
 add_executable(Algorithms-Sorting DataStructureAlgorithms/Sorting/main.cpp)
 
 add_executable(NonLinear-GraphUndirected DataStructureNonLinear/GraphUndirected/main.cpp)
