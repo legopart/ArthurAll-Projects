@@ -11,7 +11,10 @@ struct Array{ int*& array; int length; };
 static void mergeSort(int*&array, const int& arrayLength);
 static void merge(struct Array& array, struct Array& left, struct Array& right );
 
-static void mergeSort(Array& array) { mergeSort(array.array, array.length); }
+static void mergeSort(Array& array)
+{
+    mergeSort(array.array, array.length);
+}
 static void mergeSort(int*& array, const int& arrayLength)
 {
     if (arrayLength < 2) return;    //!
@@ -48,12 +51,26 @@ static void merge(struct Array& array, struct Array& left, struct Array& right )
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 // C++ method:
 static void merge2(int array[], int arrayStart, int middle, int arrayLength);
 static void mergeSort2(int*& array, const int&arrayStart, const int& arrayLength);
 
 [[maybe_unused]]
-static void mergeSort2(int*& array, const int& arrayLength) { mergeSort2(array, 0, arrayLength-1); }
+static void mergeSort2(int*& array, const int& arrayLength)
+{
+    mergeSort2(array, 0, arrayLength-1);
+}
 static void mergeSort2(int*& array, const int&arrayStart, const int& arrayLength)
 {
     if (arrayStart < arrayLength)

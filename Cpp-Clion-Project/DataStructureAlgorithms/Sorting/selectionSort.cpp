@@ -16,7 +16,8 @@ static void selectionSort(int*& array, const int& arrayLength)
 
 
 static int findMinIndex(int*& array, const int& arrayLength, int& i);
-[[maybe_unused]] static void selectionSort2(int*& array, const int& arrayLength)
+[[maybe_unused]]
+static void selectionSort2(int*& array, const int& arrayLength)
 {
     for (int i = 0; i < arrayLength; ++i)
     {
