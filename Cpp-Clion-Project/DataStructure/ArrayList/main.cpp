@@ -4,7 +4,7 @@
 #include "Array2.cpp"
 #include "Array3.cpp"
 #include <array>
-using std::cout, std::endl, std::array;
+using std::cout, std::boolalpha, std::endl, std::array;
 int main()
 {
     cout << "Array1" << endl;
@@ -17,7 +17,7 @@ int main()
     array1.add(3);
     array1.add(7);
 
-    cout << (array1.contains(5) ? "true" : "false") << endl;
+    cout << boolalpha << array1.contains(5) << endl;
     array1.print();
     array1.remove(2);
     array1.print();
@@ -34,7 +34,7 @@ int main()
     array2.add(3);
     array2.add(7);
 
-    cout << (array2.contains(5) ? "true" : "false") << endl;
+    cout << boolalpha << array2.contains(5) << endl;
     array2.print();
     array2.remove(2);
     array2.print();

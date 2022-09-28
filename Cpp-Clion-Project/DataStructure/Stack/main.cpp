@@ -3,7 +3,7 @@
 #include <stack>
 #import "Stack.cpp"
 #import "ListedStack.cpp"
-using std::string, std::endl, std::cout;
+using std::string, std::boolalpha, std::endl, std::cout;
 
 static bool isBalanced(const string &input);
 static string reverseString(const string &str);
@@ -47,9 +47,9 @@ int main()
     cout << endl;
     cout << reverseString("Apple") << endl;
 
-    cout << (isBalanced(")Apple(") ? "true" : "false") << endl;
-    cout << (isBalanced("[abc]") ? "true" : "false") << endl;
-    cout << (isBalanced("[a>bc]") ? "true" : "false") << endl;
+    cout << boolalpha << isBalanced(")Apple(")<< endl;
+    cout << boolalpha << isBalanced("[abc]") << endl;
+    cout << boolalpha << isBalanced("[a>bc]") << endl;
 
 
     return EXIT_SUCCESS;

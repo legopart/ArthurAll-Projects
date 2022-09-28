@@ -11,7 +11,7 @@
 #include <set>
 #include <map>
 #include <list>
-using std::to_string,std::string, std::swap, std::vector, std::queue, std::set, std::map, std::pair;
+using std::to_string,std::string, std::boolalpha, std::swap, std::vector, std::queue, std::set, std::map, std::pair;
 using std::list, std::stack, std::istringstream,std::cout, std::endl;
 
 static int countVowels(string str);
@@ -27,7 +27,7 @@ int main()
     cout << "Count Vowels: \t\t" << countVowels("Hello World") << endl;
     cout << "Reverse String: \t\t" << reverseString("Hello  World") << endl;
     cout << "Reverse Words: \t\t" << reverseWords("Hello World") << endl;
-    cout << "Reverse Words: \t\t" << (isRotation("WorldHello ", "Hello World") ? "true" : "false") << endl;
+    cout << "Reverse Words: \t\t" << boolalpha << isRotation("WorldHello ", "Hello World") << endl;
     cout << "Reverse Words: \t\t" << removeDuplicates("Hello World") << endl;
 
 
