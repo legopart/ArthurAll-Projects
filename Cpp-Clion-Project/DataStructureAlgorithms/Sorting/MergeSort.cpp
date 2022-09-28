@@ -31,21 +31,24 @@ static void mergeSort(int*& array, const int& arrayLength)
     mergeSort(leftArray);
     mergeSort(rightArray);
     merge(arrayArray, leftArray, rightArray);
-    delete[](left);
-    delete[](right);
 }
 
 static void merge(struct Array& array, struct Array& left, struct Array& right )
 {
+    auto [globalArray, arrayLength] {array};
+    auto [rightArray, rightLength] {right};
+    auto [leftArray, leftLength] {left};
     int l{0}, r{0}, arr{0};
-    while (l < left.length && r < right.length)
+    while (l < leftLength && r < rightLength)
     {
-        if (left.array[l] <= right.array[r]) array.array[arr++] = left.array[l++];
-        else array.array[arr++] = right.array[r++];
+        if (rightArray[l] <= rightArray[r]) globalArray[arr++] = leftArray[l++];
+        else globalArray[arr++] = rightArray[r++];
     }
     // copy remaining items in sorted array!
-    while (l < left.length) array.array[arr++] = left.array[l++];
-    while (r < right.length) array.array[arr++] = right.array[r++];
+    while (l < leftLength) globalArray[arr++] = leftArray[l++];
+    while (r < rightLength) globalArray[arr++] = rightArray[r++];
+    delete[](leftArray);
+    delete[](rightArray);
 }
 
 

@@ -1,3 +1,5 @@
+//add to lower string where needed
+
 
 #include <iostream>
 #include <cctype>
@@ -59,10 +61,6 @@ static string trim(string& str)
     if( string::npos != space ) str = str.substr( space );
     return str;
 }
-static string trim(string&& str)
-{
-    trim(str);
-}
 
 static stack<string> splitToWords(const string& s1)
 {
@@ -85,7 +83,7 @@ static int countVowels(string str)
     int count{};
     string vowels = "aeiou";
     /*to lower case*/
-    for (char & i : str) i = (char)tolower(i);
+    for (char & i : str) i = static_cast<char>(tolower(i));
     for (auto& ch : str)
         if (contains(vowels, ch)) count++;
     return count;
@@ -168,7 +166,7 @@ static string capitalize(string sentence)
     while(!words.empty()){
         string word = words.top();
         words.pop();
-        string firstChar = toString(_toupper(word.front()));
+        string firstChar = toString(static_cast<char>(toupper(word.front())));
         word.replace(0, 1,  firstChar);
         str.append(word + " ");
     }
@@ -210,7 +208,7 @@ static bool isAnagram2(const string& first, const string& second)
     for (auto ch: second)
     { // O(n)
         //if(contains(trim(toString(ch)), " " ))  continue;
-        int index = (int)ch;
+        int index = static_cast<int>((int)ch);
         if (array[index] == 0) return false;
         array[index]--;
     }
