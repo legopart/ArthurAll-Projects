@@ -14,7 +14,7 @@ private:
         struct Node *left;
         struct Node *right;
         explicit Node(int data) : data{data}, left{nullptr}, right{nullptr}, height{} {}
-        ~Node() { delete(left); delete(right); cout << "del:" << data << endl; }
+        ~Node() { delete left; delete right; cout << "del:" << data << endl; }
     };
 
     struct Node *root;
@@ -94,7 +94,7 @@ private:
     }
 public:
     explicit Tree() : root{nullptr} { }
-    ~Tree(){ delete(root); }
+    ~Tree(){ delete root; }
     void insert(int data)
     {
         Node* node = new Node( data );

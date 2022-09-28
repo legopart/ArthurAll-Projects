@@ -21,7 +21,7 @@ private:
     int count;
     bool isReversed;
     [[nodiscard]] bool isEmpty() const { return root == nullptr; }
-    void resetList(){ delete(root); root=nullptr; last=nullptr; }
+    void resetList(){ delete root; root=nullptr; last=nullptr; }
 public:
     explicit List() : root{nullptr}, last{nullptr}, count{}, isReversed{false} { }
     ~List(){ while(root != nullptr && !isReversed) {removeLast();} }
@@ -47,7 +47,7 @@ public:
         if (root == last) { resetList();return value;}
         Node *current = root;
         root = root->next;
-        delete(current);
+        delete current;
         count --;
         return value;
     }
@@ -66,7 +66,7 @@ public:
         }
         previous->next = nullptr;
         last = previous;
-        delete(current);
+        delete current;
         count --;
         return value;
     }
@@ -98,7 +98,7 @@ public:
         this->root = newList->root;
         this->last = newList->last;
         newList->isReversed = true;
-        delete(newList);
+        delete newList;
     }
     [[nodiscard]] string print() const
     {

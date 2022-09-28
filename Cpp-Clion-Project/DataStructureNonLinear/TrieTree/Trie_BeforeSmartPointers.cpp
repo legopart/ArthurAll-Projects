@@ -107,7 +107,7 @@ private:
     }
 public:
     explicit Trie() : root{new struct Node('\0')} { }
-    ~Trie() { delete(root); }
+    ~Trie() { delete root; }
     struct Node* root;
     void insert(const string& word)
     {

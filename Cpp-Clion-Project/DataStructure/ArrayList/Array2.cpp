@@ -38,7 +38,7 @@ inline void Array2<T>::resize()
     int* newArray = new int[arrayLength * 2];
     for (int i = 0; i < arrayLength; ++i)
         newArray[i] = itemArray[i];
-    //delete(itemArray);
+    //delete itemArray;
     itemArray = newArray;
     arrayLength *= 2;
 }
