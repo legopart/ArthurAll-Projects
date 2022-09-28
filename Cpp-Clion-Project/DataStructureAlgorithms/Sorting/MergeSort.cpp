@@ -1,4 +1,4 @@
-
+#pragma once
 #include <iostream>
 #include <string>
 using std::string, std::to_string, std::swap, std::cout, std::exception;
@@ -47,14 +47,6 @@ static void merge(struct Array& array, struct Array& left, struct Array& right )
     while (l < left.length) array.array[arr++] = left.array[l++];
     while (r < right.length) array.array[arr++] = right.array[r++];
 }
-
-
-
-
-
-
-
-
 
 
 

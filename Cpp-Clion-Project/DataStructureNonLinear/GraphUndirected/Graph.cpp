@@ -3,7 +3,7 @@
 
 //fix!!!  getMinimumSpanningTree
 //fix!!!    priority queue issue and comparing function
-
+#pragma once
 #include <iostream>
 #include <string>
 #include <map>

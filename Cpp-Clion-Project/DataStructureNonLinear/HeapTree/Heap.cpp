@@ -1,6 +1,6 @@
 //Fix needToSwap function
 //Delete vector version
-
+#pragma once
 #include <iostream>
 #include <string>
 //move to smart pointer

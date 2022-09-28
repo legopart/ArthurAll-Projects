@@ -1,4 +1,4 @@
-
+#pragma once
 #include <iostream>
 #include <string>
 using std::string, std::to_string, std::swap, std::cout, std::exception;

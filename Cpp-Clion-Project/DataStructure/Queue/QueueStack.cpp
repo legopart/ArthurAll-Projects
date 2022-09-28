@@ -1,6 +1,6 @@
 //use memcopy to allocate
 // delete[](items);  issue
-
+#pragma once
 #include <iostream>
 #include <stack>
 #include <string>

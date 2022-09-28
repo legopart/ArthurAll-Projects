@@ -1,7 +1,7 @@
 // fix the amount of Destruction
 // fix trim
 // fix toLowerCaseSting
-
+#pragma once
 #include <iostream>
 #include <string>
 #include <map>
