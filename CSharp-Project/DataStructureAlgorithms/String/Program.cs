@@ -12,7 +12,7 @@ namespace Strings
             Console.WriteLine("isRotation: \t\t" +     IsRotation("Hello World", "rldHello Wo"));
             Console.WriteLine("isRotation: \t\t" +     IsRotation("Hello World", "Hello Wogfufg"));
             Console.WriteLine("removeDuplicates: \t" + RemoveDuplicates("Hello World"));
-            Console.WriteLine("removeDuplicates: \t" + GetMaxOccuringChar("Hello World"));
+            Console.WriteLine("removeDuplicates: \t" + GetMaxOccurringChar("Hello World"));
             Console.WriteLine("capitalize: \t\t" +     Capitalize("hELLO       wORLD"));
             Console.WriteLine("isAnagram: \t\t" +      IsAnagram("Hello World", "Worlo Helld"));
             Console.WriteLine("isAnagram2: \t\t" +     IsAnagram2("Hello World", "Worlo Helld"));
@@ -74,7 +74,7 @@ namespace Strings
             return output.ToString();
         }
 
-        public static char GetMaxOccuringChar(String str)
+        public static char GetMaxOccurringChar(String str)
         {
             //		Map<Character, Integer> frequencies = new HashMap<>();	//hashtable
             //		for(var ch : str.toLowerCase().toCharArray()) {
