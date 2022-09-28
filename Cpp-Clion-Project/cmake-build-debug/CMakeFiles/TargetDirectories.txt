@@ -1,3 +1,5 @@
+C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/Cpp_Clion_Project.dir
+C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/Algorithms-String.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/Algorithms-Searching.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/Algorithms-Sorting.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/NonLinear-GraphUndirected.dir
@@ -6,7 +8,6 @@ C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-d
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/NonLinear-HeapTree.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/NonLinear-AVLTree.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/NonLinear-BinartTree.dir
-C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/Cpp_Clion_Project.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/Linear-ArrayList.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/Linear-LinkedList.dir
 C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/CMakeFiles/Linear-Stack.dir

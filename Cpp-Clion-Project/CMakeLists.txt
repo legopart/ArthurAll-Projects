@@ -5,7 +5,14 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(.)
 
-add_executable(Algorithms-Searching DataStructureAlgorithms/Searching/main.cpp DataStructureAlgorithms/Searching/BinarySearch.cpp DataStructureAlgorithms/Searching/TernarySearch.cpp DataStructureAlgorithms/Searching/JumpSearch.cpp DataStructureAlgorithms/Searching/ExponentialSearch.cpp DataStructureAlgorithms/String/main.cpp)
+add_executable(Cpp_Clion_Project main.cpp DataStructureAlgorithms/Sorting/main.cpp)
+
+
+
+add_executable(Algorithms-String DataStructureAlgorithms/String/main.cpp)
+
+add_executable(Algorithms-Searching DataStructureAlgorithms/Searching/main.cpp)
+
 add_executable(Algorithms-Sorting DataStructureAlgorithms/Sorting/main.cpp)
 
 add_executable(NonLinear-GraphUndirected DataStructureNonLinear/GraphUndirected/main.cpp)
@@ -19,8 +26,6 @@ add_executable(NonLinear-HeapTree DataStructureNonLinear/HeapTree/main.cpp)
 add_executable(NonLinear-AVLTree DataStructureNonLinear/AVLTree/main.cpp)
 
 add_executable(NonLinear-BinartTree DataStructureNonLinear/BinaryTree/main.cpp)
-
-add_executable(Cpp_Clion_Project main.cpp DataStructureAlgorithms/Sorting/main.cpp DataStructureAlgorithms/Sorting/BubbleSort.cpp DataStructureAlgorithms/Sorting/SelectionSort.cpp DataStructureAlgorithms/Sorting/InsertionSort.cpp DataStructureAlgorithms/Sorting/MergeSort.cpp DataStructureAlgorithms/Sorting/QuickSort.cpp DataStructureAlgorithms/Sorting/CountingSort.cpp DataStructureAlgorithms/Sorting/BucketSort.cpp)
 
 add_executable(Linear-ArrayList DataStructure/ArrayList/main.cpp)
 

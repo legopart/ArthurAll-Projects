@@ -41,6 +41,81 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug/
 # =============================================================================
+# Object build statements for EXECUTABLE target Cpp_Clion_Project
+
+
+#############################################
+# Order-only phony target for Cpp_Clion_Project
+
+build cmake_object_order_depends_target_Cpp_Clion_Project: phony || CMakeFiles/Cpp_Clion_Project.dir
+
+build CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/main.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
+  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir
+
+build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/main.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Sorting/main.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
+  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Cpp_Clion_Project
+
+
+#############################################
+# Link the executable Cpp_Clion_Project.exe
+
+build Cpp_Clion_Project.exe: CXX_EXECUTABLE_LINKER__Cpp_Clion_Project_Debug CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Cpp_Clion_Project.exe
+  TARGET_IMPLIB = libCpp_Clion_Project.dll.a
+  TARGET_PDB = Cpp_Clion_Project.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Algorithms-String
+
+
+#############################################
+# Order-only phony target for Algorithms-String
+
+build cmake_object_order_depends_target_Algorithms-String: phony || CMakeFiles/Algorithms-String.dir
+
+build CMakeFiles/Algorithms-String.dir/DataStructureAlgorithms/String/main.cpp.obj: CXX_COMPILER__Algorithms-String_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/String/main.cpp || cmake_object_order_depends_target_Algorithms-String
+  DEP_FILE = CMakeFiles\Algorithms-String.dir\DataStructureAlgorithms\String\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Algorithms-String.dir
+  OBJECT_FILE_DIR = CMakeFiles\Algorithms-String.dir\DataStructureAlgorithms\String
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Algorithms-String
+
+
+#############################################
+# Link the executable Algorithms-String.exe
+
+build Algorithms-String.exe: CXX_EXECUTABLE_LINKER__Algorithms-String_Debug CMakeFiles/Algorithms-String.dir/DataStructureAlgorithms/String/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Algorithms-String.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Algorithms-String.exe
+  TARGET_IMPLIB = libAlgorithms-String.dll.a
+  TARGET_PDB = Algorithms-String.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target Algorithms-Searching
 
 
@@ -56,41 +131,6 @@ build CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/main
   OBJECT_DIR = CMakeFiles\Algorithms-Searching.dir
   OBJECT_FILE_DIR = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\Searching
 
-build CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/BinarySearch.cpp.obj: CXX_COMPILER__Algorithms-Searching_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Searching/BinarySearch.cpp || cmake_object_order_depends_target_Algorithms-Searching
-  DEP_FILE = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\Searching\BinarySearch.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Algorithms-Searching.dir
-  OBJECT_FILE_DIR = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\Searching
-
-build CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/TernarySearch.cpp.obj: CXX_COMPILER__Algorithms-Searching_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Searching/TernarySearch.cpp || cmake_object_order_depends_target_Algorithms-Searching
-  DEP_FILE = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\Searching\TernarySearch.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Algorithms-Searching.dir
-  OBJECT_FILE_DIR = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\Searching
-
-build CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/JumpSearch.cpp.obj: CXX_COMPILER__Algorithms-Searching_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Searching/JumpSearch.cpp || cmake_object_order_depends_target_Algorithms-Searching
-  DEP_FILE = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\Searching\JumpSearch.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Algorithms-Searching.dir
-  OBJECT_FILE_DIR = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\Searching
-
-build CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/ExponentialSearch.cpp.obj: CXX_COMPILER__Algorithms-Searching_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Searching/ExponentialSearch.cpp || cmake_object_order_depends_target_Algorithms-Searching
-  DEP_FILE = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\Searching\ExponentialSearch.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Algorithms-Searching.dir
-  OBJECT_FILE_DIR = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\Searching
-
-build CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/String/main.cpp.obj: CXX_COMPILER__Algorithms-Searching_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/String/main.cpp || cmake_object_order_depends_target_Algorithms-Searching
-  DEP_FILE = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\String\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Algorithms-Searching.dir
-  OBJECT_FILE_DIR = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\String
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Algorithms-Searching
@@ -99,7 +139,7 @@ build CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/String/main.cp
 #############################################
 # Link the executable Algorithms-Searching.exe
 
-build Algorithms-Searching.exe: CXX_EXECUTABLE_LINKER__Algorithms-Searching_Debug CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/main.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/BinarySearch.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/TernarySearch.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/JumpSearch.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/ExponentialSearch.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/String/main.cpp.obj
+build Algorithms-Searching.exe: CXX_EXECUTABLE_LINKER__Algorithms-Searching_Debug CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Algorithms-Searching.dir
@@ -348,96 +388,6 @@ build NonLinear-BinartTree.exe: CXX_EXECUTABLE_LINKER__NonLinear-BinartTree_Debu
   TARGET_PDB = NonLinear-BinartTree.exe.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target Cpp_Clion_Project
-
-
-#############################################
-# Order-only phony target for Cpp_Clion_Project
-
-build cmake_object_order_depends_target_Cpp_Clion_Project: phony || CMakeFiles/Cpp_Clion_Project.dir
-
-build CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/main.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
-  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
-  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir
-
-build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/main.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Sorting/main.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
-  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
-  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting
-
-build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/BubbleSort.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Sorting/BubbleSort.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
-  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting\BubbleSort.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
-  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting
-
-build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/SelectionSort.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Sorting/SelectionSort.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
-  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting\SelectionSort.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
-  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting
-
-build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/InsertionSort.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Sorting/InsertionSort.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
-  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting\InsertionSort.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
-  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting
-
-build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/MergeSort.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Sorting/MergeSort.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
-  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting\MergeSort.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
-  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting
-
-build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/QuickSort.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Sorting/QuickSort.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
-  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting\QuickSort.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
-  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting
-
-build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/CountingSort.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Sorting/CountingSort.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
-  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting\CountingSort.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
-  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting
-
-build CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/BucketSort.cpp.obj: CXX_COMPILER__Cpp_Clion_Project_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/Sorting/BucketSort.cpp || cmake_object_order_depends_target_Cpp_Clion_Project
-  DEP_FILE = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting\BucketSort.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
-  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
-  OBJECT_FILE_DIR = CMakeFiles\Cpp_Clion_Project.dir\DataStructureAlgorithms\Sorting
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target Cpp_Clion_Project
-
-
-#############################################
-# Link the executable Cpp_Clion_Project.exe
-
-build Cpp_Clion_Project.exe: CXX_EXECUTABLE_LINKER__Cpp_Clion_Project_Debug CMakeFiles/Cpp_Clion_Project.dir/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/main.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/BubbleSort.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/SelectionSort.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/InsertionSort.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/MergeSort.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/QuickSort.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/CountingSort.cpp.obj CMakeFiles/Cpp_Clion_Project.dir/DataStructureAlgorithms/Sorting/BucketSort.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\Cpp_Clion_Project.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = Cpp_Clion_Project.exe
-  TARGET_IMPLIB = libCpp_Clion_Project.dll.a
-  TARGET_PDB = Cpp_Clion_Project.exe.dbg
-
-# =============================================================================
 # Object build statements for EXECUTABLE target Linear-ArrayList
 
 
@@ -637,6 +587,8 @@ build Algorithms-Searching: phony Algorithms-Searching.exe
 
 build Algorithms-Sorting: phony Algorithms-Sorting.exe
 
+build Algorithms-String: phony Algorithms-String.exe
+
 build Cpp_Clion_Project: phony Cpp_Clion_Project.exe
 
 build Linear-ArrayList: phony Linear-ArrayList.exe
@@ -669,7 +621,7 @@ build NonLinear-TrieTree: phony NonLinear-TrieTree.exe
 #############################################
 # Folder: C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/cmake-build-debug
 
-build all: phony Algorithms-Searching.exe Algorithms-Sorting.exe NonLinear-GraphUndirected.exe NonLinear-Graph.exe NonLinear-TrieTree.exe NonLinear-HeapTree.exe NonLinear-AVLTree.exe NonLinear-BinartTree.exe Cpp_Clion_Project.exe Linear-ArrayList.exe Linear-LinkedList.exe Linear-Stack.exe Linear-Queue.exe Linear-Hashtable.exe
+build all: phony Cpp_Clion_Project.exe Algorithms-String.exe Algorithms-Searching.exe Algorithms-Sorting.exe NonLinear-GraphUndirected.exe NonLinear-Graph.exe NonLinear-TrieTree.exe NonLinear-HeapTree.exe NonLinear-AVLTree.exe NonLinear-BinartTree.exe Linear-ArrayList.exe Linear-LinkedList.exe Linear-Stack.exe Linear-Queue.exe Linear-Hashtable.exe
 
 # =============================================================================
 # Built-in targets
