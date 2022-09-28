@@ -10,10 +10,15 @@ namespace Searching
     {
         public static int Search(int[] array, int target)
         {
-            int range = 1;
-            while (range < array.Length && array[range] < target) range *= 2;
-            int[] newArray = array[(range/2)..(Math.Min(range, array.Length) + 1)];
-            return range/2 + Array.BinarySearch(newArray, target);//BinarySearch.SearchRecursion(newArray, target);
+            int right = 1;
+            while (array[right] < target) 
+            {
+                right *= 2;
+                if (right >= array.Length) { right = array.Length; break; }
+            }
+            int[] newArray = array[(right/2)..right];
+            int search = Array.BinarySearch(newArray, target);
+            return search >= 0 ?  right /2 + search : -1 ;//BinarySearch.SearchRecursion(newArray, target);
         }
     }
 }

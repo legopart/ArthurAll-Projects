@@ -7,7 +7,7 @@ import sorting.BubbleSort;
 public class Main {
 
 	public static void main(String[] args) {
-		int target = 8;
+		int target = 4;
 		int resultIndex;
 		int[] numbers= new int[]{ 7, 3, 1, 4, 6, 2, 3 };
 		

@@ -4,9 +4,13 @@ import java.util.Arrays;
 
 public class ExponentialSearch {
 	public static int search(int[] array, int target) {
-		int bound = 1;
-		while(bound < array.length && array[bound] < target) bound *= 2;
-		int[] newArray = Arrays.copyOfRange(array, bound/2, Math.min(bound, array.length));
-		return bound/2 + BinarySearch.searchRecursion(newArray, target);
+		int right = 1;
+		while(array[right] < target) {
+			right *= 2;
+			if (right >= array.length) { right = array.length - 1; break; }
+		}
+		int[] newArray = Arrays.copyOfRange(array, right/2, right + 1);
+		int search = BinarySearch.searchRecursion(newArray, target);
+		return search >= 0 ?  right /2 + search : -1 ;
 	}
 }

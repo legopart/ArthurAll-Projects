@@ -5,6 +5,7 @@
 #import "BinarySearch.cpp"
 #import "TernarySearch.cpp"
 #import "JumpSearch.cpp"
+#import "ExponentialSearch.cpp"
 using std::string, std::cout, std::endl;
 
 static string print(int&& result) { return (result >= 0 ? to_string(result + 1 ) + " true" : to_string(result) + " false"); }
@@ -26,6 +27,8 @@ int main()
     cout <<"Ternary Search: " << print(ternarySearch(arraySorted, arrayLength, target) ) << endl;
 
     cout <<"Jump Search: " << print(jumpSearch(arraySorted, arrayLength, target) ) << endl;
+
+    cout <<"Exponential Search: " << print(exponentialSearch(arraySorted, arrayLength, target) ) << endl;
 
 
     delete[](array);
