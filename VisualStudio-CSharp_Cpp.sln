@@ -191,6 +191,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP_Ppolymorphism", "CSharp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmartPointer_CyclicReferenceProblem", "Cpp-Project\SmartPointer_CyclicReferenceProblem\SmartPointer_CyclicReferenceProblem.vcxproj", "{4EAB0DC7-49A6-4626-950F-A1AF6DA39D07}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnPacking Array", "Cpp-Project\UnPacking Array\UnPacking Array.vcxproj", "{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1221,6 +1223,18 @@ Global
 		{4EAB0DC7-49A6-4626-950F-A1AF6DA39D07}.Release|x64.Build.0 = Release|x64
 		{4EAB0DC7-49A6-4626-950F-A1AF6DA39D07}.Release|x86.ActiveCfg = Release|Win32
 		{4EAB0DC7-49A6-4626-950F-A1AF6DA39D07}.Release|x86.Build.0 = Release|Win32
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Debug|Any CPU.Build.0 = Debug|x64
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Debug|x64.ActiveCfg = Debug|x64
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Debug|x64.Build.0 = Debug|x64
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Debug|x86.ActiveCfg = Debug|Win32
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Debug|x86.Build.0 = Debug|Win32
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Release|Any CPU.ActiveCfg = Release|x64
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Release|Any CPU.Build.0 = Release|x64
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Release|x64.ActiveCfg = Release|x64
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Release|x64.Build.0 = Release|x64
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Release|x86.ActiveCfg = Release|Win32
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1317,6 +1331,7 @@ Global
 		{1487766E-51AB-4CF9-9AFC-39070E99A099} = {06437385-48F1-46AA-BFA4-978A85FC7CB1}
 		{63494166-4FF0-46C6-B2D3-E56C30ADB59F} = {0604E801-73E6-498A-808E-FC253D1B8F18}
 		{4EAB0DC7-49A6-4626-950F-A1AF6DA39D07} = {BEBD7FC2-7136-481F-8618-1E587034D36E}
+		{09BFE9E1-048A-4FC4-B8C2-C53CFD1780AE} = {BEBD7FC2-7136-481F-8618-1E587034D36E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19DA1C0C-CABF-47AA-8DBE-E82809E9C597}
