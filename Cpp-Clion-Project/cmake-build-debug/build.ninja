@@ -84,6 +84,13 @@ build CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/Expo
   OBJECT_DIR = CMakeFiles\Algorithms-Searching.dir
   OBJECT_FILE_DIR = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\Searching
 
+build CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/String/main.cpp.obj: CXX_COMPILER__Algorithms-Searching_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/DataStructureAlgorithms/String/main.cpp || cmake_object_order_depends_target_Algorithms-Searching
+  DEP_FILE = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\String\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  INCLUDES = -IC:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Clion-Project/.
+  OBJECT_DIR = CMakeFiles\Algorithms-Searching.dir
+  OBJECT_FILE_DIR = CMakeFiles\Algorithms-Searching.dir\DataStructureAlgorithms\String
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Algorithms-Searching
@@ -92,7 +99,7 @@ build CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/Expo
 #############################################
 # Link the executable Algorithms-Searching.exe
 
-build Algorithms-Searching.exe: CXX_EXECUTABLE_LINKER__Algorithms-Searching_Debug CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/main.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/BinarySearch.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/TernarySearch.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/JumpSearch.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/ExponentialSearch.cpp.obj
+build Algorithms-Searching.exe: CXX_EXECUTABLE_LINKER__Algorithms-Searching_Debug CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/main.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/BinarySearch.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/TernarySearch.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/JumpSearch.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/Searching/ExponentialSearch.cpp.obj CMakeFiles/Algorithms-Searching.dir/DataStructureAlgorithms/String/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Algorithms-Searching.dir
