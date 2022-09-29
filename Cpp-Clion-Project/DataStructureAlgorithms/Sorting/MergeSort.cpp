@@ -9,7 +9,7 @@ using std::string, std::to_string, std::swap, std::cout, std::exception;
 struct Array{ int*& array; int length; };
 
 static void mergeSort(int*&array, const int& arrayLength);
-static void merge(struct Array& array, struct Array& left, struct Array& right );
+static void merge(int*& array, struct Array& left, struct Array& right );
 
 static void mergeSort(Array& array)
 {
@@ -24,29 +24,27 @@ static void mergeSort(int*& array, const int& arrayLength)
     int* right = new int[arrayLength - middle];
     for (auto i = 0; i < middle; ++i)  left[i] = array[i];
     for (auto i = middle; i < arrayLength; ++i) right[i - middle] = array[i];
-
-    struct Array arrayArray {array, arrayLength};
     struct Array leftArray {left, middle};
     struct Array rightArray {right, arrayLength - middle};
+
     mergeSort(leftArray);
     mergeSort(rightArray);
-    merge(arrayArray, leftArray, rightArray);
+    merge(array, leftArray, rightArray);
 }
 
-static void merge(struct Array& array, struct Array& left, struct Array& right )
+static void merge(int*& array, struct Array& left, struct Array& right )
 {
-    auto [globalArray, arrayLength] {array};
     auto [rightArray, rightLength] {right};
     auto [leftArray, leftLength] {left};
     int l{0}, r{0}, arr{0};
     while (l < leftLength && r < rightLength)
     {
-        if (rightArray[l] <= rightArray[r]) globalArray[arr++] = leftArray[l++];
-        else globalArray[arr++] = rightArray[r++];
+        if (rightArray[l] <= rightArray[r]) array[arr++] = leftArray[l++];
+        else array[arr++] = rightArray[r++];
     }
     // copy remaining items in sorted array!
-    while (l < leftLength) globalArray[arr++] = leftArray[l++];
-    while (r < rightLength) globalArray[arr++] = rightArray[r++];
+    while (l < leftLength) array[arr++] = leftArray[l++];
+    while (r < rightLength) array[arr++] = rightArray[r++];
     delete[](leftArray);
     delete[](rightArray);
 }
