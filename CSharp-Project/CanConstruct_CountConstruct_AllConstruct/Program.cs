@@ -50,7 +50,7 @@ namespace CanConstruct_CountConstruct_AllConstruct
             //memo[0] = true;
             return AllConstruct(target, wordsBank, memo);
         }
-        private static List<List<String>> AllConstruct(String target, String[] wordsBank, Dictionary<string, List<List<String>>> memo) //  O(n^m) <-O(n^hmax) space O(m^2)    m=targer sum n=array length
+        private static List<List<String>> AllConstruct(String target, String[] wordsBank, Dictionary<string, List<List<String>>> memo) //  O(n^m) <-O(n^hmax) space O(m) ()   m=targer sum n=array length
         {
             if (target is null) return null;
             if (memo.ContainsKey(target)) return memo[target];
