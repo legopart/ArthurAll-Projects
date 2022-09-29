@@ -22,7 +22,7 @@ My C# C++ JAVA and Full Stack Reference Projects
 <h2>Node.js + Express</h2>
 -
 
-<h2>HTML, Javascript, CSS, PHP</h2>
+<h2>HTML, Javascript, CSS</h2>
 -
 
 <h2>Data Structure</h2>
