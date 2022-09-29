@@ -45,7 +45,7 @@ namespace CanSum_HowSum_BestSum
             if (sumTarget == 0) { return new(); } //{  }
             if (sumTarget < 0) return null;
 
-            List<int>? shortenCombination = null;
+            /*!*/    List<int>? shortenCombination = null;
 
             foreach (var num in numbers)
             {
@@ -64,26 +64,24 @@ namespace CanSum_HowSum_BestSum
             return shortenCombination;//;null; /*memo[sumTarget]*/
         }
 
-        public static List<int>? BestSumBrut(int sumTarget, int[] numbers) //  O(n^m*m) space O(m)    m=targer sum n=array length
+        public static List<int>? BestSumBrut(int sumTarget, int[] numbers) //  O(n^m *m) space O(m)    m=targer sum n=array length
         {
             if (sumTarget == 0) { return new(); } //{  }
             if (sumTarget < 0) return null;
 
-            List<int>? shortenCombination = null;
-
-
+            /*!*/List<int>? shortenCombination = null;
             foreach (var num in numbers)
             {
                 var remainder = sumTarget - num;
                 List<int>? remainderList = BestSumBrut(remainder, numbers);
                 if (remainderList != null) 
                 {
-                    remainderList.Add(num);
+                    List<int> combination = new List<int>(remainderList);
+                    combination.Add(num);
                     var comination = remainderList; 
                     if(shortenCombination is null ||comination.Count() < shortenCombination.Count())
                         shortenCombination = comination;
                 }   
-                
             }
             return shortenCombination;//;null; /*memo[sumTarget]*/
         }
@@ -107,7 +105,12 @@ namespace CanSum_HowSum_BestSum
             {
                 var remainder = sumTarget - num;
                 List<int>? remainderList = HowSum(remainder, numbers, memo);
-                if (remainderList != null) { remainderList.Add(num); return remainderList; /*memo[remainder]*/ }   //reminder from the sum
+                if (remainderList != null) {
+                    List<int> combination = new List<int>(remainderList);
+                    remainderList.Add(num);
+                    memo[sumTarget] = combination;
+                    return remainderList; /*memo[remainder]*/ 
+                }   //reminder from the sum
             }
             memo[sumTarget] = null;
             return null; /*memo[sumTarget]*/
