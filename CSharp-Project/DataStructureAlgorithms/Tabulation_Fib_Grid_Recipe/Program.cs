@@ -25,7 +25,7 @@ namespace Tabulation_Fib_Grid_Recipe
         //[ 0 1 1 1 1 ]
         //[ 0 1 2 3 4 ]
         // ...
-        public static int GridTraveler(int m, int n) // Time O(n^2) Space O(n) 
+        public static int GridTraveler(int m, int n) // Time O(n*m) Space O(n*m) 
         {
             var size1 = n + 2;  //rows
             var size2 = m + 2;  //cols
@@ -46,7 +46,7 @@ namespace Tabulation_Fib_Grid_Recipe
 
 
         // less used for next requirements
-        public static int GridTraveler2(int m, int n) // Time O(n^2) Space O(n) 
+        public static int GridTraveler2(int m, int n) // Time O(n*m) Space O(n*m) 
         {
             var size1 = n + 1;  //rows
             var size2 = m + 1;  //cols
