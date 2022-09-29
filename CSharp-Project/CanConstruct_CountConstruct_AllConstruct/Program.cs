@@ -15,12 +15,101 @@ namespace CanConstruct_CountConstruct_AllConstruct
             Console.WriteLine("Count Construct Memo " + CountConstruct("purple", new string[] { "purp", "p", "ur", "le", "purpl" })); // true
             Console.WriteLine("Count Construct Memo " + CountConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeef", new string[] { "e", "ee", "eee", "eeeee", "eeeeeee" })); // true
 
+
+            Console.Write("All Construct Brut " + "purple" + " ");
+            foreach (var list in AllConstructBrut("purple", new string[] { "purp", "p", "ur", "le", "purpl" }))
+                Console.Write("[" + String.Join(", ", list) + "] ,");
+            Console.WriteLine();
+
             Console.WriteLine("////");
 
-      //      Console.WriteLine("HowSum Brut: " + String.Join(",", HowSum(7, new int[] { 2, 3 })));
+            Console.Write("All Construct Memo " + "purple" + " ");
+            foreach (var list in AllConstruct("purple", new string[] { "purp", "p", "ur", "le", "purpl" }))
+                Console.Write("[" + String.Join(", ", list) + "] ,");
+            Console.WriteLine();
+
+
+
+            Console.Write("All Construct Memo " + "aaaaaaaaaaaaaaaaaaaaz (no one (null))" + " ");
+            foreach (var list in AllConstruct("aaaaaaaaaaaaaaaaaaaaz", new string[] { "a", "aa", "aaaaa", "aaaa", "aaaaaaaaaa" }))
+                Console.Write("[" + String.Join(", ", list) + "] ,");
+            Console.WriteLine();
+
+            //      Console.WriteLine("HowSum Brut: " + String.Join(",", HowSum(7, new int[] { 2, 3 })));
 
 
         }
+
+
+
+
+
+        public static List<List<String>> AllConstruct(String target, String[] wordsBank)
+        {
+            Dictionary<string, List<List<String>>> memo = new ();
+            //memo[0] = true;
+            return AllConstruct(target, wordsBank, memo);
+        }
+        private static List<List<String>> AllConstruct(String target, String[] wordsBank, Dictionary<string, List<List<String>>> memo) //  O(n^m) <-O(n^hmax) space O(m^2)    m=targer sum n=array length
+        {
+            if (target is null) return null;
+            if (memo.ContainsKey(target)) return memo[target];
+            if (target.Length == 0) return new List<List<String>>() { new() }; //[[]]
+
+            var result = new List<List<String>>();
+            foreach (var word in wordsBank) //only prefixes
+            {
+                if (target.IndexOf(word) == 0)
+                {
+                    var suffix = target.Substring(word.Length);
+                    var suffixWays = AllConstructBrut(suffix, wordsBank);
+                    var targetWays = new List<List<String>>();
+
+                    foreach (var suffixWay in suffixWays)  //Concatinate arrays
+                    {
+                        List<String> temp = new List<String>(suffixWay);
+                        temp.Add(word);
+                        targetWays.Add(temp);
+                    }
+                    foreach (var targetWay in targetWays)
+                        result.Add(new List<String>(targetWay));
+                }
+            }
+            memo[target] = result;
+            return result;
+        }
+
+
+
+
+        public static List<List<String>> AllConstructBrut(String target, String[] wordsBank) //  O(n^m) <-O(n^hmax) space O(m^2)    m=targer sum n=array length
+        {
+            if (target is null) return null;
+            if (target.Length == 0) return new List<List<String>>() { new() }; //[[]]
+
+            var result = new List<List<String>>();
+            foreach (var word in wordsBank) //only prefixes
+            {
+                if (target.IndexOf(word) == 0)
+                {
+                    var suffix = target.Substring(word.Length);
+                    var suffixWays = AllConstructBrut(suffix, wordsBank);
+                    var targetWays = new List<List<String>>();
+                    foreach (var suffixWay in suffixWays)  //Concatinate arrays
+                    {
+                        List<String> temp = new List<String>(suffixWay);
+                        temp.Add(word);
+                        targetWays.Add(temp);
+                    }
+                    foreach (var targetWay in targetWays)
+                        result.Add(new List<String>(targetWay)  );
+                }
+            }
+            return result;
+        }
+
+
+
 
 
 
