@@ -20,6 +20,14 @@ namespace Tabulation_Fib_Grid_Recipe
 
 
 
+        //Tabulation Recipe:
+        // *Visualize the problem as a table
+        // *Size the table based on the inputs
+        // *Initialize the table with default values
+        // *Seed the trivial answer into table
+        // *Iterate through the table
+        // *Fill further positions based on the current position
+
         //Grid Traveler Tabulation:
         //[ 0 0 0 0 0 ]
         //[ 0 1 1 1 1 ]
