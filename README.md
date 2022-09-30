@@ -26,10 +26,9 @@ My C# C++ JAVA and Full Stack Reference Projects
 -
 
 <h2>Data Structure</h2>
-
-<strong>Java</strong> <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Java-Project/DataStructureNonLinear/src/datastructure">Non Linear</a> +  <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Java-Project/DataStructure/src/datastructure">Linear</a> +  <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Java-Project/DataStructureAlgorithms/src">Algorithms</a> Data Structure<br> 
-<strong>C#</strong> <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/CSharp-Project/DataStructure">Non Linear</a> +  <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/CSharp-Project/DataStructureLinear">Linear</a> +  <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/CSharp-Project/DataStructureAlgorithms">Algorithms</a> Data Structure<br>
-<strong>C++</strong> <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Cpp-Clion-Project/DataStructureNonLinear">Non Linear</a> +  <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Cpp-Clion-Project/DataStructure">Linear</a> +  <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Cpp-Clion-Project/DataStructureAlgorithms">Algorithms</a> Data Structure<br>
+<a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/DataStructures_Algorithms_Java"><strong>Java</strong> </a>
+<a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/DataStructures_Algorithms_CSharp"><strong>C#</strong></a>
+<strong>C++</strong> <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Cpp-Clion-Project/DataStructureNonLinear">Non Linear</a> +  <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Cpp-Clion-Project/DataStructure">Linear</a> +  <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Cpp-Clion-Project/DataStructureAlgorithms">Algorithms</a><br>
 
 
 
