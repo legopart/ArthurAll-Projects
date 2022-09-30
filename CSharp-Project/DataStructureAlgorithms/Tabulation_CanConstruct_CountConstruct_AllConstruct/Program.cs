@@ -18,6 +18,9 @@ namespace Tabulation_CanConstruct_CountConstruct_AllConstruct
 
 
 
+
+
+
         public static List<String> HowConstructTabulation(String target, String[] words) // Time O(n*m * m) => O(n*m^2) {worst case, m for the internal array size} Space O(m^2)  m for additional array internal size
         {
             var size = target.Length + 1;
@@ -32,9 +35,9 @@ namespace Tabulation_CanConstruct_CountConstruct_AllConstruct
                         if (target.Substring(i).IndexOf(word) == 0)
                             if (i + word.Length < size)
                                 table[i + word.Length] = new(table[i]) { word };
-                        //table[i + word.Length].Add(word);
+                                //table[i + word.Length].Add(word);
                         //shorter way for first result/ can work without
-                        if (table[size - 1] != null) return table[size - 1];  //faster exit
+        //                if (table[size - 1] != null) return table[size - 1];  //faster exit
                     }
                 }
             }
