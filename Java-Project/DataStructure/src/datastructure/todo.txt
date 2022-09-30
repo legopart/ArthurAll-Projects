@@ -1,6 +1,0 @@
-java/c++/c# namespace/package
-java/c++/c# module
-Vectors
-ArrayList
-Generics
-Callback function
