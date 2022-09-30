@@ -32,8 +32,9 @@ namespace Tabulation_CanSum_HowSum_BestSum
                 if (table[i] != null)
                     foreach (var num in numbers)
                         if (i + num < size) 
-                            if ( table[i + num] is null || table[i + num].Count > table[i].Count ) 
+                            if ( table[i + num] is null || table[i + num].Count > table[i].Count )  //add only this logic
                                 table[i + num] = new(table[i]) { num };
+                                //table[i + num].Add(num);
             }
             return table[size - 1];
         }

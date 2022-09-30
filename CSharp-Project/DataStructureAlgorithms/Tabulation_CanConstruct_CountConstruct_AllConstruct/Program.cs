@@ -10,32 +10,56 @@ namespace Tabulation_CanConstruct_CountConstruct_AllConstruct
             // Time O(n) search iside the array Space O(n) for the array
             Console.WriteLine("Tabulation: ");
 
-            Console.WriteLine("Fib Tabulation: " + GridTraveler(6, 6));
-
+            Console.WriteLine("Can Construct Tabulation: " + CanConstructTabulation("abcdef", new String[] { "ab", "abc", "cd", "def", "abcd" }));
+            Console.WriteLine("How Construct Tabulation: " + String.Join(", ", HowConstructTabulation("abcdef", new String[] { "ab", "abc", "cd", "def", "abcd" })));
 
         }
         //applied from the bottom to the top
 
 
 
-
-        public static int GridTraveler(int m, int n) // Time O(n*m) Space O(n*m) 
+        public static List<String> HowConstructTabulation(String target, String[] words) // Time O(n*m * m) => O(n*m^2) {worst case, m for the internal array size} Space O(m^2)  m for additional array internal size
         {
-            var size1 = n + 2;  //rows
-            var size2 = m + 2;  //cols
-            var table = new int[size1, size2]; //Array fill with 0s
-            table[0, 0] = 0;
-            table[1, 1] = 1;
-            for (int i = 0; i < size1 - 1; ++i)
+            var size = target.Length + 1;
+            var table = new List<String>[size]; //Array fill with nulls
+            table[0] = new();
+            for (int i = 0; i < size; ++i)
             {
-                for (int j = 0; j < size2 - 1; ++j)
+                if (table[i] != null)
                 {
-                    int current = table[i, j];
-                    table[i, j + 1] += current;
-                    table[i + 1, j] += current;
+                    foreach (var word in words)
+                    {
+                        if (target.Substring(i).IndexOf(word) == 0)
+                            if (i + word.Length < size)
+                                table[i + word.Length] = new(table[i]) { word };
+                        //table[i + word.Length].Add(word);
+                        //shorter way for first result/ can work without
+                        if (table[size - 1] != null) return table[size - 1];  //faster exit
+                    }
                 }
             }
-            return table[m, n];
+            return table[size - 1];
+        }
+
+
+
+
+        public static bool CanConstructTabulation(string target, string[] words) // Time O(n*m) Space O(n) 
+        {
+            var size = target.Length + 1;
+            var table = new bool[size]; //Array fill with false
+            table[0] = true;
+            for (int i = 0; i < size; ++i)
+            {
+                if (table[i])
+                {
+                    foreach (var word in words)
+                        if (target.Substring(i).IndexOf(word) == 0)
+                            if (i + word.Length < size)
+                                table[i + word.Length] = true;
+                }
+            }
+            return table[size - 1];
         }
 
 
