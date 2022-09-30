@@ -65,7 +65,7 @@ namespace Tabulation_CanSum_HowSum_BestSum
 
 
 
-        public static bool CanSumTabulation(int targetSum, int[] numbers) // Time O(n*m) Space O(n) 
+        public static bool CanSumTabulation(int targetSum, int[] numbers) // Time O(n*m) Space O(m) 
         {
             var size = targetSum + 1;
             var table = new bool[size]; //Array fill with false

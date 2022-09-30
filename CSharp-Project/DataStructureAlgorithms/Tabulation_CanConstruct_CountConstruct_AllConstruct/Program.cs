@@ -71,7 +71,7 @@ namespace Tabulation_CanConstruct_CountConstruct_AllConstruct
 
 
 
-        public static bool CanConstructTabulation(string target, string[] words) // Time O(n*m) Space O(n) 
+        public static bool CanConstructTabulation(string target, string[] words) // Time O(n*m) Space O(m) 
         {
             var size = target.Length + 1;
             var table = new bool[size]; //Array fill with false
