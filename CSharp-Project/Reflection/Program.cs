@@ -1,21 +1,6 @@
 ﻿using System;/*  w w w  .  ja  v a 2s . co m*/      //Basics, dont use!
 using System.Reflection;
 
-public class MagicClass
-{
-    private int magicBaseValue;
-
-    public MagicClass()
-    {
-        magicBaseValue = 2;
-    }
-
-    public int ItsMagic(int preMagic)
-    {
-        return preMagic * magicBaseValue;
-    }
-}
-
 
 
 public class Dog
@@ -62,4 +47,22 @@ public class TestMethodInfo
        // Console.ReadLine();
     }
 
+}
+
+
+
+
+public class MagicClass
+{
+    private int magicBaseValue;
+
+    public MagicClass() //constructure
+    {
+        magicBaseValue = 2;
+    }
+
+    public int ItsMagic(int preMagic)
+    {
+        return preMagic * magicBaseValue;
+    }
 }
