@@ -28,12 +28,7 @@ My C# C++ JAVA and Full Stack Reference Projects
 <h2>Data Structure</h2>
 <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/DataStructures_Algorithms_Java"><strong>Java</strong> </a><br>
 <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/DataStructures_Algorithms_CSharp"><strong>C#</strong> </a><br>
-
-
-
-<strong>C++</strong> <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Cpp-Clion-Project/DataStructureNonLinear">Non Linear</a> +  <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Cpp-Clion-Project/DataStructure">Linear</a> +  <a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/Cpp-Clion-Project/DataStructureAlgorithms">Algorithms</a><br>
-
-
+<a href="https://github.com/w3arthur/Multi-Language-All-Projects/tree/master/DataStructures_Algorithms_Cpp"><strong>C++</strong> </a><br>
 
 
 <img src="https://i.imgur.com/3jZqAPv.png">
