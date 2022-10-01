@@ -13,7 +13,7 @@ private:
     int count;
     int* itemArray;
     int arrayLength;
-    void swap(int& a, int b) const { swap(itemArray[a], itemArray[b]); }
+    void swap(int& a, int b) const { std::swap(itemArray[a], itemArray[b]); }
     static int parent(int& index) {return index / 2;} // index/2
     static int child(int& index) {return index * 2;} // index*2
     static int left(int& index) { return  child(index) + 1; } // index*2+1
@@ -61,7 +61,7 @@ private:
     }
 
 public:
-    explicit Heap() : arrayLength{20}, itemArray{new int[arrayLength]}, count{} {}
+    explicit Heap() : arrayLength{20}, itemArray{new int[20]}, count{} {}
     ~Heap() { delete[](itemArray); }
     [[nodiscard]] bool isFull() const { return count == arrayLength; }
     [[nodiscard]] bool isEmpty() const { return count == 0; }

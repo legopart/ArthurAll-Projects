@@ -16,10 +16,36 @@ public class MagicClass
     }
 }
 
+
+
+public class Dog
+{
+    private int age = 3;
+    public int getAge() { return age; }
+}
+
 public class TestMethodInfo
 {
     public static void Main()
     {
+        var bindingFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
+
+        Dog dog = new Dog();
+        
+        Type? DogType = Type.GetType("Dog");
+        var ageField = DogType?.GetField("age", bindingFlags);
+        ageField?.SetValue(dog, 10);
+
+        
+
+        Console.WriteLine("dog Age " + dog.getAge()  ); //10
+        Console.WriteLine("dog Age " + ageField?.GetValue(dog) + " " + ageField?.GetValue(dog)?.GetType()); //10 int32
+
+        Dog dog2 = new Dog();
+        Console.WriteLine("dog2 Age " + dog2.getAge()); //3
+
+
+
         Type magicType = Type.GetType("MagicClass");
         ConstructorInfo magicConstructor = magicType.GetConstructor(Type.EmptyTypes);
         object magicClassObject = magicConstructor.Invoke(new object[] { });
@@ -33,7 +59,7 @@ public class TestMethodInfo
 
         Console.WriteLine("MagicClass.ItsMagic() returned: {0}", magicValue);
 
-        Console.ReadLine();
+       // Console.ReadLine();
     }
 
 }
