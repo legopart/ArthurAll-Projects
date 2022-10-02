@@ -4,6 +4,7 @@ namespace Deligates
 {
     internal class Program
     {
+        // deligate = functional interface
         public delegate int Ex(int i1, int i2); //string str
         public static void Aa(Ex ex)
         {
