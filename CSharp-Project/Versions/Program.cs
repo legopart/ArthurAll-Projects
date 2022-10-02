@@ -23,6 +23,7 @@ namespace UsefulLib
 }
 
 
+
 namespace NVI   //client implementation version:
 {   //no changes on client side !
     public class Derive : Base
