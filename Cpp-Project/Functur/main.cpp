@@ -17,12 +17,11 @@ int someFun11( int a, int b, int (*func11)(int x, int y) )
 }
 
 
-//! Cant
-//using func1x = (int*)(int x, int y);
-//int someFun11(int a, int b, func1x func12)
-//{
-//	func12(a, b);
-//}
+typedef int (*func1x)(int a, int b);
+int someFun12(int a, int b, func1x  func12)
+{
+	return func12(a, b);
+}
 
 
 int someFun21(int a, int b, function<int(int, int)> func21)
@@ -46,7 +45,7 @@ int main()
 	func = &sum;
 	cout << func(1, 2) << endl;
 	cout << someFun11(1, 2, &sum) << endl;
-	//cout << someFun12(1, 2, &sum) << endl;
+	cout << someFun12(1, 2, &sum) << endl;
 
 
 	//std::function
