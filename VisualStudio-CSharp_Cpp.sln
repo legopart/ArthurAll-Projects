@@ -201,9 +201,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_5_Tabulation_CanSum_HowSu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_6_Tabulation_CanConstruct_CountConstruct_AllConstruct", "DataStructures_Algorithms_CSharp\4_6 Tabulation_CanConstruct_CountConstruct_AllConstruct\4_6_Tabulation_CanConstruct_CountConstruct_AllConstruct.csproj", "{F1DCC8E6-7CA9-41DA-A1A8-326A3E650BBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "CSharp-Project\Interfaces\Interfaces.csproj", "{8BDACA86-FEED-41B9-AD4A-2384AE6B3323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "CSharp-Project\Interfaces\Interfaces.csproj", "{8BDACA86-FEED-41B9-AD4A-2384AE6B3323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "CSharp-Project\Classes\Classes.csproj", "{884F1B59-73BB-463B-B2AF-5F281EE031E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classes", "CSharp-Project\Classes\Classes.csproj", "{884F1B59-73BB-463B-B2AF-5F281EE031E1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_2_CanSum_HowSum_BestSum", "DataStructures_Algorithms_CSharp\4_2 CanSum_HowSum_BestSum\4_2_CanSum_HowSum_BestSum.csproj", "{8C5057ED-B8CC-4DF1-8077-02CCFDAD63F9}"
 EndProject
@@ -211,13 +211,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_3_CanConstruct_CountConst
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_4_Tabulation_Fib_Grid_Recipe", "DataStructures_Algorithms_CSharp\4_4 Tabulation_Fib_Grid_Recipe\4_4_Tabulation_Fib_Grid_Recipe.csproj", "{5871C172-3932-4A88-A7A5-EB6C1923EB4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versions_Sealed", "CSharp-Project\Versions_Sealed\Versions_Sealed.csproj", "{E228B07F-2B89-42E7-B9C2-525F3C901D18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Versions_Sealed", "CSharp-Project\Versions_Sealed\Versions_Sealed.csproj", "{E228B07F-2B89-42E7-B9C2-525F3C901D18}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Versions_Template_Method_Pattern", "CSharp-Project\_Template_Method_Pattern\Versions_Template_Method_Pattern.csproj", "{89BD4A4E-DAEE-4E6E-9D1C-9C216155AA08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Versions_AdHoc_Polymorphism", "CSharp-Project\Versions_AdHoc\Versions_AdHoc_Polymorphism.csproj", "{5DB19719-2F97-4FF4-B33F-D97271ED5AFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Versions_AdHoc_Polymorphism", "CSharp-Project\Versions_AdHoc\Versions_AdHoc_Polymorphism.csproj", "{5DB19719-2F97-4FF4-B33F-D97271ED5AFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indexer", "CSharp-Project\Indexer\Indexer.csproj", "{4F9A546A-D791-4967-9197-4C60F80BDFAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Indexer", "CSharp-Project\Indexer\Indexer.csproj", "{4F9A546A-D791-4967-9197-4C60F80BDFAE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Functur", "Cpp-Project\Functur\Functur.vcxproj", "{22654003-8F60-4F5F-B4A3-16E31FC072C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1393,6 +1395,18 @@ Global
 		{4F9A546A-D791-4967-9197-4C60F80BDFAE}.Release|x64.Build.0 = Release|Any CPU
 		{4F9A546A-D791-4967-9197-4C60F80BDFAE}.Release|x86.ActiveCfg = Release|Any CPU
 		{4F9A546A-D791-4967-9197-4C60F80BDFAE}.Release|x86.Build.0 = Release|Any CPU
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Debug|Any CPU.Build.0 = Debug|x64
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Debug|x64.ActiveCfg = Debug|x64
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Debug|x64.Build.0 = Debug|x64
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Debug|x86.ActiveCfg = Debug|Win32
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Debug|x86.Build.0 = Debug|Win32
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Release|Any CPU.ActiveCfg = Release|x64
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Release|Any CPU.Build.0 = Release|x64
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Release|x64.ActiveCfg = Release|x64
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Release|x64.Build.0 = Release|x64
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Release|x86.ActiveCfg = Release|Win32
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1502,6 +1516,7 @@ Global
 		{89BD4A4E-DAEE-4E6E-9D1C-9C216155AA08} = {0604E801-73E6-498A-808E-FC253D1B8F18}
 		{5DB19719-2F97-4FF4-B33F-D97271ED5AFD} = {0604E801-73E6-498A-808E-FC253D1B8F18}
 		{4F9A546A-D791-4967-9197-4C60F80BDFAE} = {0604E801-73E6-498A-808E-FC253D1B8F18}
+		{22654003-8F60-4F5F-B4A3-16E31FC072C1} = {BEBD7FC2-7136-481F-8618-1E587034D36E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19DA1C0C-CABF-47AA-8DBE-E82809E9C597}
