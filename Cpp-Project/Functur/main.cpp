@@ -6,10 +6,7 @@ using std::cout;
 using std::endl;
 using std::function;
 
-int sum(int a, int b) { return a + b; }
-
-
-
+int sum(int a, int b);
 
 int someFun11( int a, int b, int (*func11)(int x, int y) ) 
 {
@@ -38,6 +35,10 @@ int someFun22(int a, int b, func2x func22)
 
 
 
+
+int sum(int a, int b) { return a + b; }
+
+
 int main() 
 {
 	//function pointer
@@ -54,6 +55,28 @@ int main()
 	cout << func2(1, 2) << endl;
 	cout << someFun21(1, 2, sum) << endl;
 	cout << someFun22(1, 2, sum) << endl;
+
+	using FuncSignature  = int(int, int);
+	function<FuncSignature> func2_1;
+
+	//lambda
+	// [=] () mutable throw -> int { return 0; }
+	// [a, &b] [this] [&] [=]
+	// []{} no parametars
+	const auto func3 = [](int a, int b) -> int { return a + b; } ;
+	cout << someFun22(1, 2, [](int a, int b) -> int { return a + b; }) << endl;
+	cout << someFun22(1, 2, func3) << endl;
+
+	int val = 4;
+	[val = 100 /*move*/] { cout << "lambda " << val << endl; }();
+
+	//bind
+	using namespace std::placeholders;	//_1 _2
+	auto func4 = std::bind(sum, _1, _2); 
+	//Class classObj;
+	// &sum for class method (non static) std::bind( &Class::sum, classObj, _1, _2 )
+	// for static  std::bind( Class::sum, _1, _2 )
+	cout << func4(1, 2) << endl;
 
 	return EXIT_SUCCESS;
 }
