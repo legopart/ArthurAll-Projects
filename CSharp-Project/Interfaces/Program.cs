@@ -29,7 +29,7 @@ namespace Interfaces
 
     public class Program
     {
-        public static double AreaCycleCombiner(double[] radiosArray)
+        public static double AreaCycleCombiner(params double[] radiosArray)
         {
             double totalSum = 0.0;
             foreach (var radios in radiosArray) 
@@ -62,10 +62,10 @@ namespace Interfaces
         private static void Main(string[] args)
         {
 
-            double cyclesAreaSums = AreaCycleCombiner(new double[] { 2.0, 3.0 });
+            double cyclesAreaSums = AreaCycleCombiner( 2.0, 3.0 ); //(new double[] { 2.0, 3.0 });
             Console.WriteLine("Interfaces");
 
-            Console.WriteLine("The Cycles 2, 3 Area Sum: " + cyclesAreaSums);    // ~4.841
+            Console.WriteLine("The Cycles 2, 3 Area Sum: " + cyclesAreaSums);    // ~40.841
 
 
 
