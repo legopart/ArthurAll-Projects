@@ -91,6 +91,17 @@ namespace CSharp_Project
         ~B() { Console.WriteLine("ByeA"); }
     }
 
+    public class AA {
+        static protected int aa = 1;
+    }
+
+
+    public class BB : AA
+    {
+        static public int cc = aa;
+
+        static public void Method(dynamic @a) { }
+    }
 
 
 
@@ -105,13 +116,23 @@ namespace CSharp_Project
         static void Main()
         {
             {
-                Console.WriteLine();
+                Console.WriteLine(BB.cc);
+
+
+
+
+                int @aaa = 2323;
+
+
+
+
+
                //Console.WriteLine("-");
                //A a = new A();
                //int in = 42;
                //Type type = in.GetType();
 
-               Program programReflaction =  new Program();
+              // Program programReflaction =  new Program();
 
 
                 System.Reflection.MemberInfo info = typeof(MyClass);
