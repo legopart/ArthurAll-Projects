@@ -17,10 +17,10 @@ namespace TimeTakes_Winform
             while (true)
             {
                 if (!IsRun) continue;
-                 foreach(var pannel in pannels)
+                foreach (var pannel in pannels)
                 {
                     sourceToken.Token.ThrowIfCancellationRequested();
-                    await Task.Run(() => { pannel.BackColor = Color.LightGoldenrodYellow; } );
+                    await Task.Run(() => { pannel.BackColor = Color.LightGoldenrodYellow; });
                     await Task.Delay(1000);
                     //sourceToken.Token.ThrowIfCancellationRequested(); //for cancel here too
                 }
@@ -44,18 +44,22 @@ namespace TimeTakes_Winform
         {
             InitializeComponent();
 
-            Task.Run( async() => {
+            Task.Run(async () => {
                 await SwitchLight();    //SwitchLight(sourceToken.Token)
-            } );
-
+            });
+        }
+        ~Form1() {
+            sourceToken.Dispose();
 
 
         }
+
 
         private void btnPower_Click(object sender, EventArgs e)
         {
             IsRun = !IsRun;
         }
+
 
         private void btnAsyncPower_Click(object sender, EventArgs e)
         {
@@ -66,7 +70,13 @@ namespace TimeTakes_Winform
             }
             else
             {
-                if(sourceToken.IsCancellationRequested) sourceToken =  new CancellationTokenSource();
+
+                if (sourceToken.IsCancellationRequested) 
+                {
+                    sourceToken.Dispose();
+                    sourceToken = new CancellationTokenSource();
+                }
+                       
                 Task.Run(async () => {
                     await SwitchLight();    //SwitchLight(sourceToken.Token)
                 });
