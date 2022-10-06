@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace TimeTakes_Winform
@@ -9,13 +10,23 @@ namespace TimeTakes_Winform
 
         public CancellationTokenSource sourceToken = new CancellationTokenSource();
 
-        public bool IsRun = true;
+        public void ClearAll() 
+        {
+            Panel[] pannels = new Panel[] { pnlLight1, pnlLight2, pnlLight3, pnlLight4 };
+            foreach (var pannel in pannels)
+                pannel.BackColor = Color.Gray;
+        }
+
+
+
+       public bool IsRun = true;
 
         public async Task SwitchLight() //SwitchLight(CancellationToken cancellationToken) <- SwitchLight(sourceToken.Token)
         {
             Panel[] pannels = new Panel[] { pnlLight1, pnlLight2, pnlLight3, pnlLight4 };
             while (true)
             {
+                ClearAll();
                 if (!IsRun) continue;
                 foreach (var pannel in pannels)
                 {
@@ -24,10 +35,7 @@ namespace TimeTakes_Winform
                     await Task.Delay(1000);
                     //sourceToken.Token.ThrowIfCancellationRequested(); //for cancel here too
                 }
-                foreach (var pannel in pannels)
-                    pannel.BackColor = Color.Gray;
             }
-
         }
 
 
