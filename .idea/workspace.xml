@@ -16,7 +16,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc991998-f891-4ce2-abef-ed7488afc0a8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Arduino/ArduinoUno/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Arduino/ArduinoUno/.idea/ArduinoUno.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Arduino/ArduinoUno/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Arduino/ArduinoUno/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Arduino/ArduinoUno/src/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/C-Clion-Project/arduino-basics.ino" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/C-Clion-Project/arduino_basics.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cpp-Project/string_view/.idea/string_view.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled/.idea/untitled.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C-Clion-Project/cmake-build-debug/.cmake/api/v1/reply/index-2022-09-24T13-36-59-0951.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C-Clion-Project/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/C-Clion-Project/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSharp-Project/_Template_Method_Pattern/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSharp-Project/_Template_Method_Pattern/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cpp-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Cpp-Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructures_Algorithms_Cpp/CMakeExample/CmakeExample.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructures_Algorithms_Cpp/CMakeExample/CmakeExample.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructures_Algorithms_Cpp/CMakeExample/CmakeExample.h" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructures_Algorithms_Cpp/CMakeExample/CmakeExample.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructures_Algorithms_Cpp/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructures_Algorithms_Cpp/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructures_Algorithms_Java/bin/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructures_Algorithms_Java/bin/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataStructures_Algorithms_Java/bin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/DataStructures_Algorithms_Java/bin/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualStudio-CSharp_Cpp.sln" beforeDir="false" afterPath="$PROJECT_DIR$/VisualStudio-CSharp_Cpp.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +52,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2ErjEB9jGsxa3G5HvhV8Rd8qklr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,7 +65,7 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/pc1/Desktop/DataStructure_Backup/DataStructures_Algorithms_Cpp"
+    "last_opened_file_path": "C:/Users/pc1/CLionProjects"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -58,6 +78,7 @@
       <updated>1663360482184</updated>
       <workItem from="1663360484222" duration="49000" />
       <workItem from="1664653310777" duration="1086000" />
+      <workItem from="1665198027585" duration="22000" />
     </task>
     <servers />
   </component>

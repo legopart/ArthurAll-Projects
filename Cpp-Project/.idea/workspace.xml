@@ -9,7 +9,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92c24f61-4c56-44b1-8f8f-21bf3ed221e0" name="Changes" comment="" />
+    <list default="true" id="92c24f61-4c56-44b1-8f8f-21bf3ed221e0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +40,7 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/pc1/Desktop/Multi-Language-All-Projects"
+    "last_opened_file_path": "C:/Users/pc1/Desktop/Multi-Language-All-Projects/Cpp-Project/string_view"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -51,6 +53,7 @@
       <updated>1663360255207</updated>
       <workItem from="1663360256648" duration="90000" />
       <workItem from="1663360433553" duration="48000" />
+      <workItem from="1665142003531" duration="87000" />
     </task>
     <servers />
   </component>

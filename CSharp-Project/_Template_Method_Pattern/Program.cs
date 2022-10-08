@@ -14,7 +14,7 @@ namespace UsefulLib
       /*!*/ CoreDoWork();   //called the Virtal method!
             PreDoWork();
         }
-        private void PreDoWork() { Console.WriteLine("Base.PreDoWork()"); }
+        private void PreDoWork() { Console.WriteLine("Base.PreDoWork()"); } //this one added
         protected virtual void CoreDoWork() { Console.WriteLine("Base.CoreDoWork()"); }
     }
 }
