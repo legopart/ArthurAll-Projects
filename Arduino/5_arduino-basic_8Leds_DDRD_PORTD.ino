@@ -9,9 +9,9 @@ void setup()
     //pinMode(ledPin[0], OUTPUT);
     //...
     //pinMode(ledPin[7], OUTPUT);
-    DDRD= 0B11111111;   //all pins set as output
+    DDRD= 0xff;//0B11111111 all pins set as output
     // 0B000000000 will mean that all the pins input.
-    PORTD = 0B00000000;
+    PORTD = 0x0; //0B00000000
 }
 
 const int delayDefault = 1000;
@@ -20,18 +20,18 @@ byte a;
 
 void loop()
 {
-    a = 0B00000000;
+    a = 0x0; //0B00000000
     PORTD = a;
     delaySet();
 
-    a |= 0B1;
+    a |= 0B1; //0B00000001
     for(int i=0; i<=7;++i){
         PORTD |= a;
         a = a << 1;
         delaySet();
     }
 
-    a = 0B11111111;
+    a = 0xff;//0B11111111;
     PORTD = a;
     delaySet();
     for(int i=0; i<=7;++i){
