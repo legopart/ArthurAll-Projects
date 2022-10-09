@@ -1,5 +1,3 @@
-#include "Ardoino.h"
-
 
 // https://www.tinkercad.com/things/1kfqVmMh2q2
 
@@ -10,7 +8,7 @@ void setup()
 {
     pinMode(3, OUTPUT);
     pinMode(2, INPUT);
-    attachInterrupt(0, buttonPressed, RISING);  // 0 = 2(iterrupt ID), Executed Function (buttonPressed), RISING = LOW -> HIGH (RISING / FALLING / CHANGE _-_)
+    attachInterrupt(0, buttonPressed, RISING);  // 0 = 2(iterrupt ID), Executed Function (buttonPressed), RISING = LOW -> HIGH (RISING / FALLING / CHANGE/ HIGH/ LOW _-_)
     // UNO Accept pin 2, 3 (as 0, 1)
 }
 
