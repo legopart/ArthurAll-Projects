@@ -1,8 +1,6 @@
-#include "Ardoino.h"
 
-
-int ledPin=3;
-int SW = 6; // כפתור
+int ledPin=4;
+int SW = 7; // כפתור
 int ledOnTime = 1000;
 int ledOffTime = ledOnTime;
 float f = 4.556;
@@ -22,15 +20,12 @@ void loop()
 {
     for(int i=1; i<=10;++i)
         if(digitalRead(SW) == HIGH){
-            analogWrite(ledPin, 1023);
-            Serial.println(analogRead(ledPin));
+            digitalWrite(ledPin, HIGH);
+            Serial.println(digitalRead(ledPin));
             delay(i*ledOnTime);
-            analogWrite(ledPin, 50);
-            Serial.println(analogRead(ledPin));
+            digitalWrite(ledPin, LOW);
+            Serial.println(digitalRead(ledPin));
             delay(ledOffTime);
-        }
-        else{
-            analogWrite(ledPin, 0);
         }
     delay(ledOffTime);
 

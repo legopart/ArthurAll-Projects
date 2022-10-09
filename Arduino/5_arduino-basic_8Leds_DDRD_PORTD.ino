@@ -1,5 +1,3 @@
-#include "Ardoino.h"
-
 
 // https://www.tinkercad.com/things/aCAQGJyLKiz
 

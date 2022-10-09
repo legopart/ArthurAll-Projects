@@ -1,5 +1,3 @@
-#include "Ardoino.h"
-
 
 int ledPin=3;
 int SW = 6; // כפתור
