@@ -1,6 +1,7 @@
 docker pull ubuntu
 docker run ubuntu
 docker run -it ubuntu
+docker ps
 
     ubuntu commands
 echo $0
@@ -22,6 +23,7 @@ pwd     /
 ls
 ls -1
 ls -l
+ls -a       with hidden
 cd ____
 cd ./____
 cd /____     *absolute
@@ -48,3 +50,17 @@ tail -n 5 file1.txt
 echo hello > file.txt           write a single line
 ls -l > file.txt
 cat file.txt
+        find:
+grep -i hello file1.txt         searching
+grep -i hello file1.txt file2.txt 
+grep -i hello file*
+grep -i -r hello .          recursively all the folders
+grep -ir hello .            same
+find            all files every directory
+find /etc
+find -type d        only directories
+find -type f     only fileas
+find -type f -iname "f*"
+find -type f -iname "*.py"
+
+
