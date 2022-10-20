@@ -1,0 +1,50 @@
+docker pull ubuntu
+docker run ubuntu
+docker run -it ubuntu
+
+    ubuntu commands
+echo $0
+whoami
+history
+!2
+
+    package manager
+apt
+apt-get
+apt list
+apt update
+apt install nano
+apt remove nano
+python
+
+    ubuntu commands
+pwd     /
+ls
+ls -1
+ls -l
+cd ____
+cd ./____
+cd /____     *absolute
+cd /root    cd ~
+cd ..
+
+mkdir test
+mv test renamed_test
+cd renamed_test
+touch hello.txt
+touch file1.txt file2.txt file3.txt
+mv file1.txt file.txt
+
+CTRL W, delete all tab line
+
+rm file* remove ....
+rm -r renamed_test/     remove with all the content
+cat file1.txt
+more file1.txt      long files
+apt install less
+less file1.txt
+head -n 5 file1.txt
+tail -n 5 file1.txt
+echo hello > file.txt           write a single line
+ls -l > file.txt
+cat file.txt
