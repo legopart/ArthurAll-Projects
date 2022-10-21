@@ -1,2 +1,9 @@
 docker build -t react-application .
 docker run -it react-app
+            docker run -it react-app bash
+docker run -it react-app sh
+
+ls
+node --version
+
+docker history react-app 

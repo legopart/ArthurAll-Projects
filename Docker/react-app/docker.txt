@@ -1,0 +1,248 @@
+docker build -t react-app .
+
+
+docker run -it react-app
+docker run -it react-app bash
+
+
+FROM node:14.20.1-alpine3.16
+COPY package*.json README.md /app/
+
+FROM node:14.20.1-alpine3.16
+COPY . /app/
+
+FROM node:14.20.1-alpine3.16
+WORKDIR /app
+COPY . ./
+
+FROM node:14.20.1-alpine3.16
+WORKDIR /app
+COPY ["helloworld.txt", "./"]
+
+#will uncompress, or add from url file
+FROM node:14.20.1-alpine3.16
+WORKDIR /app
+COPY . .
+ADD http://.../__.json .
+ADD file.zip .
+
+
+FROM node:14.20.1-alpine3.16
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN apk install python
+*another package manager
+
+
+
+FROM node:14.20.1-alpine3.16
+WORKDIR /app
+COPY . .
+RUN npm install
+
+docker build -t react-app .
+docker run -it react-app sh
+
+
+
+
+FROM node:14.20.1-alpine3.16
+WORKDIR /app
+COPY . .
+RUN npm install
+ENV API_URL=http://api.myapp.com/
+
+...
+printenv 
+printenv API_URL
+echo $API_URL
+
+
+
+Shell:
+docker run -it alpine
+addgroup app
+adduser -S -G app app_user
+
+show: 
+groups app_user
+
+
+    use:
+addgroup app
+adduser -S -G app app
+groups app
+
+    combine
+RUN addgroup app && adduser -S -G app app
+USER app
+
+
+
+
+docker build -t react-app .
+docker run -it react-app npm start
+        use     CMD npm start
+         use     CMD npm start  *only the last will take effect!
+
+another form, 
+    Shell form (seperate shall)
+        linux /bin/sh
+        windows cmd
+CMD npm start
+    Exec form:  (this is directly, use it)
+CMD ["npm", "start"]
+
+
+    ! CMD can override!!! docker run -it react-app echo "hello world"
+
+the same:
+ENTRYPOINT npm start
+ENTRYPOINT [ "npm", "start" ]
+
+
+    ! ENTRYPOINT can override docker run -it react-app --entrypoint echo "hello world"
+
+
+each line is layer
+
+
+docker history react-app 
+
+
+
+
+
+
+
+
+
+        delete empty images
+docker images
+docker image prune
+
+for running containers
+docker ps
+docker container prune
+
+    older images (stop state)
+docker ps-a
+docker container prune
+
+    all images delete
+docker image        commands
+
+
+
+
+
+        //several commands
+mkdir test ; cd test ; echo done
+can && && !better, if first fail, others will not done
+can || ||    return the first seccess
+piping:
+    ls /bin
+    ls /bin | less
+    ls /bin | head
+    ls /bin | tail
+
+break to longer commands
+    mkdir hello;\
+        cd test ;\
+        echo done
+
+
+
+
+    environments: 
+printenv
+printenv PATH
+echo $PATH
+        **available only on this session!
+export DB_USER = arthur
+echo $DB_USER
+
+        start container         //the variable will delete
+docker start -i 2f7
+
+    set variables for every connection (premenent)
+    use > not >> to add
+cd ~
+echo DB_USER=arthur >> .bashrc
+source .bashrc
+nano .bashrc
+
+
+
+    processes:
+ps
+    * show how much terminals runs it,
+    * show the time that took to processes
+
+    put on background &
+sleep 1000&
+
+kill 307
+
+
+        user commands:
+useradd
+usermod
+userdel
+cat /etc/passwd          all users
+
+useradd john
+usermod -s /bin/bash john
+
+adduser         more iteractive
+pwd
+
+docker exec -it -u john 2gdfd756gf bash
+
+
+        managing groups
+groupadd
+groupdel
+groupmod
+    cat /etc/group
+    add to group
+usermod -G developers john
+
+cat /etc/passwd | grep john
+grep john /etc/passwd
+    user groups
+groups john
+
+
+
+    file premmisions
+cd /home 
+echo echo hello > deploy.sh
+ls -l
+./deploy.sh
+chmod u+x deploy.sh     הוספת אישור הרצה
+chmod o+x deploy.sh      הוספת אישור הרצה לאחרים
+chmod og+x+w-r *.sh    אחרים ובעל הקבוצה
+
+
+
+
+
+
+
+
+
+    Build number
+docker build -t react-app:1 .
+docker images
+docker image remove react-app:latest
+docker images
+
+docker image tag react-app:1 react-app:2
+
+docker login
+docker image tag react-app:2 w3arthur/react-app:2
+docker push w3arthur/react-app:2
+
+**להשלים

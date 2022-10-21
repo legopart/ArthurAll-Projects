@@ -1,2 +1,0 @@
-docker build -t react-app .
-docker run -it react-app
