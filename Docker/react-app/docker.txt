@@ -246,3 +246,10 @@ docker image tag react-app:2 w3arthur/react-app:2
 docker push w3arthur/react-app:2
 
 **להשלים
+
+    save image
+docker image save --help
+docker image save -o react-app.tar react-app:1
+docker image rm react-app:1
+docker image rm react-app:2
+docker image load -i react-app.tar
