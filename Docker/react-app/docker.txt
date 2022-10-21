@@ -253,3 +253,70 @@ docker image save -o react-app.tar react-app:1
 docker image rm react-app:1
 docker image rm react-app:2
 docker image load -i react-app.tar
+
+
+
+
+
+
+
+
+
+    detouch mod (background!)
+docker run -d react-app:2
+docker run -d --name arthur react-app:2
+
+    logs
+docker ps
+                    container id
+docker logs -f 4139a28ae780
+CTRL C
+    logs by time
+docker logs -f -t 4139a28ae780
+
+    last 5 lines
+docker logs -n 5 4139a28ae780
+docker logs -n 5 -t 4139a28ae780
+
+
+
+    publishing ports:
+docker run -d -p 80:3000 --name arthur_c1 react-app:2
+docker ps
+
+
+    exec:       (in /app        WORKDIR)
+docker exec arthur_c1 ls
+docker exec -it arthur_c1 sh        (shell session)
+exit
+
+
+    commands
+docker stop arthur_c1
+docker start arthur_c1
+
+docker stop arthur_c1
+docker rm arthur_c1
+
+docker rm -f arthur_c1
+
+docker ps -a
+
+docker ps -a | grep c1
+
+
+
+
+
+
+docker exec -it arthur_c1 sh 
+echo hello > data.txt
+exit
+
+docker exec -it arthur_c1 sh 
+ls | grep data
+        *no data
+
+
+        volumes:
+        
