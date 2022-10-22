@@ -319,4 +319,53 @@ ls | grep data
 
 
         volumes:
-        
+docker volume create app-data
+docker volume inspect app-data
+            * on vm
+            "Mountpoint": "/var/lib/docker/volumes/app-data/_data",
+
+docker run -d --name arthur_c5 -p 4004:3000 -v app-data:/app/data react-app:2
+docker ps
+docker exec -it arthur_c5 sh
+cd data
+echo hello > data.txt
+cd ..
+ls -l
+    root only premmisions ...
+    !!! please rebuild
+docker build -t react-app:2 .
+
+docker run -d --name arthur_c6 -p 4005:3000 -v app-data:/app/data react-app:2
+docker exec -it arthur_c6 sh
+cd data
+ls              data.txt is exist, this files virtual exist
+
+
+
+
+
+
+    copy from container
+docker cp arthur_c6:/app/data.txt .
+    copy to container
+docker cp data2.txt arthur_c6:/app
+docker exec -it arthur_c6 sh
+
+
+
+
+
+                publish changes to docker
+                don't build each change
+                do mapping /HOST ->> /CONTAINER
+docker run -d --name arthur_c13 -p 4012:3000 -v dockerDir:/app react-app:2
+
+docker run -d --name arthur_c13 -p 4012:3000 -v ${pwd}:/app react-app:2
+docker logs -f arthur_c13
+
+
+
+
+
+docker image rm -f ${docker container -a -q ls }        -aq
+docker image rm -f ${docker image ls -q}
