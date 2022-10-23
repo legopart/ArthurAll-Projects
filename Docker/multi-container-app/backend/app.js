@@ -10,3 +10,4 @@ app.use("/api/", homeRoutes);
 app.use("/api/movies", movieRoutes);
 
 module.exports = app;
+
