@@ -1,0 +1,19 @@
+
+mkdir /.ssh
+ssh-keygen -b 4096
+
+
+    connect
+ssh root@157.230.3.218
+
+                    ssh-copy-id -i ~/.ssh/w3ddd.pub root@147.182.186.43
+        https://www.techtarget.com/searchsecurity/tutorial/Use-ssh-keygen-to-create-SSH-key-pairs-and-more
+$ ssh -i ~/.ssh/id_w3docker root@147.182.186.43
+eval ssh-agent -s
+ssh-add ~/.ssh/is_rsa_do    ?
+scp -r * root@157.230.3.218:~
+
+ssh root@157.230.3.218
+docker-compose up -d
+docker-compose ps
+docker-compose logs _____
