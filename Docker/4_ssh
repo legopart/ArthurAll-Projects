@@ -1,7 +1,0 @@
-
-mkdir /.ssh
-ssh-keygen -b 4096
-
-
-    connect
-ssh root@142.93..55.60
