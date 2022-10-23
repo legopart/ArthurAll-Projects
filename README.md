@@ -36,4 +36,3 @@ My C# C++ JAVA and Full Stack Reference Projects
 
 
 
-<img alt="" src="https://c.tenor.com/xP3RMY_2LfwAAAAd/reisen-udongein.gif"  height="200" width="auto">
