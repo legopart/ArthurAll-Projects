@@ -32,4 +32,119 @@ docker exec -it -u root vidly_backend sh
 
 docker network ls
     our network here (like vidly_)
-    
+
+    logs
+docker-compose logs --help
+docker-compose logs -f
+
+docker ps
+docker logs 4tg
+
+    publishing changes
+
+docker-compose up -d
+docker-compose up
+cd backend
+
+
+
+
+
+
+
+        Migration
+docker-compose down
+docker volume ls
+docker volume rm _____
+docker volume rm $(docker volume ls -q)
+docker-compose up
+
+        Testing
+להשלים
+
+
+        Deployment
+        https://github.com/docker/machine/releases
+        https://docker-docs.netlify.app/machine/install-machine/#install-machine-directly
+git bash *2
+if [[ ! -d "$HOME/bin" ]]; then mkdir -p "$HOME/bin"; fi && \
+curl -L https://github.com/docker/machine/releases/download/v0.16.2/docker-machine-Windows-x86_64.exe > "$HOME/bin/docker-machine.exe" && \
+chmod +x "$HOME/bin/docker-machine.exe"
+
+docker-machine --v
+
+docker-machine rm -f $(docker-machine ls -q)
+
+
+*find a driver for deploy       https://docker-docs.netlify.app/machine/drivers/
+*can use        --driver none
+*fix for digitalocean https://www.digitalocean.com/community/questions/unable-to-verify-the-docker-daemon-is-listening
+        --engine-install-url "https://releases.rancher.com/install-docker/19.03.9.sh" \
+
+docker-machine create `
+on linux
+base=https://github.com/docker/machine/releases/download/v0.14.0 &&
+  mkdir -p "$HOME/bin" &&
+  curl -L $base/docker-machine-Windows-x86_64.exe > "$HOME/bin/docker-machine.exe" &&
+  chmod +x "$HOME/bin/docker-machine.exe"
+
+*info:
+        https://www.digitalocean.com/community/tutorials/how-to-provision-and-manage-remote-docker-hosts-with-docker-machine-on-ubuntu-16-04
+        https://github.com/docker/machine/issues/3394
+
+
+docker-machine create \
+        --driver digitalocean \
+        --digitalocean-access-token dop_v1_d8d555b0f2be772774cbb5f4ebe8bce31effea3c893c7f3292787d292f9f4b75 \
+        --digitalocean-image ubuntu-18-04-x64 \
+        --engine-install-url "https://releases.rancher.com/install-docker/19.03.9.sh" \
+vidly
+
+
+        use ubuntu-20-04-x64
+$DOTOKEN=MY_TOKEN
+
+export DOTOKEN=dop_v1_d8d555b0f2be772774cbb5f4ebe8bce31effea3c893c7f3292787d292f9f4b75
+
+
+docker-machine create --driver digitalocean --digitalocean-access-token dop_v1_d8d555b0f2be772774cbb5f4ebe8bce31effea3c893c7f3292787d292f9f4b75 machine-name
+
+
+                ssh
+docker-machine ssh vidly
+        ducomentation
+https://docs.docker.com/compose/compose-file/compose-file-v3/#restart
+
+        check sizes (MB):
+docker images
+        react optimized for deploy production
+cd frontend
+npm run build
+                build
+docker build -t vidly_web_opt -f Dockerfile.prod .
+cd..
+docker-compose -f docker-compose.prod.yml build 
+docker images
+
+        deploy
+docker-machine ls
+docker-machine env vidly
+        *final command
+eval $(docker-machine env vidly)        set to docker machine
+        *inside the machine:
+docker images
+docker-compose -f docker-compose.prod.yml up -d
+        *rebuild
+
+docker-compose -f docker-compose.prod.yml up --build            *with running logs
+docker-compose -f docker-compose.prod.yml up -d --build
+        debuging, check containers
+docker ps
+docker logs ____
+
+docker-machine ls
+
+
+
+        tag versions
+docker ps
