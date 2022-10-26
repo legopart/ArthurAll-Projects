@@ -13,7 +13,7 @@ public:
     void run() {
         int three{ 3 };
         int four{ 4 };
-        auto pLambda = [&, this]() {
+        auto pLambda = [&, this]()  {
             one = 111;
             cout << one << two << three << four << endl;
         };
@@ -23,7 +23,7 @@ public:
 
 
 int main() {
-    auto func1 = []() { cout << "Lambda expression:" << endl; };
+    auto func1 = []() mutable { cout << "Lambda expression:" << endl; };
     test(func1);
 
     auto func2 = [](string name) { cout << name << endl; };
@@ -37,9 +37,9 @@ int main() {
     int two{ 2 };
     int three{ 3 };
 
-    [one, two, three]() { cout << one << ": " << two << endl; }();
-    [=]() { cout << one << ": " << two << endl; }();    //all local variables by value
-    [=, &three]() {three = 7; cout << one << ": " << two << ": " << three << endl; }();
+    [one, two, three]() mutable { cout << one << ": " << two << endl; }();
+    [=]() mutable { cout << one << ": " << two << endl; }();    //all local variables by value
+    [=, &three]() mutable {three = 7; cout << one << ": " << two << ": " << three << endl; }();
     cout << three << endl;
     [&]() {three = 1; one = 5; cout << one << ": " << two << ": " << three << endl; }();  //all local variables by reference
     auto aa = [&, two, three]() {one = 1; cout << one << ": " << two << ": " << three << endl; };    // two, three by value

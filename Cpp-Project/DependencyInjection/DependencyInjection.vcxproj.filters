@@ -13,48 +13,69 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Interfaces">
+      <UniqueIdentifier>{8dbe9f7d-d77f-45c9-a505-70c5adb73bf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Modules">
+      <UniqueIdentifier>{773d5057-b12d-40f3-aa2b-236f8fc6cde0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Modules\GPS">
+      <UniqueIdentifier>{a32a2591-b37d-44af-905d-a13e65bab37f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Modules\RESTClient">
+      <UniqueIdentifier>{8276cca5-18a4-4078-a0b9-a2c0044986ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules">
+      <UniqueIdentifier>{1a734797-f960-4d4c-bbff-039721f085b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\GPS">
+      <UniqueIdentifier>{2ec4e3a4-a665-4103-b36d-33d23c52a61a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Modules\RestClient">
+      <UniqueIdentifier>{5305bda4-6f06-4762-9d77-4061a0caa52d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RESTCHttpClient.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CPRHttpClinet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Source Files\Modules</Filter>
+    </ClCompile>
     <ClCompile Include="MokeGPS.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Modules\GPS</Filter>
     </ClCompile>
     <ClCompile Include="RealGPS.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Modules\GPS</Filter>
     </ClCompile>
-    <ClCompile Include="Config.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="CPRHttpClinet.cpp">
+      <Filter>Source Files\Modules\RestClient</Filter>
+    </ClCompile>
+    <ClCompile Include="RESTCHttpClient.cpp">
+      <Filter>Source Files\Modules\RestClient</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MokeGPS.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RealGPS.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="IGPS.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
     <ClInclude Include="Config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CPRHttpClinet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RESTCHttpClient.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Modules</Filter>
     </ClInclude>
     <ClInclude Include="IHttpClient.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="MokeGPS.h">
+      <Filter>Header Files\Modules\GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="RealGPS.h">
+      <Filter>Header Files\Modules\GPS</Filter>
+    </ClInclude>
+    <ClInclude Include="CPRHttpClinet.h">
+      <Filter>Header Files\Modules\RESTClient</Filter>
+    </ClInclude>
+    <ClInclude Include="RESTCHttpClient.h">
+      <Filter>Header Files\Modules\RESTClient</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
