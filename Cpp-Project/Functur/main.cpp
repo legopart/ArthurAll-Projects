@@ -26,17 +26,33 @@ int someFun21(int a, int b, function<int(int, int)> func21)
 	return func21(a, b);
 }
 
-using func2x = function<int(int, int)>;
+using func2x = function<int(int, int)>;	//
 int someFun22(int a, int b, func2x func22)
 {
 	return func22(a, b);
 }
 
 
-
+using FuncSignature = int(int, int);
+int someFun21(int a, int b, FuncSignature func21)
+{
+	return func21(a, b);
+}
 
 
 int sum(int a, int b) { return a + b; }
+
+
+
+
+
+int someFun3(int a, int b, func2x func22)
+{
+	return func22(a, b);
+}
+
+
+
 
 
 int main() 
