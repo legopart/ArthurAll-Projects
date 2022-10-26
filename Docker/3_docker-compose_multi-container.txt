@@ -148,3 +148,20 @@ docker-machine ls
 
         tag versions
 docker ps
+
+
+
+dop_v1_f0e862c8731756a0355eb93ec5186b0a206754dd97976e32d9670bf7770522c9
+
+
+
+docker-machine create \
+    --driver generic \
+    --generic-ip-address=157.230.3.218 \
+    --generic-ssh-key ~/.ssh/id_rsa \
+    vidly
+
+
+docker-machine create --driver generic --generic-ip-address=157.230.3.218 --generic-ssh-key ~/.ssh/id_rsa --generic-ssh-user=root vidly
+
+
