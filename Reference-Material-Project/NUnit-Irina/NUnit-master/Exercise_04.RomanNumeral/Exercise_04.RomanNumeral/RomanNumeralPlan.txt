@@ -1,0 +1,27 @@
+﻿0 -> ""
+1 -> I
+3 -> III
+4 -> IV
+5 -> V
+6 -> VI
+9 -> IX
+10 -> X
+24 -> XXIV
+38 -> XXXVIII
+42 -> XLII
+51 -> LI
+95 -> XCV
+104 -> CIV
+419 -> CDXIX
+555 -> DLV
+986 -> CMLXXXVI
+1499 -> MCDXCIX
+2219 -> MMCCXIX
+2017 (fail) -> MMXVIII
+-> 0
+I -> 1
+IX - > 9
+XCIV -> 94
+CMXLIII -> 943
+MCDXCIX -> 1499  
+MMMDCCCVI -> 3806

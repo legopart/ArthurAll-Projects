@@ -51,12 +51,25 @@ int someFun3(int a, int b, func2x func22)
 	return func22(a, b);
 }
 
-
+class FunctureClass
+{
+	int _value;
+public:
+	FunctureClass(int value) : _value( value ) {}
+	void operator()(int& i) const
+	{
+		i = i * _value;
+	}
+};
 
 
 
 int main() 
 {
+	int aa = 3;
+	FunctureClass(2)(aa);	// 98 labda style
+
+
 	//function pointer
 	int (*func)(int a, int b);
 	func = &sum;
