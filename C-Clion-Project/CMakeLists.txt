@@ -3,9 +3,13 @@ project(C_Clion_Project C)
 
 set(CMAKE_C_STANDARD 23)
 
+
+
 add_executable(_exerciseTest _exerciseTest.c)
 
-add_executable(_exercise1 _exercise1.c Ardoino.h)
+add_executable(_exercise1 _exercise1.c)
+
+add_executable(threads threads.c)
 
 add_executable(string string.c)
 

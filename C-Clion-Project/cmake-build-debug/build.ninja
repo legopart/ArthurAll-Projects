@@ -107,6 +107,39 @@ build _exercise1.exe: C_EXECUTABLE_LINKER___exercise1_Debug CMakeFiles/_exercise
   TARGET_PDB = _exercise1.exe.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target threads
+
+
+#############################################
+# Order-only phony target for threads
+
+build cmake_object_order_depends_target_threads: phony || CMakeFiles/threads.dir
+
+build CMakeFiles/threads.dir/threads.c.obj: C_COMPILER__threads_Debug C$:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/threads.c || cmake_object_order_depends_target_threads
+  DEP_FILE = CMakeFiles\threads.dir\threads.c.obj.d
+  FLAGS = -g -std=gnu2x
+  OBJECT_DIR = CMakeFiles\threads.dir
+  OBJECT_FILE_DIR = CMakeFiles\threads.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target threads
+
+
+#############################################
+# Link the executable threads.exe
+
+build threads.exe: C_EXECUTABLE_LINKER__threads_Debug CMakeFiles/threads.dir/threads.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\threads.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = threads.exe
+  TARGET_IMPLIB = libthreads.dll.a
+  TARGET_PDB = threads.exe.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target string
 
 
@@ -486,6 +519,8 @@ build struct1: phony struct1.exe
 
 build struct2: phony struct2.exe
 
+build threads: phony threads.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -494,7 +529,7 @@ build struct2: phony struct2.exe
 #############################################
 # Folder: C:/Users/pc1/Desktop/Multi-Language-All-Projects/C-Clion-Project/cmake-build-debug
 
-build all: phony _exerciseTest.exe _exercise1.exe string.exe scope.exe static.exe pointers.exe const.c.exe malloc.c.exe macros.exe struct1.exe struct2.exe C_Clion_Project.exe
+build all: phony _exerciseTest.exe _exercise1.exe threads.exe string.exe scope.exe static.exe pointers.exe const.c.exe malloc.c.exe macros.exe struct1.exe struct2.exe C_Clion_Project.exe
 
 # =============================================================================
 # Built-in targets
