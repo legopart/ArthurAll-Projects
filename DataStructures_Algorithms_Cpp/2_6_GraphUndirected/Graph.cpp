@@ -160,7 +160,7 @@ public:
 
 
 
-    Graph getMinimumSpanningTree() //to fix !!!
+    Graph getMinimumSpanningTree() //to check
     {
         Graph tree{};
         if (nodes.empty()) return tree;
