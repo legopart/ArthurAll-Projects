@@ -2,6 +2,7 @@
 # sets
 
 
+from sys import getsizeof
 numbers2 = [1, 1, 2, 3, 4]
 uniques = set(numbers2)
 print("set ", uniques)
@@ -72,4 +73,12 @@ print(values)  # {0: 0, 1: 2, 2: 4, 3: 6, 4: 8}
 
 
 # generator object
-generator_object = (x * 2 for x in range(5))
+#from sys import getsizeof
+print("generator_object:")
+generator_object = (x * 2 for x in range(5))  # not []
+# size: 104 remain the same for all range
+# no len()
+print("generator_object size:", getsizeof(generator_object))
+
+for x1 in list(generator_object):
+    print(x1)
