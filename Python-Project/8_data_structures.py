@@ -17,3 +17,25 @@ print(chars[-1])  # d
 chars[0] = 'h'
 
 print(chars[:5])
+
+chars[0] = 'H'
+
+print(chars[:])
+
+numbers2 = list(range(21))
+numbers2.remove(0)
+
+print(numbers2)
+print(numbers2[::-1])  # reverse
+print(numbers2[::-2])  # reverse each 2
+
+
+unpack = [1, 2, 3, 4, 5]
+first, second, third, *others = unpack
+# first = 1 second = 2 third = 3 others = [4, 5]
+print(first)  # 1
+print(others)  # [4, 5]
+
+
+first2, *others2, last = unpack
+print(last)  # 5
