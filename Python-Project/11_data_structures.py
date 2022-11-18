@@ -63,7 +63,7 @@ for x1 in range(5):
 
 values2 = {}  # dictionary
 for x2 in range(5):
-    values2[x] = x2 * 2
+    values2[x2] = x2 * 2
 
 
 # comprehension set {expression for item in items}
