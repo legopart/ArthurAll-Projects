@@ -1,0 +1,52 @@
+
+
+from abc import ABC, abstractmethod
+
+
+class InvalidOperationError(Exception):
+    pass
+
+
+class Stream(ABC):
+    def __init__(self) -> None:
+        print(" stream init")
+        self.opened = False  # flag
+
+    def open(self):
+        if self.opened:
+            raise InvalidOperationError("stream already opened")
+        self.opened = True
+        print("stream opened")
+
+    def close(self):
+        if not self.opened:
+            raise InvalidOperationError("stream already closed")
+        self.opened = False
+        print("stream closed")
+
+    @abstractmethod
+    def read(self):
+        pass
+
+
+class FileStream(Stream):
+    def read(self):
+        print("reading data from file")
+
+
+class NetworkStream(Stream):
+    def read(self):
+        print("reading data from network")
+
+
+class MemoryStream(Stream):
+    def read(self):  # mast to set
+        print("reading data from memory")
+
+
+# change to abstract
+print("stream")
+stream = MemoryStream()
+stream.open()
+
+# from abc import ABC, abstractmethod
