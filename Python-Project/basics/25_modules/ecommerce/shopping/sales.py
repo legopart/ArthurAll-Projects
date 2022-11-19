@@ -1,7 +1,12 @@
 
-# from ..customer import contact  # relevant path import
 from ecommerce.customer import contact
 # absolute path import
+print("sales initialize", __name__)
+
+if __name__ == "__main__"
+pass  # run from this file
+# from ..customer import contact
+# relevant path import
 
 contact.contact_customer()
 
