@@ -1,0 +1,24 @@
+# data classes
+
+from collections import namedtuple
+
+
+# class Point:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+
+#     def __eq__(self, other):
+#         return self.x == other.x and self.y == other.y
+
+# data class
+Point = namedtuple("Point", ["x", "y"])
+
+
+p1 = Point(x=1, y=2)
+p2 = Point(1, 2)
+# p2.x = 2   #cant change namedtuple
+p2 = Point(10, 2)  # rename with new object
+print(p1 == p2)  # True # False
+print("id(p1)", id(p1))
+print("id(p1)", id(p2))

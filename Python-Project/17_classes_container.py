@@ -1,8 +1,11 @@
 
 class Product:
     def __init__(self, price) -> None:
-        self.set_price(price)
-        pass
+        self.price = price
+       # pass
+
+    def __del__(self):
+        print("destructor ")
 
     @property
     def price(self):  # get_price(self):
