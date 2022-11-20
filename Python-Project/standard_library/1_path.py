@@ -1,3 +1,5 @@
+import shutil
+from time import ctime
 from pathlib import Path
 # Path class
 
@@ -42,3 +44,24 @@ print(paths)  # WindowsPath, PasixPath on mac or linux
 py_files = [p for p in path.glob("*.py")]  # find only .py files
 # find only .py files with childres also path.glob("**/*.py")
 py_files_recursively = [p for p in path.rglob("*.py")]
+
+
+#from time import ctime
+path = Path("ecommerce/__init__.py")
+print(ctime(path.stat().st_ctime))  # creation time
+path.read_bytes()  # content as bytes
+path.read_text()  # content content
+# better then
+with open("ecommerce/__init__.py", "r") as file:
+    pass
+
+path.write_text("hello world")
+# path.write_bytes()
+
+
+source = Path("ecommerce/__init__.py")
+target = Path() / "__init__.py"
+# target.write_text(source.read_text())
+
+#import shutil
+shutil.copy(source, target)
