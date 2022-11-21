@@ -2,7 +2,7 @@ from pathlib import Path
 from zipfile import  ZipFile
 
 with ZipFile("files.zip", "w") as zip: #write
-    for path in Path("basics").rglob("*.*"):
+    for path in Path("../basics").rglob("*.*"):
         zip.write(path)
 #zip.close()
 

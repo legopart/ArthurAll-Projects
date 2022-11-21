@@ -8,3 +8,7 @@ movies = [
 data = json.dumps(movies)
 print(data)
 Path("movies.json").write_text(data)
+
+data = Path("movies.json").read_text()
+movies =  json.load(data) #parse to array
+print(movies)
