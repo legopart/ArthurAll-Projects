@@ -1,12 +1,12 @@
 import requests
-import config
+from config import Yelp
 
 
 # pipenv install requests
 # chooses the right environment
 # https://www.yelp.com/developers/documentation/v3/business_search
 url: str = "https://api.yelp.com/v3/businesses/search"
-api_key: str = config.api_key
+api_key: str = Yelp.api_key
 
 headers: dict = {
     "Authorization": "Bearer " + api_key
