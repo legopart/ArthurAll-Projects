@@ -29,6 +29,8 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# installed panels (admin, auth network, contenttypes, sessions(data about users)
+# , messages (displayed messages) , staticfiles (css and images) )
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'movies.apps.MoviesConfig'
 ]
 
 MIDDLEWARE = [
