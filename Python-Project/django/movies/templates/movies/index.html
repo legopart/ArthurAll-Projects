@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Hello Movies World</h1>
+<!-- zen coding: table.table>thead>tr>th*4  Tab-->
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Stock</th>
+        <th>Daily Rate</th>
+    </tr>
+    </thead>
+    <!-- django template -->
+    <!--  logic (loops + conditions)  variable -->
+    <tbody>
+    {% for movie in movies %}
+    <tr>
+        <td>
+            <a href="{% url 'movies:detail' movie.id %}">
+                {{ movie.title }}
+            </a>
+        </td>
+        <td>{{ movie.genre }}</td>
+        <td>{{ movie.number_in_stock }}</td>
+        <td>{{ movie.daily_rate }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

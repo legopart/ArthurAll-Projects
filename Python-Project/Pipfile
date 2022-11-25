@@ -12,6 +12,9 @@ pypdf2 = "*"
 openpyxl = "*"
 numpy = "*"
 django = "*"
+pylint-django = "*"
+pylint = "*"
+django-tastypie = "*"
 
 [dev-packages]
 
