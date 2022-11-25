@@ -1,0 +1,169 @@
+jupiter notebook
+# dash board:
+# localhost:8888
+# > desktop
+# new v > python
+# rename to, Hello World
+# Hello World.ipymb
+download data set from kaggle.com
+
+
+print("hello world")
+
+download, put on desktop
+https://www.kaggle.com/datasets/gregorut/videogamesales
+
+code:
+import pandas as pd 
+df = pd.read_csv('vgsales.csv')
+df
+
+#global data attrebutes
+import pandas as pd 
+df = pd.read_csv('vgsales.csv')
+df.shape	#(rows, columns)
+
+df.describe()		# info about each column
+
+
+df.values
+
+# TAB		auto complete
+# Shift TAB		info
+# CTRL /	comment
+DD 		delete cell
+
+another example
+
+import pandas as pd 
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from sklearn import tree
+import joblib
+
+music_data = pd.read_csv('music.csv')
+music_data
+
+
+1- clean data, remove empti/ null / prepper
+2-seperate input / output,  age+gender / genre
+
+X = music_data.drop(columns=['genre']) #input
+X
+
+y = music_data['genre'] #output
+y
+
+
+
+3- creating a model, desicion tree
+
+
+
+#import ...
+X = music_data.drop(columns=['genre']) #input 
+y = music_data['genre'] #output
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+
+4- make prodictions (age , 1 male 0 female)
+model.predict([[21, 1], [22, 0]])
+						array(['HipHop', 'Dance'], dtype=object)
+
+5- measure accuracy of the model
+2 samples cant test the model algorithm, have to check 70% of the data, and 20-30% for testing
+
+
+
+#import ...
+X = music_data.drop(columns=['genre']) #input 
+y = music_data['genre'] #output
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2) #0.2-0.3
+
+
+model = DecisionTreeClassifier()
+model.fit(X_train, y_train)
+prediction =model.predict(X_test)
+
+score = accuracy_score(y_test, prediction)
+score
+
+
+
+
+CTRL ENTER
+
+
+
+
+
+
+#import ...
+X = music_data.drop(columns=['genre']) #input 
+y = music_data['genre'] #output
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.8)
+
+
+model = DecisionTreeClassifier()
+model.fit(X_train, y_train)
+prediction =model.predict(X_test)
+
+score = accuracy_score(y_test, prediction)
+score	 #80% for testing
+
+
+
+
+*more clean data = better learn, better testing
+
+
+
+
+
+
+
+
+
+model precistence,
+	trained model from a file
+
+
+#import ...
+X = music_data.drop(columns=['genre']) #input 
+y = music_data['genre'] #output
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+joblib.dump(model, 'music-reccomender.joblib')
+
+
+
+
+
+#load the file
+model = joblib.load('music-reccomender.joblib') 
+prediction = model.predict([[21, 1]])
+prediction
+
+
+
+
+
+visual models:
+
+
+
+X = music_data.drop(columns=['genre']) #input 
+y = music_data['genre'] #output
+
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+
+tree.export_graphviz(model, out_file='music-recommender.dot', feature_names=['age', 'gender'], class_names=sorted(y.unique()), label='all', rounded=True, filled=True)
+
+
+
+CTRL SHIFT V 
