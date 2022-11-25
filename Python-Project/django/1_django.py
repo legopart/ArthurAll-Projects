@@ -1,4 +1,7 @@
 # pipenv install django
+# use:
+# pipenv install django==3.2
+
 # == 2.1
 # activate virtual environments
 # pipenv shell
@@ -12,6 +15,7 @@
 #
 # python manage.py runserver 8000
 #
+# all the functionality from model databases
 # all the functionality from model databases
 # django will create models for us in database
 # this is created a migration

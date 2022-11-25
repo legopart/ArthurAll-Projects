@@ -15,7 +15,6 @@ class Genre(models.Model):
         return self.name
 
 
-
 class Movie(models.Model):
     title = models.CharField(max_length=255)
     release_year = models.IntegerField(null=True)
