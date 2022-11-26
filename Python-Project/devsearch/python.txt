@@ -1,0 +1,35 @@
+python
+pip list
+pip install virtualenv
+cd desktop
+virtualenv env
+env\Scripts\activate
+pip list
+env\Scripts\deactivate
+pip install django
+! always activate to use django !
+	commands
+django-admin
+
+django-admin startproject devsearch
+cd devsearch
+python manage.py runserver
+	http://localhost:8000/
+	CTRL C
+*copy env to project folder
+*dont touch manage.py
+
+devsearch > server.py
+* set middlewares
+* set urls apps
+* templates
+* database, connections
+devsearch > urls.py		,list
+*navigation for the app
+devsearch > wsgi.py	not needed
+*django web server
+devsearch > asgi.py	not needed
+*asyncronic server
+all seperated to apps!
+
+
