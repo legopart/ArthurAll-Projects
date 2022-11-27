@@ -1,5 +1,7 @@
 from django.urls import path
 from django.http import HttpResponse
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
@@ -11,3 +13,5 @@ urlpatterns = [
     path("update-project/<str:pk1>", views.updateProject, name="update-project"),
     path("delete-project/<str:pk1>", views.deleteProject, name="delete-project"),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

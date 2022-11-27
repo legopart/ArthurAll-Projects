@@ -22,7 +22,7 @@ def project(request, pk1):
 
 def createProject(request):
     if request.method == 'POST':
-        form = ProjectForm(request.POST)
+        form = ProjectForm(request.POST, request.FILES)  # get backend files
         print(request.POST)  # request.POST['title']
         if form.is_valid():  # check required form + validity
             form.save()  # add new project to data base
@@ -36,7 +36,7 @@ def createProject(request):
 def updateProject(request, pk1):
     project = Project.objects.get(id=pk1)
     if request.method == 'POST':
-        form = ProjectForm(request.POST, instance=project)
+        form = ProjectForm(request.POST, request.FILES, instance=project)
         print(request.POST)  # request.POST['title']
         if form.is_valid():  # check required form + validity
             form.save()  # add new project to data base

@@ -1,0 +1,13 @@
+django model class 
+
+
+python -m install pillow
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+
+use django white noise for static file hosting
+static files not works on DEBUG=False
+
+python manage.py collectstatic
