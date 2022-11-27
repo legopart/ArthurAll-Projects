@@ -1,0 +1,46 @@
+migration, create database
+
+cmd
+env\Scripts\activate
+python manage.py runserver
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+
+python manage.py shell
+>>>	from projects.models import Project
+>>>	projects = Project.objects.all()
+>>>	print(projects)
+		<QuerySet [<Project: Project: Mumble Social Network>, <Project: Project: Ecommerce Website>, <Project: Project: Portfolio Website>, <Project: Project: Code Sniper>, <Project: Project: Yoga Vive>]>
+>>>	projectObj = Project.objects.get(title="Portfolio Website")
+>>>	print(projectObj)
+	Project: Portfolio Website
+>>>	print(projectObj.created)
+		2022-11-27 02:59:22.026711+00:00
+>>>	projects = Project.objects.filter(title__startswith="po")
+>>>	print(projects)
+		<QuerySet [<Project: Project: Portfolio Website>]>
+>>>	projects = Project.objects.filter(vote_ratio__gte=50)
+>>>	print(projects)
+		<QuerySet [<Project: Project: Mumble Social Network>, <Project: Project: Portfolio Website>, <Project: Project: Code Sniper>, <Project: Project: Yoga Vive>]>
+>>>	projects = Project.objects.filter(vote_ratio__lte=50)
+>>>	print(projects)
+		<QuerySet [<Project: Project: Ecommerce Website>]>
+>>>	exit
+
+		get all one to ? 
+python manage.py shell
+>>>	from projects.models import Project
+>>>	project = Project.objects.get(title="Ecommerce Website")
+>>>	print(project)
+>>>	print(project.review_set.all())		# lower case
+		<QuerySet [<Review: up rate -> Project: Ecommerce Website>, <Review: up rate -> Project: Ecommerce Website>, <Review: down rate -> Project: Ecommerce Website>]>    
+>>>	print(project.tags.all())
+		<QuerySet [<Tag: Django>, <Tag: JavaScript>, <Tag: React>]>

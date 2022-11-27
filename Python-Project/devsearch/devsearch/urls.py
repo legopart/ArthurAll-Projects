@@ -18,9 +18,10 @@ from django.urls import path, include
 from django.http import HttpResponse
 
 urlpatterns = [
-    path("", lambda x:HttpResponse("<h1>Welcome 8000</h1>")),
+    path("", lambda request:HttpResponse("<h1>Welcome 8000</h1>")),
     path("admin/", admin.site.urls),
-    path('', include('projects.urls'))
+    path('', include('projects.urls')),
+    path('', include('example.urls')),  # example/urls.py
 ]
 # <int:pk>
 # <slug:pk>

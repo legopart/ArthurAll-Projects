@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block title %}
+(example/i)Some Project {{project.id}} {{project.name}} 
+{% endblock title %}
+
+
+
+{% block content %}
+<h1>(example/i)Single Project Template</h1>
+<h2>Project #{{project.id}} {{project.name}} </h2>
+{% endblock content %}
