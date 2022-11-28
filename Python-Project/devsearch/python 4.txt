@@ -8,6 +8,15 @@ python manage.py runserver
 
 
 use django white noise for static file hosting
-static files not works on DEBUG=False
+static files not works on DEBUG = False
 
+before deploy
 python manage.py collectstatic
+
+
+python -m install whitenoise
+
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+https://whitenoise.evans.io/en/latest/
+
+*fix white noise installetion

@@ -24,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-+hlze%tq+!8**3g8@^j!^m(d=e)14s=ndosjy$77q6g+2spgzj"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True    # False on deploy
 
-ALLOWED_HOSTS: list[str] = []
+ALLOWED_HOSTS: list[str] = ['localhost',
+                            '127.0.0.1', 'mywebsite.com']   # on deploy
 
 
 # Application definition
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    # "whitenoise.middleware.WhiteNoiseMiddleware", # to fix https://whitenoise.evans.io/en/latest/
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -131,7 +133,7 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
 
 # static files on production, will create
-# python manage.py collectstatic
+# python manage.py collectstatic            before deploy
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
