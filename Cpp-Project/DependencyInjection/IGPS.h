@@ -6,3 +6,4 @@ public:
 	virtual float getLongitude()=0;
 };
 
+
