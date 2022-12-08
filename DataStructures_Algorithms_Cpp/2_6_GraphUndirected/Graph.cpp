@@ -36,8 +36,9 @@ struct Node
 struct Edge {
     typedef weak_ptr<struct Node> wp_Node;
     typedef shared_ptr<struct Node> sp_Node;
+    typedef Node* ptr_Node; //cant use wp_ (weak pointer) on this
     int weight;
-    Node* from; //cant use wp_ (weak pointer)
+    ptr_Node from;
     wp_Node to;
     explicit Edge(Node* from, sp_Node& to, int weight) : from{from}, to{to}, weight{weight} {   }
     ~Edge(){ cout << "del:" << print() << "; "; }
