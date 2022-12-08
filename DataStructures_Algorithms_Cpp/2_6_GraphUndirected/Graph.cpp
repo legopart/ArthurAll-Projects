@@ -20,8 +20,8 @@ using std::stack, std::queue, std::priority_queue, std::shared_ptr, std::make_sh
 
 struct Node
 {
-    typedef std::shared_ptr<struct Node> sp_Node;
-    typedef std::shared_ptr<struct Edge> sp_Edge;
+    typedef shared_ptr<struct Node> sp_Node;
+    typedef shared_ptr<struct Edge> sp_Edge;
     char label;
     list<sp_Edge> edges; /*!*/
     explicit Node(char& label) : label{label}, edges{} {   }
@@ -34,8 +34,8 @@ struct Node
     [[nodiscard]] string print() const { string toString{}; return toString+label; }
 };
 struct Edge {
-    typedef std::weak_ptr<struct Node> wp_Node;
-    typedef std::shared_ptr<struct Node> sp_Node;
+    typedef weak_ptr<struct Node> wp_Node;
+    typedef shared_ptr<struct Node> sp_Node;
     int weight;
     Node* from; //cant use wp_ (weak pointer)
     wp_Node to;
@@ -56,8 +56,8 @@ struct NodePriority {
 
 class Graph {   //for example only
 private:
-    typedef std::shared_ptr<struct Node> sp_Node;
-    typedef std::shared_ptr<struct Edge> sp_Edge;
+    typedef shared_ptr<struct Node> sp_Node;
+    typedef shared_ptr<struct Edge> sp_Edge;
     typedef shared_ptr<struct NodePriority> sp_NodePriority;
     //typedef std::_Rb_tree_const_iterator<pair<const char, sp_Node>> it_Node;
     map<char, sp_Node> nodes;
