@@ -1,7 +1,7 @@
 //fix the issue with too much destructures
 
 #include <iostream>
-#include "Graph.cpp"
+#include "Graph.h"
 using  std::cout, std::endl, std::list;
 int main() {
 
@@ -12,7 +12,7 @@ int main() {
         graph1.addNode('b');
         graph1.addNode('c');
         graph1.addEdge('a', 'b', 3);
-         graph1.addEdge('a', 'c', 6);
+        graph1.addEdge('a', 'c', 6);
         graph1.addEdge('b', 'c', 6);
         cout << graph1.print() << endl;
 
