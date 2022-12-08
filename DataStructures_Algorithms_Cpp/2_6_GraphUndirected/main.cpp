@@ -27,9 +27,11 @@ int main() {
         graph2.addEdge('b', 'c', 10);
         auto path = graph2.getShortestPath('a', 'c');
         cout << endl;
-        for(auto node : path) cout << node << ", "; // a, b, c
+        for (auto node: path) cout << node << ", "; // a, b, c
         cout << endl << endl << endl << endl;
-
+    }
+    {
+        cout << "\n\nGraph:" << endl;
         Graph graph{};  //to fix !
         graph.addNode('a');
         graph.addNode('b');
@@ -40,6 +42,7 @@ int main() {
         graph.addEdge('c', 'd', 5);
         graph.addEdge('a', 'c', 1);
         graph.addEdge('b', 'c', 2);
+
         auto tree = graph.getMinimumSpanningTree();
         cout << "Get Minimum Spanning Tree:" << endl;
         cout << tree.print() << endl << endl;
