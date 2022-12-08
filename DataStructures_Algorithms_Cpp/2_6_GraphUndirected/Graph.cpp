@@ -37,7 +37,7 @@ struct Edge {
     typedef std::weak_ptr<struct Node> wp_Node;
     typedef std::shared_ptr<struct Node> sp_Node;
     int weight;
-    Node* from;
+    Node* from; //cant use wp_ (weak pointer)
     wp_Node to;
     explicit Edge(Node* from, sp_Node& to, int weight) : from{from}, to{to}, weight{weight} {   }
     ~Edge(){ cout << "del:" << print() << "; "; }
@@ -62,7 +62,7 @@ private:
     //typedef std::_Rb_tree_const_iterator<pair<const char, sp_Node>> it_Node;
     map<char, sp_Node> nodes;
 
-    list<char> buildPath(map<sp_Node, sp_Node>& previousNodes, const sp_Node& toNode) const {
+    static list<char> buildPath(map<sp_Node, sp_Node>& previousNodes, const sp_Node& toNode) {
         stack<sp_Node> stack{};
         stack.push(toNode);
         auto previous = previousNodes.find(toNode)->second;
@@ -93,7 +93,7 @@ private:
     }
 
 
-    bool containsNode(const sp_Node& node) const { return !(nodes.find(node->label) == nodes.end()); }
+    [[nodiscard]] bool containsNode(const sp_Node& node) const { return !(nodes.find(node->label) == nodes.end()); }
 
 
 public:
@@ -116,7 +116,7 @@ public:
         fromNode->addEdge(toNode, weight);
         toNode->addEdge(fromNode, weight);
     }
-    list<char> getShortestPath(char from, char to) const
+    [[nodiscard]] list<char> getShortestPath(char from, char to) const
     {
         if (nodes.find(from) == nodes.end() || nodes.find(to) == nodes.end()) throw exception();
         auto fromNode = nodes.find(from)->second;
