@@ -16,7 +16,7 @@
 #include <memory>
 
 using std::string, std::to_string, std::cout, std::map, std::pair, std::set, std::list, std::vector;
-using std::stack, std::queue, std::priority_queue, std::shared_ptr, std::make_shared, std::exception;
+using std::stack, std::queue, std::priority_queue, std::shared_ptr, std::weak_ptr, std::make_shared, std::exception;
 
 struct Node
 {
