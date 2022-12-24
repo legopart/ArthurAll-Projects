@@ -25,7 +25,7 @@
 		"express-async-handler": "^1.2.0",
 		"jake-lib": "^1.0.0",
 		"joi": "^17.6.0",
-		"jsonwebtoken": "^8.5.1",
+		"jsonwebtoken": "^9.0.0",
 		
 		"lodash": "^4.17.21",
 		"mongoose": "^6.2.4",
