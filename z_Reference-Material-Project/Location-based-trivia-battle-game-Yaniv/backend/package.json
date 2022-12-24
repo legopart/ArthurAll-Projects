@@ -257,7 +257,7 @@
     "js-tokens": "^4.0.0",
     "jsdom": "^16.7.0",
     "jsesc": "^2.5.2",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "json-bigint": "^1.0.0",
     "json-parse-even-better-errors": "^2.3.1",
     "json-buffer": "^3.0.0",
