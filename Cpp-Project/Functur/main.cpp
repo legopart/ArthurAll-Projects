@@ -4,7 +4,7 @@
 
 using std::cout;
 using std::endl;
-using std::function;
+
 
 int sum(int a, int b);
 
@@ -21,6 +21,10 @@ int someFun12(int a, int b, func1x  func12)
 }
 
 
+
+
+using std::function;
+
 int someFun21(int a, int b, function<int(int, int)> func21)
 {
 	return func21(a, b);
@@ -33,6 +37,9 @@ int someFun22(int a, int b, func2x func22)
 }
 
 
+
+
+
 using FuncSignature = int(int, int);
 int someFun21(int a, int b, FuncSignature func21)
 {
@@ -40,16 +47,19 @@ int someFun21(int a, int b, FuncSignature func21)
 }
 
 
+
+
+
+
+//
+//int someFun3(int a, int b, func2x func22)
+//{
+//	return func22(a, b);
+//}
+
+
 int sum(int a, int b) { return a + b; }
 
-
-
-
-
-int someFun3(int a, int b, func2x func22)
-{
-	return func22(a, b);
-}
 
 class FunctureClass
 {
