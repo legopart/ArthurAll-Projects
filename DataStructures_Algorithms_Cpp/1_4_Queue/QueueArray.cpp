@@ -5,7 +5,6 @@
 using std::string, std::to_string, std::exception;
 class QueueArray
 {
-private:
     int itemsLength;
     int* items;
     int count;

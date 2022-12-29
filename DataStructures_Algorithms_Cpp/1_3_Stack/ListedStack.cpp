@@ -8,7 +8,6 @@
 using std::list, std::string, std::to_string, std::exception, std::cout;
 class LinkedStack
 {
-private:
     list<int> items;
     [[nodiscard]] bool isEmpty() const { return items.empty(); };
 public:

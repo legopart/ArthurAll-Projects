@@ -6,7 +6,6 @@ using std::string, std::to_string, std::cout, std::endl, std::list, std::excepti
 //std::min, std::max;
 
 class Tree {
-private:
     struct Node
     {
         int data;

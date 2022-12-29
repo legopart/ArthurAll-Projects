@@ -5,7 +5,6 @@
 using std::string, std::to_string, std::exception;
 class QueueCircular
 {
-private:
     int* items;
     int itemsLength;
     int count;

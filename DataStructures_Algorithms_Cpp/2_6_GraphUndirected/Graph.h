@@ -56,7 +56,6 @@ struct NodePriority {
 };
 
 class Graph {   //for example only
-private:
     typedef shared_ptr<struct Node> sp_Node;
     typedef shared_ptr<struct Edge> sp_Edge;
     typedef shared_ptr<struct NodePriority> sp_NodePriority;

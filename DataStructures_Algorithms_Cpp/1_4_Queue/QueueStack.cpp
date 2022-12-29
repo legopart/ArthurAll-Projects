@@ -7,7 +7,6 @@
 using std::stack, std::string, std::to_string, std::exception;
 class QueueStack
 {
-private:
     stack<int> queueStack; //stackA
     stack<int> enqueueStack; //stackB
     [[maybe_unused]] [[nodiscard]] bool isEmpty() const { return queueStack.empty();}

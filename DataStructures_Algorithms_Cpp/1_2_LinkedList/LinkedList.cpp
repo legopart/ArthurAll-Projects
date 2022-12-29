@@ -8,7 +8,6 @@
 using std::string, std::to_string, std::cout, std::exception;
 class List
 {
-private:
     struct Node
     {
         int data;

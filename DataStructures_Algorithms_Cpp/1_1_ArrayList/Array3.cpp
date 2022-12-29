@@ -3,7 +3,6 @@
 template<typename T ,size_t/*int*/ S>
 class Array3
 {
-private:
     T m_Data[S]{};
 public:
     Array3() = default;

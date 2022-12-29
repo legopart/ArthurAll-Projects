@@ -4,7 +4,6 @@
 using std::string, std::to_string, std::cout, std::exception;
 class Stack
 {
-private:
     int itemsLength;
     int* items;
     int count;

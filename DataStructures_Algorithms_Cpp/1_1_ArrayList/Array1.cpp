@@ -4,7 +4,6 @@
 using std::string, std::to_string, std::cout,std::exception;
 class Array1
 {
-private:
     int* itemArray{};
     int arrayLength{};
     int count{}; //count

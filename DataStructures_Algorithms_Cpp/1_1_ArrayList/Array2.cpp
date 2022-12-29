@@ -4,7 +4,6 @@ using std::string, std::to_string, std::cout;
 template<typename T>
 class Array2
 {
-private:
     T* itemArray;
     int arrayLength;
     int count; //count
