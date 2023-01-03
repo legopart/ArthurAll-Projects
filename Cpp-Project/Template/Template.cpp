@@ -31,11 +31,20 @@ struct Power<1>
 
 
 template<unsigned int N>
-int Pow(int i)  {  return i * Pow<N - 1>(i); }
+unsigned int Pow(int i)  {  return i * Pow<N - 1>(i); }
 
 template<>
-int Pow<1>(int i) { return i; }
+unsigned int Pow<1>(int i) { return i; }
 
+
+
+
+//To fix
+//template<unsigned int A, unsigned int B>
+//unsigned int Pow2() { return B * Pow2<A-1, B>(); }
+//
+//template<unsigned int B>
+//unsigned int Pow2<1, B>() { return B; }
 
 
 int main()
@@ -47,7 +56,10 @@ int main()
     std::cout << "class/struct, 5^4 = " << Power<4>::value(5) << std::endl;
 
     std::cout << "function, 5^4 = " << Pow<4>(5) << std::endl;
+
+   /// std::cout << "function2, 5^4 = " << Pow2<5, 4>() << std::endl;
 }
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
