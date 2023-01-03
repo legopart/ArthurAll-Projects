@@ -20,6 +20,19 @@ void Print(int value)
 }
 
 
+template<unsigned int N>
+class Array
+{
+    int m_Array[N];
+};
+
+
+
+
+
+
+
+
 
 template<unsigned int N>
 struct Power
@@ -76,6 +89,7 @@ unsigned int Pow<1>(int i) { return i; }
 int main()
 {
     Print("hello");
+    Print(5.5f);
     std::cout << "int5: ";
     Print(5);
 
