@@ -1,22 +1,51 @@
-// NewProject.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Mutable.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-#include "cls.h"
-#define Log(x) std::cout << "x" << std::endl;
 
+
+
+//mutable
+
+class ClsA
+{
+public:
+    mutable int x = 5;
+    int y = 2;
+    int Foo() const
+    {
+        //++y;
+        ++x;
+        return x;
+    }
+};
+
+
+void PrintClsA(const ClsA& clsA)
+{
+    std::cout << "print() foo = " << clsA.Foo() << std::endl;
+}
 
 
 int main()
 {
+    ClsA clsA;
+    clsA.Foo();
+
+    std::cout << "class x = " << clsA.x << std::endl;
 
 
-    Log(abc);
+    int x = 5;
+    auto foo = [=]() mutable    //do awailable to change
+    {
+        ++x;
 
+        std::cout << "lambda x = " << x << std::endl;
+    };
 
+    foo();
 
-    Cls::print();
-    
+    std::cout << "external x = " << x << std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
