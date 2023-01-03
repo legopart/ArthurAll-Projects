@@ -13,6 +13,13 @@ void Print(T value)
 }
 
 
+void Print(int value)
+{
+    std::cout << value * 10 << std::endl;
+    //std::cout << value << " a = " << a << std::endl;
+}
+
+
 
 template<unsigned int N>
 struct Power
@@ -30,6 +37,24 @@ struct Power<1>
 
 
 
+
+template<unsigned int A, unsigned int B>
+struct Power2
+{
+    static constexpr int64_t value = B * Power2<A - 1, B>::value; //or enum value
+};
+
+
+
+template<unsigned int B>
+struct Power2<1, B>
+{
+    static constexpr int64_t value = B ;
+};
+
+
+
+
 template<unsigned int N>
 unsigned int Pow(int i)  {  return i * Pow<N - 1>(i); }
 
@@ -41,23 +66,26 @@ unsigned int Pow<1>(int i) { return i; }
 
 //To fix
 //template<unsigned int A, unsigned int B>
-//unsigned int Pow2() { return B * Pow2<A-1, B>(); }
+//unsigned int Pow22() { return A*B; }
 //
-//template<unsigned int B>
-//unsigned int Pow2<1, B>() { return B; }
+//template<unsigned int _>
+//unsigned int Pow22<1, _>() { return  1; }
+
 
 
 int main()
 {
     Print("hello");
-    
+    std::cout << "int5: ";
     Print(5);
 
     std::cout << "class/struct, 5^4 = " << Power<4>::value(5) << std::endl;
 
+    std::cout << "option2: class/struct, 5^4 = " << Power2<4, 5>::value << std::endl;
+
     std::cout << "function, 5^4 = " << Pow<4>(5) << std::endl;
 
-   /// std::cout << "function2, 5^4 = " << Pow2<5, 4>() << std::endl;
+   // std::cout << "function2, 5^4 = " << Pow2<5, 4>() << std::endl;
 }
 
 
