@@ -20,10 +20,10 @@ void Print(int value)
 }
 
 
-template<unsigned int N>
+template<typename T,unsigned int N>
 class Array
 {
-    int m_Array[N];
+    T m_Array[N];
 };
 
 
