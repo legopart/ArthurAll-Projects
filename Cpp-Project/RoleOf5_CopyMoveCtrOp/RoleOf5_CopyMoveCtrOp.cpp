@@ -24,7 +24,7 @@ public:
 		memcpy(mPtr, other.mPtr, sizeof(int) * numElements);
 	}
 
-	Widget(const Widget& other) : mPtr{ new int[numElements] }	//important to start as the constructure
+	Widget(const Widget& other) : mPtr{ new int[numElements] }//, mX { other.mx } 	//important to start as the constructure
 	{
 		copyCtrOp(other);
 		cout << "copied()" << endl;
