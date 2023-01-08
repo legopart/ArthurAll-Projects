@@ -1,11 +1,15 @@
 #include <iostream>
 #include <memory>
-#include <string>
-using std::string, std::to_string, std::cout;
+#include <vector>
+#include <algorithm>
+#include <numeric>
+using namespace std;
 
 
 
 int main() 
 {
+
+	cout << " ~" << endl;
 
 }

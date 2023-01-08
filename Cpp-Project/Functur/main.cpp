@@ -29,8 +29,8 @@ int someFun21(int a, int b, function<int(int, int)> func21)
 {
 	return func21(a, b);
 }
-
-using func2x = function<int(int, int)>;	//
+//using std::function;
+using func2x = std::function<int(int, int)>;	//
 int someFun22(int a, int b, func2x func22)
 {
 	return func22(a, b);
@@ -39,7 +39,7 @@ int someFun22(int a, int b, func2x func22)
 
 
 
-
+	//uised before
 using FuncSignature = int(int, int);
 int someFun21(int a, int b, FuncSignature func21)
 {

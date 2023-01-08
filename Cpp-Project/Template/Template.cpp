@@ -1,5 +1,13 @@
+// This is a personal academic project. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
+
+
+
 // Template.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+
+
 
 #include <iostream>
 #include <string>
@@ -79,15 +87,17 @@ unsigned int Pow<1>(int i) { return i; }
 
 //To fix
 //template<unsigned int A, unsigned int B>
-//unsigned int Pow22() { return A*B; }
+//constexpr unsigned int Pow22() { return B * Pow22<A - 1, B>(); }
 //
-//template<unsigned int _>
-//unsigned int Pow22<1, _>() { return  1; }
+//template<unsigned int B>
+//constexpr unsigned int Pow22<1, B>() { return  B; }
 
 
 
 int main()
 {
+
+
     Print("hello");
     Print(5.5f);
     std::cout << "int5: ";
