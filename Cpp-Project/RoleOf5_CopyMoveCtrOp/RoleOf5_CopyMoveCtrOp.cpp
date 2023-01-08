@@ -10,9 +10,9 @@ class Widget
 {
 
 private:
-	int* mPtr;
 	int mX;
-	const size_t numElements = 1'000'000;
+	const size_t numElements = 1'000'000;	//first set size
+	int* mPtr;
 public:
 	Widget(int x) : mPtr{ new int[numElements] }, mX{ x }
 	{}
@@ -38,12 +38,11 @@ public:
 	}
 
 
-
 	//move
-	void moveCtrOp(Widget&& other)	// = &
+	void moveCtrOp(Widget&& other)	// const& &&
 	{
 		mX = other.mX;
-		//other.x = NULL;	//x not a resource, not movable
+		//other.x = NULL;	//x not a resource, not movable, cant delete
 		mPtr = other.mPtr;
 		other.mPtr = nullptr;
 	}
@@ -74,7 +73,6 @@ public:
 	{
 		delete[] mPtr;
 	}
-
 public:
 	friend ostream& operator<<(ostream& os, const Widget& wdg);
 };
@@ -99,4 +97,12 @@ int main()
 		cout << wdg << " ";
 	cout << endl;
 
+
+	Widget a1(20);
+	Widget a2(30);
+	a1 = a2;					//copied =
+	Widget a3(a2);				//copied ()
+	a1 = move(a2);		//move =
+	Widget a4(move(a3));	// move ()
+		//moved a2, a3 is unuseable (for array)
 }
