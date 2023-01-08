@@ -37,6 +37,12 @@ public:
 		return *this;
 	}
 
+	/**
+		//not copyable!
+		Widget(const Widget& other) = delete;
+		Widget& operator=(const Widget& other) = delete;
+	/**/
+
 
 	//move
 	void moveCtrOp(Widget&& other)	// const& &&
