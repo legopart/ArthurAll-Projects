@@ -14,25 +14,24 @@ using namespace std;
 
 int main()
 {
-    auto result = _setmode(_fileno(stdout), _O_U16TEXT);
+    auto result = _setmode(_fileno(stdout), _O_U8TEXT);
     //_O_U8TEXT //_O_UTEXT  // _O_WTEXT
-    #define cout wcout      //Fix ! to same unicode usage
-
-
-
+#define cout wcout      //Fix ! to same unicode usage
 
     wchar_t wide[] = L"ארטור";
     wprintf(wide);
 
     std::wcout << std::endl;
 
-    std::wstring  str = L"שלום ארטור";
+    std::wstring  str = L"aaaa aaab שלום ארטור bbba bbbc";
     std::reverse(str.begin(), str.end());
     std::wcout << str << std::endl;
 
-    
+    std::string regularString = "ABC";
 
-    std::cout << std::endl; //Fix
+    std::cout << regularString.c_str() << std::endl; //Fix
+
+    std::cout << std::wstring(regularString.begin(), regularString.end()) << std::endl; //Fix
 
 
 }
