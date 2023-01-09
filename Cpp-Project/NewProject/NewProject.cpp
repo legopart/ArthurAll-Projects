@@ -1,4 +1,4 @@
-// NewProject.cpp : This file contains the 'main' function. Program execution begins and ends there.
+﻿// NewProject.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -6,9 +6,9 @@
 #define Log(x) std::cout << "x" << std::endl;
 
 
-
 int main()
 {
+
 
 
     Log(abc);
