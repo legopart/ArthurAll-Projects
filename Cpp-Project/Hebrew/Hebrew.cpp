@@ -38,7 +38,10 @@ int main()
 
 
 
-
+//https://www.google.com/search?q=arduino+hebrew+string&oq=arduino+hebrew+string&aqs=chrome..69i57j33i160l4.9769j0j7&sourceid=chrome&ie=UTF-8
+// 
+// 
+// 
 // https://learn.microsoft.com/en-us/answers/questions/263442/how-to-output-non-english-string-literals-in-c.html
 // 
 // 
