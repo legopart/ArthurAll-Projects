@@ -1,5 +1,0 @@
-cmake_minimum_required (VERSION 3.8)
-
-#set("Headers" "Graph.h")
-set("Sources" "main.cpp" "Graph.cpp") #"${PROJECT_SOURCE_DIR}/2_6_GraphUndirected/"
-add_executable ("2_6_GraphUndirected"  ${Sources})

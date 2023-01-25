@@ -18,7 +18,7 @@
     <ClCompile Include="macros.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="debug.cpp">
+    <ClCompile Include="config.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

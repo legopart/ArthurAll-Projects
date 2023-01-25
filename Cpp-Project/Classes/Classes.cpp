@@ -100,7 +100,33 @@ public:
     void print() { cout << "child" << endl; };
 };
 
+
+
+
+
+
+class IAAA
+{
+public:
+    int a;
+};
+
+class AAA : public AAA
+{
+public:
+    int a;
+};
+
+
 int main() {
+
+
+    IAAA aaa;
+    aaa.a = 5;
+
+
+
+
     cout << "Function pointer:" << endl;
 
     Child ch1;

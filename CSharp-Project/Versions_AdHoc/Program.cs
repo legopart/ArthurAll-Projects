@@ -65,14 +65,16 @@ public class Versions_AdHoc_Polymorphism
         Console.WriteLine("AdHoc Polymorphism: 1 2 3");
 
         // IInterface[] array = { new MyClass1(), new MyClass2(), new MyClass3() };
-        dynamic[] @array1 = { new MyClass1(), new MyClass2(), new MyClass3() }; 
+        //dynamic[] @array1
+        IInterface[] array1 = { new MyClass1(), new MyClass2(), new MyClass3() }; 
 
         for (int i = 0; i < 3; ++i)
-            @array1[i].Method(); //dlr asked, dont know about the dynami methods...
+            array1[i].Method(); //dlr asked, dont know about the dynami methods...
                                //may show run time dynamic exception
         Console.WriteLine("AdHoc Polymorphism: A B C");
 
 
+        //dynamic[]
         Object[] array2 = { new ClassA(), new ClassB(), new ClassC() };
         Console.WriteLine("--------------------------------");
         foreach (dynamic @i in array2) 

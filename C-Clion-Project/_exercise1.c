@@ -23,6 +23,7 @@ void arrSwop(int arr[], int arrLength){
 }
 
 //	האיבר הכי גבוה במערך
+// במידה ויש במערך לפחות 2 איברים!
 int biggest(int arr[], int arrLength){
     int b=arr[0];   //biggest
     for (int i=1;i<arrLength;i++)
@@ -30,13 +31,15 @@ int biggest(int arr[], int arrLength){
     return b;
 }
 
-//	האיבר ה3 הגבוה ביותר
+// חילוף פויינטרים
 void swopPointer(int *x, int *y){
     int tmp=*x;
     *x=*y;
     *y=tmp;
 }
 
+
+//	האיבר ה3 הגבוה ביותר
 int biggest3(int arr[], int arrLength){
     int minInt= -powX(2, (sizeof(int)*8-1) )+1; //-2147483647
     int b1, b2, b3;
@@ -51,12 +54,14 @@ int biggest3(int arr[], int arrLength){
 }
 
 //	מספרים ראשוניים עד n
+// האם המספר הוא ראשוני
 int isFirst(int x){ //x>2
     for(int i=2; i<x; i++)
         if(x%i==0) return 0;
     return 1;
 }
 
+//	מספרים ראשוניים עד n
 int firstNumberCount(int n){
     if(n==0||n==1)return 0;
     int count=0;
@@ -69,7 +74,7 @@ int firstNumberCount(int n){
 //	מונה כמות תווים במחרוזת
 //ממיר מצביע למחרוזת
 void pointerStringToArray(char *str, char emptyarr[]){
-    for (int i=0;str[i];i++){
+    for (int i=0;str[i];i++){   //str[i] != NULL
         emptyarr[i]=str[i];
     }
 }
@@ -147,6 +152,7 @@ void mergeArray(int merge[], int arr1[], int length1, int arr2[], int length2){
 }
 
 //	מיזוג 2 מערכים עם מיון
+    // 2 המערכים ממויינים
 void mergeArraySort(int merge[], int arr1[], int length1, int arr2[], int length2){
     int i, j, m; //array1, array2, merged array counters
     i=j=m=0;
