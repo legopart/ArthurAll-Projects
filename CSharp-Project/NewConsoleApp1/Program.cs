@@ -28,28 +28,28 @@ namespace NewConsoleApp1
 
                 //stor memoization by place
 
-            Dictionary<int, SomeList> dic = new();
-            dic.Add(1, new SomeList());
-            dic.Add(2, new SomeList());
-            dic.Add(3, new SomeList());
+            Dictionary<int, List<int>> dic = new();
+            dic.Add(1, new ());
+            dic.Add(2, new ());
+            dic.Add(3, new ());
 
 
-            Dictionary<int, SomeList> visited = new();
+            Dictionary<int, List<int>> visited = new();
             var place1 = dic[1];
             visited.Add(1, place1);
             visited.Add(2, dic[2]);
             visited.Add(3, dic[3]);
 
 
-            visited[2].list.Add(10);
-            visited[2].list.Add(20);
-            visited[2].list.Add(30);
-            visited[2].list.Add(50);
+            visited[2].Add(10);
+            visited[2].Add(20);
+            visited[2].Add(30);
+            visited[2].Add(50);
 
 
             Console.WriteLine ( 
                 "The 2nd place in dic is:"
-                + string.Join(",", dic[2].list) 
+                + string.Join(",", dic[2]) 
             );
 
 
