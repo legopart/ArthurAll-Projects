@@ -18,7 +18,7 @@
             Some<double>.a = 90;
 
 
-            Console.WriteLine("a is: (" + Some<int>.a + ") "); //5
+            Console.WriteLine("a is: (" + Some<int>.a + ") "); // (5)
 
         }
     }
