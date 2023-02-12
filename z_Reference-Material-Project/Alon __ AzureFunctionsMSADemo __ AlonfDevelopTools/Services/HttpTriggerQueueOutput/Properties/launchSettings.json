@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "HttpTriggerQueueOutput": {
-      "commandName": "Project",
-      "commandLineArgs": "host start --port 7071"
-    }
-  }
-}
